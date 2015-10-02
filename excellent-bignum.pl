@@ -25,7 +25,9 @@ $SIG{TERM} = $SIG{INT} = sub {
 	print $file "\nEnded at $N\n";
 	};
 
-foreach my $n ( 10**$k .. 10**($k+1) - 1 ) {
+my $start = $ARGV[1] // 10**$k;
+
+foreach my $n ( $start .. 10**($k+1) - 1 ) {
 	$N = $n;
 	state $count      = 0;
 	state $this_count = 0;
