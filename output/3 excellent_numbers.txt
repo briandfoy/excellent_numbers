@@ -1,0 +1,2705 @@
+*** Starting run at Fri Oct  2 16:56:39 2015
+*** k is 3
+*** Working on 1000
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1010
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1020
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1030
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1040
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1050
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1060
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1070
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1080
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1090
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1100
+*** Overall rate: inf / sec
+*** Previous interval rate: inf / sec
+*** Working on 1110
+*** Overall rate: 111 / sec
+*** Previous interval rate: 10 / sec
+*** Working on 1120
+*** Overall rate: 121 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1130
+*** Overall rate: 131 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1140
+*** Overall rate: 141 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1150
+*** Overall rate: 151 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1160
+*** Overall rate: 161 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1170
+*** Overall rate: 171 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1180
+*** Overall rate: 181 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1190
+*** Overall rate: 191 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1200
+*** Overall rate: 201 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1210
+*** Overall rate: 211 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1220
+*** Overall rate: 221 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1230
+*** Overall rate: 231 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1240
+*** Overall rate: 241 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1250
+*** Overall rate: 251 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1260
+*** Overall rate: 261 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1270
+*** Overall rate: 271 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1280
+*** Overall rate: 281 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1290
+*** Overall rate: 291 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1300
+*** Overall rate: 301 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1310
+*** Overall rate: 311 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1320
+*** Overall rate: 321 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1330
+*** Overall rate: 331 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1340
+*** Overall rate: 341 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1350
+*** Overall rate: 351 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1360
+*** Overall rate: 361 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1370
+*** Overall rate: 371 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1380
+*** Overall rate: 381 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1390
+*** Overall rate: 391 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1400
+*** Overall rate: 401 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1410
+*** Overall rate: 411 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1420
+*** Overall rate: 421 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1430
+*** Overall rate: 431 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1440
+*** Overall rate: 441 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1450
+*** Overall rate: 451 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1460
+*** Overall rate: 461 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1470
+*** Overall rate: 471 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1480
+*** Overall rate: 481 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1490
+*** Overall rate: 491 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1500
+*** Overall rate: 501 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1510
+*** Overall rate: 511 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1520
+*** Overall rate: 521 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1530
+*** Overall rate: 531 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1540
+*** Overall rate: 541 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1550
+*** Overall rate: 551 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1560
+*** Overall rate: 561 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1570
+*** Overall rate: 571 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1580
+*** Overall rate: 581 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1590
+*** Overall rate: 591 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1600
+*** Overall rate: 601 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1610
+*** Overall rate: 611 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1620
+*** Overall rate: 621 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1630
+*** Overall rate: 631 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1640
+*** Overall rate: 641 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1650
+*** Overall rate: 651 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1660
+*** Overall rate: 661 / sec
+*** Previous interval rate: inf / sec
+16604400
+*** Working on 1670
+*** Overall rate: 671 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1680
+*** Overall rate: 681 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1690
+*** Overall rate: 691 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1700
+*** Overall rate: 701 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1710
+*** Overall rate: 711 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1720
+*** Overall rate: 721 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1730
+*** Overall rate: 731 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1740
+*** Overall rate: 741 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1750
+*** Overall rate: 751 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1760
+*** Overall rate: 761 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1770
+*** Overall rate: 771 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1780
+*** Overall rate: 781 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1790
+*** Overall rate: 791 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1800
+*** Overall rate: 801 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1810
+*** Overall rate: 811 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1820
+*** Overall rate: 821 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1830
+*** Overall rate: 831 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1840
+*** Overall rate: 841 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1850
+*** Overall rate: 851 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1860
+*** Overall rate: 861 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1870
+*** Overall rate: 871 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1880
+*** Overall rate: 881 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1890
+*** Overall rate: 891 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1900
+*** Overall rate: 901 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1910
+*** Overall rate: 911 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1920
+*** Overall rate: 921 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1930
+*** Overall rate: 931 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1940
+*** Overall rate: 941 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1950
+*** Overall rate: 951 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1960
+*** Overall rate: 961 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1970
+*** Overall rate: 971 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1980
+*** Overall rate: 981 / sec
+*** Previous interval rate: inf / sec
+*** Working on 1990
+*** Overall rate: 991 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2000
+*** Overall rate: 1001 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2010
+*** Overall rate: 1011 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2020
+*** Overall rate: 1021 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2030
+*** Overall rate: 1031 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2040
+*** Overall rate: 1041 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2050
+*** Overall rate: 1051 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2060
+*** Overall rate: 1061 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2070
+*** Overall rate: 1071 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2080
+*** Overall rate: 1081 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2090
+*** Overall rate: 1091 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2100
+*** Overall rate: 1101 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2110
+*** Overall rate: 1111 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2120
+*** Overall rate: 1121 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2130
+*** Overall rate: 1131 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2140
+*** Overall rate: 1141 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2150
+*** Overall rate: 1151 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2160
+*** Overall rate: 1161 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2170
+*** Overall rate: 1171 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2180
+*** Overall rate: 1181 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2190
+*** Overall rate: 1191 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2200
+*** Overall rate: 1201 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2210
+*** Overall rate: 1211 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2220
+*** Overall rate: 1221 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2230
+*** Overall rate: 1231 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2240
+*** Overall rate: 1241 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2250
+*** Overall rate: 1251 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2260
+*** Overall rate: 1261 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2270
+*** Overall rate: 1271 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2280
+*** Overall rate: 1281 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2290
+*** Overall rate: 1291 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2300
+*** Overall rate: 1301 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2310
+*** Overall rate: 1311 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2320
+*** Overall rate: 1321 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2330
+*** Overall rate: 1331 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2340
+*** Overall rate: 1341 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2350
+*** Overall rate: 1351 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2360
+*** Overall rate: 1361 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2370
+*** Overall rate: 1371 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2380
+*** Overall rate: 1381 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2390
+*** Overall rate: 695 / sec
+*** Previous interval rate: 10 / sec
+*** Working on 2400
+*** Overall rate: 700 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2410
+*** Overall rate: 705 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2420
+*** Overall rate: 710 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2430
+*** Overall rate: 715 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2440
+*** Overall rate: 720 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2450
+*** Overall rate: 725 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2460
+*** Overall rate: 730 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2470
+*** Overall rate: 735 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2480
+*** Overall rate: 740 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2490
+*** Overall rate: 745 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2500
+*** Overall rate: 750 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2510
+*** Overall rate: 755 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2520
+*** Overall rate: 760 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2530
+*** Overall rate: 765 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2540
+*** Overall rate: 770 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2550
+*** Overall rate: 775 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2560
+*** Overall rate: 780 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2570
+*** Overall rate: 785 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2580
+*** Overall rate: 790 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2590
+*** Overall rate: 795 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2600
+*** Overall rate: 800 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2610
+*** Overall rate: 805 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2620
+*** Overall rate: 810 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2630
+*** Overall rate: 815 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2640
+*** Overall rate: 820 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2650
+*** Overall rate: 825 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2660
+*** Overall rate: 830 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2670
+*** Overall rate: 835 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2680
+*** Overall rate: 840 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2690
+*** Overall rate: 845 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2700
+*** Overall rate: 850 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2710
+*** Overall rate: 855 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2720
+*** Overall rate: 860 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2730
+*** Overall rate: 865 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2740
+*** Overall rate: 870 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2750
+*** Overall rate: 875 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2760
+*** Overall rate: 880 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2770
+*** Overall rate: 885 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2780
+*** Overall rate: 890 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2790
+*** Overall rate: 895 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2800
+*** Overall rate: 900 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2810
+*** Overall rate: 905 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2820
+*** Overall rate: 910 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2830
+*** Overall rate: 915 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2840
+*** Overall rate: 920 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2850
+*** Overall rate: 925 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2860
+*** Overall rate: 930 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2870
+*** Overall rate: 935 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2880
+*** Overall rate: 940 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2890
+*** Overall rate: 945 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2900
+*** Overall rate: 950 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2910
+*** Overall rate: 955 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2920
+*** Overall rate: 960 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2930
+*** Overall rate: 965 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2940
+*** Overall rate: 970 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2950
+*** Overall rate: 975 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2960
+*** Overall rate: 980 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2970
+*** Overall rate: 985 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2980
+*** Overall rate: 990 / sec
+*** Previous interval rate: inf / sec
+*** Working on 2990
+*** Overall rate: 995 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3000
+*** Overall rate: 1000 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3010
+*** Overall rate: 1005 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3020
+*** Overall rate: 1010 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3030
+*** Overall rate: 1015 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3040
+*** Overall rate: 1020 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3050
+*** Overall rate: 1025 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3060
+*** Overall rate: 1030 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3070
+*** Overall rate: 1035 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3080
+*** Overall rate: 1040 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3090
+*** Overall rate: 1045 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3100
+*** Overall rate: 1050 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3110
+*** Overall rate: 1055 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3120
+*** Overall rate: 1060 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3130
+*** Overall rate: 1065 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3140
+*** Overall rate: 1070 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3150
+*** Overall rate: 1075 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3160
+*** Overall rate: 1080 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3170
+*** Overall rate: 1085 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3180
+*** Overall rate: 1090 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3190
+*** Overall rate: 1095 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3200
+*** Overall rate: 1100 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3210
+*** Overall rate: 1105 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3220
+*** Overall rate: 1110 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3230
+*** Overall rate: 1115 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3240
+*** Overall rate: 1120 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3250
+*** Overall rate: 1125 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3260
+*** Overall rate: 1130 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3270
+*** Overall rate: 1135 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3280
+*** Overall rate: 1140 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3290
+*** Overall rate: 1145 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3300
+*** Overall rate: 1150 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3310
+*** Overall rate: 1155 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3320
+*** Overall rate: 1160 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3330
+*** Overall rate: 1165 / sec
+*** Previous interval rate: inf / sec
+33346668
+*** Working on 3340
+*** Overall rate: 1170 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3350
+*** Overall rate: 1175 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3360
+*** Overall rate: 1180 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3370
+*** Overall rate: 1185 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3380
+*** Overall rate: 1190 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3390
+*** Overall rate: 1195 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3400
+*** Overall rate: 1200 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3410
+*** Overall rate: 1205 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3420
+*** Overall rate: 1210 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3430
+*** Overall rate: 1215 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3440
+*** Overall rate: 1220 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3450
+*** Overall rate: 1225 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3460
+*** Overall rate: 1230 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3470
+*** Overall rate: 1235 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3480
+*** Overall rate: 1240 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3490
+*** Overall rate: 1245 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3500
+*** Overall rate: 1250 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3510
+*** Overall rate: 1255 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3520
+*** Overall rate: 1260 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3530
+*** Overall rate: 1265 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3540
+*** Overall rate: 1270 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3550
+*** Overall rate: 1275 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3560
+*** Overall rate: 1280 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3570
+*** Overall rate: 1285 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3580
+*** Overall rate: 1290 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3590
+*** Overall rate: 1295 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3600
+*** Overall rate: 1300 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3610
+*** Overall rate: 1305 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3620
+*** Overall rate: 1310 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3630
+*** Overall rate: 1315 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3640
+*** Overall rate: 1320 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3650
+*** Overall rate: 1325 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3660
+*** Overall rate: 1330 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3670
+*** Overall rate: 1335 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3680
+*** Overall rate: 1340 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3690
+*** Overall rate: 1345 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3700
+*** Overall rate: 900 / sec
+*** Previous interval rate: 10 / sec
+*** Working on 3710
+*** Overall rate: 903 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3720
+*** Overall rate: 907 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3730
+*** Overall rate: 910 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3740
+*** Overall rate: 913 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3750
+*** Overall rate: 917 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3760
+*** Overall rate: 920 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3770
+*** Overall rate: 923 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3780
+*** Overall rate: 927 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3790
+*** Overall rate: 930 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3800
+*** Overall rate: 933 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3810
+*** Overall rate: 937 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3820
+*** Overall rate: 940 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3830
+*** Overall rate: 943 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3840
+*** Overall rate: 947 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3850
+*** Overall rate: 950 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3860
+*** Overall rate: 953 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3870
+*** Overall rate: 957 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3880
+*** Overall rate: 960 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3890
+*** Overall rate: 963 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3900
+*** Overall rate: 967 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3910
+*** Overall rate: 970 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3920
+*** Overall rate: 973 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3930
+*** Overall rate: 977 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3940
+*** Overall rate: 980 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3950
+*** Overall rate: 983 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3960
+*** Overall rate: 987 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3970
+*** Overall rate: 990 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3980
+*** Overall rate: 993 / sec
+*** Previous interval rate: inf / sec
+*** Working on 3990
+*** Overall rate: 997 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4000
+*** Overall rate: 1000 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4010
+*** Overall rate: 1003 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4020
+*** Overall rate: 1007 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4030
+*** Overall rate: 1010 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4040
+*** Overall rate: 1013 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4050
+*** Overall rate: 1017 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4060
+*** Overall rate: 1020 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4070
+*** Overall rate: 1023 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4080
+*** Overall rate: 1027 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4090
+*** Overall rate: 1030 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4100
+*** Overall rate: 1033 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4110
+*** Overall rate: 1037 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4120
+*** Overall rate: 1040 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4130
+*** Overall rate: 1043 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4140
+*** Overall rate: 1047 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4150
+*** Overall rate: 1050 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4160
+*** Overall rate: 1053 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4170
+*** Overall rate: 1057 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4180
+*** Overall rate: 1060 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4190
+*** Overall rate: 1063 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4200
+*** Overall rate: 1067 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4210
+*** Overall rate: 1070 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4220
+*** Overall rate: 1073 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4230
+*** Overall rate: 1077 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4240
+*** Overall rate: 1080 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4250
+*** Overall rate: 1083 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4260
+*** Overall rate: 1087 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4270
+*** Overall rate: 1090 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4280
+*** Overall rate: 1093 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4290
+*** Overall rate: 1097 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4300
+*** Overall rate: 1100 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4310
+*** Overall rate: 1103 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4320
+*** Overall rate: 1107 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4330
+*** Overall rate: 1110 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4340
+*** Overall rate: 1113 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4350
+*** Overall rate: 1117 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4360
+*** Overall rate: 1120 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4370
+*** Overall rate: 1123 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4380
+*** Overall rate: 1127 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4390
+*** Overall rate: 1130 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4400
+*** Overall rate: 1133 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4410
+*** Overall rate: 1137 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4420
+*** Overall rate: 1140 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4430
+*** Overall rate: 1143 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4440
+*** Overall rate: 1147 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4450
+*** Overall rate: 1150 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4460
+*** Overall rate: 1153 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4470
+*** Overall rate: 1157 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4480
+*** Overall rate: 1160 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4490
+*** Overall rate: 1163 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4500
+*** Overall rate: 1167 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4510
+*** Overall rate: 1170 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4520
+*** Overall rate: 1173 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4530
+*** Overall rate: 1177 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4540
+*** Overall rate: 1180 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4550
+*** Overall rate: 1183 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4560
+*** Overall rate: 1187 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4570
+*** Overall rate: 1190 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4580
+*** Overall rate: 1193 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4590
+*** Overall rate: 1197 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4600
+*** Overall rate: 1200 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4610
+*** Overall rate: 1203 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4620
+*** Overall rate: 1207 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4630
+*** Overall rate: 1210 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4640
+*** Overall rate: 1213 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4650
+*** Overall rate: 1217 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4660
+*** Overall rate: 1220 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4670
+*** Overall rate: 1223 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4680
+*** Overall rate: 1227 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4690
+*** Overall rate: 1230 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4700
+*** Overall rate: 1233 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4710
+*** Overall rate: 1237 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4720
+*** Overall rate: 1240 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4730
+*** Overall rate: 1243 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4740
+*** Overall rate: 1247 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4750
+*** Overall rate: 1250 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4760
+*** Overall rate: 1253 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4770
+*** Overall rate: 1257 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4780
+*** Overall rate: 1260 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4790
+*** Overall rate: 1263 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4800
+*** Overall rate: 1267 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4810
+*** Overall rate: 1270 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4820
+*** Overall rate: 1273 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4830
+*** Overall rate: 1277 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4840
+*** Overall rate: 1280 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4850
+*** Overall rate: 1283 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4860
+*** Overall rate: 1287 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4870
+*** Overall rate: 1290 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4880
+*** Overall rate: 1293 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4890
+*** Overall rate: 1297 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4900
+*** Overall rate: 1300 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4910
+*** Overall rate: 1303 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4920
+*** Overall rate: 1307 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4930
+*** Overall rate: 1310 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4940
+*** Overall rate: 1313 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4950
+*** Overall rate: 1317 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4960
+*** Overall rate: 1320 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4970
+*** Overall rate: 1323 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4980
+*** Overall rate: 1327 / sec
+*** Previous interval rate: inf / sec
+*** Working on 4990
+*** Overall rate: 1330 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5000
+*** Overall rate: 1000 / sec
+*** Previous interval rate: 10 / sec
+*** Working on 5010
+*** Overall rate: 1002 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5020
+*** Overall rate: 1005 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5030
+*** Overall rate: 1007 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5040
+*** Overall rate: 1010 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5050
+*** Overall rate: 1012 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5060
+*** Overall rate: 1015 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5070
+*** Overall rate: 1017 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5080
+*** Overall rate: 1020 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5090
+*** Overall rate: 1022 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5100
+*** Overall rate: 1025 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5110
+*** Overall rate: 1027 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5120
+*** Overall rate: 1030 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5130
+*** Overall rate: 1032 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5140
+*** Overall rate: 1035 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5150
+*** Overall rate: 1037 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5160
+*** Overall rate: 1040 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5170
+*** Overall rate: 1042 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5180
+*** Overall rate: 1045 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5190
+*** Overall rate: 1047 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5200
+*** Overall rate: 1050 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5210
+*** Overall rate: 1052 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5220
+*** Overall rate: 1055 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5230
+*** Overall rate: 1057 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5240
+*** Overall rate: 1060 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5250
+*** Overall rate: 1062 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5260
+*** Overall rate: 1065 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5270
+*** Overall rate: 1067 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5280
+*** Overall rate: 1070 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5290
+*** Overall rate: 1072 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5300
+*** Overall rate: 1075 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5310
+*** Overall rate: 1077 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5320
+*** Overall rate: 1080 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5330
+*** Overall rate: 1082 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5340
+*** Overall rate: 1085 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5350
+*** Overall rate: 1087 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5360
+*** Overall rate: 1090 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5370
+*** Overall rate: 1092 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5380
+*** Overall rate: 1095 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5390
+*** Overall rate: 1097 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5400
+*** Overall rate: 1100 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5410
+*** Overall rate: 1102 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5420
+*** Overall rate: 1105 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5430
+*** Overall rate: 1107 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5440
+*** Overall rate: 1110 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5450
+*** Overall rate: 1112 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5460
+*** Overall rate: 1115 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5470
+*** Overall rate: 1117 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5480
+*** Overall rate: 1120 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5490
+*** Overall rate: 1122 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5500
+*** Overall rate: 1125 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5510
+*** Overall rate: 1127 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5520
+*** Overall rate: 1130 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5530
+*** Overall rate: 1132 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5540
+*** Overall rate: 1135 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5550
+*** Overall rate: 1137 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5560
+*** Overall rate: 1140 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5570
+*** Overall rate: 1142 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5580
+*** Overall rate: 1145 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5590
+*** Overall rate: 1147 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5600
+*** Overall rate: 1150 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5610
+*** Overall rate: 1152 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5620
+*** Overall rate: 1155 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5630
+*** Overall rate: 1157 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5640
+*** Overall rate: 1160 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5650
+*** Overall rate: 1162 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5660
+*** Overall rate: 1165 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5670
+*** Overall rate: 1167 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5680
+*** Overall rate: 1170 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5690
+*** Overall rate: 1172 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5700
+*** Overall rate: 1175 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5710
+*** Overall rate: 1177 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5720
+*** Overall rate: 1180 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5730
+*** Overall rate: 1182 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5740
+*** Overall rate: 1185 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5750
+*** Overall rate: 1187 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5760
+*** Overall rate: 1190 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5770
+*** Overall rate: 1192 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5780
+*** Overall rate: 1195 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5790
+*** Overall rate: 1197 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5800
+*** Overall rate: 1200 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5810
+*** Overall rate: 1202 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5820
+*** Overall rate: 1205 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5830
+*** Overall rate: 1207 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5840
+*** Overall rate: 1210 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5850
+*** Overall rate: 1212 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5860
+*** Overall rate: 1215 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5870
+*** Overall rate: 1217 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5880
+*** Overall rate: 1220 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5890
+*** Overall rate: 1222 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5900
+*** Overall rate: 1225 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5910
+*** Overall rate: 1227 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5920
+*** Overall rate: 1230 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5930
+*** Overall rate: 1232 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5940
+*** Overall rate: 1235 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5950
+*** Overall rate: 1237 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5960
+*** Overall rate: 1240 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5970
+*** Overall rate: 1242 / sec
+*** Previous interval rate: inf / sec
+*** Working on 5980
+*** Overall rate: 1245 / sec
+*** Previous interval rate: inf / sec
+59809776
+*** Working on 5990
+*** Overall rate: 1247 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6000
+*** Overall rate: 1250 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6010
+*** Overall rate: 1252 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6020
+*** Overall rate: 1255 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6030
+*** Overall rate: 1257 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6040
+*** Overall rate: 1260 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6050
+*** Overall rate: 1262 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6060
+*** Overall rate: 1265 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6070
+*** Overall rate: 1267 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6080
+*** Overall rate: 1270 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6090
+*** Overall rate: 1272 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6100
+*** Overall rate: 1275 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6110
+*** Overall rate: 1277 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6120
+*** Overall rate: 1280 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6130
+*** Overall rate: 1282 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6140
+*** Overall rate: 1285 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6150
+*** Overall rate: 1287 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6160
+*** Overall rate: 1290 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6170
+*** Overall rate: 1292 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6180
+*** Overall rate: 1295 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6190
+*** Overall rate: 1297 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6200
+*** Overall rate: 1300 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6210
+*** Overall rate: 1302 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6220
+*** Overall rate: 1305 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6230
+*** Overall rate: 1307 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6240
+*** Overall rate: 1310 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6250
+*** Overall rate: 1312 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6260
+*** Overall rate: 1315 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6270
+*** Overall rate: 1317 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6280
+*** Overall rate: 1320 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6290
+*** Overall rate: 1322 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6300
+*** Overall rate: 1325 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6310
+*** Overall rate: 1327 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6320
+*** Overall rate: 1330 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6330
+*** Overall rate: 1332 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6340
+*** Overall rate: 1335 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6350
+*** Overall rate: 1070 / sec
+*** Previous interval rate: 10 / sec
+*** Working on 6360
+*** Overall rate: 1072 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6370
+*** Overall rate: 1074 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6380
+*** Overall rate: 1076 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6390
+*** Overall rate: 1078 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6400
+*** Overall rate: 1080 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6410
+*** Overall rate: 1082 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6420
+*** Overall rate: 1084 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6430
+*** Overall rate: 1086 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6440
+*** Overall rate: 1088 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6450
+*** Overall rate: 1090 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6460
+*** Overall rate: 1092 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6470
+*** Overall rate: 1094 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6480
+*** Overall rate: 1096 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6490
+*** Overall rate: 1098 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6500
+*** Overall rate: 1100 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6510
+*** Overall rate: 1102 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6520
+*** Overall rate: 1104 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6530
+*** Overall rate: 1106 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6540
+*** Overall rate: 1108 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6550
+*** Overall rate: 1110 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6560
+*** Overall rate: 1112 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6570
+*** Overall rate: 1114 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6580
+*** Overall rate: 1116 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6590
+*** Overall rate: 1118 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6600
+*** Overall rate: 1120 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6610
+*** Overall rate: 1122 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6620
+*** Overall rate: 1124 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6630
+*** Overall rate: 1126 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6640
+*** Overall rate: 1128 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6650
+*** Overall rate: 1130 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6660
+*** Overall rate: 1132 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6670
+*** Overall rate: 1134 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6680
+*** Overall rate: 1136 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6690
+*** Overall rate: 1138 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6700
+*** Overall rate: 1140 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6710
+*** Overall rate: 1142 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6720
+*** Overall rate: 1144 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6730
+*** Overall rate: 1146 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6740
+*** Overall rate: 1148 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6750
+*** Overall rate: 1150 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6760
+*** Overall rate: 1152 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6770
+*** Overall rate: 1154 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6780
+*** Overall rate: 1156 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6790
+*** Overall rate: 1158 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6800
+*** Overall rate: 1160 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6810
+*** Overall rate: 1162 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6820
+*** Overall rate: 1164 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6830
+*** Overall rate: 1166 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6840
+*** Overall rate: 1168 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6850
+*** Overall rate: 1170 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6860
+*** Overall rate: 1172 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6870
+*** Overall rate: 1174 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6880
+*** Overall rate: 1176 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6890
+*** Overall rate: 1178 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6900
+*** Overall rate: 1180 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6910
+*** Overall rate: 1182 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6920
+*** Overall rate: 1184 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6930
+*** Overall rate: 1186 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6940
+*** Overall rate: 1188 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6950
+*** Overall rate: 1190 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6960
+*** Overall rate: 1192 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6970
+*** Overall rate: 1194 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6980
+*** Overall rate: 1196 / sec
+*** Previous interval rate: inf / sec
+*** Working on 6990
+*** Overall rate: 1198 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7000
+*** Overall rate: 1200 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7010
+*** Overall rate: 1202 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7020
+*** Overall rate: 1204 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7030
+*** Overall rate: 1206 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7040
+*** Overall rate: 1208 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7050
+*** Overall rate: 1210 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7060
+*** Overall rate: 1212 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7070
+*** Overall rate: 1214 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7080
+*** Overall rate: 1216 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7090
+*** Overall rate: 1218 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7100
+*** Overall rate: 1220 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7110
+*** Overall rate: 1222 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7120
+*** Overall rate: 1224 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7130
+*** Overall rate: 1226 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7140
+*** Overall rate: 1228 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7150
+*** Overall rate: 1230 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7160
+*** Overall rate: 1232 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7170
+*** Overall rate: 1234 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7180
+*** Overall rate: 1236 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7190
+*** Overall rate: 1238 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7200
+*** Overall rate: 1240 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7210
+*** Overall rate: 1242 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7220
+*** Overall rate: 1244 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7230
+*** Overall rate: 1246 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7240
+*** Overall rate: 1248 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7250
+*** Overall rate: 1250 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7260
+*** Overall rate: 1252 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7270
+*** Overall rate: 1254 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7280
+*** Overall rate: 1256 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7290
+*** Overall rate: 1258 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7300
+*** Overall rate: 1260 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7310
+*** Overall rate: 1262 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7320
+*** Overall rate: 1264 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7330
+*** Overall rate: 1266 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7340
+*** Overall rate: 1268 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7350
+*** Overall rate: 1270 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7360
+*** Overall rate: 1272 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7370
+*** Overall rate: 1274 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7380
+*** Overall rate: 1276 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7390
+*** Overall rate: 1278 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7400
+*** Overall rate: 1280 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7410
+*** Overall rate: 1282 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7420
+*** Overall rate: 1284 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7430
+*** Overall rate: 1286 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7440
+*** Overall rate: 1288 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7450
+*** Overall rate: 1290 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7460
+*** Overall rate: 1292 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7470
+*** Overall rate: 1294 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7480
+*** Overall rate: 1296 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7490
+*** Overall rate: 1298 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7500
+*** Overall rate: 1300 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7510
+*** Overall rate: 1302 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7520
+*** Overall rate: 1304 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7530
+*** Overall rate: 1306 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7540
+*** Overall rate: 1308 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7550
+*** Overall rate: 1310 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7560
+*** Overall rate: 1312 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7570
+*** Overall rate: 1314 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7580
+*** Overall rate: 1316 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7590
+*** Overall rate: 1318 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7600
+*** Overall rate: 1320 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7610
+*** Overall rate: 1322 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7620
+*** Overall rate: 1324 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7630
+*** Overall rate: 1326 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7640
+*** Overall rate: 1328 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7650
+*** Overall rate: 1330 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7660
+*** Overall rate: 1332 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7670
+*** Overall rate: 1334 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7680
+*** Overall rate: 1336 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7690
+*** Overall rate: 1338 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7700
+*** Overall rate: 1340 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7710
+*** Overall rate: 1342 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7720
+*** Overall rate: 1344 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7730
+*** Overall rate: 1346 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7740
+*** Overall rate: 1348 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7750
+*** Overall rate: 1350 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7760
+*** Overall rate: 1352 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7770
+*** Overall rate: 1354 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7780
+*** Overall rate: 1356 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7790
+*** Overall rate: 1358 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7800
+*** Overall rate: 1360 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7810
+*** Overall rate: 1362 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7820
+*** Overall rate: 1364 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7830
+*** Overall rate: 1366 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7840
+*** Overall rate: 1368 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7850
+*** Overall rate: 1370 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7860
+*** Overall rate: 1372 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7870
+*** Overall rate: 1374 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7880
+*** Overall rate: 1376 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7890
+*** Overall rate: 1378 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7900
+*** Overall rate: 1380 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7910
+*** Overall rate: 1382 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7920
+*** Overall rate: 1384 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7930
+*** Overall rate: 1386 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7940
+*** Overall rate: 1388 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7950
+*** Overall rate: 1390 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7960
+*** Overall rate: 1392 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7970
+*** Overall rate: 1394 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7980
+*** Overall rate: 1396 / sec
+*** Previous interval rate: inf / sec
+*** Working on 7990
+*** Overall rate: 1398 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8000
+*** Overall rate: 1400 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8010
+*** Overall rate: 1402 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8020
+*** Overall rate: 1404 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8030
+*** Overall rate: 1406 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8040
+*** Overall rate: 1408 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8050
+*** Overall rate: 1410 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8060
+*** Overall rate: 1412 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8070
+*** Overall rate: 1414 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8080
+*** Overall rate: 1416 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8090
+*** Overall rate: 1418 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8100
+*** Overall rate: 1420 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8110
+*** Overall rate: 1422 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8120
+*** Overall rate: 1424 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8130
+*** Overall rate: 1426 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8140
+*** Overall rate: 1428 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8150
+*** Overall rate: 1191 / sec
+*** Previous interval rate: 10 / sec
+*** Working on 8160
+*** Overall rate: 1193 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8170
+*** Overall rate: 1195 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8180
+*** Overall rate: 1196 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8190
+*** Overall rate: 1198 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8200
+*** Overall rate: 1200 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8210
+*** Overall rate: 1201 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8220
+*** Overall rate: 1203 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8230
+*** Overall rate: 1205 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8240
+*** Overall rate: 1206 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8250
+*** Overall rate: 1208 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8260
+*** Overall rate: 1210 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8270
+*** Overall rate: 1211 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8280
+*** Overall rate: 1213 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8290
+*** Overall rate: 1215 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8300
+*** Overall rate: 1216 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8310
+*** Overall rate: 1218 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8320
+*** Overall rate: 1220 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8330
+*** Overall rate: 1221 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8340
+*** Overall rate: 1223 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8350
+*** Overall rate: 1225 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8360
+*** Overall rate: 1226 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8370
+*** Overall rate: 1228 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8380
+*** Overall rate: 1230 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8390
+*** Overall rate: 1231 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8400
+*** Overall rate: 1233 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8410
+*** Overall rate: 1235 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8420
+*** Overall rate: 1236 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8430
+*** Overall rate: 1238 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8440
+*** Overall rate: 1240 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8450
+*** Overall rate: 1241 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8460
+*** Overall rate: 1243 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8470
+*** Overall rate: 1245 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8480
+*** Overall rate: 1246 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8490
+*** Overall rate: 1248 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8500
+*** Overall rate: 1250 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8510
+*** Overall rate: 1251 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8520
+*** Overall rate: 1253 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8530
+*** Overall rate: 1255 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8540
+*** Overall rate: 1256 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8550
+*** Overall rate: 1258 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8560
+*** Overall rate: 1260 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8570
+*** Overall rate: 1261 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8580
+*** Overall rate: 1263 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8590
+*** Overall rate: 1265 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8600
+*** Overall rate: 1266 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8610
+*** Overall rate: 1268 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8620
+*** Overall rate: 1270 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8630
+*** Overall rate: 1271 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8640
+*** Overall rate: 1273 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8650
+*** Overall rate: 1275 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8660
+*** Overall rate: 1276 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8670
+*** Overall rate: 1278 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8680
+*** Overall rate: 1280 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8690
+*** Overall rate: 1281 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8700
+*** Overall rate: 1283 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8710
+*** Overall rate: 1285 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8720
+*** Overall rate: 1286 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8730
+*** Overall rate: 1288 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8740
+*** Overall rate: 1290 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8750
+*** Overall rate: 1291 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8760
+*** Overall rate: 1293 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8770
+*** Overall rate: 1295 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8780
+*** Overall rate: 1296 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8790
+*** Overall rate: 1298 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8800
+*** Overall rate: 1300 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8810
+*** Overall rate: 1301 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8820
+*** Overall rate: 1303 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8830
+*** Overall rate: 1305 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8840
+*** Overall rate: 1306 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8850
+*** Overall rate: 1308 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8860
+*** Overall rate: 1310 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8870
+*** Overall rate: 1311 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8880
+*** Overall rate: 1313 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8890
+*** Overall rate: 1315 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8900
+*** Overall rate: 1316 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8910
+*** Overall rate: 1318 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8920
+*** Overall rate: 1320 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8930
+*** Overall rate: 1321 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8940
+*** Overall rate: 1323 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8950
+*** Overall rate: 1325 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8960
+*** Overall rate: 1326 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8970
+*** Overall rate: 1328 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8980
+*** Overall rate: 1330 / sec
+*** Previous interval rate: inf / sec
+*** Working on 8990
+*** Overall rate: 1331 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9000
+*** Overall rate: 1333 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9010
+*** Overall rate: 1335 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9020
+*** Overall rate: 1336 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9030
+*** Overall rate: 1338 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9040
+*** Overall rate: 1340 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9050
+*** Overall rate: 1341 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9060
+*** Overall rate: 1343 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9070
+*** Overall rate: 1345 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9080
+*** Overall rate: 1346 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9090
+*** Overall rate: 1348 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9100
+*** Overall rate: 1350 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9110
+*** Overall rate: 1351 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9120
+*** Overall rate: 1353 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9130
+*** Overall rate: 1355 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9140
+*** Overall rate: 1356 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9150
+*** Overall rate: 1358 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9160
+*** Overall rate: 1360 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9170
+*** Overall rate: 1361 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9180
+*** Overall rate: 1363 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9190
+*** Overall rate: 1365 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9200
+*** Overall rate: 1366 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9210
+*** Overall rate: 1368 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9220
+*** Overall rate: 1370 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9230
+*** Overall rate: 1371 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9240
+*** Overall rate: 1373 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9250
+*** Overall rate: 1375 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9260
+*** Overall rate: 1376 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9270
+*** Overall rate: 1378 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9280
+*** Overall rate: 1380 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9290
+*** Overall rate: 1381 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9300
+*** Overall rate: 1383 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9310
+*** Overall rate: 1385 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9320
+*** Overall rate: 1386 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9330
+*** Overall rate: 1388 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9340
+*** Overall rate: 1390 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9350
+*** Overall rate: 1391 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9360
+*** Overall rate: 1393 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9370
+*** Overall rate: 1395 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9380
+*** Overall rate: 1396 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9390
+*** Overall rate: 1398 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9400
+*** Overall rate: 1400 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9410
+*** Overall rate: 1401 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9420
+*** Overall rate: 1403 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9430
+*** Overall rate: 1405 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9440
+*** Overall rate: 1406 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9450
+*** Overall rate: 1408 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9460
+*** Overall rate: 1410 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9470
+*** Overall rate: 1411 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9480
+*** Overall rate: 1413 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9490
+*** Overall rate: 1415 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9500
+*** Overall rate: 1416 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9510
+*** Overall rate: 1418 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9520
+*** Overall rate: 1420 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9530
+*** Overall rate: 1421 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9540
+*** Overall rate: 1423 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9550
+*** Overall rate: 1425 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9560
+*** Overall rate: 1426 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9570
+*** Overall rate: 1428 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9580
+*** Overall rate: 1430 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9590
+*** Overall rate: 1431 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9600
+*** Overall rate: 1433 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9610
+*** Overall rate: 1435 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9620
+*** Overall rate: 1436 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9630
+*** Overall rate: 1438 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9640
+*** Overall rate: 1440 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9650
+*** Overall rate: 1441 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9660
+*** Overall rate: 1443 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9670
+*** Overall rate: 1445 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9680
+*** Overall rate: 1446 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9690
+*** Overall rate: 1448 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9700
+*** Overall rate: 1450 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9710
+*** Overall rate: 1451 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9720
+*** Overall rate: 1453 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9730
+*** Overall rate: 1455 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9740
+*** Overall rate: 1456 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9750
+*** Overall rate: 1458 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9760
+*** Overall rate: 1460 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9770
+*** Overall rate: 1461 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9780
+*** Overall rate: 1463 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9790
+*** Overall rate: 1465 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9800
+*** Overall rate: 1466 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9810
+*** Overall rate: 1468 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9820
+*** Overall rate: 1470 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9830
+*** Overall rate: 1471 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9840
+*** Overall rate: 1473 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9850
+*** Overall rate: 1475 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9860
+*** Overall rate: 1476 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9870
+*** Overall rate: 1478 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9880
+*** Overall rate: 1480 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9890
+*** Overall rate: 1481 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9900
+*** Overall rate: 1483 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9910
+*** Overall rate: 1485 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9920
+*** Overall rate: 1486 / sec
+*** Previous interval rate: 10 / sec
+*** Working on 9930
+*** Overall rate: 1275 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9940
+*** Overall rate: 1277 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9950
+*** Overall rate: 1278 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9960
+*** Overall rate: 1280 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9970
+*** Overall rate: 1281 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9980
+*** Overall rate: 1283 / sec
+*** Previous interval rate: inf / sec
+*** Working on 9990
+*** Overall rate: 1284 / sec
+*** Previous interval rate: inf / sec
