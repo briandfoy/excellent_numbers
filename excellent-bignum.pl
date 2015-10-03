@@ -82,6 +82,8 @@ my $max_a = bisect(
 say "*** largest is $max_a";
 say "$start .. $max_a";
 
+my $k2 = length $start;
+
 foreach my $a ( $start .. $max_a ) {
 	$N = $a;
 
@@ -89,10 +91,7 @@ foreach my $a ( $start .. $max_a ) {
 		say "*** Working on $a";
 		}
 
-	my $k = length $a;
-
-
-	my $front = $a*(10**$k + $a);
+	my $front = $a*(10**$k2 + $a);
 
 	my $root = int( sqrt( $front ) );
 
