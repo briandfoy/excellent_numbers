@@ -54,7 +54,7 @@ my $start = do {
 my $end = do {
 	# if they specify a third number, that's a literal number we need
 	# to break up to get the first half
-	if( defined $ARGV[2] ) { substr $ARGV[1], 0, length( $ARGV[2] ) / 2 }
+	if( defined $ARGV[2] ) { substr $ARGV[2], 0, length( $ARGV[2] ) / 2 }
 	# Otherwise we find the maximum a in this range
 	else {
 		# find the $max_a by trying things until we get a good one
@@ -128,7 +128,7 @@ foreach my $a ( $start .. $end ) {
 		elsif( $back > $front       ) { $root--; redo }
 		else                          {
 			say "$a$root";
-			$nt->update( "$a$root is excellent" ) if $nt;
+			eval { $nt->update( "$a$root is excellent" ) } if $nt;
 			last;
 			}
 		}
