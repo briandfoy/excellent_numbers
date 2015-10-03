@@ -1,5 +1,7 @@
 #!/usr/bin/perl
-use v5.20;
+use v5.22;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
 
 use bigint;
 
@@ -18,182 +20,137 @@ my $tee = IO::Tee->new( $file, interactive() );
 select $tee;
 
 say "*** Starting run at " . localtime;
+say "*** PID is $$";
 say "*** k is $k";
 
 our $N;
 $SIG{TERM} = $SIG{INT} = sub {
 	print $file "\nEnded at $N\n";
+	exit;
 	};
 
-my $start = $ARGV[1] // 10**$k;
+my $start = do {
+	# if they specify a big number, that's a literal number we need
+	# to break up
+	if( defined $ARGV[1] ) { substr $ARGV[1], 0, length( $ARGV[1] ) / 2 }
+	# Otherwise we assume it's a number of digits
+	else { 10**$k }
+	};
 
-foreach my $n ( $start .. 10**($k+1) - 1 ) {
-	$N = $n;
-	state $count      = 0;
-	state $this_count = 0;
-	state $start_time = time;
-	state $this_time  = time;
-	state $interval   = 10**($k-2);
+=encoding utf8
 
-	$count++;
-	$this_count++;
+=pod
 
-	unless( $this_time % 1800 ) { # every half hour
-		say "*** Working on $n";
+A number I<ab> is excellent if I<b²> - I<a²> is the number I<ab>,
+where I<a> and I<b> have an equal number of digits. For instance, 48
+is 8² - 4².
+
+I can rewrite I<ab> to separate the halves of numbers. Here, I<k> is
+the order of magnitude of half the number (or, one less than the count
+of digits, e.g. for 1,000 I<k> is 3):
+
+	b² - a² = a 10**k + b            (1)
+
+Rearranging to get the same letters on the same side:
+
+	b² - b = a 10**k + a²            (2)
+
+Or,
+
+	b (b - 1) = a (10**k + a )       (3)
+
+Now, for sufficiently large numbers, I<b (b - 1)> is almost I<b²>. In
+that case, I<b> would be the I<√ a (10**k + a )>. Checking around that
+root by a few numbers verifies the excellent number.
+
+There's a maximum I<a> that we have to check since beyond that value
+there's not enough left over to subtract from the maximum square of
+I<b> to get back a number with the right number of digits. I can find
+that by setting I<b> to its maximum value and solving (2) for I<a>.
+The maximum I<a> starts right around the numbers that start with 6.
+This cuts out roughly 40% of the range of numbers of that length.
+
+=cut
+
+# find the $max_a by trying things until we get a good one
+my $max_a = bisect(
+	$k+1,
+	sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) },
+	my $threshold = 1
+	);
+
+say "*** largest is $max_a";
+say "$start .. $max_a";
+
+foreach my $a ( $start .. $max_a ) {
+	$N = $a;
+
+	unless( time % 1800 ) { # every half hour
+		say "*** Working on $a";
 		}
-	unless( $n % $interval ) {
-		say "*** Working on $n";
-		my $overall_rate = $count / ( time - $start_time );
-		say "*** Overall rate: $overall_rate / sec";
 
-		my $this_rate    = $this_count / ( time - $this_time );
-		say "*** Previous interval rate: $this_rate / sec";
+	my $k = length $a;
 
-		$this_count = 0;
-		$this_time  = time;
-		}
 
-	my $k = length $n;
-	my $front = $n*(10**$k + $n);
+	my $front = $a*(10**$k + $a);
 
 	my $root = int( sqrt( $front ) );
 
-	foreach my $try ( $root - 2 .. $root + 2 ) {
-		my $back = $try * ($try - 1);
-		last if length($try) > $k;
+	foreach my $b_try ( $root - 2 .. $root + 2 ) {
+		my $back = $b_try * ($b_try - 1);
+		last if length($b_try) > $k;
 		last if $back > $front;
 		#say "\tn: $n back: $back try: $try front: $front";
 		if( $back == $front ) {
-			say "$n$try";
+			say "$a$b_try";
 			last;
 			}
 		}
 	}
 
+# This is really sloppy, but I only have to run it once
+sub bisect ( $k, $sub, $threshold=1 ) {
+	my $b = '9' x $k;  # the largest b
+
+	# the limits for our bisection. These will close in on the middle
+	# as we test the bounds
+	my $maximum = $b;
+	my $minimum = '1' . ( '0' x ($k-1) );
+
+	# Let's start in the middle of the range
+	my $try = int( ( $maximum - $minimum ) / 2 );
+
+	my %Seen;
+	while( 1 ) {
+		my $result = $sub->( $try, $k );
+		#say "Min: $minimum: Max: $maximum Try: $try Result: $result";
+
+		my $last_try = $try;
+		$try = do {
+			if( abs($result - $b) < $threshold ) {
+				#say "last block";
+				last ;
+				}
+			elsif( $result > $b )    { # result is too big, make try smaller
+				#say "too big";
+				$maximum = $try;
+				int( $minimum + ( $try - $minimum ) / 2 );
+				}
+			elsif( $result < $b ) { # result is too small, make try bigger
+				#say "too small";
+				$minimum = $try;
+				int( ($try + ( $maximum - $try ) / 2) + 1 );
+				}
+			else { return $try }
+			};
+		last if int( $last_try ) == int( $try );
+		last if $Seen{ $try }++; # stop cycles
+
+		#say "next try $try";
+		}
+
+	# cheat a little
+	return int( $try + $threshold );
+	};
+
 __END__
-*** Working on 10000000000
-*** Overall rate: inf / sec
-*** Previous interval rate: inf / sec
-*** Working on 10100000000
-*** Overall rate: 855 / sec
-*** Previous interval rate: 855 / sec
-*** Working on 10200000000
-*** Overall rate: 868 / sec
-*** Previous interval rate: 881 / sec
-*** Working on 10300000000
-*** Overall rate: 870 / sec
-*** Previous interval rate: 876 / sec
-*** Working on 10400000000
-*** Overall rate: 873 / sec
-*** Previous interval rate: 879 / sec
-*** Working on 10500000000
-*** Overall rate: 875 / sec
-*** Previous interval rate: 885 / sec
-*** Working on 10600000000
-*** Overall rate: 877 / sec
-*** Previous interval rate: 884 / sec
-*** Working on 10700000000
-*** Overall rate: 876 / sec
-*** Previous interval rate: 876 / sec
-*** Working on 10800000000
-*** Overall rate: 878 / sec
-*** Previous interval rate: 887 / sec
-*** Working on 10900000000
-*** Overall rate: 878 / sec
-*** Previous interval rate: 885 / sec
-*** Working on 11000000000
-*** Overall rate: 879 / sec
-*** Previous interval rate: 884 / sec
-*** Working on 11100000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 896 / sec
-*** Working on 11200000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 885 / sec
-*** Working on 11300000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 885 / sec
-*** Working on 11400000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 883 / sec
-*** Working on 11500000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 878 / sec
-*** Working on 11600000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 876 / sec
-*** Working on 11700000000
-*** Overall rate: 882 / sec
-*** Previous interval rate: 904 / sec
-*** Working on 11800000000
-*** Overall rate: 882 / sec
-*** Previous interval rate: 883 / sec
-*** Working on 11900000000
-*** Overall rate: 882 / sec
-*** Previous interval rate: 883 / sec
-*** Working on 12000000000
-*** Overall rate: 882 / sec
-*** Previous interval rate: 883 / sec
-*** Working on 12100000000
-*** Overall rate: 882 / sec
-*** Previous interval rate: 883 / sec
-*** Working on 12200000000
-*** Overall rate: 882 / sec
-*** Previous interval rate: 882 / sec
-*** Working on 12300000000
-*** Overall rate: 883 / sec
-*** Previous interval rate: 905 / sec
-*** Working on 12400000000
-*** Overall rate: 883 / sec
-*** Previous interval rate: 883 / sec
-*** Working on 12500000000
-*** Overall rate: 883 / sec
-*** Previous interval rate: 883 / sec
-*** Working on 12600000000
-*** Overall rate: 883 / sec
-*** Previous interval rate: 881 / sec
-*** Working on 12700000000
-*** Overall rate: 883 / sec
-*** Previous interval rate: 879 / sec
-*** Working on 12800000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 827 / sec
-1283162072038050132225
-*** Working on 12900000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 891 / sec
-*** Working on 13000000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 869 / sec
-*** Working on 13100000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 881 / sec
-*** Working on 13200000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 874 / sec
-*** Working on 13300000000
-*** Overall rate: 880 / sec
-*** Previous interval rate: 862 / sec
-*** Working on 13400000000
-*** Overall rate: 880 / sec
-*** Previous interval rate: 878 / sec
-*** Working on 13500000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 907 / sec
-*** Working on 13600000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 886 / sec
-*** Working on 13700000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 884 / sec
-*** Working on 13800000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 877 / sec
-1382185301039663949900
-*** Working on 13900000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 880 / sec
-*** Working on 14000000000
-*** Overall rate: 881 / sec
-*** Previous interval rate: 870 / sec
-1401308698439970930753
