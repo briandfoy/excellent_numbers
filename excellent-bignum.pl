@@ -106,6 +106,7 @@ foreach my $a ( $start .. $max_a ) {
 		elsif( $back > $front       ) { $root--; redo }
 		else                          { say "$a$root"; last }
 		}
+
 	}
 
 # This is really sloppy, but I only have to run it once
