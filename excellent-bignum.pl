@@ -45,10 +45,27 @@ $SIG{TERM} = $SIG{INT} = sub {
 
 my $start = do {
 	# if they specify a big number, that's a literal number we need
-	# to break up
+	# to break up to get the first half
 	if( defined $ARGV[1] ) { substr $ARGV[1], 0, length( $ARGV[1] ) / 2 }
-	# Otherwise we assume it's a number of digits
+	# Otherwise we assume it's a number of digits in the final number
 	else { 10**$k }
+	};
+
+my $end = do {
+	# if they specify a third number, that's a literal number we need
+	# to break up to get the first half
+	if( defined $ARGV[2] ) { substr $ARGV[1], 0, length( $ARGV[2] ) / 2 }
+	# Otherwise we find the maximum a in this range
+	else {
+		# find the $max_a by trying things until we get a good one
+		my $max_a = bisect(
+			$k+1,
+			sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) },
+			my $threshold = 1
+			);
+		say "*** largest is $max_a";
+		$max_a;
+		}
 	};
 
 =encoding utf8
@@ -86,19 +103,10 @@ This cuts out roughly 40% of the range of numbers of that length.
 
 =cut
 
-# find the $max_a by trying things until we get a good one
-my $max_a = bisect(
-	$k+1,
-	sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) },
-	my $threshold = 1
-	);
-
-say "*** largest is $max_a";
-say "$start .. $max_a";
+say "$start .. $end";
 
 my $k2 = length $start;
-
-foreach my $a ( $start .. $max_a ) {
+foreach my $a ( $start .. $end ) {
 	$N = $a;
 
 	my $time = time;
