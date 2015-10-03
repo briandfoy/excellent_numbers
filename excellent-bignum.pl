@@ -87,7 +87,9 @@ my $k2 = length $start;
 foreach my $a ( $start .. $max_a ) {
 	$N = $a;
 
-	unless( time % 1800 ) { # every half hour
+	my $time = time;
+	state $Reported = {};
+	unless( $time % 1800 and ! exists $Reported->{$time} ) { # every half hour
 		say "*** Working on $a";
 		}
 
