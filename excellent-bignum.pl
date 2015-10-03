@@ -14,7 +14,7 @@ die "Number of digits must be even and non-zero! You said [$digits]\n"
 
 my $k          = ( $digits / 2 ) - 1;
 
-open my $file, '>>:utf8', "$k excellent_numbers.txt";
+open my $file, '>>:utf8', "excellent_numbers-k$k-$$-@{[time]}.txt";
 
 my $tee = IO::Tee->new( $file, interactive() );
 select $tee;
