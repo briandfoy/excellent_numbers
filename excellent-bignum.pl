@@ -8,6 +8,20 @@ use bigint;
 use IO::Interactive qw(interactive);
 use IO::Tee;
 
+my $nt = eval {
+	require Net::Twitter;
+	my $nt = Net::Twitter->new(
+		traits   => [qw/API::RESTv1_1/],
+		consumer_key        => $ENV{TWITTER_CONSUMER_KEY},
+		consumer_secret     => $ENV{TWITTER_CONSUMER_SECRET},
+		access_token        => $ENV{TWITTER_TOKEN},
+		access_token_secret => $ENV{TWITTER_TOKEN_SECRET},
+		);
+	} || do {
+	say "*** Could not setup Net::Twitter, so I won't post there: $@";
+	();
+	};
+
 my $digits = $ARGV[0] // 10;
 die "Number of digits must be even and non-zero! You said [$digits]\n"
 	unless( $digits > 0 and $digits % 2 == 0 and int($digits) eq $digits );
@@ -104,7 +118,11 @@ foreach my $a ( $start .. $max_a ) {
 		my $back = $root * ( $root - 1 );
 		   if( $back < $front       ) { $root++; redo }
 		elsif( $back > $front       ) { $root--; redo }
-		else                          { say "$a$root"; last }
+		else                          {
+			say "$a$root";
+			$nt->update( "$a$root is excellent" ) if $nt;
+			last;
+			}
 		}
 
 	}
