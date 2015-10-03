@@ -97,15 +97,14 @@ foreach my $a ( $start .. $max_a ) {
 
 	my $root = int( sqrt( $front ) );
 
-	foreach my $b_try ( $root - 2 .. $root + 2 ) {
-		my $back = $b_try * ($b_try - 1);
-		last if length($b_try) > $k;
-		last if $back > $front;
-		#say "\tn: $n back: $back try: $try front: $front";
-		if( $back == $front ) {
-			say "$a$b_try";
-			last;
-			}
+	my %Tried;
+	while( 1 ) {
+		last if $Tried{$root}++;
+		#say "*** [$a] Trying root $root";
+		my $back = $root * ( $root - 1 );
+		   if( $back < $front       ) { $root++; redo }
+		elsif( $back > $front       ) { $root--; redo }
+		else                          { say "$a$root"; last }
 		}
 	}
 
