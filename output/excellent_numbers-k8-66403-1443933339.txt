@@ -1,0 +1,37 @@
+*** Starting run at Sun Oct  4 00:35:39 2015
+*** PID is 66403
+*** k is 8
+300000000 .. 400000000
+300625300625300625
+*** Working on 302368044
+*** Working on 305174422
+*** Working on 307976101
+*** Working on 311607325
+*** Working on 315235033
+*** Working on 318866409
+*** Working on 322497040
+*** Working on 326126842
+*** Working on 329758216
+332001666665001333
+333333334666666668
+*** Working on 333382369
+334668334668334668
+*** Working on 337012650
+*** Working on 340564048
+*** Working on 344121407
+344329484680361873
+*** Working on 347694241
+*** Working on 351313813
+*** Working on 354976836
+*** Working on 358639671
+*** Working on 362301519
+*** Working on 365965073
+*** Working on 369630387
+*** Working on 373266566
+*** Working on 376935678
+*** Working on 380594607
+*** Working on 384183577
+*** Working on 387764314
+*** Working on 391355223
+*** Working on 395015869
+*** Working on 398714448

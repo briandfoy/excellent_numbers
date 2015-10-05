@@ -1,0 +1,4 @@
+*** Starting run at Sat Oct  3 14:37:57 2015
+*** PID is 87045
+*** k is 2
+150 .. 150

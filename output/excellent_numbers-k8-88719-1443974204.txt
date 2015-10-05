@@ -1,0 +1,7 @@
+*** Starting run at Sun Oct  4 11:56:44 2015
+*** PID is 88719
+*** k is 8
+100000000 .. 150000000
+*** Working on 100393177
+
+Ended at 102196438

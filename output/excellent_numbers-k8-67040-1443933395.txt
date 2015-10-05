@@ -1,0 +1,21 @@
+*** Starting run at Sun Oct  4 00:36:35 2015
+*** PID is 67040
+*** k is 8
+150000000 .. 200000000
+*** Working on 152312612
+*** Working on 155158026
+*** Working on 158000441
+*** Working on 161692268
+*** Working on 165382038
+168654484443958128
+*** Working on 169072988
+*** Working on 172758521
+*** Working on 176446411
+*** Working on 180134832
+*** Working on 183817405
+*** Working on 187505981
+189525190474810476
+190476190476190476
+*** Working on 191114312
+*** Working on 194729139
+*** Working on 198361405
