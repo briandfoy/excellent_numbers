@@ -117,7 +117,7 @@ So far:
 
 =over 4
 
-=item * Mark Jason Dominus presented the problem and same the initial optimzation I came up with
+=item * Mark Jason Dominus presented the problem and same the initial optimization I came up with
 
 =item * Joe Zbiciak contributed the modulus congruence optimization
 
@@ -131,11 +131,8 @@ So far:
 
 =item * L<Doing less work to compute excellent numbers|http://www.masteringperl.org/2015/10/doing-less-work-to-compute-excellent-numbers/>
 
-=item * L<http://blog.plover.com/math/excellent.html|Excellent Numbers>
+=item * L<Excellent Numbers|http://blog.plover.com/math/excellent.html>
 
-=item *
-
-=item *
-
+=item * L<The "excellent numbers" tag at Mastering Perl|http://www.masteringperl.org/tag/excellent-numbers/>
 
 =back
