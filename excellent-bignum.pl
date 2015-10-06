@@ -245,7 +245,6 @@ sub bisect ( $k, $sub, $threshold=1 ) {
 	return int( $try + $threshold );
 	};
 
-__END__
 # http://rosettacode.org/wiki/Convert_seconds_to_compound_duration#Perl
 sub compound_duration ( $sec ) {
     no warnings 'numeric';
@@ -258,3 +257,4 @@ sub compound_duration ( $sec ) {
         int($sec)          % 60 . " sec";
 	}
 
+__END__
