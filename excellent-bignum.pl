@@ -10,6 +10,7 @@ use IO::Interactive qw(interactive);
 use IO::Tee;
 
 my $nt = eval {
+	die 'NO_TWITTER set to true' if $ENV{NO_TWITTER};
 	require Net::Twitter;
 	my $nt = Net::Twitter->new(
 		traits   => [qw/API::RESTv1_1/],
