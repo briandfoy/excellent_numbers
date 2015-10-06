@@ -118,7 +118,6 @@ that by setting I<b> to its maximum value and solving (2) for I<a>.
 The maximum I<a> starts right around the numbers that start with 6.
 This cuts out roughly 40% of the range of numbers of that length.
 
-=cut
 There are other limitations on I<a> that Joe Zbiciak elucidated. It
 only works with numbers that end with {0, 4, 6} as a quirk of squares.
 If we only care about the last digit, then we take everything mod 10.
@@ -155,6 +154,7 @@ only values of I<a> that will produce { 0, 6 } as a square are { 0, 4,
 9 }. That's 60% of the candidates!
 
 
+=cut
 
 say "*** $start .. $end";
 
@@ -162,10 +162,10 @@ my $Report_threshold = 300;
 
 my $k2 = length $start;
 foreach my $a ( $start .. $end ) {
-	$N = $a;
 	# see the modulo stuff. a can only end in these digits;
 	next unless $a =~ m/[0468]\z/;
 
+	$N = $a;
 
 	my $time = time;
 	state $Reported = {};
