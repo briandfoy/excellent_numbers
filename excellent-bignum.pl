@@ -118,6 +118,42 @@ The maximum I<a> starts right around the numbers that start with 6.
 This cuts out roughly 40% of the range of numbers of that length.
 
 =cut
+There are other limitations on I<a> that Joe Zbiciak elucidated. It
+only works with numbers that end with {0, 4, 6} as a quirk of squares.
+If we only care about the last digit, then we take everything mod 10.
+That means I lose the I<10**k> term because that's always evenly
+divisible by 10:
+
+	b*b - a*a = b (mod 10)           (4)
+
+Rearranging as I did in (2), I get:
+
+    b*b - b = a*a (mod 10)           (5)
+
+But a square number (mod 10) can only end in { 0, 1, 4, 5, 6, 9 }, so
+any I<a²> ending in { 2, 3, 7, 8 } is not a candidate.
+
+But I<b*b – b> (mod 10) must also end in { 0, 1, 4, 5, 6, 9 } because
+it's the same number. If we take some I<b> (mod 10) and compute
+I<b*b – b> (mod 10), only values of I<b> ending in { 0, 6 } work:
+
+	0*0 - 0 = 0  works
+	1*1 - 1 = 0  works
+	2*2 - 2 = 2  doesn't work
+	3*3 - 3 = 6  works
+	4*4 - 4 = 2  doesn't work
+	5*5 - 5 = 0  works
+	6*6 - 6 = 0  works
+	7*7 - 7 = 2  doesn't work
+	8*8 - 8 = 6  works
+	9*9 - 9 = 2  doesn't work
+
+The I<b> side will only produce values ending in { 0, 6 }, and the
+only values of I<a> that will produce { 0, 6 } as a square are { 0, 4,
+6, 8 }. This means that I can skip all I<a> that are { 1, 2, 3, 5, 7,
+9 }. That's 60% of the candidates!
+
+
 
 say "*** $start .. $end";
 
@@ -126,6 +162,9 @@ my $Report_threshold = 300;
 my $k2 = length $start;
 foreach my $a ( $start .. $end ) {
 	$N = $a;
+	# see the modulo stuff. a can only end in these digits;
+	next unless $a =~ m/[0468]\z/;
+
 
 	my $time = time;
 	state $Reported = {};
