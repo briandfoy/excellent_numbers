@@ -48,7 +48,14 @@ $SIG{TERM} = $SIG{INT} = sub {
 my $start = do {
 	# if they specify a big number, that's a literal number we need
 	# to break up to get the first half
-	if( defined $ARGV[1] ) { substr $ARGV[1], 0, length( $ARGV[1] ) / 2 }
+	if( defined $ARGV[1] ) {
+		$ARGV[1] =~ s/_//g;
+
+		die "$ARGV[1] doesn't look like a number!\n" if $ARGV[1] =~ /\D/;
+		die "$ARGV[1] should be $half_digits digits but is " . length($ARGV[1]) . " digits\n"
+			unless length $ARGV[1] eq $half_digits;
+		$ARGV[1];
+		}
 	# Otherwise we assume it's a number of digits in the final number
 	else { 10**$k }
 	};
@@ -56,7 +63,14 @@ my $start = do {
 my $end = do {
 	# if they specify a third number, that's a literal number we need
 	# to break up to get the first half
-	if( defined $ARGV[2] ) { substr $ARGV[2], 0, length( $ARGV[2] ) / 2 }
+	if( defined $ARGV[2] ) {
+		$ARGV[2] =~ s/_//g;
+
+		die "$ARGV[2] doesn't look like a number!\n" if $ARGV[2] =~ /\D/;
+		die "$ARGV[2] should be $half_digits digits but is " . length($ARGV[2]) . " digits\n"
+			unless length $ARGV[2] eq $half_digits;
+		$ARGV[2];
+		}
 	# Otherwise we find the maximum a in this range
 	else {
 		# find the $max_a by trying things until we get a good one
