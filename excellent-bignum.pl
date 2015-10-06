@@ -169,8 +169,15 @@ foreach my $a ( $start .. $end ) {
 
 	my $time = time;
 	state $Reported = {};
+	state $last_a = $a;
 	unless( $time % $Report_threshold or $Reported->{$time}++ ) {
-		say "*** Working on $a";
+		my $rate = int( ( $a - $last_a ) / $Report_threshold );
+		my $left = $end - $a;
+		my $time_left = $left / $rate;
+		my $compound_duration = compound_duration( $time_left );
+
+		say "*** Working on $a => rate is $rate / s => time left $compound_duration";
+		$last_a = $a;
 		}
 
 	my $front = $a*(10**$k2 + $a);
@@ -239,3 +246,15 @@ sub bisect ( $k, $sub, $threshold=1 ) {
 	};
 
 __END__
+# http://rosettacode.org/wiki/Convert_seconds_to_compound_duration#Perl
+sub compound_duration ( $sec ) {
+    no warnings 'numeric';
+
+    return join ', ', grep { $_ > 0 }
+        int($sec/60/60/24/7)    . " wk",
+        int($sec/60/60/24) % 7  . " d",
+        int($sec/60/60)    % 24 . " hr",
+        int($sec/60)       % 60 . " min",
+        int($sec)          % 60 . " sec";
+	}
+
