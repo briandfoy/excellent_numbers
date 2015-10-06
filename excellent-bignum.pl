@@ -119,7 +119,9 @@ This cuts out roughly 40% of the range of numbers of that length.
 
 =cut
 
-say "$start .. $end";
+say "*** $start .. $end";
+
+my $Report_threshold = 300;
 
 my $k2 = length $start;
 foreach my $a ( $start .. $end ) {
