@@ -129,7 +129,7 @@ foreach my $a ( $start .. $end ) {
 
 	my $time = time;
 	state $Reported = {};
-	unless( $time % 1800 or $Reported->{$time}++ ) { # every half hour
+	unless( $time % $Report_threshold or $Reported->{$time}++ ) {
 		say "*** Working on $a";
 		}
 
