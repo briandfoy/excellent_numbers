@@ -28,6 +28,7 @@ my $digits = $ARGV[0] // 10;
 die "Number of digits must be even and non-zero! You said [$digits]\n"
 	unless( $digits > 0 and $digits % 2 == 0 and int($digits) eq $digits );
 
+my $half_digits = $digits / 2;
 my $k          = ( $digits / 2 ) - 1;
 
 open my $file, '>>:utf8', "excellent_numbers-k$k-$$-@{[time]}.txt";
