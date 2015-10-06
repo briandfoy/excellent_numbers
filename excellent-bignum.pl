@@ -3,6 +3,7 @@ use v5.22;
 use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
+# maybe we should conditionally load this based on the number's size
 use bigint;
 
 use IO::Interactive qw(interactive);
