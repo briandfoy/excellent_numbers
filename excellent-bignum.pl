@@ -49,7 +49,7 @@ sub get_start ( $self, $start ) {
 
 			die "$start doesn't look like a number!\n" if $start =~ /\D/;
 			die "$start should be " . $self->half_digits . " digits but is " . length($start) . " digits\n"
-				unless length start eq $self->half_digits;
+				unless length $start eq $self->half_digits;
 			$start;
 			}
 		# Otherwise we assume it's a number of digits in the final number
