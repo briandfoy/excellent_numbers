@@ -1,0 +1,11 @@
+*** Starting run at Tue Oct  6 17:21:09 2015
+*** PID is 98489
+*** k is 8
+*** largest is 618033989
+100000000 .. 618033989
+*** Working on 101164376
+*** Working on 102690766
+103495840337945601
+*** Working on 104216218
+
+Ended at 105511856

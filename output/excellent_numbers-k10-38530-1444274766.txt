@@ -1,0 +1,35 @@
+*** Starting run at Wed Oct  7 23:26:06 2015
+*** PID is 38530
+*** k is 10
+*** 12964613778 .. 12999999999
+*** Working on 12965453618 => rate is 2799 / s => time left 0 wk, 0 d, 3 hr, 25 min, 42 sec
+*** Working on 12966541966 => rate is 3627 / s => time left 0 wk, 0 d, 2 hr, 33 min, 44 sec
+*** Working on 12967630366 => rate is 3628 / s => time left 0 wk, 0 d, 2 hr, 28 min, 42 sec
+*** Working on 12968730140 => rate is 3665 / s => time left 0 wk, 0 d, 2 hr, 22 min, 12 sec
+*** Working on 12969834908 => rate is 3682 / s => time left 0 wk, 0 d, 2 hr, 16 min, 32 sec
+*** Working on 12970939536 => rate is 3682 / s => time left 0 wk, 0 d, 2 hr, 11 min, 32 sec
+*** Working on 12972041204 => rate is 3672 / s => time left 0 wk, 0 d, 2 hr, 6 min, 54 sec
+*** Working on 12973145274 => rate is 3680 / s => time left 0 wk, 0 d, 2 hr, 1 min, 37 sec
+*** Working on 12974250646 => rate is 3684 / s => time left 0 wk, 0 d, 1 hr, 56 min, 29 sec
+*** Working on 12975356518 => rate is 3686 / s => time left 0 wk, 0 d, 1 hr, 51 min, 25 sec
+*** Working on 12976464454 => rate is 3693 / s => time left 0 wk, 0 d, 1 hr, 46 min, 13 sec
+*** Working on 12977586754 => rate is 3741 / s => time left 0 wk, 0 d, 1 hr, 39 min, 51 sec
+*** Working on 12978709540 => rate is 3742 / s => time left 0 wk, 0 d, 1 hr, 34 min, 49 sec
+*** Working on 12979830764 => rate is 3737 / s => time left 0 wk, 0 d, 1 hr, 29 min, 57 sec
+*** Working on 12980952846 => rate is 3740 / s => time left 0 wk, 0 d, 1 hr, 24 min, 52 sec
+*** Working on 12982076818 => rate is 3746 / s => time left 0 wk, 0 d, 1 hr, 19 min, 44 sec
+*** Working on 12983203028 => rate is 3754 / s => time left 0 wk, 0 d, 1 hr, 14 min, 34 sec
+*** Working on 12984328008 => rate is 3749 / s => time left 0 wk, 0 d, 1 hr, 9 min, 40 sec
+*** Working on 12985451434 => rate is 3744 / s => time left 0 wk, 0 d, 1 hr, 4 min, 45 sec
+*** Working on 12986568856 => rate is 3724 / s => time left 0 wk, 0 d, 1 hr, 0 min, 6 sec
+*** Working on 12987705038 => rate is 3787 / s => time left 0 wk, 0 d, 0 hr, 54 min, 6 sec
+*** Working on 12988840816 => rate is 3785 / s => time left 0 wk, 0 d, 0 hr, 49 min, 8 sec
+*** Working on 12989971670 => rate is 3769 / s => time left 0 wk, 0 d, 0 hr, 44 min, 20 sec
+*** Working on 12991107190 => rate is 3785 / s => time left 0 wk, 0 d, 0 hr, 39 min, 9 sec
+*** Working on 12992242624 => rate is 3784 / s => time left 0 wk, 0 d, 0 hr, 34 min, 10 sec
+*** Working on 12993375776 => rate is 3777 / s => time left 0 wk, 0 d, 0 hr, 29 min, 13 sec
+*** Working on 12994512026 => rate is 3787 / s => time left 0 wk, 0 d, 0 hr, 24 min, 9 sec
+*** Working on 12995651874 => rate is 3799 / s => time left 0 wk, 0 d, 0 hr, 19 min, 4 sec
+*** Working on 12996789228 => rate is 3791 / s => time left 0 wk, 0 d, 0 hr, 14 min, 6 sec
+*** Working on 12997927966 => rate is 3795 / s => time left 0 wk, 0 d, 0 hr, 9 min, 5 sec
+*** Working on 12999068100 => rate is 3800 / s => time left 0 wk, 0 d, 0 hr, 4 min, 5 sec

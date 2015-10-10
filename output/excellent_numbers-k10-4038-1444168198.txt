@@ -1,0 +1,22 @@
+*** Starting run at Tue Oct  6 17:49:58 2015
+*** PID is 4038
+*** k is 10
+*** 48484848485 .. 49999999999
+*** Working on 48484855626
+*** Working on 48485979928
+*** Working on 48487101450
+*** Working on 48488208958
+*** Working on 48489318598
+*** Working on 48490436324
+*** Working on 48491554488
+*** Working on 48492673938
+*** Working on 48493801214
+*** Working on 48494898398
+*** Working on 48496014658
+*** Working on 48497124220
+*** Working on 48498236010
+*** Working on 48499356558
+*** Working on 48500469976
+*** Working on 48501593510
+
+Ended at 48502195616
