@@ -143,7 +143,7 @@ sub test_range ( $self, $Report_threshold=300 ) {
 
 # This is really sloppy, but I only have to run it once
 sub bisect ( $self, $sub, $threshold=1 ) {
-	my $k = $self->k;
+	my $k = $self->k + 1;
 
 	my $b = '9' x $k;  # the largest b
 
