@@ -1,0 +1,4 @@
+*** Starting run at Tue Oct  6 17:42:29 2015
+*** PID is 2714
+*** k is 10
+*** 33333333335 .. 1

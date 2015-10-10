@@ -1,0 +1,14 @@
+*** Starting run at Tue Oct  6 13:50:14 2015
+*** PID is 6332
+*** k is 10
+33333333335 .. 39999999999
+*** Working on 33334499865
+*** Working on 33338039168
+*** Working on 33341598523
+*** Working on 33345163224
+*** Working on 33348720649
+*** Working on 33352258949
+*** Working on 33355776620
+*** Working on 33359282884
+
+Ended at 33361671538
