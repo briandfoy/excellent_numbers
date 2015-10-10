@@ -42,7 +42,7 @@ say "*** k is $k";
 
 our $N;
 $SIG{TERM} = $SIG{INT} = sub {
-	print $file "\nEnded at $N\n";
+	print "\nEnded at $N\n";
 	exit;
 	};
 
