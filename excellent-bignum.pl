@@ -99,6 +99,7 @@ sub test_range ( $self, $Report_threshold=300 ) {
 	local $SIG{TERM} = local $SIG{INT} = sub { $self->logger( "Ended at $N" ); exit };
 
 	my $k2 = length $self->start;
+	my $ten_k2 = 10**$k;
 	my $end = $self->end;
 
 	foreach my $a ( $self->start .. $end ) {
@@ -120,7 +121,7 @@ sub test_range ( $self, $Report_threshold=300 ) {
 			$last_a = $a;
 			}
 
-		my $front = $a*(10**$k2 + $a);
+		my $front = $a*( $ten_k2 + $a);
 
 		my $root = int( sqrt( $front ) );
 
