@@ -115,7 +115,7 @@ sub test_range ( $self, $Report_threshold=300 ) {
 			my $rate = int( ( $a - $last_a ) / $Report_threshold );
 			my $left = $end - $a;
 			my $time_left = $left / $rate;
-			my $compound_duration = compound_duration( $time_left );
+			my $compound_duration = $self->compound_duration( $time_left );
 
 			$self->logger( "Working on $a => rate is $rate / s => time left $compound_duration" );
 			$last_a = $a;
@@ -190,7 +190,7 @@ sub bisect ( $self, $sub, $threshold=1 ) {
 	};
 
 # http://rosettacode.org/wiki/Convert_seconds_to_compound_duration#Perl
-sub compound_duration ( $sec ) {
+sub compound_duration ( $self, $sec ) {
     no warnings 'numeric';
 
     return join ', ', grep { $_ > 0 }
