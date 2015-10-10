@@ -36,7 +36,9 @@ sub end         ( $self ) { $self->{end} }
 sub half_digits ( $self ) { $self->{half_digits} //= $self->digits / 2 }
 sub k           ( $self ) { $self->{k} //= $self->half_digits - 1 }
 
-sub logger ( $self, $message ) { $self->{logger}->( $message ) }
+sub logger   ( $self, $message ) { $self->{logger}->( $message ) }
+sub reporter ( $self, $message ) { $self->{reporter}->( $message ) }
+sub twitter  ( $self  )          { $self->{twitter} }
 
 sub get_start ( $self, $start ) {
 	# if they specify a big number, that's a literal number we need
