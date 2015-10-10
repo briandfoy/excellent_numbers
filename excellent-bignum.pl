@@ -132,7 +132,7 @@ sub test_range ( $self, $Report_threshold=300 ) {
 			   if( $back < $front       ) { $root++; redo }
 			elsif( $back > $front       ) { $root--; redo }
 			else                          {
-				$self->reporter->( "$a$root" );
+				$self->reporter( "$a$root" );
 				eval { $self->twitter->update( "$a$root is excellent" ) } if $self->twitter;
 				last;
 				}
