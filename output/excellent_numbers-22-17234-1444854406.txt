@@ -1,0 +1,31 @@
+*** Starting run at Wed Oct 14 16:26:46 2015
+*** PID is 17234
+*** k is 10
+*** 32968331730..33000000000
+*** Working on 32968969124 => rate is 2124 / s => time left 0 wk, 0 d, 4 hr, 3 min, 29 sec
+*** Working on 32970006964 => rate is 3459 / s => time left 0 wk, 0 d, 2 hr, 24 min, 31 sec
+*** Working on 32971057118 => rate is 3500 / s => time left 0 wk, 0 d, 2 hr, 17 min, 49 sec
+*** Working on 32972101836 => rate is 3482 / s => time left 0 wk, 0 d, 2 hr, 13 min, 32 sec
+*** Working on 32973189948 => rate is 3627 / s => time left 0 wk, 0 d, 2 hr, 3 min, 11 sec
+*** Working on 32974251418 => rate is 3538 / s => time left 0 wk, 0 d, 2 hr, 1 min, 17 sec
+*** Working on 32975278770 => rate is 3424 / s => time left 0 wk, 0 d, 2 hr, 0 min, 19 sec
+*** Working on 32976344824 => rate is 3553 / s => time left 0 wk, 0 d, 1 hr, 50 min, 57 sec
+*** Working on 32977550324 => rate is 4018 / s => time left 0 wk, 0 d, 1 hr, 33 min, 7 sec
+*** Working on 32978793134 => rate is 4142 / s => time left 0 wk, 0 d, 1 hr, 25 min, 19 sec
+*** Working on 32980033964 => rate is 4136 / s => time left 0 wk, 0 d, 1 hr, 20 min, 27 sec
+*** Working on 32981233670 => rate is 3999 / s => time left 0 wk, 0 d, 1 hr, 18 min, 12 sec
+*** Working on 32982469734 => rate is 4120 / s => time left 0 wk, 0 d, 1 hr, 10 min, 54 sec
+*** Working on 32983691210 => rate is 4071 / s => time left 0 wk, 0 d, 1 hr, 6 min, 46 sec
+*** Working on 32984901480 => rate is 4034 / s => time left 0 wk, 0 d, 1 hr, 2 min, 22 sec
+*** Working on 32986115684 => rate is 4047 / s => time left 0 wk, 0 d, 0 hr, 57 min, 10 sec
+*** Working on 32987328010 => rate is 4041 / s => time left 0 wk, 0 d, 0 hr, 52 min, 15 sec
+*** Working on 32988545194 => rate is 4057 / s => time left 0 wk, 0 d, 0 hr, 47 min, 3 sec
+*** Working on 32989762506 => rate is 4057 / s => time left 0 wk, 0 d, 0 hr, 42 min, 3 sec
+*** Working on 32990968730 => rate is 4020 / s => time left 0 wk, 0 d, 0 hr, 37 min, 26 sec
+*** Working on 32992181296 => rate is 4041 / s => time left 0 wk, 0 d, 0 hr, 32 min, 14 sec
+*** Working on 32993397398 => rate is 4053 / s => time left 0 wk, 0 d, 0 hr, 27 min, 9 sec
+*** Working on 32994609628 => rate is 4040 / s => time left 0 wk, 0 d, 0 hr, 22 min, 14 sec
+*** Working on 32995827698 => rate is 4060 / s => time left 0 wk, 0 d, 0 hr, 17 min, 7 sec
+*** Working on 32997042384 => rate is 4048 / s => time left 0 wk, 0 d, 0 hr, 12 min, 10 sec
+*** Working on 32998258996 => rate is 4055 / s => time left 0 wk, 0 d, 0 hr, 7 min, 9 sec
+*** Working on 32999475738 => rate is 4055 / s => time left 0 wk, 0 d, 0 hr, 2 min, 9 sec
