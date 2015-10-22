@@ -1,0 +1,5 @@
+*** Starting run at Thu Oct 22 00:18:33 2015
+*** PID is 83000
+*** k is 10
+*** 35800000000..35950000000
+*** Working on 35800355060 => rate is 1183 / s => time left 0 wk, 1 d, 11 hr, 8 min, 16 sec
