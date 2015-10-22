@@ -6,7 +6,7 @@ use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
 # maybe we should conditionally load this based on the number's size
-use bigint;
+use bigint try => 'GMP';
 
 
 __PACKAGE__->run( @ARGV ) unless caller;
