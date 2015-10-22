@@ -1,0 +1,7 @@
+*** Starting run at Mon Oct 19 16:14:56 2015
+*** PID is 9776
+*** k is 10
+*** 24000000000..25000000000
+*** Working on 24000018324 => rate is 61 / s => time left 27 wk, 0 d, 17 hr, 39 min, 2 sec
+*** Working on 24001549254 => rate is 5103 / s => time left 0 wk, 2 d, 6 hr, 20 min, 59 sec
+*** Working on 24003080286 => rate is 5103 / s => time left 0 wk, 2 d, 6 hr, 15 min, 59 sec
