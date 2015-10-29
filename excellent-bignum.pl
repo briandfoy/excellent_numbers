@@ -1,89 +1,240 @@
 #!/usr/bin/perl
+package ExcellentNumbers;
+
 use v5.22;
 use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
 # maybe we should conditionally load this based on the number's size
-use bigint;
+use bigint try => 'GMP';
 
-use IO::Interactive qw(interactive);
-use IO::Tee;
 
-my $nt = eval {
-	die 'NO_TWITTER set to true' if $ENV{NO_TWITTER};
-	require Net::Twitter;
-	my $nt = Net::Twitter->new(
-		traits   => [qw/API::RESTv1_1/],
-		consumer_key        => $ENV{TWITTER_CONSUMER_KEY},
-		consumer_secret     => $ENV{TWITTER_CONSUMER_SECRET},
-		access_token        => $ENV{TWITTER_TOKEN},
-		access_token_secret => $ENV{TWITTER_TOKEN_SECRET},
-		);
-	} || do {
-	say "*** Could not setup Net::Twitter, so I won't post there: $@";
-	();
-	};
+__PACKAGE__->run( @ARGV ) unless caller;
 
-my $digits = $ARGV[0] // 10;
-die "Number of digits must be even and non-zero! You said [$digits]\n"
-	unless( $digits > 0 and $digits % 2 == 0 and int($digits) eq $digits );
+sub new ( $class, @args ) {
+	my( $digits, $start, $end ) = @args;
 
-my $half_digits = $digits / 2;
-my $k          = ( $digits / 2 ) - 1;
+	die "Number of digits must be even and non-zero! You said [$digits]\n"
+		unless( $digits > 0 and $digits % 2 == 0 and int($digits) eq $digits );
 
-open my $file, '>>:utf8', "excellent_numbers-k$k-$$-@{[time]}.txt";
+	my $self = bless {
+		digits      => $digits,
+		args        => [ @args ],
+		}, $class;
 
-my $tee = IO::Tee->new( $file, interactive() );
-select $tee;
+	$self->setup_logging;
+	$self->setup_twitter;
+	$self->get_start( $start );
+	$self->get_end( $end );
 
-say "*** Starting run at " . localtime;
-say "*** PID is $$";
-say "*** k is $k";
+	$self;
+	}
 
-our $N;
-$SIG{TERM} = $SIG{INT} = sub {
-	print "\nEnded at $N\n";
-	exit;
-	};
+sub digits      ( $self ) { $self->{digits} }
+sub start       ( $self ) { $self->{start} }
+sub end         ( $self ) { $self->{end} }
+sub half_digits ( $self ) { $self->{half_digits} //= $self->digits / 2 }
+sub k           ( $self ) { $self->{k} //= $self->half_digits - 1 }
 
-my $start = do {
+sub logger   ( $self, $message ) { $self->{logger}->( $message ) }
+sub reporter ( $self, $message ) { $self->{reporter}->( $message ) }
+sub twitter  ( $self  )          { $self->{twitter} }
+
+sub get_start ( $self, $start ) {
 	# if they specify a big number, that's a literal number we need
 	# to break up to get the first half
-	if( defined $ARGV[1] ) {
-		$ARGV[1] =~ s/_//g;
+	$self->{start} = do {
+		if( defined $start ) {
+			$start =~ s/_//g;
 
-		die "$ARGV[1] doesn't look like a number!\n" if $ARGV[1] =~ /\D/;
-		die "$ARGV[1] should be $half_digits digits but is " . length($ARGV[1]) . " digits\n"
-			unless length $ARGV[1] eq $half_digits;
-		$ARGV[1];
-		}
-	# Otherwise we assume it's a number of digits in the final number
-	else { 10**$k }
+			die "$start doesn't look like a number!\n" if $start =~ /\D/;
+			die "$start should be " . $self->half_digits . " digits but is " . length($start) . " digits\n"
+				unless length $start eq $self->half_digits;
+			$start;
+			}
+		# Otherwise we assume it's a number of digits in the final number
+		else { 10**$self->k }
+		};
 	};
 
-my $end = do {
+sub get_end ( $self, $end ) {
 	# if they specify a third number, that's a literal number we need
 	# to break up to get the first half
-	if( defined $ARGV[2] ) {
-		$ARGV[2] =~ s/_//g;
+	$self->{end} = do {
+		if( defined $end ) {
+			$end =~ s/_//g;
 
-		die "$ARGV[2] doesn't look like a number!\n" if $ARGV[2] =~ /\D/;
-		die "$ARGV[2] should be $half_digits digits but is " . length($ARGV[2]) . " digits\n"
-			unless length $ARGV[2] eq $half_digits;
-		$ARGV[2];
+			die "$end doesn't look like a number!\n" if $end =~ /\D/;
+			die "$end should be " . $self->half_digits . " digits but is " . length($end) . " digits\n"
+				unless length $end eq $self->half_digits;
+			$end;
+			}
+		# Otherwise we find the maximum a in this range
+		else {
+			# find the $max_a by trying things until we get a good one
+			my $max_a = $self->bisect(
+				sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) },
+				my $threshold = 1
+				);
+			$self->logger( "largest is $max_a" );
+			$max_a;
+			}
+		};
+	}
+
+sub run ( $class, @args ) {
+	my $thingy = $class->new( @args );
+
+	$thingy->logger( "Starting run at " . localtime );
+	$thingy->logger( "PID is $$" );
+	$thingy->logger( "k is " . $thingy->k );
+
+	$thingy->test_range;
+	}
+
+sub test_range ( $self, $Report_threshold=300 ) {
+	$self->logger( $self->start . '..' . $self->end );
+
+	our $N;
+	local $SIG{TERM} = local $SIG{INT} = sub { $self->logger( "Ended at $N" ); exit };
+
+	my $k2 = length $self->start;
+	my $ten_k2 = 10**$k2;
+	my $end = $self->end;
+
+	foreach my $a ( $self->start .. $end ) {
+		# see the modulo stuff. a can only end in these digits
+		next unless $a =~ m/[0468]\z/;
+
+		$N = $a;
+
+		my $time = time;
+		state $Reported = {};
+		state $last_a = $a;
+		unless( $time % $Report_threshold or $Reported->{$time}++ ) {
+			my $rate = int( ( $a - $last_a ) / $Report_threshold );
+			my $left = $end - $a;
+			my $time_left = $left / $rate;
+			my $compound_duration = $self->compound_duration( $time_left );
+
+			$self->logger( "Working on $a => rate is $rate / s => time left $compound_duration" );
+			$last_a = $a;
+			}
+
+		my $front = $a*( $ten_k2 + $a);
+
+		my $root = int( sqrt( $front ) );
+
+		my %Tried;
+		while( 1 ) {
+			last if $Tried{$root}++;
+			#say "*** [$a] Trying root $root";
+			my $back = $root * ( $root - 1 );
+			   if( $back < $front       ) { $root++; redo }
+			elsif( $back > $front       ) { $root--; redo }
+			else                          {
+				$self->reporter( "$a$root" );
+				eval { $self->twitter->update( "$a$root is excellent" ) } if $self->twitter;
+				last;
+				}
+			}
+
 		}
-	# Otherwise we find the maximum a in this range
-	else {
-		# find the $max_a by trying things until we get a good one
-		my $max_a = bisect(
-			$k+1,
-			sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) },
-			my $threshold = 1
-			);
-		say "*** largest is $max_a";
-		$max_a;
+	}
+
+# This is really sloppy, but I only have to run it once
+sub bisect ( $self, $sub, $threshold=1 ) {
+	my $k = $self->k + 1;
+
+	my $b = '9' x $k;  # the largest b
+
+	# the limits for our bisection. These will close in on the middle
+	# as we test the bounds
+	my $maximum = $b;
+	my $minimum = '1' . ( '0' x ($k-1) );
+
+	# Let's start in the middle of the range
+	my $try = int( ( $maximum - $minimum ) / 2 );
+
+	my %Seen;
+	while( 1 ) {
+		my $result = $sub->( $try, $k );
+		#say "Min: $minimum: Max: $maximum Try: $try Result: $result";
+
+		my $last_try = $try;
+		$try = do {
+			if( abs($result - $b) < $threshold ) {
+				#say "last block";
+				last ;
+				}
+			elsif( $result > $b )    { # result is too big, make try smaller
+				#say "too big";
+				$maximum = $try;
+				int( $minimum + ( $try - $minimum ) / 2 );
+				}
+			elsif( $result < $b ) { # result is too small, make try bigger
+				#say "too small";
+				$minimum = $try;
+				int( ($try + ( $maximum - $try ) / 2) + 1 );
+				}
+			else { return $try }
+			};
+		last if int( $last_try ) == int( $try );
+		last if $Seen{ $try }++; # stop cycles
+
+		#say "next try $try";
 		}
+
+	# cheat a little
+	return int( $try + $threshold );
 	};
+
+# http://rosettacode.org/wiki/Convert_seconds_to_compound_duration#Perl
+sub compound_duration ( $self, $sec ) {
+    no warnings 'numeric';
+
+    return join ', ', grep { $_ > 0 }
+        int($sec/60/60/24/7)    . " wk",
+        int($sec/60/60/24) % 7  . " d",
+        int($sec/60/60)    % 24 . " hr",
+        int($sec/60)       % 60 . " min",
+        int($sec)          % 60 . " sec";
+	}
+
+sub setup_twitter ( $self ) {
+	$self->{twitter} = eval {
+		die 'NO_TWITTER set to true' if $ENV{NO_TWITTER};
+		require Net::Twitter;
+		my $nt = Net::Twitter->new(
+			traits   => [qw/API::RESTv1_1/],
+			consumer_key        => $ENV{TWITTER_CONSUMER_KEY},
+			consumer_secret     => $ENV{TWITTER_CONSUMER_SECRET},
+			access_token        => $ENV{TWITTER_TOKEN},
+			access_token_secret => $ENV{TWITTER_TOKEN_SECRET},
+			);
+		} || do {
+		$self->logger( "Could not setup Net::Twitter, so I won't post there: $@" );
+		();
+		};
+	}
+
+sub setup_logging ( $self ) {
+	require IO::Interactive;
+	require IO::Tee;
+
+	my $digits = $self->digits;
+
+	my $filename = "excellent_numbers-$digits-$$-@{[time]}.txt";
+	open my $file, '>>:utf8', $filename
+		or die "Could not open [$filename]: $!\n";
+	$file->autoflush(1);
+
+	my $tee = IO::Tee->new( $file, IO::Interactive::interactive() );
+	$self->{logger}   = sub ( $message ) { say { $tee } "*** $message" };
+	$self->{reporter} = sub ( $number )  { say { $tee } $number };
+	};
+
+__END__
 
 =encoding utf8
 
@@ -155,106 +306,3 @@ only values of I<a> that will produce { 0, 6 } as a square are { 0, 4,
 
 
 =cut
-
-say "*** $start .. $end";
-
-my $Report_threshold = 300;
-
-my $k2 = length $start;
-foreach my $a ( $start .. $end ) {
-	# see the modulo stuff. a can only end in these digits;
-	next unless $a =~ m/[0468]\z/;
-
-	$N = $a;
-
-	my $time = time;
-	state $Reported = {};
-	state $last_a = $a;
-	unless( $time % $Report_threshold or $Reported->{$time}++ ) {
-		my $rate = int( ( $a - $last_a ) / $Report_threshold );
-		my $left = $end - $a;
-		my $time_left = $left / $rate;
-		my $compound_duration = compound_duration( $time_left );
-
-		say "*** Working on $a => rate is $rate / s => time left $compound_duration";
-		$last_a = $a;
-		}
-
-	my $front = $a*(10**$k2 + $a);
-
-	my $root = int( sqrt( $front ) );
-
-	my %Tried;
-	while( 1 ) {
-		last if $Tried{$root}++;
-		#say "*** [$a] Trying root $root";
-		my $back = $root * ( $root - 1 );
-		   if( $back < $front       ) { $root++; redo }
-		elsif( $back > $front       ) { $root--; redo }
-		else                          {
-			say "$a$root";
-			eval { $nt->update( "$a$root is excellent" ) } if $nt;
-			last;
-			}
-		}
-
-	}
-
-# This is really sloppy, but I only have to run it once
-sub bisect ( $k, $sub, $threshold=1 ) {
-	my $b = '9' x $k;  # the largest b
-
-	# the limits for our bisection. These will close in on the middle
-	# as we test the bounds
-	my $maximum = $b;
-	my $minimum = '1' . ( '0' x ($k-1) );
-
-	# Let's start in the middle of the range
-	my $try = int( ( $maximum - $minimum ) / 2 );
-
-	my %Seen;
-	while( 1 ) {
-		my $result = $sub->( $try, $k );
-		#say "Min: $minimum: Max: $maximum Try: $try Result: $result";
-
-		my $last_try = $try;
-		$try = do {
-			if( abs($result - $b) < $threshold ) {
-				#say "last block";
-				last ;
-				}
-			elsif( $result > $b )    { # result is too big, make try smaller
-				#say "too big";
-				$maximum = $try;
-				int( $minimum + ( $try - $minimum ) / 2 );
-				}
-			elsif( $result < $b ) { # result is too small, make try bigger
-				#say "too small";
-				$minimum = $try;
-				int( ($try + ( $maximum - $try ) / 2) + 1 );
-				}
-			else { return $try }
-			};
-		last if int( $last_try ) == int( $try );
-		last if $Seen{ $try }++; # stop cycles
-
-		#say "next try $try";
-		}
-
-	# cheat a little
-	return int( $try + $threshold );
-	};
-
-# http://rosettacode.org/wiki/Convert_seconds_to_compound_duration#Perl
-sub compound_duration ( $sec ) {
-    no warnings 'numeric';
-
-    return join ', ', grep { $_ > 0 }
-        int($sec/60/60/24/7)    . " wk",
-        int($sec/60/60/24) % 7  . " d",
-        int($sec/60/60)    % 24 . " hr",
-        int($sec/60)       % 60 . " min",
-        int($sec)          % 60 . " sec";
-	}
-
-__END__
