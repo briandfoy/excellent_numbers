@@ -28,7 +28,6 @@ foreach my $n ( $start .. 10**($k) - 1 ) {
 
 */
 
-int power( int, int );
 void bisect( int, int, mpz_t );
 void default_start_a( int, mpz_t );
 void default_end_a(   int, mpz_t );
@@ -38,7 +37,7 @@ int main( int argc, char *argv[] ) {
 	int base10_ui = 10;
 	int digits, len, k, n;
 
-	mpz_inits( i, one, start_a, end_a, root, result, front, back, ten_k, mod10, mod2, NULL );
+	mpz_inits( i, one, start_a, end_a, ten_k, NULL );
 
 	if( argc == 1 ) {
 		digits = 4;
@@ -69,7 +68,7 @@ int main( int argc, char *argv[] ) {
 		return( 1 );
 		}
 
-	/* gmp_printf( "start a is %Zd\n", start_a );  */
+	gmp_printf( "start a is %Zd\n", start_a );
 	gmp_printf( "end is %Zd\n",     end_a   );
 
 	mpz_ui_pow_ui( ten_k, 10L, k );
@@ -77,6 +76,7 @@ int main( int argc, char *argv[] ) {
 
 	for( mpz_set( i, start_a ); mpz_cmp( i, end_a ) <= 0; mpz_add_ui(i, i, 1L) ) {
 		/* gmp_printf( "%Zd\n", i );  */
+		mpz_inits( mod10, mod2, front, back, root, root_less_one, NULL );
 
 		mpz_mod_ui( mod10, i, 10L );
 		mpz_mod_ui( mod2, mod10, 2L );
@@ -104,6 +104,8 @@ int main( int argc, char *argv[] ) {
 		if( 0 == mpz_cmp( front, back ) ) {
 			gmp_printf( "%Zd%Zd is excellent\n", i, root_less_one );
 			}
+
+		mpz_clears( mod10, mod2, front, back, root, root_less_one, NULL );
 		}
 
 	/* len = mpz_sizeinbase(n, 16) + 2; */
@@ -114,23 +116,11 @@ int main( int argc, char *argv[] ) {
 	}
 
 void default_start_a( int k, mpz_t start_a ) {
-	mpz_set_ui(
-		start_a,
-		power( 10, k - 1 )
-		);
+	mpz_ui_pow_ui( start_a, 10, k - 1 );
 	}
 
 void default_end_a( int k, mpz_t end_a ) {
 	bisect( k, 1, end_a );
-	}
-
-int power( int base, int exponent ) {
-	int i;
-	int result = 1;
-	for( i = 1; i <= exponent; i++ ) {
-		result *= base;
-		}
-	return result;
 	}
 
 void bisect ( int k, int threshold, mpz_t end_a ) {
