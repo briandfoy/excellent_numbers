@@ -11,10 +11,7 @@ is 8² - 4².
 
 =head2 The Numbers
 
-I'm currently working on the 22-digit numbers. In the GitHub repo,
-I keep track of the checked ranges in F<22-digit-ranges-tried.txt>.
-I haven't modified the program to use a range file to automatically
-keep track of work.
+I'm currently working on the 24-digit numbers.
 
 So far:
 
