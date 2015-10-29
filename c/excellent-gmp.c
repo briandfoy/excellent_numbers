@@ -33,11 +33,11 @@ void default_start_a( int, mpz_t );
 void default_end_a(   int, mpz_t );
 
 int main( int argc, char *argv[] ) {
-	mpz_t i, m, one, result, root, root_less_one, start_a, end_a, front, back, ten_k, mod10, mod2;
+	mpz_t start_a, end_a;
 	int base10_ui = 10;
-	int digits, len, k, n;
+	int digits, k;
 
-	mpz_inits( i, one, start_a, end_a, ten_k, NULL );
+	mpz_inits( start_a, end_a, NULL );
 
 	if( argc == 1 ) {
 		digits = 4;
@@ -71,46 +71,49 @@ int main( int argc, char *argv[] ) {
 	gmp_printf( "start a is %Zd\n", start_a );
 	gmp_printf( "end is %Zd\n",     end_a   );
 
-	mpz_ui_pow_ui( ten_k, 10L, k );
+	mpz_t one, ten, two, zero, ten_k;
+	mpz_inits( one, ten, two, zero, ten_k, NULL );
+	mpz_set_ui( one, 1L );
+	mpz_set_ui( ten, 10L );
+	mpz_set_ui( two, 2L );
+	mpz_set_ui( zero, 0L );
+
+	mpz_pow_ui( ten_k, ten, k );
 	/* gmp_printf( "10^k is %Zd\n", ten_k );  */
 
-	for( mpz_set( i, start_a ); mpz_cmp( i, end_a ) <= 0; mpz_add_ui(i, i, 1L) ) {
-		/* gmp_printf( "%Zd\n", i );  */
-		mpz_inits( mod10, mod2, front, back, root, root_less_one, NULL );
+	mpz_t      i, mod2, mod10, front, back, root, root_plus_one;
+	mpz_inits( i, mod2, mod10, front, back, root, root_plus_one, NULL );
 
-		mpz_mod_ui( mod10, i, 10L );
-		mpz_mod_ui( mod2, mod10, 2L );
-
-		if( mpz_cmp_ui( mod2, 0L ) != 0 ) { /* skip the odd numbers */
-			continue;
-			}
-		if( mpz_cmp_ui( mod10, 2L ) == 0 ) { /* cannot end in 2 */
+	for( mpz_set( i, start_a ); mpz_cmp( i, end_a ) <= 0; mpz_add(i, i, one) ) {
+		/* skip the odd numbers */
+		mpz_mod( mod2, i, two );
+		if( mpz_cmp( mod2, zero ) != 0 ) {
 			continue;
 			}
 
+		/* skip those that end in 2 */
+		mpz_mod( mod10, i, ten );
+		if( mpz_cmp( mod10, two ) == 0 ) {
+			continue;
+			}
+
+		/* the front part of the number */
 		mpz_add( front, ten_k, i );
 		mpz_mul( front, front, i );
-		/* gmp_printf( "\tfront is %Zd\n", front ); */
 
+
+		/* the back part of the number */
 		mpz_sqrt( root, front );
-		/* gmp_printf( "\troot is %Zd\n", root ); */
-
-		mpz_init( root_less_one );
-		mpz_add_ui( root_less_one, root, 1L );
-		/* gmp_printf( "\troot_less_one is %Zd\n", root_less_one ); */
-		mpz_mul( back, root, root_less_one );
-		/* gmp_printf( "\tback is %Zd\n", back ); */
+		mpz_add( root_plus_one, root, one );
+		mpz_mul( back, root, root_plus_one );
 
 		if( 0 == mpz_cmp( front, back ) ) {
-			gmp_printf( "%Zd%Zd is excellent\n", i, root_less_one );
+			gmp_printf( "%Zd%Zd is excellent\n", i, root_plus_one );
 			}
-
-		mpz_clears( mod10, mod2, front, back, root, root_less_one, NULL );
 		}
 
-	/* len = mpz_sizeinbase(n, 16) + 2; */
-
-	mpz_clears( start_a, end_a, i, ten_k, front, mod10, mod2, NULL );
+	mpz_clears( mod2, mod10, front, back, root, root_plus_one, NULL );
+	mpz_clears( i, start_a, end_a, ten_k, one, two, ten, zero, NULL );
 
 	return( 0 );
 	}
