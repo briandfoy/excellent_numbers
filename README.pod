@@ -138,4 +138,5 @@ So far:
 =item * L<The "excellent numbers" tag at Mastering Perl|http://www.masteringperl.org/tag/excellent-numbers/>
 
 =item * L<484848 is excellent|http://blog.plover.com/math/484848.html>
+
 =back
