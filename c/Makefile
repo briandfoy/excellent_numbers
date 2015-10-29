@@ -1,2 +1,2 @@
 all:
-	cc -lgmp -o excellent-gmp excellent-gmp.c
+	cc -lgmp -g -o excellent-gmp excellent-gmp.c
