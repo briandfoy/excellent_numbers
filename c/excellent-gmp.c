@@ -67,6 +67,7 @@ int main( int argc, char *argv[] ) {
 
 	gmp_printf( "start a is %Zd\n", start_a );
 	gmp_printf( "end is %Zd\n",     end_a   );
+	fflush( stdout );
 
 	mpz_t one, ten, two, zero, ten_k;
 	mpz_inits( one, ten, two, zero, ten_k, NULL );
@@ -105,6 +106,7 @@ int main( int argc, char *argv[] ) {
 
 		if( 0 == mpz_cmp( front, back ) ) {
 			gmp_printf( "%Zd%Zd is excellent\n", i, root_plus_one );
+			fflush( stdout );
 			}
 		}
 
