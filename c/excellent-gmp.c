@@ -46,10 +46,7 @@ int main( int argc, char *argv[] ) {
 		digits = strtol(argv[1], (char **)NULL, 10);
 		}
 
-	/* printf( "digits is %d\n",  digits ); */
-
 	k = ( digits / 2 );
-	/* printf( "k is %d\n",  k ); */
 
 	if( argc == 2 ) {
 		default_start_a( k, start_a );
@@ -79,7 +76,6 @@ int main( int argc, char *argv[] ) {
 	mpz_set_ui( zero, 0L );
 
 	mpz_pow_ui( ten_k, ten, k );
-	/* gmp_printf( "10^k is %Zd\n", ten_k );  */
 
 	mpz_t      i, mod2, mod10, front, back, root, root_plus_one;
 	mpz_inits( i, mod2, mod10, front, back, root, root_plus_one, NULL );
@@ -134,15 +130,11 @@ void bisect ( int k, int threshold, mpz_t end_a ) {
 
 	mpz_set( maximum, b );
 	mpz_sub_ui( maximum, b, 1L );
-	gmp_printf( "maximum is %Zd\n", maximum );
 	mpz_ui_pow_ui( minimum, 10, k - 1 );
-	gmp_printf( "minimum is %Zd\n", minimum );
 
 	mpz_set( try, maximum );
 	mpz_sub( try, try, minimum );
 	mpz_tdiv_q_ui( try, try, 2 );
-
-	gmp_printf( "first try is %Zd\n", try );
 
 	while( 1 ) {
 		/* sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) }, */
