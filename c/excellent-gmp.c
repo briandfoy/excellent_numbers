@@ -155,7 +155,7 @@ void bisect ( int k, int threshold, mpz_t end_a ) {
 			}
 		else if( mpz_cmp( result, b ) > 0 ) { /* result is too big, make try smaller */
 			mpz_set( maximum, try );
-			/* 				int( $minimum + ( $try - $minimum ) / 2 ); */
+			/* int( $minimum + ( $try - $minimum ) / 2 ); */
 			mpz_sub( result2, try, minimum );
 			mpz_tdiv_q_ui( result2, result2, 2 );
 			mpz_add( try, minimum, result2 );
@@ -173,18 +173,19 @@ void bisect ( int k, int threshold, mpz_t end_a ) {
 			break;
 			}
 
-		if( 0 == mpz_cmp( last_try, try ) ) {
+		if( 0 == mpz_cmp( last_try, try ) ) { /* stop if we're about to try the same number again */
 			break;
 			};
 
 		mpz_sub( result2, maximum, minimum );
+		/* avert a cycle with the min is very close to the max */
 		if( mpz_cmp_ui( result2, threshold ) <= 0 ) {
 			mpz_set( try, minimum );
 			break;
 			}
 		}
 
-	mpz_add_ui( end_a, try, threshold ) /* cheat a little */;
+	mpz_add_ui( end_a, try, threshold ) /* cheat a little by adding threshold */;
 
 	mpz_clears( b, minimum, maximum, try, last_try, result, result2, NULL );
 	}
