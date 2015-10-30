@@ -3,13 +3,15 @@ use v5.20;
 use utf8;
 use open qw(:std :utf8);
 
+use bigint;
+
 my $number = $ARGV[0];
 
 my $length = length $number;
 my $k      = $length - 1;
 
 if( $length % 2 ) {
-	die "odd";
+	die "odd number of digits ($length) disallowed!";
 	}
 
 
