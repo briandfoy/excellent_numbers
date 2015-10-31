@@ -119,31 +119,6 @@ int main( int argc, char *argv[] ) {
 	return( 0 );
 	}
 
-void default_start_a( int k, mpz_t start_a ) {
-	mpz_ui_pow_ui( start_a, 10, k - 1 );
-	}
-
-void default_end_a( int k, mpz_t end_a ) {
-	bisect( k, 1, end_a );
-	}
-
-void bisect ( int k, int threshold, mpz_t end_a ) {
-	mpz_t b, minimum, maximum, try, last_try, result, result2;
-	mpz_inits( b, minimum, maximum, try, last_try, result, result2, NULL );
-
-	mpz_ui_pow_ui( b, 10, k );
-
-	mpz_set( maximum, b );
-	mpz_sub_ui( maximum, b, 1L );
-	mpz_ui_pow_ui( minimum, 10, k - 1 );
-
-	mpz_set( try, maximum );
-	mpz_sub( try, try, minimum );
-	mpz_tdiv_q_ui( try, try, 2 );
-
-	while( 1 ) {
-		/* sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) }, */
-		mpz_mul( result, try, try );
 void time_left ( const mpz_t rate, const mpz_t this_a, const mpz_t end_a ) {
 	mpz_t left_a, seconds_left, weeks, days, hours, minutes, seconds;
 	mpz_inits( left_a, seconds_left, weeks, days, hours, minutes, seconds, NULL );
@@ -171,6 +146,31 @@ void time_left ( const mpz_t rate, const mpz_t this_a, const mpz_t end_a ) {
 	mpz_clears( left_a, seconds_left, weeks, days, hours, minutes, seconds, NULL );
 	}
 
+void default_start_a( int k, mpz_t start_a ) {
+	mpz_ui_pow_ui( start_a, 10, k - 1 );
+	}
+
+void default_end_a( int k, mpz_t end_a ) {
+	bisect( k, 1, end_a );
+	}
+
+void bisect ( int k, int threshold, mpz_t end_a ) {
+	mpz_t b, minimum, maximum, try, last_try, result, result2;
+	mpz_inits( b, minimum, maximum, try, last_try, result, result2, NULL );
+
+	mpz_ui_pow_ui( b, 10, k );
+
+	mpz_set( maximum, b );
+	mpz_sub_ui( maximum, b, 1L );
+	mpz_ui_pow_ui( minimum, 10, k - 1 );
+
+	mpz_set( try, maximum );
+	mpz_sub( try, try, minimum );
+	mpz_tdiv_q_ui( try, try, 2 );
+
+	while( 1 ) {
+		/* sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) }, */
+		mpz_mul( result, try, try );
 		mpz_ui_pow_ui( result2, 10, k );
 		mpz_mul( result2, result2, try );
 		mpz_add( result, result, result2 );
