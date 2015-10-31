@@ -59,7 +59,32 @@ int main( int argc, char *argv[] ) {
 	mpz_t      i, mod2, mod10, front, back, root, root_plus_one;
 	mpz_inits( i, mod2, mod10, front, back, root, root_plus_one, NULL );
 
+	int last_time, this_time, time_passed;
+	unsigned int report_period;
+	report_period = 60*15;
+
+	mpz_t last_i, numbers_done, rate;
+	mpz_inits( last_i, numbers_done, rate, NULL );
+	mpz_set( last_i, start_a );
+	mpz_set( numbers_done, zero );
+	mpz_set( rate, zero );
+	last_time = (unsigned)time(NULL);
+
+	/* record some progress info */
 	for( mpz_set( i, start_a ); mpz_cmp( i, end_a ) <= 0; mpz_add(i, i, one) ) {
+		this_time = (unsigned)time(NULL);
+
+		if( ( (this_time % report_period) == 0) && (this_time != last_time) ) {
+			time_passed = this_time - last_time;
+			mpz_sub( numbers_done, i, last_i );
+			mpz_tdiv_q_ui( rate, numbers_done, time_passed );
+			gmp_printf( "***[%u] working on: %Zd tried: %Zd rate: %Zd / sec\n", this_time, i, numbers_done, rate );
+			time_left( rate, i, end_a );
+			fflush( stdout );
+			mpz_set( last_i, i );
+			last_time = this_time;
+			}
+
 		/* skip the odd numbers */
 		mpz_mod( mod2, i, two );
 		if( mpz_cmp( mod2, zero ) != 0 ) {
