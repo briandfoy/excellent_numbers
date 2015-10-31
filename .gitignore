@@ -3,3 +3,4 @@ nytprof.out
 nohup.out
 c/excellent-gmp
 c/excellent-gmp.dSYM
+c/*.txt
