@@ -8,6 +8,7 @@
 void bisect( int, int, mpz_t );
 void default_start_a( int, mpz_t );
 void default_end_a(   int, mpz_t );
+void time_left ( const mpz_t, const mpz_t, const mpz_t );
 
 int main( int argc, char *argv[] ) {
 	mpz_t start_a, end_a;
@@ -118,6 +119,33 @@ void bisect ( int k, int threshold, mpz_t end_a ) {
 	while( 1 ) {
 		/* sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) }, */
 		mpz_mul( result, try, try );
+void time_left ( const mpz_t rate, const mpz_t this_a, const mpz_t end_a ) {
+	mpz_t left_a, seconds_left, weeks, days, hours, minutes, seconds;
+	mpz_inits( left_a, seconds_left, weeks, days, hours, minutes, seconds, NULL );
+
+	mpz_sub( left_a, end_a, this_a );
+
+	mpz_tdiv_q( seconds_left, left_a, rate );
+	mpz_tdiv_q_ui( weeks, seconds_left, 60*60*24*7 );
+
+	mpz_tdiv_q_ui( days, seconds_left, 60*60*24 );
+	mpz_mod_ui( days, days, 7 );
+
+	mpz_tdiv_q_ui( hours, seconds_left, 60*60 );
+	mpz_mod_ui( hours, hours, 24 );
+
+	mpz_tdiv_q_ui( minutes, seconds_left, 60*60 );
+	mpz_mod_ui( minutes, minutes, 60 );
+
+	mpz_tdiv_q_ui( seconds, seconds_left, 60 );
+	mpz_mod_ui( seconds, seconds, 60 );
+
+	gmp_printf( "*** time left: %Zd wk %Zd d %Zd h %Zd m %Zd s\n",
+		weeks, days, hours, minutes, seconds );
+
+	mpz_clears( left_a, seconds_left, weeks, days, hours, minutes, seconds, NULL );
+	}
+
 		mpz_ui_pow_ui( result2, 10, k );
 		mpz_mul( result2, result2, try );
 		mpz_add( result, result, result2 );
