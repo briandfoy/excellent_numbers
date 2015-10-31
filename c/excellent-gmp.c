@@ -42,8 +42,8 @@ int main( int argc, char *argv[] ) {
 		return( 1 );
 		}
 
-	gmp_printf( "start a is %Zd\n", start_a );
-	gmp_printf( "end a is %Zd\n",   end_a   );
+	gmp_printf( "*** start a is %Zd\n", start_a );
+	gmp_printf( "*** end a is %Zd\n",   end_a   );
 	fflush( stdout );
 
 	mpz_t one, ten, two, zero, ten_k;
