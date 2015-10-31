@@ -3,30 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-
-/*
-
-
-my $k  = ( $digits / 2 );
-my $start = 10**($k-1);
-
-foreach my $n ( $start .. 10**($k) - 1 ) {
-	say "[@{[time]}] Working on $n" unless $n % $start;
-	my $front = $n*(10**$k + $n);
-	my $root = int( sqrt( $front ) );
-
-	foreach my $try ( $root - 2 .. $root + 2 ) {
-		my $back = $try * ($try - 1);
-		last if length($try) > $k;
-		last if $back > $front;
-		if( $back == $front ) {
-			say "$n$try";
-			last;
-			}
-		}
-	}
-
-*/
+#include <time.h>
 
 void bisect( int, int, mpz_t );
 void default_start_a( int, mpz_t );
