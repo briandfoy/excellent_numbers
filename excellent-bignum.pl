@@ -240,13 +240,13 @@ __END__
 
 =pod
 
-A number I<ab> is excellent if I<b²> - I<a²> is the number I<ab>,
-where I<a> and I<b> have an equal number of digits. For instance, 48
-is 8² - 4².
+A number I<ab> is excellent if the difference I<b²> - I<a²> is the
+number I<ab> again, where I<a> and I<b> have an equal number of
+digits. For instance, 48 is 8² - 4².
 
 I can rewrite I<ab> to separate the halves of numbers. Here, I<k> is
 the order of magnitude of half the number (or, one less than the count
-of digits, e.g. for 1,000 I<k> is 3):
+of digits, e.g. for 3648 I<k> is 2 because 36 is really 36*10^2):
 
 	b² - a² = a 10**k + b            (1)
 
@@ -262,12 +262,12 @@ Now, for sufficiently large numbers, I<b (b - 1)> is almost I<b²>. In
 that case, I<b> would be the I<√ a (10**k + a )>. Checking around that
 root by a few numbers verifies the excellent number.
 
-There's a maximum I<a> that we have to check since beyond that value
-there's not enough left over to subtract from the maximum square of
-I<b> to get back a number with the right number of digits. I can find
-that by setting I<b> to its maximum value and solving (2) for I<a>.
-The maximum I<a> starts right around the numbers that start with 6.
-This cuts out roughly 40% of the range of numbers of that length.
+There's a maximum I<a> that I have to check since beyond that value
+there's not a I<b> large enough to get back a number with the right
+number of digits. I can find that by setting I<b> to its maximum value (all 9s)
+and solving (2) for I<a>. The maximum I<a> starts right around the
+numbers that start with 6. This cuts out roughly 40% of the range of
+numbers of that length.
 
 There are other limitations on I<a> that Joe Zbiciak elucidated. It
 only works with numbers that end with {0, 4, 6} as a quirk of squares.
