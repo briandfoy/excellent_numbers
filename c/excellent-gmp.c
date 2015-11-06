@@ -3,34 +3,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-
-/*
-
-
-my $k  = ( $digits / 2 );
-my $start = 10**($k-1);
-
-foreach my $n ( $start .. 10**($k) - 1 ) {
-	say "[@{[time]}] Working on $n" unless $n % $start;
-	my $front = $n*(10**$k + $n);
-	my $root = int( sqrt( $front ) );
-
-	foreach my $try ( $root - 2 .. $root + 2 ) {
-		my $back = $try * ($try - 1);
-		last if length($try) > $k;
-		last if $back > $front;
-		if( $back == $front ) {
-			say "$n$try";
-			last;
-			}
-		}
-	}
-
-*/
+#include <time.h>
 
 void bisect( int, int, mpz_t );
 void default_start_a( int, mpz_t );
 void default_end_a(   int, mpz_t );
+void time_left ( const mpz_t, const mpz_t, const mpz_t );
 
 int main( int argc, char *argv[] ) {
 	mpz_t start_a, end_a;
@@ -65,8 +43,8 @@ int main( int argc, char *argv[] ) {
 		return( 1 );
 		}
 
-	gmp_printf( "start a is %Zd\n", start_a );
-	gmp_printf( "end a is %Zd\n",   end_a   );
+	gmp_printf( "*** start a is %Zd\n", start_a );
+	gmp_printf( "*** end a is %Zd\n",   end_a   );
 	fflush( stdout );
 
 	mpz_t one, ten, two, zero, ten_k;
@@ -81,7 +59,32 @@ int main( int argc, char *argv[] ) {
 	mpz_t      i, mod2, mod10, front, back, root, root_plus_one;
 	mpz_inits( i, mod2, mod10, front, back, root, root_plus_one, NULL );
 
+	int last_time, this_time, time_passed;
+	unsigned int report_period;
+	report_period = 60*15;
+
+	mpz_t last_i, numbers_done, rate;
+	mpz_inits( last_i, numbers_done, rate, NULL );
+	mpz_set( last_i, start_a );
+	mpz_set( numbers_done, zero );
+	mpz_set( rate, zero );
+	last_time = (unsigned)time(NULL);
+
+	/* record some progress info */
 	for( mpz_set( i, start_a ); mpz_cmp( i, end_a ) <= 0; mpz_add(i, i, one) ) {
+		this_time = (unsigned)time(NULL);
+
+		if( ( (this_time % report_period) == 0) && (this_time != last_time) ) {
+			time_passed = this_time - last_time;
+			mpz_sub( numbers_done, i, last_i );
+			mpz_tdiv_q_ui( rate, numbers_done, time_passed );
+			gmp_printf( "***[%u] working on: %Zd tried: %Zd rate: %Zd / sec\n", this_time, i, numbers_done, rate );
+			time_left( rate, i, end_a );
+			fflush( stdout );
+			mpz_set( last_i, i );
+			last_time = this_time;
+			}
+
 		/* skip the odd numbers */
 		mpz_mod( mod2, i, two );
 		if( mpz_cmp( mod2, zero ) != 0 ) {
@@ -114,6 +117,33 @@ int main( int argc, char *argv[] ) {
 	mpz_clears( i, start_a, end_a, ten_k, one, two, ten, zero, NULL );
 
 	return( 0 );
+	}
+
+void time_left ( const mpz_t rate, const mpz_t this_a, const mpz_t end_a ) {
+	mpz_t left_a, seconds_left, weeks, days, hours, minutes, seconds;
+	mpz_inits( left_a, seconds_left, weeks, days, hours, minutes, seconds, NULL );
+
+	mpz_sub( left_a, end_a, this_a );
+
+	mpz_tdiv_q( seconds_left, left_a, rate );
+	mpz_tdiv_q_ui( weeks, seconds_left, 60*60*24*7 );
+
+	mpz_tdiv_q_ui( days, seconds_left, 60*60*24 );
+	mpz_mod_ui( days, days, 7 );
+
+	mpz_tdiv_q_ui( hours, seconds_left, 60*60 );
+	mpz_mod_ui( hours, hours, 24 );
+
+	mpz_tdiv_q_ui( minutes, seconds_left, 60*60 );
+	mpz_mod_ui( minutes, minutes, 60 );
+
+	mpz_tdiv_q_ui( seconds, seconds_left, 60 );
+	mpz_mod_ui( seconds, seconds, 60 );
+
+	gmp_printf( "*** time left: %Zd wk %Zd d %Zd h %Zd m %Zd s\n",
+		weeks, days, hours, minutes, seconds );
+
+	mpz_clears( left_a, seconds_left, weeks, days, hours, minutes, seconds, NULL );
 	}
 
 void default_start_a( int k, mpz_t start_a ) {
