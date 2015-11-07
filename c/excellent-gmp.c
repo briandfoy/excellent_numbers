@@ -43,10 +43,6 @@ int main( int argc, char *argv[] ) {
 		return( 1 );
 		}
 
-	gmp_printf( "*** start a is %Zd\n", start_a );
-	gmp_printf( "*** end a is %Zd\n",   end_a   );
-	fflush( stdout );
-
 	mpz_t one, ten, two, zero, ten_k;
 	mpz_inits( one, ten, two, zero, ten_k, NULL );
 	mpz_set_ui( one, 1L );
@@ -55,6 +51,16 @@ int main( int argc, char *argv[] ) {
 	mpz_set_ui( zero, 0L );
 
 	mpz_pow_ui( ten_k, ten, k );
+
+	/* odd numbers cannot be candidates for a. Start with an even
+	number and add two to check the next candidate */
+	if( mpz_odd_p( start_a ) == 1 ) {
+		mpz_add( start_a, start_a, one );
+		}
+
+	gmp_printf( "*** start a is %Zd\n", start_a );
+	gmp_printf( "*** end a is %Zd\n",   end_a   );
+	fflush( stdout );
 
 	mpz_t      i, mod2, mod10, front, back, root, root_plus_one;
 	mpz_inits( i, mod2, mod10, front, back, root, root_plus_one, NULL );
@@ -70,10 +76,11 @@ int main( int argc, char *argv[] ) {
 	mpz_set( rate, zero );
 	last_time = (unsigned)time(NULL);
 
-	/* record some progress info */
-	for( mpz_set( i, start_a ); mpz_cmp( i, end_a ) <= 0; mpz_add(i, i, one) ) {
+	/* only check the even numbers, so increase by 2 each iteration */
+	for( mpz_set( i, start_a ); mpz_cmp( i, end_a ) <= 0; mpz_add(i, i, two) ) {
 		this_time = (unsigned)time(NULL);
 
+		/* record some progress info */
 		if( ( (this_time % report_period) == 0) && (this_time != last_time) ) {
 			time_passed = this_time - last_time;
 			mpz_sub( numbers_done, i, last_i );
@@ -83,12 +90,6 @@ int main( int argc, char *argv[] ) {
 			fflush( stdout );
 			mpz_set( last_i, i );
 			last_time = this_time;
-			}
-
-		/* skip the odd numbers */
-		mpz_mod( mod2, i, two );
-		if( mpz_cmp( mod2, zero ) != 0 ) {
-			continue;
 			}
 
 		/* skip those that end in 2 */
