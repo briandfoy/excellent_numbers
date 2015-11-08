@@ -11,7 +11,7 @@ is 8² - 4².
 
 =head2 The Numbers
 
-I'm currently working on the 26-digit numbers. So far:
+I'm currently working on the 28-digit numbers. So far:
 
 	48
 
