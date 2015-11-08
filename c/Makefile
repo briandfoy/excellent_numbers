@@ -1,6 +1,23 @@
+CC=cc
+LIBS=-lgmp
+
+GRAND_CC=${CC} ${LIBS}
+
+C_FILES=excellent-gmp.c
+BASE=excellent-gmp
+
 all:
-	cc -lgmp -o excellent-gmp excellent-gmp.c
+	${GRAND_CC} -o ${BASE} ${C_FILES}
+
+# make file target name?
+try:
+	${GRAND_CC} -o ${BASE}-try ${C_FILES}
+	./excellent-gmp-try
+
+debug:
+	${GRAND_CC} -o ${BASE}-debug -DDEBUGGING=1 ${C_FILES}
+	./excellent-gmp-try
 
 valgrind:
-	cc -lgmp  -g-o excellent-gmp excellent-gmp.c
-	valgrind --leak-check=full --show-leak-kinds=all -v ./excellent-gmp 10
+	${GRAND_CC} -g -o ${BASE}-valgrind ${C_FILES}
+	valgrind --leak-check=full --show-leak-kinds=all -v ${BASE}-valgrind 10
