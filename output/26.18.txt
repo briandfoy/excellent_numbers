@@ -1,0 +1,892 @@
+*** start a is 1800000000000
+*** end a is 2600000000000
+***[1446616800] working on: 1801102154553 tried: 1102154553 rate: 1964624 / sec
+*** time left: 0 wk 4 d 16 h 52 m 57 s
+***[1446617700] working on: 1802864026201 tried: 1761871648 rate: 1957635 / sec
+*** time left: 0 wk 4 d 17 h 53 m 6 s
+***[1446618600] working on: 1804622499791 tried: 1758473590 rate: 1953859 / sec
+*** time left: 0 wk 4 d 17 h 53 m 4 s
+***[1446619500] working on: 1806397879443 tried: 1775379652 rate: 1972644 / sec
+*** time left: 0 wk 4 d 15 h 51 m 45 s
+***[1446620400] working on: 1808213173781 tried: 1815294338 rate: 2016993 / sec
+*** time left: 0 wk 4 d 13 h 49 m 2 s
+***[1446621300] working on: 1810036488366 tried: 1823314585 rate: 2025905 / sec
+*** time left: 0 wk 4 d 12 h 48 m 18 s
+***[1446622200] working on: 1811861854632 tried: 1825366266 rate: 2028184 / sec
+*** time left: 0 wk 4 d 11 h 47 m 56 s
+***[1446623100] working on: 1813685636225 tried: 1823781593 rate: 2026423 / sec
+*** time left: 0 wk 4 d 11 h 47 m 47 s
+***[1446624000] working on: 1815511135937 tried: 1825499712 rate: 2028333 / sec
+*** time left: 0 wk 4 d 11 h 47 m 26 s
+***[1446624900] working on: 1817331468237 tried: 1820332300 rate: 2022591 / sec
+*** time left: 0 wk 4 d 11 h 47 m 29 s
+***[1446625800] working on: 1819151672137 tried: 1820203900 rate: 2022448 / sec
+*** time left: 0 wk 4 d 11 h 47 m 14 s
+***[1446626700] working on: 1820972905776 tried: 1821233639 rate: 2023592 / sec
+*** time left: 0 wk 4 d 10 h 46 m 56 s
+***[1446627600] working on: 1822796518807 tried: 1823613031 rate: 2026236 / sec
+*** time left: 0 wk 4 d 10 h 46 m 32 s
+***[1446628500] working on: 1824621369393 tried: 1824850586 rate: 2027611 / sec
+*** time left: 0 wk 4 d 10 h 46 m 13 s
+***[1446629400] working on: 1826445929016 tried: 1824559623 rate: 2027288 / sec
+*** time left: 0 wk 4 d 9 h 45 m 59 s
+***[1446630300] working on: 1828260630791 tried: 1814701775 rate: 2016335 / sec
+*** time left: 0 wk 4 d 10 h 46 m 19 s
+***[1446631200] working on: 1830083613082 tried: 1822982291 rate: 2025535 / sec
+*** time left: 0 wk 4 d 9 h 45 m 35 s
+***[1446632100] working on: 1831907051175 tried: 1823438093 rate: 2026042 / sec
+*** time left: 0 wk 4 d 9 h 45 m 18 s
+***[1446633000] working on: 1833722812819 tried: 1815761644 rate: 2017512 / sec
+*** time left: 0 wk 4 d 9 h 45 m 30 s
+***[1446633900] working on: 1835544242556 tried: 1821429737 rate: 2023810 / sec
+*** time left: 0 wk 4 d 8 h 44 m 55 s
+***[1446634800] working on: 1837365817417 tried: 1821574861 rate: 2023972 / sec
+*** time left: 0 wk 4 d 8 h 44 m 40 s
+***[1446635700] working on: 1839181599665 tried: 1815782248 rate: 2017535 / sec
+*** time left: 0 wk 4 d 8 h 44 m 45 s
+***[1446636600] working on: 1840925309182 tried: 1743709517 rate: 1937455 / sec
+*** time left: 0 wk 4 d 12 h 48 m 49 s
+***[1446637500] working on: 1842691477572 tried: 1766168390 rate: 1962409 / sec
+*** time left: 0 wk 4 d 11 h 47 m 11 s
+***[1446638400] working on: 1844481318895 tried: 1789841323 rate: 1988712 / sec
+*** time left: 0 wk 4 d 9 h 45 m 31 s
+***[1446639300] working on: 1846263100399 tried: 1781781504 rate: 1979757 / sec
+*** time left: 0 wk 4 d 9 h 45 m 45 s
+***[1446640200] working on: 1848023578705 tried: 1760478306 rate: 1956087 / sec
+*** time left: 0 wk 4 d 10 h 46 m 47 s
+***[1446641100] working on: 1849804172055 tried: 1780593350 rate: 1978437 / sec
+*** time left: 0 wk 4 d 9 h 45 m 19 s
+***[1446642000] working on: 1851616206557 tried: 1812034502 rate: 2013371 / sec
+*** time left: 0 wk 4 d 7 h 43 m 15 s
+***[1446642900] working on: 1853440902019 tried: 1824695462 rate: 2027439 / sec
+*** time left: 0 wk 4 d 6 h 42 m 17 s
+***[1446643800] working on: 1855266166239 tried: 1825264220 rate: 2028071 / sec
+*** time left: 0 wk 4 d 6 h 42 m 0 s
+***[1446644700] working on: 1857090405370 tried: 1824239131 rate: 2026932 / sec
+*** time left: 0 wk 4 d 5 h 41 m 48 s
+***[1446645600] working on: 1858912898439 tried: 1822493069 rate: 2024992 / sec
+*** time left: 0 wk 4 d 5 h 41 m 39 s
+***[1446646500] working on: 1860736851248 tried: 1823952809 rate: 2026614 / sec
+*** time left: 0 wk 4 d 5 h 41 m 19 s
+***[1446647400] working on: 1862561848042 tried: 1824996794 rate: 2027774 / sec
+*** time left: 0 wk 4 d 5 h 41 m 1 s
+***[1446648300] working on: 1864386633311 tried: 1824785269 rate: 2027539 / sec
+*** time left: 0 wk 4 d 4 h 40 m 46 s
+***[1446649200] working on: 1866210240368 tried: 1823607057 rate: 2026230 / sec
+*** time left: 0 wk 4 d 4 h 40 m 35 s
+***[1446650100] working on: 1868033330771 tried: 1823090403 rate: 2025656 / sec
+*** time left: 0 wk 4 d 4 h 40 m 22 s
+***[1446651000] working on: 1869857387397 tried: 1824056626 rate: 2026729 / sec
+*** time left: 0 wk 4 d 4 h 40 m 4 s
+***[1446651900] working on: 1871679481352 tried: 1822093955 rate: 2024548 / sec
+*** time left: 0 wk 4 d 3 h 39 m 55 s
+***[1446652800] working on: 1873500015098 tried: 1820533746 rate: 2022815 / sec
+*** time left: 0 wk 4 d 3 h 39 m 45 s
+***[1446653700] working on: 1875319065582 tried: 1819050484 rate: 2021167 / sec
+*** time left: 0 wk 4 d 3 h 39 m 35 s
+***[1446654600] working on: 1877140370391 tried: 1821304809 rate: 2023672 / sec
+*** time left: 0 wk 4 d 3 h 39 m 13 s
+***[1446655500] working on: 1878962130860 tried: 1821760469 rate: 2024178 / sec
+*** time left: 0 wk 4 d 2 h 38 m 56 s
+***[1446656400] working on: 1880781011123 tried: 1818880263 rate: 2020978 / sec
+*** time left: 0 wk 4 d 2 h 38 m 51 s
+***[1446657300] working on: 1882598522421 tried: 1817511298 rate: 2019456 / sec
+*** time left: 0 wk 4 d 2 h 38 m 40 s
+***[1446658200] working on: 1884411585381 tried: 1813062960 rate: 2014514 / sec
+*** time left: 0 wk 4 d 2 h 38 m 40 s
+***[1446659100] working on: 1886201408799 tried: 1789823418 rate: 1988692 / sec
+*** time left: 0 wk 4 d 3 h 39 m 42 s
+***[1446660000] working on: 1888024265197 tried: 1822856398 rate: 2025395 / sec
+*** time left: 0 wk 4 d 1 h 37 m 38 s
+***[1446660900] working on: 1889849106198 tried: 1824841001 rate: 2027601 / sec
+*** time left: 0 wk 4 d 1 h 37 m 17 s
+***[1446661800] working on: 1891673404043 tried: 1824297845 rate: 2026997 / sec
+*** time left: 0 wk 4 d 1 h 37 m 4 s
+***[1446662700] working on: 1893495735632 tried: 1822331589 rate: 2024812 / sec
+*** time left: 0 wk 4 d 0 h 36 m 55 s
+***[1446663600] working on: 1895319460238 tried: 1823724606 rate: 2026360 / sec
+*** time left: 0 wk 4 d 0 h 36 m 35 s
+***[1446664500] working on: 1897142100359 tried: 1822640121 rate: 2025155 / sec
+*** time left: 0 wk 4 d 0 h 36 m 24 s
+***[1446665400] working on: 1898964355672 tried: 1822255313 rate: 2024728 / sec
+*** time left: 0 wk 4 d 0 h 36 m 10 s
+***[1446666300] working on: 1900785646241 tried: 1821290569 rate: 2023656 / sec
+*** time left: 0 wk 3 d 23 h 35 m 58 s
+***[1446667200] working on: 1902607259681 tried: 1821613440 rate: 2024014 / sec
+*** time left: 0 wk 3 d 23 h 35 m 42 s
+***[1446668100] working on: 1904430254657 tried: 1822994976 rate: 2025549 / sec
+*** time left: 0 wk 3 d 23 h 35 m 23 s
+***[1446669000] working on: 1906250538395 tried: 1820283738 rate: 2022537 / sec
+*** time left: 0 wk 3 d 23 h 35 m 16 s
+***[1446669900] working on: 1908070714711 tried: 1820176316 rate: 2022418 / sec
+*** time left: 0 wk 3 d 23 h 35 m 2 s
+***[1446670800] working on: 1909891600392 tried: 1820885681 rate: 2023206 / sec
+*** time left: 0 wk 3 d 22 h 34 m 44 s
+***[1446671700] working on: 1911711869795 tried: 1820269403 rate: 2022521 / sec
+*** time left: 0 wk 3 d 22 h 34 m 31 s
+***[1446672600] working on: 1913531358320 tried: 1819488525 rate: 2021653 / sec
+*** time left: 0 wk 3 d 22 h 34 m 19 s
+***[1446673500] working on: 1915347286774 tried: 1815928454 rate: 2017698 / sec
+*** time left: 0 wk 3 d 22 h 34 m 15 s
+***[1446674400] working on: 1917156380915 tried: 1809094141 rate: 2010104 / sec
+*** time left: 0 wk 3 d 22 h 34 m 21 s
+***[1446675300] working on: 1918961674007 tried: 1805293092 rate: 2005881 / sec
+*** time left: 0 wk 3 d 22 h 34 m 18 s
+***[1446676200] working on: 1920783694559 tried: 1822020552 rate: 2024467 / sec
+*** time left: 0 wk 3 d 21 h 33 m 11 s
+***[1446677100] working on: 1922602227301 tried: 1818532742 rate: 2020591 / sec
+*** time left: 0 wk 3 d 21 h 33 m 7 s
+***[1446678000] working on: 1924423281395 tried: 1821054094 rate: 2023393 / sec
+*** time left: 0 wk 3 d 20 h 32 m 44 s
+***[1446678900] working on: 1926222710257 tried: 1799428862 rate: 1999365 / sec
+*** time left: 0 wk 3 d 21 h 33 m 36 s
+***[1446679800] working on: 1928029456739 tried: 1806746482 rate: 2007496 / sec
+*** time left: 0 wk 3 d 20 h 32 m 58 s
+***[1446680700] working on: 1929829881689 tried: 1800424950 rate: 2000472 / sec
+*** time left: 0 wk 3 d 21 h 33 m 3 s
+***[1446681600] working on: 1931649376961 tried: 1819495272 rate: 2021661 / sec
+*** time left: 0 wk 3 d 19 h 31 m 49 s
+***[1446682500] working on: 1933469612959 tried: 1820235998 rate: 2022484 / sec
+*** time left: 0 wk 3 d 19 h 31 m 32 s
+***[1446683400] working on: 1935292231157 tried: 1822618198 rate: 2025131 / sec
+*** time left: 0 wk 3 d 19 h 31 m 10 s
+***[1446684300] working on: 1937114785871 tried: 1822554714 rate: 2025060 / sec
+*** time left: 0 wk 3 d 18 h 30 m 55 s
+***[1446685200] working on: 1938937005255 tried: 1822219384 rate: 2024688 / sec
+*** time left: 0 wk 3 d 18 h 30 m 41 s
+***[1446686100] working on: 1940758529558 tried: 1821524303 rate: 2023915 / sec
+*** time left: 0 wk 3 d 18 h 30 m 28 s
+***[1446687000] working on: 1942581441077 tried: 1822911519 rate: 2025457 / sec
+*** time left: 0 wk 3 d 18 h 30 m 9 s
+***[1446687900] working on: 1944399967403 tried: 1818526326 rate: 2020584 / sec
+*** time left: 0 wk 3 d 18 h 30 m 7 s
+***[1446688800] working on: 1946222204353 tried: 1822236950 rate: 2024707 / sec
+*** time left: 0 wk 3 d 17 h 29 m 41 s
+***[1446689700] working on: 1948042991509 tried: 1820787156 rate: 2023096 / sec
+*** time left: 0 wk 3 d 17 h 29 m 30 s
+***[1446690600] working on: 1949865087472 tried: 1822095963 rate: 2024551 / sec
+*** time left: 0 wk 3 d 17 h 29 m 12 s
+***[1446691500] working on: 1951683810838 tried: 1818723366 rate: 2020803 / sec
+*** time left: 0 wk 3 d 17 h 29 m 7 s
+***[1446692400] working on: 1953505773112 tried: 1821962274 rate: 2024402 / sec
+*** time left: 0 wk 3 d 16 h 28 m 42 s
+***[1446693300] working on: 1955329075527 tried: 1823302415 rate: 2025891 / sec
+*** time left: 0 wk 3 d 16 h 28 m 23 s
+***[1446694200] working on: 1957154525768 tried: 1825450241 rate: 2028278 / sec
+*** time left: 0 wk 3 d 16 h 28 m 2 s
+***[1446695100] working on: 1958974479911 tried: 1819954143 rate: 2022171 / sec
+*** time left: 0 wk 3 d 16 h 28 m 3 s
+***[1446696000] working on: 1960791366459 tried: 1816886548 rate: 2018762 / sec
+*** time left: 0 wk 3 d 15 h 27 m 57 s
+***[1446696900] working on: 1962610209701 tried: 1818843242 rate: 2020936 / sec
+*** time left: 0 wk 3 d 15 h 27 m 36 s
+***[1446697800] working on: 1964436789582 tried: 1826579881 rate: 2029533 / sec
+*** time left: 0 wk 3 d 14 h 26 m 59 s
+***[1446698700] working on: 1966259724586 tried: 1822935004 rate: 2025483 / sec
+*** time left: 0 wk 3 d 14 h 26 m 54 s
+***[1446699600] working on: 1968084680499 tried: 1824955913 rate: 2027728 / sec
+*** time left: 0 wk 3 d 14 h 26 m 33 s
+***[1446700500] working on: 1969908133056 tried: 1823452557 rate: 2026058 / sec
+*** time left: 0 wk 3 d 14 h 26 m 23 s
+***[1446701400] working on: 1971716472914 tried: 1808339858 rate: 2009266 / sec
+*** time left: 0 wk 3 d 14 h 26 m 51 s
+***[1446702300] working on: 1973473865657 tried: 1757392743 rate: 1952658 / sec
+*** time left: 0 wk 3 d 17 h 29 m 7 s
+***[1446703200] working on: 1975249109041 tried: 1775243384 rate: 1972492 / sec
+*** time left: 0 wk 3 d 15 h 27 m 58 s
+***[1446704100] working on: 1977029771702 tried: 1780662661 rate: 1978514 / sec
+*** time left: 0 wk 3 d 15 h 27 m 27 s
+***[1446705000] working on: 1978794381064 tried: 1764609362 rate: 1960677 / sec
+*** time left: 0 wk 3 d 16 h 28 m 0 s
+***[1446705900] working on: 1980577151687 tried: 1782770623 rate: 1980856 / sec
+*** time left: 0 wk 3 d 14 h 26 m 51 s
+***[1446706800] working on: 1982405868042 tried: 1828716355 rate: 2031907 / sec
+*** time left: 0 wk 3 d 12 h 24 m 25 s
+***[1446707700] working on: 1984234031995 tried: 1828163953 rate: 2031293 / sec
+*** time left: 0 wk 3 d 12 h 24 m 12 s
+***[1446708600] working on: 1986064061977 tried: 1830029982 rate: 2033366 / sec
+*** time left: 0 wk 3 d 11 h 23 m 52 s
+***[1446709500] working on: 1987890866419 tried: 1826804442 rate: 2029782 / sec
+*** time left: 0 wk 3 d 11 h 23 m 46 s
+***[1446710400] working on: 1989699441433 tried: 1808575014 rate: 2009527 / sec
+*** time left: 0 wk 3 d 12 h 24 m 21 s
+***[1446711300] working on: 1991526057700 tried: 1826616267 rate: 2029573 / sec
+*** time left: 0 wk 3 d 11 h 23 m 16 s
+***[1446712200] working on: 1993355005703 tried: 1828948003 rate: 2032164 / sec
+*** time left: 0 wk 3 d 10 h 22 m 55 s
+***[1446713100] working on: 1995182279307 tried: 1827273604 rate: 2030304 / sec
+*** time left: 0 wk 3 d 10 h 22 m 44 s
+***[1446714000] working on: 1997011978314 tried: 1829699007 rate: 2032998 / sec
+*** time left: 0 wk 3 d 10 h 22 m 23 s
+***[1446714900] working on: 1998841045927 tried: 1829067613 rate: 2032297 / sec
+*** time left: 0 wk 3 d 10 h 22 m 10 s
+***[1446715800] working on: 2000669015007 tried: 1827969080 rate: 2031076 / sec
+*** time left: 0 wk 3 d 9 h 21 m 58 s
+***[1446716700] working on: 2002492519365 tried: 1823504358 rate: 2026115 / sec
+*** time left: 0 wk 3 d 9 h 21 m 55 s
+***[1446717600] working on: 2004319215530 tried: 1826696165 rate: 2029662 / sec
+*** time left: 0 wk 3 d 9 h 21 m 31 s
+***[1446718500] working on: 2006146632151 tried: 1827416621 rate: 2030462 / sec
+*** time left: 0 wk 3 d 9 h 21 m 14 s
+***[1446719400] working on: 2007968046612 tried: 1821414461 rate: 2023793 / sec
+*** time left: 0 wk 3 d 9 h 21 m 15 s
+***[1446720300] working on: 2009794599219 tried: 1826552607 rate: 2029502 / sec
+*** time left: 0 wk 3 d 8 h 20 m 46 s
+***[1446721200] working on: 2011624248099 tried: 1829648880 rate: 2032943 / sec
+*** time left: 0 wk 3 d 8 h 20 m 23 s
+***[1446722100] working on: 2013451354403 tried: 1827106304 rate: 2030118 / sec
+*** time left: 0 wk 3 d 8 h 20 m 15 s
+***[1446723000] working on: 2015190211955 tried: 1738857552 rate: 1932063 / sec
+*** time left: 0 wk 3 d 12 h 24 m 4 s
+***[1446723900] working on: 2016943062767 tried: 1752850812 rate: 1947612 / sec
+*** time left: 0 wk 3 d 11 h 23 m 9 s
+***[1446724800] working on: 2018731077552 tried: 1788014785 rate: 1986683 / sec
+*** time left: 0 wk 3 d 9 h 21 m 16 s
+***[1446725700] working on: 2020516149123 tried: 1785071571 rate: 1983412 / sec
+*** time left: 0 wk 3 d 9 h 21 m 9 s
+***[1446726600] working on: 2022282217661 tried: 1766068538 rate: 1962298 / sec
+*** time left: 0 wk 3 d 9 h 21 m 46 s
+***[1446727500] working on: 2024051999145 tried: 1769781484 rate: 1966423 / sec
+*** time left: 0 wk 3 d 9 h 21 m 21 s
+***[1446728400] working on: 2025867500475 tried: 1815501330 rate: 2017223 / sec
+*** time left: 0 wk 3 d 7 h 19 m 3 s
+***[1446729300] working on: 2027692876612 tried: 1825376137 rate: 2028195 / sec
+*** time left: 0 wk 3 d 6 h 18 m 22 s
+***[1446730200] working on: 2029517562407 tried: 1824685795 rate: 2027428 / sec
+*** time left: 0 wk 3 d 6 h 18 m 9 s
+***[1446731100] working on: 2031342223825 tried: 1824661418 rate: 2027401 / sec
+*** time left: 0 wk 3 d 5 h 17 m 54 s
+***[1446732000] working on: 2033167446509 tried: 1825222684 rate: 2028025 / sec
+*** time left: 0 wk 3 d 5 h 17 m 38 s
+***[1446732900] working on: 2034992361730 tried: 1824915221 rate: 2027683 / sec
+*** time left: 0 wk 3 d 5 h 17 m 24 s
+***[1446733800] working on: 2036813817810 tried: 1821456080 rate: 2023840 / sec
+*** time left: 0 wk 3 d 5 h 17 m 17 s
+***[1446734700] working on: 2038634355916 tried: 1820538106 rate: 2022820 / sec
+*** time left: 0 wk 3 d 5 h 17 m 5 s
+***[1446735600] working on: 2040456715889 tried: 1822359973 rate: 2024844 / sec
+*** time left: 0 wk 3 d 4 h 16 m 45 s
+***[1446736500] working on: 2042280126156 tried: 1823410267 rate: 2026011 / sec
+*** time left: 0 wk 3 d 4 h 16 m 27 s
+***[1446737400] working on: 2044104539020 tried: 1824412864 rate: 2027125 / sec
+*** time left: 0 wk 3 d 4 h 16 m 10 s
+***[1446738300] working on: 2045926210239 tried: 1821671219 rate: 2024079 / sec
+*** time left: 0 wk 3 d 4 h 16 m 2 s
+***[1446739200] working on: 2047749614507 tried: 1823404268 rate: 2026004 / sec
+*** time left: 0 wk 3 d 3 h 15 m 43 s
+***[1446740100] working on: 2049571843806 tried: 1822229299 rate: 2024699 / sec
+*** time left: 0 wk 3 d 3 h 15 m 30 s
+***[1446741000] working on: 2051396045104 tried: 1824201298 rate: 2026890 / sec
+*** time left: 0 wk 3 d 3 h 15 m 11 s
+***[1446741900] working on: 2053220216067 tried: 1824170963 rate: 2026856 / sec
+*** time left: 0 wk 3 d 2 h 14 m 56 s
+***[1446742800] working on: 2055043938209 tried: 1823722142 rate: 2026357 / sec
+*** time left: 0 wk 3 d 2 h 14 m 42 s
+***[1446743700] working on: 2056866471285 tried: 1822533076 rate: 2025036 / sec
+*** time left: 0 wk 3 d 2 h 14 m 30 s
+***[1446744600] working on: 2058679941335 tried: 1813470050 rate: 2014966 / sec
+*** time left: 0 wk 3 d 2 h 14 m 37 s
+***[1446745500] working on: 2060431688761 tried: 1751747426 rate: 1946386 / sec
+*** time left: 0 wk 3 d 5 h 17 m 0 s
+***[1446746400] working on: 2062211058814 tried: 1779370053 rate: 1977077 / sec
+*** time left: 0 wk 3 d 3 h 15 m 33 s
+***[1446747300] working on: 2063988664469 tried: 1777605655 rate: 1975117 / sec
+*** time left: 0 wk 3 d 3 h 15 m 23 s
+***[1446748200] working on: 2065754464102 tried: 1765799633 rate: 1961999 / sec
+*** time left: 0 wk 3 d 3 h 15 m 38 s
+***[1446749100] working on: 2067522992921 tried: 1768528819 rate: 1965032 / sec
+*** time left: 0 wk 3 d 3 h 15 m 16 s
+***[1446750000] working on: 2069344769619 tried: 1821776698 rate: 2024196 / sec
+*** time left: 0 wk 3 d 0 h 12 m 49 s
+***[1446750900] working on: 2071167922520 tried: 1823152901 rate: 2025725 / sec
+*** time left: 0 wk 3 d 0 h 12 m 30 s
+***[1446751800] working on: 2072988885869 tried: 1820963349 rate: 2023292 / sec
+*** time left: 0 wk 3 d 0 h 12 m 21 s
+***[1446752700] working on: 2074810447203 tried: 1821561334 rate: 2023957 / sec
+*** time left: 0 wk 3 d 0 h 12 m 4 s
+***[1446753600] working on: 2076631893573 tried: 1821446370 rate: 2023829 / sec
+*** time left: 0 wk 2 d 23 h 11 m 50 s
+***[1446754500] working on: 2078453302904 tried: 1821409331 rate: 2023788 / sec
+*** time left: 0 wk 2 d 23 h 11 m 35 s
+***[1446755400] working on: 2080273535941 tried: 1820233037 rate: 2022481 / sec
+*** time left: 0 wk 2 d 23 h 11 m 22 s
+***[1446756300] working on: 2082097368145 tried: 1823832204 rate: 2026480 / sec
+*** time left: 0 wk 2 d 22 h 10 m 59 s
+***[1446757200] working on: 2083919775516 tried: 1822407371 rate: 2024897 / sec
+*** time left: 0 wk 2 d 22 h 10 m 47 s
+***[1446758100] working on: 2085742945872 tried: 1823170356 rate: 2025744 / sec
+*** time left: 0 wk 2 d 22 h 10 m 31 s
+***[1446759000] working on: 2087565399970 tried: 1822454098 rate: 2024948 / sec
+*** time left: 0 wk 2 d 22 h 10 m 17 s
+***[1446759900] working on: 2089390043669 tried: 1824643699 rate: 2027381 / sec
+*** time left: 0 wk 2 d 21 h 9 m 57 s
+***[1446760800] working on: 2091211789643 tried: 1821745974 rate: 2024162 / sec
+*** time left: 0 wk 2 d 21 h 9 m 49 s
+***[1446761700] working on: 2093033892679 tried: 1822103036 rate: 2024558 / sec
+*** time left: 0 wk 2 d 21 h 9 m 33 s
+***[1446762600] working on: 2094853214270 tried: 1819321591 rate: 2021468 / sec
+*** time left: 0 wk 2 d 21 h 9 m 24 s
+***[1446763500] working on: 2096675512150 tried: 1822297880 rate: 2024775 / sec
+*** time left: 0 wk 2 d 21 h 9 m 3 s
+***[1446764400] working on: 2098496333114 tried: 1820820964 rate: 2023134 / sec
+*** time left: 0 wk 2 d 20 h 8 m 51 s
+***[1446765300] working on: 2100314742107 tried: 1818408993 rate: 2020454 / sec
+*** time left: 0 wk 2 d 20 h 8 m 41 s
+***[1446766200] working on: 2102120954789 tried: 1806212682 rate: 2006902 / sec
+*** time left: 0 wk 2 d 20 h 8 m 54 s
+***[1446767100] working on: 2103886497134 tried: 1765542345 rate: 1961713 / sec
+*** time left: 0 wk 2 d 22 h 10 m 14 s
+***[1446768000] working on: 2105663906139 tried: 1777409005 rate: 1974898 / sec
+*** time left: 0 wk 2 d 21 h 9 m 31 s
+***[1446768900] working on: 2107431839556 tried: 1767933417 rate: 1964370 / sec
+*** time left: 0 wk 2 d 21 h 9 m 39 s
+***[1446769800] working on: 2109177882804 tried: 1746043248 rate: 1940048 / sec
+*** time left: 0 wk 2 d 22 h 10 m 16 s
+***[1446770700] working on: 2110952121613 tried: 1774238809 rate: 1971376 / sec
+*** time left: 0 wk 2 d 20 h 8 m 54 s
+***[1446771600] working on: 2112775489083 tried: 1823367470 rate: 2025963 / sec
+*** time left: 0 wk 2 d 18 h 6 m 48 s
+***[1446772500] working on: 2114595241560 tried: 1819752477 rate: 2021947 / sec
+*** time left: 0 wk 2 d 18 h 6 m 41 s
+***[1446773400] working on: 2116417136914 tried: 1821895354 rate: 2024328 / sec
+*** time left: 0 wk 2 d 18 h 6 m 21 s
+***[1446774300] working on: 2118241711484 tried: 1824574570 rate: 2027305 / sec
+*** time left: 0 wk 2 d 18 h 6 m 0 s
+***[1446775200] working on: 2120066773613 tried: 1825062129 rate: 2027846 / sec
+*** time left: 0 wk 2 d 17 h 5 m 44 s
+***[1446776100] working on: 2121889809766 tried: 1823036153 rate: 2025595 / sec
+*** time left: 0 wk 2 d 17 h 5 m 33 s
+***[1446777000] working on: 2123712793811 tried: 1822984045 rate: 2025537 / sec
+*** time left: 0 wk 2 d 17 h 5 m 19 s
+***[1446777900] working on: 2125532669319 tried: 1819875508 rate: 2022083 / sec
+*** time left: 0 wk 2 d 17 h 5 m 10 s
+***[1446778800] working on: 2127355121961 tried: 1822452642 rate: 2024947 / sec
+*** time left: 0 wk 2 d 16 h 4 m 50 s
+***[1446779700] working on: 2129178332668 tried: 1823210707 rate: 2025789 / sec
+*** time left: 0 wk 2 d 16 h 4 m 33 s
+***[1446780600] working on: 2131002101438 tried: 1823768770 rate: 2026409 / sec
+*** time left: 0 wk 2 d 16 h 4 m 17 s
+***[1446781500] working on: 2132823268198 tried: 1821166760 rate: 2023518 / sec
+*** time left: 0 wk 2 d 16 h 4 m 7 s
+***[1446782400] working on: 2134647683203 tried: 1824415005 rate: 2027127 / sec
+*** time left: 0 wk 2 d 15 h 3 m 46 s
+***[1446783300] working on: 2136470683147 tried: 1822999944 rate: 2025555 / sec
+*** time left: 0 wk 2 d 15 h 3 m 34 s
+***[1446784200] working on: 2138295909152 tried: 1825226005 rate: 2028028 / sec
+*** time left: 0 wk 2 d 15 h 3 m 14 s
+***[1446785100] working on: 2140120030649 tried: 1824121497 rate: 2026801 / sec
+*** time left: 0 wk 2 d 15 h 3 m 1 s
+***[1446786000] working on: 2141945926357 tried: 1825895708 rate: 2028773 / sec
+*** time left: 0 wk 2 d 14 h 2 m 42 s
+***[1446786900] working on: 2143770480261 tried: 1824553904 rate: 2027282 / sec
+*** time left: 0 wk 2 d 14 h 2 m 30 s
+***[1446787800] working on: 2145592233459 tried: 1821753198 rate: 2024170 / sec
+*** time left: 0 wk 2 d 14 h 2 m 21 s
+***[1446788700] working on: 2147416425556 tried: 1824192097 rate: 2026880 / sec
+*** time left: 0 wk 2 d 14 h 2 m 1 s
+***[1446789600] working on: 2149242340986 tried: 1825915430 rate: 2028794 / sec
+*** time left: 0 wk 2 d 13 h 1 m 43 s
+***[1446790500] working on: 2151064139963 tried: 1821798977 rate: 2024221 / sec
+*** time left: 0 wk 2 d 13 h 1 m 36 s
+***[1446791400] working on: 2152890498182 tried: 1826358219 rate: 2029286 / sec
+*** time left: 0 wk 2 d 13 h 1 m 12 s
+***[1446792300] working on: 2154717704848 tried: 1827206666 rate: 2030229 / sec
+*** time left: 0 wk 2 d 12 h 0 m 55 s
+***[1446793200] working on: 2156546007729 tried: 1828302881 rate: 2031447 / sec
+*** time left: 0 wk 2 d 12 h 0 m 38 s
+***[1446794100] working on: 2158372933052 tried: 1826925323 rate: 2029917 / sec
+*** time left: 0 wk 2 d 12 h 0 m 25 s
+***[1446795000] working on: 2160202461651 tried: 1829528599 rate: 2032809 / sec
+*** time left: 0 wk 2 d 12 h 0 m 5 s
+***[1446795900] working on: 2162031372994 tried: 1828911343 rate: 2032123 / sec
+*** time left: 0 wk 2 d 11 h 59 m 52 s
+***[1446796800] working on: 2163860873646 tried: 1829500652 rate: 2032778 / sec
+*** time left: 0 wk 2 d 11 h 59 m 35 s
+***[1446797700] working on: 2165689219032 tried: 1828345386 rate: 2031494 / sec
+*** time left: 0 wk 2 d 11 h 59 m 23 s
+***[1446798600] working on: 2167517962569 tried: 1828743537 rate: 2031937 / sec
+*** time left: 0 wk 2 d 11 h 59 m 7 s
+***[1446799500] working on: 2169347855974 tried: 1829893405 rate: 2033214 / sec
+*** time left: 0 wk 2 d 10 h 58 m 50 s
+***[1446800400] working on: 2171176957586 tried: 1829101612 rate: 2032335 / sec
+*** time left: 0 wk 2 d 10 h 58 m 36 s
+***[1446801300] working on: 2173004973965 tried: 1828016379 rate: 2031129 / sec
+*** time left: 0 wk 2 d 10 h 58 m 23 s
+***[1446802200] working on: 2174834523251 tried: 1829549286 rate: 2032832 / sec
+*** time left: 0 wk 2 d 10 h 58 m 5 s
+***[1446803100] working on: 2176660359295 tried: 1825836044 rate: 2028706 / sec
+*** time left: 0 wk 2 d 9 h 57 m 57 s
+***[1446804000] working on: 2178488309053 tried: 1827949758 rate: 2031055 / sec
+*** time left: 0 wk 2 d 9 h 57 m 38 s
+***[1446804900] working on: 2180316739406 tried: 1828430353 rate: 2031589 / sec
+*** time left: 0 wk 2 d 9 h 57 m 22 s
+***[1446805800] working on: 2182135481030 tried: 1818741624 rate: 2020824 / sec
+*** time left: 0 wk 2 d 9 h 57 m 26 s
+***[1446806700] working on: 2183963634559 tried: 1828153529 rate: 2031281 / sec
+*** time left: 0 wk 2 d 8 h 56 m 53 s
+***[1446807600] working on: 2185790813861 tried: 1827179302 rate: 2030199 / sec
+*** time left: 0 wk 2 d 8 h 56 m 40 s
+***[1446808500] working on: 2187615382831 tried: 1824568970 rate: 2027298 / sec
+*** time left: 0 wk 2 d 8 h 56 m 30 s
+***[1446809400] working on: 2189373840921 tried: 1758458090 rate: 1953842 / sec
+*** time left: 0 wk 2 d 10 h 58 m 22 s
+***[1446810300] working on: 2191135490467 tried: 1761649546 rate: 1957388 / sec
+*** time left: 0 wk 2 d 10 h 58 m 1 s
+***[1446811200] working on: 2192920442529 tried: 1784952062 rate: 1983280 / sec
+*** time left: 0 wk 2 d 9 h 57 m 0 s
+***[1446812100] working on: 2194707749301 tried: 1787306772 rate: 1985896 / sec
+*** time left: 0 wk 2 d 8 h 56 m 41 s
+***[1446813000] working on: 2196479280301 tried: 1771531000 rate: 1968367 / sec
+*** time left: 0 wk 2 d 8 h 56 m 56 s
+***[1446813900] working on: 2198254032897 tried: 1774752596 rate: 1971947 / sec
+*** time left: 0 wk 2 d 8 h 56 m 35 s
+***[1446814800] working on: 2200066963591 tried: 1812930694 rate: 2014367 / sec
+*** time left: 0 wk 2 d 7 h 55 m 9 s
+***[1446815700] working on: 2201891797907 tried: 1824834316 rate: 2027593 / sec
+*** time left: 0 wk 2 d 6 h 54 m 32 s
+***[1446816600] working on: 2203718024462 tried: 1826226555 rate: 2029140 / sec
+*** time left: 0 wk 2 d 6 h 54 m 14 s
+***[1446817500] working on: 2205541960961 tried: 1823936499 rate: 2026596 / sec
+*** time left: 0 wk 2 d 6 h 54 m 4 s
+***[1446818400] working on: 2207366806744 tried: 1824845783 rate: 2027606 / sec
+*** time left: 0 wk 2 d 5 h 53 m 47 s
+***[1446819300] working on: 2209192004931 tried: 1825198187 rate: 2027997 / sec
+*** time left: 0 wk 2 d 5 h 53 m 31 s
+***[1446820200] working on: 2211016758487 tried: 1824753556 rate: 2027503 / sec
+*** time left: 0 wk 2 d 5 h 53 m 17 s
+***[1446821100] working on: 2212840240341 tried: 1823481854 rate: 2026090 / sec
+*** time left: 0 wk 2 d 5 h 53 m 4 s
+***[1446822000] working on: 2214664017545 tried: 1823777204 rate: 2026419 / sec
+*** time left: 0 wk 2 d 4 h 52 m 49 s
+***[1446822900] working on: 2216488039847 tried: 1824022302 rate: 2026691 / sec
+*** time left: 0 wk 2 d 4 h 52 m 33 s
+***[1446823800] working on: 2218311655678 tried: 1823615831 rate: 2026239 / sec
+*** time left: 0 wk 2 d 4 h 52 m 19 s
+***[1446824700] working on: 2220134561825 tried: 1822906147 rate: 2025451 / sec
+*** time left: 0 wk 2 d 4 h 52 m 5 s
+***[1446825600] working on: 2221957670874 tried: 1823109049 rate: 2025676 / sec
+*** time left: 0 wk 2 d 3 h 51 m 50 s
+***[1446826500] working on: 2223777380531 tried: 1819709657 rate: 2021899 / sec
+*** time left: 0 wk 2 d 3 h 51 m 41 s
+***[1446827400] working on: 2225600634517 tried: 1823253986 rate: 2025837 / sec
+*** time left: 0 wk 2 d 3 h 51 m 20 s
+***[1446828300] working on: 2227422099536 tried: 1821465019 rate: 2023850 / sec
+*** time left: 0 wk 2 d 3 h 51 m 8 s
+***[1446829200] working on: 2229244291023 tried: 1822191487 rate: 2024657 / sec
+*** time left: 0 wk 2 d 2 h 50 m 52 s
+***[1446830100] working on: 2231065861840 tried: 1821570817 rate: 2023967 / sec
+*** time left: 0 wk 2 d 2 h 50 m 38 s
+***[1446831000] working on: 2232879826746 tried: 1813964906 rate: 2015516 / sec
+*** time left: 0 wk 2 d 2 h 50 m 35 s
+***[1446831900] working on: 2234632988959 tried: 1753162213 rate: 1947958 / sec
+*** time left: 0 wk 2 d 4 h 52 m 6 s
+***[1446832800] working on: 2236414431631 tried: 1781442672 rate: 1979380 / sec
+*** time left: 0 wk 2 d 3 h 51 m 1 s
+***[1446833700] working on: 2238188978728 tried: 1774547097 rate: 1971718 / sec
+*** time left: 0 wk 2 d 2 h 50 m 58 s
+***[1446834600] working on: 2239941571702 tried: 1752592974 rate: 1947325 / sec
+*** time left: 0 wk 2 d 3 h 51 m 21 s
+***[1446835500] working on: 2241712962803 tried: 1771391101 rate: 1968212 / sec
+*** time left: 0 wk 2 d 2 h 50 m 33 s
+***[1446836400] working on: 2243533349885 tried: 1820387082 rate: 2022652 / sec
+*** time left: 0 wk 2 d 0 h 48 m 57 s
+***[1446837300] working on: 2245356420764 tried: 1823070879 rate: 2025634 / sec
+*** time left: 0 wk 2 d 0 h 48 m 37 s
+***[1446838200] working on: 2247177889132 tried: 1821468368 rate: 2023853 / sec
+*** time left: 0 wk 2 d 0 h 48 m 25 s
+***[1446839100] working on: 2248998590589 tried: 1820701457 rate: 2023001 / sec
+*** time left: 0 wk 2 d 0 h 48 m 11 s
+***[1446840000] working on: 2250819040461 tried: 1820449872 rate: 2022722 / sec
+*** time left: 0 wk 1 d 23 h 47 m 57 s
+***[1446840900] working on: 2252641199344 tried: 1822158883 rate: 2024620 / sec
+*** time left: 0 wk 1 d 23 h 47 m 39 s
+***[1446841800] working on: 2254464069316 tried: 1822869972 rate: 2025411 / sec
+*** time left: 0 wk 1 d 23 h 47 m 23 s
+***[1446842700] working on: 2256288151104 tried: 1824081788 rate: 2026757 / sec
+*** time left: 0 wk 1 d 23 h 47 m 6 s
+***[1446843600] working on: 2258111809583 tried: 1823658479 rate: 2026287 / sec
+*** time left: 0 wk 1 d 22 h 46 m 52 s
+***[1446844500] working on: 2259935704523 tried: 1823894940 rate: 2026549 / sec
+*** time left: 0 wk 1 d 22 h 46 m 36 s
+***[1446845400] working on: 2261759284113 tried: 1823579590 rate: 2026199 / sec
+*** time left: 0 wk 1 d 22 h 46 m 22 s
+***[1446846300] working on: 2263583799020 tried: 1824514907 rate: 2027238 / sec
+*** time left: 0 wk 1 d 22 h 46 m 5 s
+***[1446847200] working on: 2265402559808 tried: 1818760788 rate: 2020845 / sec
+*** time left: 0 wk 1 d 21 h 45 m 59 s
+***[1446848100] working on: 2267218796983 tried: 1816237175 rate: 2018041 / sec
+*** time left: 0 wk 1 d 21 h 45 m 48 s
+***[1446849000] working on: 2269019598764 tried: 1800801781 rate: 2000890 / sec
+*** time left: 0 wk 1 d 21 h 45 m 56 s
+***[1446849900] working on: 2270836615951 tried: 1817017187 rate: 2018907 / sec
+*** time left: 0 wk 1 d 21 h 45 m 17 s
+***[1446850800] working on: 2272653040056 tried: 1816424105 rate: 2018249 / sec
+*** time left: 0 wk 1 d 21 h 45 m 3 s
+***[1446851700] working on: 2274473137540 tried: 1820097484 rate: 2022330 / sec
+*** time left: 0 wk 1 d 20 h 44 m 42 s
+***[1446852600] working on: 2276274877377 tried: 1801739837 rate: 2001933 / sec
+*** time left: 0 wk 1 d 20 h 44 m 55 s
+***[1446853500] working on: 2278037216071 tried: 1762338694 rate: 1958154 / sec
+*** time left: 0 wk 1 d 21 h 45 m 40 s
+***[1446854400] working on: 2279820691182 tried: 1783475111 rate: 1981639 / sec
+*** time left: 0 wk 1 d 20 h 44 m 52 s
+***[1446855300] working on: 2281601890595 tried: 1781199413 rate: 1979110 / sec
+*** time left: 0 wk 1 d 20 h 44 m 41 s
+***[1446856200] working on: 2283360254328 tried: 1758363733 rate: 1953737 / sec
+*** time left: 0 wk 1 d 21 h 45 m 1 s
+***[1446857100] working on: 2285113843503 tried: 1753589175 rate: 1948432 / sec
+*** time left: 0 wk 1 d 20 h 44 m 53 s
+***[1446858000] working on: 2286935058804 tried: 1821215301 rate: 2023572 / sec
+*** time left: 0 wk 1 d 18 h 42 m 58 s
+***[1446858900] working on: 2288757987951 tried: 1822929147 rate: 2025476 / sec
+*** time left: 0 wk 1 d 18 h 42 m 41 s
+***[1446859800] working on: 2290580906241 tried: 1822918290 rate: 2025464 / sec
+*** time left: 0 wk 1 d 18 h 42 m 26 s
+***[1446860700] working on: 2292402500041 tried: 1821593800 rate: 2023993 / sec
+*** time left: 0 wk 1 d 18 h 42 m 12 s
+***[1446861600] working on: 2294228695872 tried: 1826195831 rate: 2029106 / sec
+*** time left: 0 wk 1 d 17 h 41 m 51 s
+***[1446862500] working on: 2296054460592 tried: 1825764720 rate: 2028627 / sec
+*** time left: 0 wk 1 d 17 h 41 m 37 s
+***[1446863400] working on: 2297879095998 tried: 1824635406 rate: 2027372 / sec
+*** time left: 0 wk 1 d 17 h 41 m 23 s
+***[1446864300] working on: 2299699339519 tried: 1820243521 rate: 2022492 / sec
+*** time left: 0 wk 1 d 17 h 41 m 14 s
+***[1446865200] working on: 2301521539366 tried: 1822199847 rate: 2024666 / sec
+*** time left: 0 wk 1 d 16 h 40 m 57 s
+***[1446866100] working on: 2303346381797 tried: 1824842431 rate: 2027602 / sec
+*** time left: 0 wk 1 d 16 h 40 m 38 s
+***[1446867000] working on: 2305171112016 tried: 1824730219 rate: 2027478 / sec
+*** time left: 0 wk 1 d 16 h 40 m 23 s
+***[1446867900] working on: 2306992795199 tried: 1821683183 rate: 2024092 / sec
+*** time left: 0 wk 1 d 16 h 40 m 12 s
+***[1446868800] working on: 2308818750182 tried: 1825954983 rate: 2028838 / sec
+*** time left: 0 wk 1 d 15 h 39 m 52 s
+***[1446869700] working on: 2310644362341 tried: 1825612159 rate: 2028457 / sec
+*** time left: 0 wk 1 d 15 h 39 m 37 s
+***[1446870600] working on: 2312470779180 tried: 1826416839 rate: 2029352 / sec
+*** time left: 0 wk 1 d 15 h 39 m 21 s
+***[1446871500] working on: 2314293467885 tried: 1822688705 rate: 2025209 / sec
+*** time left: 0 wk 1 d 15 h 39 m 11 s
+***[1446872400] working on: 2316119897621 tried: 1826429736 rate: 2029366 / sec
+*** time left: 0 wk 1 d 14 h 38 m 51 s
+***[1446873300] working on: 2317945125836 tried: 1825228215 rate: 2028031 / sec
+*** time left: 0 wk 1 d 14 h 38 m 37 s
+***[1446874200] working on: 2319754453476 tried: 1809327640 rate: 2010364 / sec
+*** time left: 0 wk 1 d 14 h 38 m 43 s
+***[1446875100] working on: 2321555807359 tried: 1801353883 rate: 2001504 / sec
+*** time left: 0 wk 1 d 14 h 38 m 38 s
+***[1446876000] working on: 2323383670340 tried: 1827862981 rate: 2030958 / sec
+*** time left: 0 wk 1 d 13 h 37 m 49 s
+***[1446876900] working on: 2325209754459 tried: 1826084119 rate: 2028982 / sec
+*** time left: 0 wk 1 d 13 h 37 m 37 s
+***[1446877800] working on: 2327036798752 tried: 1827044293 rate: 2030049 / sec
+*** time left: 0 wk 1 d 13 h 37 m 21 s
+***[1446878700] working on: 2328863089775 tried: 1826291023 rate: 2029212 / sec
+*** time left: 0 wk 1 d 13 h 37 m 6 s
+***[1446879600] working on: 2330692137554 tried: 1829047779 rate: 2032275 / sec
+*** time left: 0 wk 1 d 12 h 36 m 48 s
+***[1446880500] working on: 2332520619468 tried: 1828481914 rate: 2031646 / sec
+*** time left: 0 wk 1 d 12 h 36 m 34 s
+***[1446881400] working on: 2334349486688 tried: 1828867220 rate: 2032074 / sec
+*** time left: 0 wk 1 d 12 h 36 m 18 s
+***[1446882300] working on: 2336178545175 tried: 1829058487 rate: 2032287 / sec
+*** time left: 0 wk 1 d 12 h 36 m 3 s
+***[1446883200] working on: 2338008685944 tried: 1830140769 rate: 2033489 / sec
+*** time left: 0 wk 1 d 11 h 35 m 47 s
+***[1446884100] working on: 2339836344117 tried: 1827658173 rate: 2030731 / sec
+*** time left: 0 wk 1 d 11 h 35 m 35 s
+***[1446885000] working on: 2341665189640 tried: 1828845523 rate: 2032050 / sec
+*** time left: 0 wk 1 d 11 h 35 m 18 s
+***[1446885900] working on: 2343493849139 tried: 1828659499 rate: 2031843 / sec
+*** time left: 0 wk 1 d 11 h 35 m 4 s
+***[1446886800] working on: 2345323482906 tried: 1829633767 rate: 2032926 / sec
+*** time left: 0 wk 1 d 10 h 34 m 47 s
+***[1446887700] working on: 2347153100271 tried: 1829617365 rate: 2032908 / sec
+*** time left: 0 wk 1 d 10 h 34 m 32 s
+***[1446888600] working on: 2348982918649 tried: 1829818378 rate: 2033131 / sec
+*** time left: 0 wk 1 d 10 h 34 m 17 s
+***[1446889500] working on: 2350808372410 tried: 1825453761 rate: 2028281 / sec
+*** time left: 0 wk 1 d 10 h 34 m 7 s
+***[1446890400] working on: 2352636576235 tried: 1828203825 rate: 2031337 / sec
+*** time left: 0 wk 1 d 9 h 33 m 49 s
+***[1446891300] working on: 2354463703701 tried: 1827127466 rate: 2030141 / sec
+*** time left: 0 wk 1 d 9 h 33 m 35 s
+***[1446892200] working on: 2356282769871 tried: 1819066170 rate: 2021184 / sec
+*** time left: 0 wk 1 d 9 h 33 m 29 s
+***[1446893100] working on: 2358110095666 tried: 1827325795 rate: 2030361 / sec
+*** time left: 0 wk 1 d 9 h 33 m 5 s
+***[1446894000] working on: 2359938691177 tried: 1828595511 rate: 2031772 / sec
+*** time left: 0 wk 1 d 8 h 32 m 49 s
+***[1446894900] working on: 2361764980268 tried: 1826289091 rate: 2029210 / sec
+*** time left: 0 wk 1 d 8 h 32 m 36 s
+***[1446895800] working on: 2363493416611 tried: 1728436343 rate: 1920484 / sec
+*** time left: 0 wk 1 d 10 h 34 m 12 s
+***[1446896700] working on: 2365235063911 tried: 1741647300 rate: 1935163 / sec
+*** time left: 0 wk 1 d 9 h 33 m 41 s
+***[1446897600] working on: 2367023959700 tried: 1788895789 rate: 1987661 / sec
+*** time left: 0 wk 1 d 8 h 32 m 33 s
+***[1446898500] working on: 2368808720752 tried: 1784761052 rate: 1983067 / sec
+*** time left: 0 wk 1 d 8 h 32 m 23 s
+***[1446899400] working on: 2370576639640 tried: 1767918888 rate: 1964354 / sec
+*** time left: 0 wk 1 d 8 h 32 m 26 s
+***[1446900300] working on: 2372353873325 tried: 1777233685 rate: 1974704 / sec
+*** time left: 0 wk 1 d 8 h 32 m 1 s
+***[1446901200] working on: 2374169282649 tried: 1815409324 rate: 2017121 / sec
+*** time left: 0 wk 1 d 7 h 31 m 5 s
+***[1446902100] working on: 2375992665076 tried: 1823382427 rate: 2025980 / sec
+*** time left: 0 wk 1 d 6 h 30 m 42 s
+***[1446903000] working on: 2377819762434 tried: 1827097358 rate: 2030108 / sec
+*** time left: 0 wk 1 d 6 h 30 m 24 s
+***[1446903900] working on: 2379644713409 tried: 1824950975 rate: 2027723 / sec
+*** time left: 0 wk 1 d 6 h 30 m 11 s
+***[1446904800] working on: 2381469704077 tried: 1824990668 rate: 2027767 / sec
+*** time left: 0 wk 1 d 5 h 29 m 56 s
+***[1446905700] working on: 2383295617217 tried: 1825913140 rate: 2028792 / sec
+*** time left: 0 wk 1 d 5 h 29 m 40 s
+***[1446906600] working on: 2385121172801 tried: 1825555584 rate: 2028395 / sec
+*** time left: 0 wk 1 d 5 h 29 m 25 s
+***[1446907500] working on: 2386946270448 tried: 1825097647 rate: 2027886 / sec
+*** time left: 0 wk 1 d 5 h 29 m 11 s
+***[1446908400] working on: 2388772317548 tried: 1826047100 rate: 2028941 / sec
+*** time left: 0 wk 1 d 4 h 28 m 55 s
+***[1446909300] working on: 2390597273465 tried: 1824955917 rate: 2027728 / sec
+*** time left: 0 wk 1 d 4 h 28 m 41 s
+***[1446910200] working on: 2392422585163 tried: 1825311698 rate: 2028124 / sec
+*** time left: 0 wk 1 d 4 h 28 m 25 s
+***[1446911100] working on: 2394245795215 tried: 1823210052 rate: 2025788 / sec
+*** time left: 0 wk 1 d 4 h 28 m 12 s
+***[1446912000] working on: 2396071363866 tried: 1825568651 rate: 2028409 / sec
+*** time left: 0 wk 1 d 3 h 27 m 55 s
+***[1446912900] working on: 2397894319555 tried: 1822955689 rate: 2025506 / sec
+*** time left: 0 wk 1 d 3 h 27 m 43 s
+***[1446913800] working on: 2399715705482 tried: 1821385927 rate: 2023762 / sec
+*** time left: 0 wk 1 d 3 h 27 m 29 s
+***[1446914700] working on: 2401538738240 tried: 1823032758 rate: 2025591 / sec
+*** time left: 0 wk 1 d 3 h 27 m 12 s
+***[1446915600] working on: 2403363941058 tried: 1825202818 rate: 2028003 / sec
+*** time left: 0 wk 1 d 2 h 26 m 56 s
+***[1446916500] working on: 2405189089405 tried: 1825148347 rate: 2027942 / sec
+*** time left: 0 wk 1 d 2 h 26 m 41 s
+***[1446917400] working on: 2406993860636 tried: 1804771231 rate: 2005301 / sec
+*** time left: 0 wk 1 d 2 h 26 m 44 s
+***[1446918300] working on: 2408755992172 tried: 1762131536 rate: 1957923 / sec
+*** time left: 0 wk 1 d 3 h 27 m 7 s
+***[1446919200] working on: 2410531566459 tried: 1775574287 rate: 1972860 / sec
+*** time left: 0 wk 1 d 2 h 26 m 40 s
+***[1446920100] working on: 2412303745013 tried: 1772178554 rate: 1969087 / sec
+*** time left: 0 wk 1 d 2 h 26 m 28 s
+***[1446921000] working on: 2414061704737 tried: 1757959724 rate: 1953288 / sec
+*** time left: 0 wk 1 d 2 h 26 m 26 s
+***[1446921900] working on: 2415828609514 tried: 1766904777 rate: 1963227 / sec
+*** time left: 0 wk 1 d 2 h 26 m 3 s
+***[1446922800] working on: 2417634827105 tried: 1806217591 rate: 2006908 / sec
+*** time left: 0 wk 1 d 1 h 25 m 14 s
+***[1446923700] working on: 2419433714575 tried: 1798887470 rate: 1998763 / sec
+*** time left: 0 wk 1 d 1 h 25 m 5 s
+***[1446924600] working on: 2421253807120 tried: 1820092545 rate: 2022325 / sec
+*** time left: 0 wk 1 d 0 h 24 m 33 s
+***[1446925500] working on: 2423078030698 tried: 1824223578 rate: 2026915 / sec
+*** time left: 0 wk 1 d 0 h 24 m 14 s
+***[1446926400] working on: 2424900954626 tried: 1822923928 rate: 2025471 / sec
+*** time left: 0 wk 1 d 0 h 24 m 0 s
+***[1446927300] working on: 2426724867967 tried: 1823913341 rate: 2026570 / sec
+*** time left: 0 wk 0 d 23 h 23 m 45 s
+***[1446928200] working on: 2428547950981 tried: 1823083014 rate: 2025647 / sec
+*** time left: 0 wk 0 d 23 h 23 m 30 s
+***[1446929100] working on: 2430371503501 tried: 1823552520 rate: 2026169 / sec
+*** time left: 0 wk 0 d 23 h 23 m 15 s
+***[1446930000] working on: 2432191574491 tried: 1820070990 rate: 2022301 / sec
+*** time left: 0 wk 0 d 23 h 23 m 2 s
+***[1446930900] working on: 2434011725531 tried: 1820151040 rate: 2022390 / sec
+*** time left: 0 wk 0 d 22 h 22 m 47 s
+***[1446931800] working on: 2435835410978 tried: 1823685447 rate: 2026317 / sec
+*** time left: 0 wk 0 d 22 h 22 m 30 s
+***[1446932700] working on: 2437657178469 tried: 1821767491 rate: 2024186 / sec
+*** time left: 0 wk 0 d 22 h 22 m 16 s
+***[1446933600] working on: 2439480391158 tried: 1823212689 rate: 2025791 / sec
+*** time left: 0 wk 0 d 22 h 22 m 0 s
+***[1446934500] working on: 2441303303079 tried: 1822911921 rate: 2025457 / sec
+*** time left: 0 wk 0 d 21 h 21 m 45 s
+***[1446935400] working on: 2443126650691 tried: 1823347612 rate: 2025941 / sec
+*** time left: 0 wk 0 d 21 h 21 m 30 s
+***[1446936300] working on: 2444947966977 tried: 1821316286 rate: 2023684 / sec
+*** time left: 0 wk 0 d 21 h 21 m 16 s
+***[1446937200] working on: 2446767537629 tried: 1819570652 rate: 2021745 / sec
+*** time left: 0 wk 0 d 21 h 21 m 3 s
+***[1446938100] working on: 2448591247710 tried: 1823710081 rate: 2026344 / sec
+*** time left: 0 wk 0 d 20 h 20 m 45 s
+***[1446939000] working on: 2450406523267 tried: 1815275557 rate: 2016972 / sec
+*** time left: 0 wk 0 d 20 h 20 m 36 s
+***[1446939900] working on: 2452157312193 tried: 1750788926 rate: 1945321 / sec
+*** time left: 0 wk 0 d 21 h 21 m 6 s
+***[1446940800] working on: 2453943206334 tried: 1785894141 rate: 1984326 / sec
+*** time left: 0 wk 0 d 20 h 20 m 26 s
+***[1446941700] working on: 2455719414883 tried: 1776208549 rate: 1973565 / sec
+*** time left: 0 wk 0 d 20 h 20 m 18 s
+***[1446942600] working on: 2457485806223 tried: 1766391340 rate: 1962657 / sec
+*** time left: 0 wk 0 d 20 h 20 m 10 s
+***[1446943500] working on: 2459254892117 tried: 1769085894 rate: 1965650 / sec
+*** time left: 0 wk 0 d 19 h 19 m 53 s
+***[1446944400] working on: 2461076853336 tried: 1821961219 rate: 2024401 / sec
+*** time left: 0 wk 0 d 19 h 19 m 3 s
+***[1446945300] working on: 2462899505816 tried: 1822652480 rate: 2025169 / sec
+*** time left: 0 wk 0 d 18 h 18 m 48 s
+***[1446946200] working on: 2464722748341 tried: 1823242525 rate: 2025825 / sec
+*** time left: 0 wk 0 d 18 h 18 m 32 s
+***[1446947100] working on: 2466546224518 tried: 1823476177 rate: 2026084 / sec
+*** time left: 0 wk 0 d 18 h 18 m 17 s
+***[1446948000] working on: 2468371769906 tried: 1825545388 rate: 2028383 / sec
+*** time left: 0 wk 0 d 18 h 18 m 1 s
+***[1446948900] working on: 2470195916330 tried: 1824146424 rate: 2026829 / sec
+*** time left: 0 wk 0 d 17 h 17 m 47 s
+***[1446949800] working on: 2472020317397 tried: 1824401067 rate: 2027112 / sec
+*** time left: 0 wk 0 d 17 h 17 m 32 s
+***[1446950700] working on: 2473841342052 tried: 1821024655 rate: 2023360 / sec
+*** time left: 0 wk 0 d 17 h 17 m 19 s
+***[1446951600] working on: 2475665576571 tried: 1824234519 rate: 2026927 / sec
+*** time left: 0 wk 0 d 17 h 17 m 2 s
+***[1446952500] working on: 2477489220517 tried: 1823643946 rate: 2026271 / sec
+*** time left: 0 wk 0 d 16 h 16 m 47 s
+***[1446953400] working on: 2479315080305 tried: 1825859788 rate: 2028733 / sec
+*** time left: 0 wk 0 d 16 h 16 m 31 s
+***[1446954300] working on: 2481139009515 tried: 1823929210 rate: 2026588 / sec
+*** time left: 0 wk 0 d 16 h 16 m 17 s
+***[1446955200] working on: 2482963329545 tried: 1824320030 rate: 2027022 / sec
+*** time left: 0 wk 0 d 16 h 16 m 2 s
+***[1446956100] working on: 2484786684107 tried: 1823354562 rate: 2025949 / sec
+*** time left: 0 wk 0 d 15 h 15 m 47 s
+***[1446957000] working on: 2486606505841 tried: 1819821734 rate: 2022024 / sec
+*** time left: 0 wk 0 d 15 h 15 m 34 s
+***[1446957900] working on: 2488332157929 tried: 1725652088 rate: 1917391 / sec
+*** time left: 0 wk 0 d 16 h 16 m 10 s
+***[1446958800] working on: 2490025159057 tried: 1693001128 rate: 1881112 / sec
+*** time left: 0 wk 0 d 16 h 16 m 14 s
+***[1446959700] working on: 2491754883626 tried: 1729724569 rate: 1921916 / sec
+*** time left: 0 wk 0 d 15 h 15 m 38 s
+***[1446960600] working on: 2493417588364 tried: 1662704738 rate: 1847449 / sec
+*** time left: 0 wk 0 d 16 h 16 m 1 s
+***[1446961500] working on: 2495108527159 tried: 1690938795 rate: 1878820 / sec
+*** time left: 0 wk 0 d 15 h 15 m 30 s
+***[1446962400] working on: 2496841766277 tried: 1733239118 rate: 1925821 / sec
+*** time left: 0 wk 0 d 14 h 14 m 52 s
+***[1446963300] working on: 2498586232304 tried: 1744466027 rate: 1938295 / sec
+*** time left: 0 wk 0 d 14 h 14 m 32 s
+***[1446964200] working on: 2500287038788 tried: 1700806484 rate: 1889784 / sec
+*** time left: 0 wk 0 d 14 h 14 m 39 s
+***[1446965100] working on: 2501731209675 tried: 1444170887 rate: 1604634 / sec
+*** time left: 0 wk 0 d 17 h 17 m 0 s
+***[1446966000] working on: 2502923511593 tried: 1192301918 rate: 1324779 / sec
+*** time left: 0 wk 0 d 20 h 20 m 21 s
+***[1446966900] working on: 2504482810635 tried: 1559299042 rate: 1732554 / sec
+*** time left: 0 wk 0 d 15 h 15 m 18 s
+***[1446967800] working on: 2506271128639 tried: 1788318004 rate: 1987020 / sec
+*** time left: 0 wk 0 d 13 h 13 m 6 s
+***[1446968700] working on: 2508074715771 tried: 1803587132 rate: 2003985 / sec
+*** time left: 0 wk 0 d 12 h 12 m 44 s
+***[1446969600] working on: 2509886743502 tried: 1812027731 rate: 2013364 / sec
+*** time left: 0 wk 0 d 12 h 12 m 25 s
+***[1446970500] working on: 2511704736407 tried: 1817992905 rate: 2019992 / sec
+*** time left: 0 wk 0 d 12 h 12 m 8 s
+***[1446971400] working on: 2513521721144 tried: 1816984737 rate: 2018871 / sec
+*** time left: 0 wk 0 d 11 h 11 m 53 s
+***[1446972300] working on: 2515342194703 tried: 1820473559 rate: 2022748 / sec
+*** time left: 0 wk 0 d 11 h 11 m 37 s
+***[1446973200] working on: 2517162990501 tried: 1820795798 rate: 2023106 / sec
+*** time left: 0 wk 0 d 11 h 11 m 22 s
+***[1446974100] working on: 2518981379208 tried: 1818388707 rate: 2020431 / sec
+*** time left: 0 wk 0 d 11 h 11 m 8 s
+***[1446975000] working on: 2520760060524 tried: 1778681316 rate: 1976312 / sec
+*** time left: 0 wk 0 d 11 h 11 m 8 s
+***[1446975900] working on: 2522492983169 tried: 1732922645 rate: 1925469 / sec
+*** time left: 0 wk 0 d 11 h 11 m 10 s
+***[1446976800] working on: 2523668240274 tried: 1175257105 rate: 1305841 / sec
+*** time left: 0 wk 0 d 16 h 16 m 14 s
+***[1446977700] working on: 2524946554829 tried: 1278314555 rate: 1420349 / sec
+*** time left: 0 wk 0 d 14 h 14 m 40 s
+***[1446978600] working on: 2526210534535 tried: 1263979706 rate: 1404421 / sec
+*** time left: 0 wk 0 d 14 h 14 m 35 s
+***[1446979500] working on: 2527496998018 tried: 1286463483 rate: 1429403 / sec
+*** time left: 0 wk 0 d 14 h 14 m 5 s
+***[1446980400] working on: 2528789593089 tried: 1292595071 rate: 1436216 / sec
+*** time left: 0 wk 0 d 13 h 13 m 46 s
+***[1446981300] working on: 2530202418925 tried: 1412825836 rate: 1569806 / sec
+*** time left: 0 wk 0 d 12 h 12 m 21 s
+***[1446982200] working on: 2531596333298 tried: 1393914373 rate: 1548793 / sec
+*** time left: 0 wk 0 d 12 h 12 m 16 s
+***[1446983100] working on: 2533119325409 tried: 1522992111 rate: 1692213 / sec
+*** time left: 0 wk 0 d 10 h 10 m 58 s
+***[1446984000] working on: 2534900849375 tried: 1781523966 rate: 1979471 / sec
+*** time left: 0 wk 0 d 9 h 9 m 8 s
+***[1446984900] working on: 2536686274442 tried: 1785425067 rate: 1983805 / sec
+*** time left: 0 wk 0 d 8 h 8 m 51 s
+***[1446985800] working on: 2538450895841 tried: 1764621399 rate: 1960690 / sec
+*** time left: 0 wk 0 d 8 h 8 m 43 s
+***[1446986700] working on: 2540220685829 tried: 1769789988 rate: 1966433 / sec
+*** time left: 0 wk 0 d 8 h 8 m 26 s
+***[1446987600] working on: 2542033606361 tried: 1812920532 rate: 2014356 / sec
+*** time left: 0 wk 0 d 7 h 7 m 59 s
+***[1446988500] working on: 2543856235227 tried: 1822628866 rate: 2025143 / sec
+*** time left: 0 wk 0 d 7 h 7 m 42 s
+***[1446989400] working on: 2545681036756 tried: 1824801529 rate: 2027557 / sec
+*** time left: 0 wk 0 d 7 h 7 m 26 s
+***[1446990300] working on: 2547504018276 tried: 1822981520 rate: 2025535 / sec
+*** time left: 0 wk 0 d 7 h 7 m 11 s
+***[1446991200] working on: 2549329585431 tried: 1825567155 rate: 2028407 / sec
+*** time left: 0 wk 0 d 6 h 6 m 56 s
+***[1446992100] working on: 2551153471615 tried: 1823886184 rate: 2026540 / sec
+*** time left: 0 wk 0 d 6 h 6 m 41 s
+***[1446993000] working on: 2552977071099 tried: 1823599484 rate: 2026221 / sec
+*** time left: 0 wk 0 d 6 h 6 m 26 s
+***[1446993900] working on: 2554799226016 tried: 1822154917 rate: 2024616 / sec
+*** time left: 0 wk 0 d 6 h 6 m 12 s
+***[1446994800] working on: 2556623220881 tried: 1823994865 rate: 2026660 / sec
+*** time left: 0 wk 0 d 5 h 5 m 56 s
+***[1446995700] working on: 2558446985859 tried: 1823764978 rate: 2026405 / sec
+*** time left: 0 wk 0 d 5 h 5 m 41 s
+***[1446996600] working on: 2560271848709 tried: 1824862850 rate: 2027625 / sec
+*** time left: 0 wk 0 d 5 h 5 m 26 s
+***[1446997500] working on: 2562073821106 tried: 1801972397 rate: 2002191 / sec
+*** time left: 0 wk 0 d 5 h 5 m 15 s
+***[1446998400] working on: 2563817563321 tried: 1743742215 rate: 1937491 / sec
+*** time left: 0 wk 0 d 5 h 5 m 11 s
+***[1446999300] working on: 2565637074447 tried: 1819511126 rate: 2021679 / sec
+*** time left: 0 wk 0 d 4 h 4 m 43 s
+***[1447000200] working on: 2567459411689 tried: 1822337242 rate: 2024819 / sec
+*** time left: 0 wk 0 d 4 h 4 m 27 s
+***[1447001100] working on: 2569277761484 tried: 1818349795 rate: 2020388 / sec
+*** time left: 0 wk 0 d 4 h 4 m 13 s
+***[1447002000] working on: 2571095262496 tried: 1817501012 rate: 2019445 / sec
+*** time left: 0 wk 0 d 3 h 3 m 58 s
+***[1447002900] working on: 2572903801387 tried: 1808538891 rate: 2009487 / sec
+*** time left: 0 wk 0 d 3 h 3 m 44 s
+***[1447003800] working on: 2574713114191 tried: 1809312804 rate: 2010347 / sec
+*** time left: 0 wk 0 d 3 h 3 m 29 s
+***[1447004700] working on: 2576457125070 tried: 1744010879 rate: 1937789 / sec
+*** time left: 0 wk 0 d 3 h 3 m 22 s
+***[1447005600] working on: 2578233908989 tried: 1776783919 rate: 1974204 / sec
+*** time left: 0 wk 0 d 3 h 3 m 3 s
+***[1447006500] working on: 2580007189295 tried: 1773280306 rate: 1970311 / sec
+*** time left: 0 wk 0 d 2 h 2 m 49 s
+***[1447007400] working on: 2581749967837 tried: 1742778542 rate: 1936420 / sec
+*** time left: 0 wk 0 d 2 h 2 m 37 s
+***[1447008300] working on: 2583477462563 tried: 1727494726 rate: 1919438 / sec
+*** time left: 0 wk 0 d 2 h 2 m 23 s
+***[1447009200] working on: 2585300200200 tried: 1822737637 rate: 2025264 / sec
+*** time left: 0 wk 0 d 2 h 2 m 0 s
+***[1447010100] working on: 2587121875505 tried: 1821675305 rate: 2024083 / sec
+*** time left: 0 wk 0 d 1 h 1 m 46 s
+***[1447011000] working on: 2588911956277 tried: 1790080772 rate: 1988978 / sec
+*** time left: 0 wk 0 d 1 h 1 m 32 s
+***[1447011900] working on: 2590693266498 tried: 1781310221 rate: 1979233 / sec
+*** time left: 0 wk 0 d 1 h 1 m 18 s
+***[1447012800] working on: 2592514149951 tried: 1820883453 rate: 2023203 / sec
+*** time left: 0 wk 0 d 1 h 1 m 1 s
+***[1447013700] working on: 2594335583832 tried: 1821433881 rate: 2023815 / sec
+*** time left: 0 wk 0 d 0 h 0 m 46 s
+***[1447014600] working on: 2596157185366 tried: 1821601534 rate: 2024001 / sec
+*** time left: 0 wk 0 d 0 h 0 m 31 s
+***[1447015500] working on: 2598005766303 tried: 1848580937 rate: 2053978 / sec
+*** time left: 0 wk 0 d 0 h 0 m 16 s
+***[1447016400] working on: 2599865375546 tried: 1859609243 rate: 2066232 / sec
+*** time left: 0 wk 0 d 0 h 0 m 1 s
