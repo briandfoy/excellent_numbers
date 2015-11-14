@@ -1,33 +1,21 @@
 #!/usr/bin/perl
 use v5.20;
 use utf8;
-use open qw(:std :utf8);
 
-use bigint;
+use FindBin;
+use lib "$FindBin::Bin/../lib";
 
-my $number = $ARGV[0];
+use ExcellentNumber qw(is_excellent);
 
-my $length = length $number;
-my $k      = $length - 1;
+my $rc = is_excellent( $ARGV[0] );
 
-if( $length % 2 ) {
-	die "odd number of digits ($length) disallowed!";
+unless( $rc ) {
+	say "$ARGV[0] is not excellent";
+	exit;
 	}
 
+say "$ARGV[0] is excellent";
 
-my( $a, $b ) = map { substr $number, $_->[0], $_->[1] } (
-	[ 0, $length / 2 ],
-	[ $length / 2, $length / 2 ]
-	);
-
-my $a2 = $a ** 2;
-my $b2 = $b ** 2;
-
-my $diff = $b2 - $a2;
-
-say "b = $b => b² = $b2";
-say "a = $a => a² = $a2";
-say "\ndiff is $diff";
-
-my $insert = $number == $diff ? '' : 'not ';
-say "\n$number is ${insert}excellent";
+say "b = $rc->{b} => b² = $rc->{'b²'}";
+say "a = $rc->{a} => a² = $rc->{'a²'}";
+say "\ndiff is $rc->{diff}";
