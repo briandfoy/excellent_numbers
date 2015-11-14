@@ -1,0 +1,52 @@
+#!perl
+use v5.10;
+
+use lib qw(lib);
+use ExcellentNumber qw(is_excellent);
+
+my $file = $ARGV[0] // 'excellent.txt';
+die "File [$file] not found!\n" unless -e $file;
+
+open my $fh, '<:utf8', $file or die "Could not open [$file]: $!";
+
+my $previous_length = 0;
+
+while( my $num = <$fh> ) {
+	chomp $num;
+
+	warn "[$num] has trailing whitespace ($file line $.)\n"
+		if $num =~ s/\s+\z//;
+
+	warn "[$num] is not excellent ($file line $.)\n"
+		unless is_excellent( $num );
+
+	my $this_length = length( $num );
+	$string .= "\n\t[$this_length digits]\n"
+		if $this_length > $previous_length;
+	$string .= "$num\n";
+
+	$previous_length = $this_length;
+	}
+
+$string =~ s/^(\d)/\t\1/gm;
+
+open my $rfh, '<:utf8', 'README.pod' or die "Could not open [README.pod]: $!";
+my $readme = do { local $/; <$rfh> };
+close $rfh;
+
+my $success = $readme =~ s/
+^=head2 \s+ The \s+ Numbers
+\s+
+[\d\D]+?
+(?==head)
+/=head2 The Numbers
+
+I'm currently working on the $previous_length-digit numbers. So far:
+$string
+/xsm;
+
+warn "No substitution in README\n" unless $success;
+
+open my $wfh, '>:utf8', 'README.pod' or die "Could not open [README.pod]: $!";
+say { $wfh } $readme;
+close $wfh;
