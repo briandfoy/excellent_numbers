@@ -212,11 +212,9 @@ I'm currently working on the 28-digit numbers. So far:
 
 =item * L<484848 is excellent|http://blog.plover.com/math/484848.html>
 
+=item * L<The Online Encyclopedia of Integer Sequences, A162700|https://oeis.org/A162700>
+
+They only have 25 entries. I would add more but they don't like my
+name. If someone wants to add them, you can do that.
+
 =back
-
-
-
-
-
-
-
