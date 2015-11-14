@@ -10,6 +10,6 @@ excellent.txt: FORCE
 	@ echo " excellent numbers"
 
 README.pod: excellent.txt
-	${PERL} -Mlib=lib tools/put_nums_in_readme
+	@ ${PERL} -Mlib=lib tools/put_nums_in_readme
 
 FORCE:
