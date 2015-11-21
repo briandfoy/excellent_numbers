@@ -1,0 +1,38 @@
+#!perl
+use v5.22;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+use strict;
+use warnings;
+
+use Math::Prime::Util::GMP qw(factor);
+
+open my $fh, '<:utf8', $ARGV[0] or
+	die "Could not open $ARGV[0]:$!";
+
+while( <$fh> ) {
+	chomp;
+	next if /\D/;
+
+	my @factors = factor( $_ );
+	say "$_: @factors";
+
+	my @halves = string_halves( $_ );
+	foreach my $half ( @halves ) {
+		my @factors = factor( $half );
+		say "\t$half: @factors";
+		}
+	}
+
+
+sub string_halves ( $string ) {
+	my $length = length $string;
+
+	my( $first, $second ) = map {
+		my( $start, $len ) = @$_;
+		substr $string, $start, $len } (
+			[ 0, $length / 2 ],
+			[ $length / 2, $length / 2 ],
+		)
+	}
