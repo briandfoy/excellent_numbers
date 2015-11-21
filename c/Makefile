@@ -21,3 +21,4 @@ debug:
 valgrind:
 	${GRAND_CC} -g -o ${BASE}-valgrind ${C_FILES}
 	valgrind --leak-check=full --show-leak-kinds=all -v ${BASE}-valgrind 10
+
