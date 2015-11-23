@@ -1,6 +1,9 @@
 PERL=perl5.22.0
+FILES=excellent.txt README.pod bA162700.txt
 
 all: README.pod bA162700.txt
+	git commit -m 'Update excellent number list' ${FILES}
+	git push --all
 
 bA162700.txt: excellent.txt
 	@ echo "# A162700 (b-file created by https://github.com/briandfoy/excellent_numbers)" > $@
