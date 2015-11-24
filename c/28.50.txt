@@ -1,0 +1,6 @@
+*** start a is 50000000000000
+*** end a is 55000000000000
+***[1448388000] working on: 50002938032762 tried: 2938032762 rate: 5145416 / sec
+*** time left: 1 wk 4 d 5 h 29 m 46 s
+***[1448388900] working on: 50007962685672 tried: 5024652910 rate: 5582947 / sec
+*** time left: 1 wk 3 d 8 h 8 m 22 s
