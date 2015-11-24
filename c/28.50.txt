@@ -4,3 +4,5 @@
 *** time left: 1 wk 4 d 5 h 29 m 46 s
 ***[1448388900] working on: 50007962685672 tried: 5024652910 rate: 5582947 / sec
 *** time left: 1 wk 3 d 8 h 8 m 22 s
+***[1448389800] working on: 50010249079510 tried: 2286393838 rate: 2540437 / sec
+*** time left: 3 wk 1 d 17 h 5 m 35 s
