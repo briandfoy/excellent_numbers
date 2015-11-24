@@ -48,6 +48,10 @@ p.note {
 	font-style: italic;
 	color: #aaa;
 	}
+
+div.center {
+	text-align: center;
+	}
 </style>
 
     <a id="forkme_banner" href="https://github.com/briandfoy/excellent_numbers">View on GitHub</a>
@@ -76,11 +80,20 @@ p.note {
 
       <section id="main_content">
 
-<p class="note"><i>This is not the website about phone numbers. That's <a href="http://www.excellentnumbers.com">excellentnumbers.com</a> and has nothing to do with math.</i></p>
+<p class="note"><i>Not the phone number website <a href="http://www.excellentnumbers.com">excellentnumbers.com</a></i></p>
 
 <h2>The project</h2>
 
 <p>I started computing some interesting numbers by brute force in Perl. As the numbers got bigger Perl got slower and slower. I optimized the algorithm and that worked for awhile, but that only went so far. For much bigger numbers, I had to drop into C. Once in C, I had to go wide. I've got a good case study for improving the performance of a program.</p>
+
+<h2>The numbers</h2>
+
+<p>The full list is in the <a href="https://github.com/briandfoy/excellent_numbers/blob/0baa9ea7c8e03467aaae08df61ad11bb7c9a9190/excellent.txt">excellent.txt file in the repo</a>, but we also <a href="https://twitter.com/excellent_nums">tweet them</a> as they come in.</p>
+
+<div align="center">
+<a class="twitter-timeline" href="https://twitter.com/excellent_nums" data-widget-id="669094319110774784">Tweets by @excellent_nums</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
 
 <h2>The math</h2>
 
@@ -381,7 +394,7 @@ Now that we have an algorithm that excludes most of the numbers, we have to comp
 Each jump in digits, say from 24- to 26-digits, is a ten-fold increase in numbers to check. If I wanted to do this on my MacBook Air, here's the progression of times (slowly getting slower as the numbers get bigger):
 </p>
 
-<div id="timings">
+<div id="timings" class="center">
 <table>
 <tr><th>Digits</th><th>Processor time</th></tr>
 <tr><td>2</td><td>5 microseconds</td></tr>
