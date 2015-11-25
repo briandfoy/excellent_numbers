@@ -1,0 +1,99 @@
+#!perl
+use v5.22.0;
+
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+use Data::Dumper;
+use File::Path              qw(make_path);
+use File::Spec::Functions   qw(catfile updir);
+use Getopt::Long            qw(GetOptions);
+use POSIX                   qw(ceil);
+
+die "Invalid options or values\n" unless GetOptions( \my %opts,
+	'processes|j=i',
+	'start=i',
+	'end=i',
+	'length|l=i',
+	'output_dir|o=s',
+	'command|cmd=s',
+  	 );
+
+$opts{'processes'}    //=  1;
+$opts{'length'}       //= 10;
+$opts{'start'}        //=  1;
+$opts{'end'}          //= 62;
+$opts{'output_dir'}   //= 'output';
+$opts{'command'}      //= catfile( 'c', 'excellent-gmp' );
+
+if( $opts{'length'} % 2 ) {
+	die "length must be an even number (not  $opts{'length'})\n";
+	}
+
+unless( -d $opts{'output_dir'} ) {
+	make_path( $opts{'output_dir'} ) or
+		die "Output directory $opts{'output_dir'} does not exist!\n";
+	}
+
+unless( -e $opts{'command'} ) {
+	die "Command $opts{'command'} does not exist!\n";
+	}
+
+unless( -x $opts{'command'} ) {
+	die "Command $opts{'command'} is not executable!\n";
+	}
+
+foreach my $key ( qw( start end ) ) {
+	if( length $opts{$key} < $opts{'length'} / 2 ) {
+		$opts{$key} .= 0 x ( $opts{'length'} / 2 - length $opts{$key} );
+		}
+	}
+
+say Dumper( \%opts );
+
+my $interval = ceil(
+	( $opts{'end'} - $opts{'start'} ) / $opts{'processes'}
+	);
+
+say "interval is $interval\n";
+
+my @output_files = ();
+for( my $a = $opts{'start'}; $a <= $opts{'end'}; $a += $interval ) {
+	state $i = 0;
+	$i++;
+	my $end = $a + $interval - 1;
+
+	my @args = ( $opts{'length'}, $a, $end );
+	my $output_file = make_filename( $opts{length}, $a, $end );
+	push @output_files, $output_file;
+
+	if( my $child_pid = fork ) { # parent
+		say "Parent process $$ forked child $child_pid, saving in $output_file";
+		}
+	else { # child
+		say "Child process $$ with args: @args";
+		my $output_file = catfile(
+			$opts{'output_dir'}, $output_file,
+			);
+
+		open STDOUT, '>:utf8', $output_file
+			or die "Could not open $output_file: $!";
+
+		exec '/bin/echo', $$, @args;
+		}
+	}
+
+
+while (1) {
+	my $child = waitpid(-1, 0);
+	last if $child == -1;       # No more outstanding children
+
+#	system '/usr/bin/grep', '-H', '-n', '^[123456]', @output_files;
+	say "Parent: Child $child was reaped - ", scalar localtime, ".";
+	}
+
+sub make_filename ( $length, $start, $end, $pid=$$, $time=time ) {
+	return join( '.', $length, $start, $end, $pid, 'txt' )
+	}
+
+say "All done."
