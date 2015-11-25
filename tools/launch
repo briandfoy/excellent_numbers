@@ -8,7 +8,7 @@ use Data::Dumper;
 use File::Path              qw(make_path);
 use File::Spec::Functions   qw(catfile updir);
 use Getopt::Long            qw(GetOptions);
-use POSIX                   qw(ceil);
+use POSIX                   qw(ceil :sys_wait_h);
 
 die "Invalid options or values\n" unless GetOptions( \my %opts,
 	'processes|j=i',
@@ -17,6 +17,7 @@ die "Invalid options or values\n" unless GetOptions( \my %opts,
 	'length|l=i',
 	'output_dir|o=s',
 	'command|cmd=s',
+	'sleep|s=i',
   	 );
 
 $opts{'processes'}    //=  1;
@@ -25,6 +26,7 @@ $opts{'start'}        //=  1;
 $opts{'end'}          //= 62;
 $opts{'output_dir'}   //= 'output';
 $opts{'command'}      //= catfile( 'c', 'excellent-gmp' );
+$opts{'sleep'}        //= 300;
 
 if( $opts{'length'} % 2 ) {
 	die "length must be an even number (not  $opts{'length'})\n";
@@ -49,19 +51,18 @@ foreach my $key ( qw( start end ) ) {
 		}
 	}
 
-say Dumper( \%opts );
-
 my $interval = ceil(
 	( $opts{'end'} - $opts{'start'} ) / $opts{'processes'}
 	);
 
-say "interval is $interval\n";
-
 my @output_files = ();
+my %children;
 for( my $a = $opts{'start'}; $a <= $opts{'end'}; $a += $interval ) {
 	state $i = 0;
 	$i++;
 	my $end = $a + $interval - 1;
+
+	$end = $opts{'end'} if $end > $opts{'end'};
 
 	my @args = ( $opts{'length'}, $a, $end );
 	my $output_file = make_filename( $opts{length}, $a, $end );
@@ -69,6 +70,12 @@ for( my $a = $opts{'start'}; $a <= $opts{'end'}; $a += $interval ) {
 
 	if( my $child_pid = fork ) { # parent
 		say "Parent process $$ forked child $child_pid, saving in $output_file";
+		$children{$child_pid} = {
+			file  => $output_file,
+			start => $a,
+			end   => $end,
+			done  => 0,
+			};
 		}
 	else { # child
 		say "Child process $$ with args: @args";
@@ -79,17 +86,31 @@ for( my $a = $opts{'start'}; $a <= $opts{'end'}; $a += $interval ) {
 		open STDOUT, '>:utf8', $output_file
 			or die "Could not open $output_file: $!";
 
-		exec '/bin/echo', $$, @args;
+		say "$opts{command} $args[0]";
+		exec $opts{command}, @args;
+		die "Could not exec! $!";
 		}
 	}
 
-
 while (1) {
-	my $child = waitpid(-1, 0);
-	last if $child == -1;       # No more outstanding children
+	foreach my $pid ( keys %children ) {
+		next if $children{$pid}{done};
+		my $rc = waitpid( $pid, WNOHANG );
+		$children{$pid}{done} = 1 if $rc == -1;
+		if( $rc == $pid ) {
+			say "Child $pid is done";
+			$children{$pid}{done} = 1
+			}
+		if( $rc == 0 ) {
+			say "Child $pid is still running";
+			}
+		}
 
-#	system '/usr/bin/grep', '-H', '-n', '^[123456]', @output_files;
-	say "Parent: Child $child was reaped - ", scalar localtime, ".";
+	last if grep { $children{$_}{done} == 0 } keys %children;
+
+	say "Still working. Sleeping for $opts{'sleep'} seconds";
+
+	sleep $opts{'sleep'};
 	}
 
 sub make_filename ( $length, $start, $end, $pid=$$, $time=time ) {
