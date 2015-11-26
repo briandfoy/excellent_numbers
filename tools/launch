@@ -10,6 +10,99 @@ use File::Spec::Functions   qw(catfile updir);
 use Getopt::Long            qw(GetOptions);
 use POSIX                   qw(ceil :sys_wait_h);
 
+=head1 NAME
+
+launch - start a bunch of processes to look for excellent numbers
+
+=head1 SYNOPSIS
+
+	% launch
+
+	# 20 digit numbers
+	% launch --length 20
+
+	# 20 digit numbers in 10 processes
+	% launch --length 20 --processes 10
+
+	# 20 digit numbers in 10 processes, from numbers starting with
+	# 32 to numbers starting in 47
+	% launch --length 20 --processes 10 --start 32 --end 47
+
+=head1 DESCRIPTION
+
+=head2 Options
+
+=over
+
+=item * --processes, -j
+
+The number of processes to use.
+
+Default: 2
+
+=item * --length, -l
+
+The number of digits in the numbers to check. This must be an even number.
+
+Default: 10
+
+=item * --start
+
+The start value for I<a>. It will be 0-padded to half the digits of the
+length we're testing.
+
+Default: 1
+
+=item * --end
+
+The start value for I<a>. It will be 0-padded to half the digits of the
+length we're testing.
+
+Default: 62
+
+=item * --output_dir, -o
+
+The directory for output files.
+
+Default: F<output/>
+
+=item * --command, --cmd
+
+The command to run. It's arguments are the length, the start, and the end.
+
+Default: B<c/excellent-gmp>
+
+=item * --sleep
+
+The time in seconds to delay before checking on processes again.
+
+Default: 300
+
+=back
+
+=head1 TO DO
+
+=head1 SEE ALSO
+
+=head1 SOURCE AVAILABILITY
+
+This source is part of a GitHub project:
+
+	https://github.com/briandfoy/excellent_numbers
+
+=head1 AUTHOR
+
+brian d foy, C<< <brian.d.foy@gmail.com> >>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright © 2015, brian d foy <brian.d.foy@gmail.com>. All rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
+
 die "Invalid options or values\n" unless GetOptions( \my %opts,
 	'processes|j=i',
 	'start=i',
@@ -20,7 +113,7 @@ die "Invalid options or values\n" unless GetOptions( \my %opts,
 	'sleep|s=i',
   	 );
 
-$opts{'processes'}    //=  1;
+$opts{'processes'}    //=  2;
 $opts{'length'}       //= 10;
 $opts{'start'}        //=  1;
 $opts{'end'}          //= 62;
@@ -52,7 +145,7 @@ foreach my $key ( qw( start end ) ) {
 	}
 
 my $interval = ceil(
-	( $opts{'end'} - $opts{'start'} ) / $opts{'processes'}
+	( $opts{'end'} - $opts{'start'} + 1 ) / $opts{'processes'}
 	);
 
 my @output_files = ();
@@ -65,11 +158,12 @@ for( my $a = $opts{'start'}; $a <= $opts{'end'}; $a += $interval ) {
 	$end = $opts{'end'} if $end > $opts{'end'};
 
 	my @args = ( $opts{'length'}, $a, $end );
-	my $output_file = make_filename( $opts{length}, $a, $end );
+	my $output_file = make_filename( $opts{output_dir}, $opts{length}, $a, $end );
 	push @output_files, $output_file;
 
+
 	if( my $child_pid = fork ) { # parent
-		say "Parent process $$ forked child $child_pid, saving in $output_file";
+		say "*** Parent process $$ forked child $child_pid, saving in $output_file";
 		$children{$child_pid} = {
 			file  => $output_file,
 			start => $a,
@@ -78,43 +172,24 @@ for( my $a = $opts{'start'}; $a <= $opts{'end'}; $a += $interval ) {
 			};
 		}
 	else { # child
-		say "Child process $$ with args: @args";
-		my $output_file = catfile(
-			$opts{'output_dir'}, $output_file,
-			);
-
 		open STDOUT, '>:utf8', $output_file
 			or die "Could not open $output_file: $!";
 
-		say "$opts{command} $args[0]";
 		exec $opts{command}, @args;
 		die "Could not exec! $!";
 		}
 	}
 
-while (1) {
-	foreach my $pid ( keys %children ) {
-		next if $children{$pid}{done};
-		my $rc = waitpid( $pid, WNOHANG );
-		$children{$pid}{done} = 1 if $rc == -1;
-		if( $rc == $pid ) {
-			say "Child $pid is done";
-			$children{$pid}{done} = 1
-			}
-		if( $rc == 0 ) {
-			say "Child $pid is still running";
-			}
-		}
-
-	last if grep { $children{$_}{done} == 0 } keys %children;
-
-	say "Still working. Sleeping for $opts{'sleep'} seconds";
-
+while(1) {
+	my $rc = waitpid( -1, WNOHANG );
+	last if $rc == -1;
+	say "*** Process $rc ended ($children{$rc}{start} - $children{$rc}{end})" if $rc;
 	sleep $opts{'sleep'};
 	}
 
-sub make_filename ( $length, $start, $end, $pid=$$, $time=time ) {
-	return join( '.', $length, $start, $end, $pid, 'txt' )
+sub make_filename ( $output_dir, $length, $start, $end, $pid=$$, $time=time ) {
+	return catfile(
+		$output_dir,
+		join( '.', $length, $start, $end, $pid, 'txt' )
+		);
 	}
-
-say "All done."
