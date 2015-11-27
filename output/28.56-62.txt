@@ -485,3 +485,11 @@
 5742239882566695076662591093 is excellent
 ***[1448640900] working on: 57425939087906 tried: 5895539996 rate: 6550599 / sec
 *** time left: 1 wk 1 d 1 h 13 m 57 s
+***[1448641800] working on: 57431834167886 tried: 5895079980 rate: 6550088 / sec
+*** time left: 1 wk 1 d 1 h 13 m 43 s
+***[1448642700] working on: 57437730109078 tried: 5895941192 rate: 6551045 / sec
+*** time left: 1 wk 1 d 1 h 13 m 26 s
+***[1448643600] working on: 57443625711720 tried: 5895602642 rate: 6550669 / sec
+*** time left: 1 wk 1 d 1 h 13 m 12 s
+***[1448644500] working on: 57449521766518 tried: 5896054798 rate: 6551171 / sec
+*** time left: 1 wk 1 d 0 h 12 m 56 s
