@@ -444,3 +444,12 @@
 *** time left: 1 wk 1 d 6 h 18 m 25 s
 ***[1448622900] working on: 51307926257104 tried: 5920375898 rate: 6578195 / sec
 *** time left: 1 wk 1 d 6 h 18 m 7 s
+5131073116985088112792772501 is excellent
+***[1448623800] working on: 51313846068132 tried: 5919811028 rate: 6577567 / sec
+*** time left: 1 wk 1 d 5 h 17 m 54 s
+***[1448624700] working on: 51319766054574 tried: 5919986442 rate: 6577762 / sec
+*** time left: 1 wk 1 d 5 h 17 m 38 s
+***[1448625600] working on: 51325686333920 tried: 5920279346 rate: 6578088 / sec
+*** time left: 1 wk 1 d 5 h 17 m 23 s
+***[1448626500] working on: 51331596833338 tried: 5910499418 rate: 6567221 / sec
+*** time left: 1 wk 1 d 5 h 17 m 27 s
