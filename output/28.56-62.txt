@@ -476,3 +476,12 @@
 *** time left: 1 wk 1 d 3 h 15 m 12 s
 ***[1448637300] working on: 57402355953306 tried: 5895280028 rate: 6550311 / sec
 *** time left: 1 wk 1 d 2 h 14 m 58 s
+***[1448638200] working on: 57408251576266 tried: 5895622960 rate: 6550692 / sec
+*** time left: 1 wk 1 d 2 h 14 m 42 s
+***[1448639100] working on: 57414147639614 tried: 5896063348 rate: 6551181 / sec
+*** time left: 1 wk 1 d 2 h 14 m 26 s
+***[1448640000] working on: 57420043547910 tried: 5895908296 rate: 6551009 / sec
+*** time left: 1 wk 1 d 2 h 14 m 12 s
+5742239882566695076662591093 is excellent
+***[1448640900] working on: 57425939087906 tried: 5895539996 rate: 6550599 / sec
+*** time left: 1 wk 1 d 1 h 13 m 57 s
