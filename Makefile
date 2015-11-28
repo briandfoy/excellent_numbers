@@ -1,5 +1,5 @@
 PERL=perl5.22.0
-FILES=excellent.txt README.pod bA162700.txt
+FILES=excellent.txt README.pod bA162700.txt primes.txt
 
 all: README.pod bA162700.txt
 	git commit -m 'Update excellent number list' ${FILES}
@@ -20,3 +20,6 @@ README.pod: excellent.txt
 	@ ${PERL} -Mlib=lib tools/put_nums_in_readme
 
 FORCE:
+primes.txt: excellent.txt tools/primes
+	@ ${PERL} -Mlib=lib tools/primes
+
