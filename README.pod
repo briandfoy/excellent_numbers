@@ -13,7 +13,6 @@ is 8² - 4².
 
 I'm currently working on the 28-digit numbers. So far:
 
-
 	[2 digits]
 	48
 
@@ -226,6 +225,7 @@ They only have 25 entries. I would add more but they don't like my
 name. If someone wants to add them, you can do that.
 
 =back
+
 
 
 
