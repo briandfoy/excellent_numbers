@@ -53,3 +53,7 @@ FILE: while( my $output_file = readdir $dh ) {
 	}
 
 say {interactive} join "\n\t", "Should add:", @add_to_excellent;
+
+open my $fh, '>>:utf8', $file;
+print {$fh} join "\n", @add_to_excellent;
+close $fh;
