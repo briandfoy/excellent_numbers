@@ -7,7 +7,6 @@ use lib "$FindBin::Bin/../lib";
 
 use ExcellentNumber qw(is_excellent);
 use IO::Interactive qw(interactive);
-
 use Net::Twitter;
 
 my $file = "$FindBin::Bin/../excellent.txt";
@@ -55,4 +54,6 @@ foreach my $number ( keys %numbers ) {
 		next;
 		}
 	warn "[$number] has not been tweeted\n";
+	say { interactive } "Tweeting $number";
+	$nt->update( "$number is excellent" )
 	}
