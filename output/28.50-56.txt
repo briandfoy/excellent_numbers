@@ -669,3 +669,11 @@
 *** time left: 1 wk 0 d 2 h 50 m 28 s
 ***[1448723700] working on: 51969196287418 tried: 5920263250 rate: 6578070 / sec
 *** time left: 1 wk 0 d 2 h 50 m 12 s
+***[1448724600] working on: 51975115629722 tried: 5919342304 rate: 6577047 / sec
+*** time left: 1 wk 0 d 1 h 49 m 59 s
+***[1448725500] working on: 51981034529426 tried: 5918899704 rate: 6576555 / sec
+*** time left: 1 wk 0 d 1 h 49 m 45 s
+***[1448726400] working on: 51986954336876 tried: 5919807450 rate: 6577563 / sec
+*** time left: 1 wk 0 d 1 h 49 m 28 s
+***[1448727300] working on: 51992874386132 tried: 5920049256 rate: 6577832 / sec
+*** time left: 1 wk 0 d 1 h 49 m 13 s
