@@ -22,7 +22,7 @@ say { interactive } "There are " . @numbers . " listed excellent numbers";
 
 my $nt = Net::Twitter->new(
 	traits   => [qw/OAuth API::RESTv1_1/],
-	map { $_ => $ENV{"twitter_$_"} || die "ENV twitter_$_ not set" }
+	map { $_ => $ENV{"excellent_twitter_$_"} || die "ENV excellent_twitter_$_ not set" }
 		qw(
 			consumer_secret
 			consumer_key
