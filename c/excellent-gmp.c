@@ -85,6 +85,7 @@ int main( int argc, char *argv[] ) {
 			time_passed = this_time - last_time;
 			mpz_sub( numbers_done, i, last_i );
 			mpz_tdiv_q_ui( rate, numbers_done, time_passed );
+			gmp_printf( "+++ Checked [%Zd] to [%Zd]\n", start_a, i );
 			gmp_printf( "***[%u] working on: %Zd tried: %Zd rate: %Zd / sec\n", this_time, i, numbers_done, rate );
 			time_left( rate, i, end_a );
 			fflush( stdout );
