@@ -766,3 +766,11 @@
 5824675383423496007081591148 is excellent
 ***[1448766900] working on: 58252040294320 tried: 5920948042 rate: 6578831 / sec
 *** time left: 0 wk 6 d 14 h 38 m 14 s
+***[1448767800] working on: 58257960802960 tried: 5920508640 rate: 6578342 / sec
+*** time left: 0 wk 6 d 14 h 38 m 0 s
+***[1448768700] working on: 58263882485230 tried: 5921682270 rate: 6579646 / sec
+*** time left: 0 wk 6 d 13 h 37 m 43 s
+***[1448769600] working on: 58269804718124 tried: 5922232894 rate: 6580258 / sec
+*** time left: 0 wk 6 d 13 h 37 m 27 s
+***[1448770500] working on: 58275726668472 tried: 5921950348 rate: 6579944 / sec
+*** time left: 0 wk 6 d 13 h 37 m 13 s
