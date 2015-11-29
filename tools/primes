@@ -1,10 +1,8 @@
 #!perl
-use v5.22;
-use feature qw(signatures);
-no warnings qw(experimental::signatures);
+use v5.22.0;
 
-use strict;
-use warnings;
+no warnings qw(experimental::signatures);
+use feature qw(signatures say);
 
 use Math::Prime::Util::GMP qw(factor);
 
