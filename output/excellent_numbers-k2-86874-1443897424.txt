@@ -1,6 +1,0 @@
-*** Starting run at Sat Oct  3 14:37:04 2015
-*** PID is 86874
-*** k is 2
-*** largest is 619
-100 .. 619
-140400

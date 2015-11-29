@@ -7,7 +7,6 @@ use lib "$FindBin::Bin/../lib";
 
 use ExcellentNumber qw(is_excellent);
 use IO::Interactive qw(interactive);
-
 use Net::Twitter;
 
 my $file = "$FindBin::Bin/../excellent.txt";
@@ -22,7 +21,7 @@ say { interactive } "There are " . @numbers . " listed excellent numbers";
 
 my $nt = Net::Twitter->new(
 	traits   => [qw/OAuth API::RESTv1_1/],
-	map { $_ => $ENV{"twitter_$_"} || die "ENV twitter_$_ not set" }
+	map { $_ => $ENV{"excellent_twitter_$_"} || die "ENV excellent_twitter_$_ not set" }
 		qw(
 			consumer_secret
 			consumer_key
@@ -55,4 +54,6 @@ foreach my $number ( keys %numbers ) {
 		next;
 		}
 	warn "[$number] has not been tweeted\n";
+	say { interactive } "Tweeting $number";
+	$nt->update( "$number is excellent" )
 	}

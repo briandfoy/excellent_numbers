@@ -1,7 +1,0 @@
-*** Starting run at Tue Oct  6 17:42:52 2015
-*** PID is 2796
-*** k is 10
-*** 33333333335 .. 39999999999
-*** Working on 33333817176
-
-Ended at 33334502014
