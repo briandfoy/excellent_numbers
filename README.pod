@@ -228,28 +228,3 @@ They only have 25 entries. I would add more but they don't like my
 name. If someone wants to add them, you can do that.
 
 =back
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
