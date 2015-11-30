@@ -115,6 +115,9 @@ int main( int argc, char *argv[] ) {
 			}
 		}
 
+	gmp_printf( "+++ Checked [%Zd] to [%Zd]\n", start_a, i );
+	fflush( stdout );
+
 	mpz_clears( mod2, mod10, front, back, root, root_plus_one, NULL );
 	mpz_clears( i, start_a, end_a, ten_k, one, two, ten, zero, NULL );
 
