@@ -8,10 +8,12 @@ no warnings map { "experimental::$_" } qw(signatures postderef);
 use FindBin;
 use lib "$FindBin::Bin/../lib";
 
+use Data::Dumper;
 use ExcellentNumber qw(is_excellent);
 use File::Basename qw(basename);
 use File::Spec::Functions qw(catfile no_upwards);
 use IO::Interactive qw(interactive);
+use Set::IntSpan;
 
 my $output_dir = $ARGV[0] // 'output';
 opendir my $dh, $output_dir or die "Could not open [$output_dir]: $!\n";
@@ -22,10 +24,9 @@ FILE: while( my $output_file = readdir $dh ) {
 	my $this = $hash->{$output_file} = {};
 	my $path = catfile( $output_dir, $output_file );
 	next FILE unless -T $path;
-	say {interactive} "Checking on $output_file";
+#	say {interactive} "Checking on $output_file";
 
 	open my $fh, '<:utf8', $path or do { warn "Could not open file [$path]: $!"; next FILE };
-
 
 	LINE: while( <$fh> ) {
 		if( /\A \Q***\E \s* (?<start>[0-9]+) \s* \Q..\E \s* (?<end>[0-9]+) /x ) {
@@ -47,4 +48,22 @@ FILE: while( my $output_file = readdir $dh ) {
 		}
 	}
 
-say Dumper( $hash ); use Data::Dumper;
+#say Dumper( $hash );
+
+my $ranges;
+foreach my $file ( keys %$hash ) {
+	my $this = $hash->{$file};
+
+	my $length = 2 * length $this->{start};
+	my $set_spec = join '-', $this->@{ qw(start progress) };
+#	say "$length: $set_spec";
+	push $ranges->{$length}->@*, $set_spec;
+	}
+#say Dumper( $ranges );
+
+foreach my $length ( sort { $a <=> $b } keys %$ranges ) {
+	my $set = Set::IntSpan->new( $ranges->{$length}->@* );
+
+	my $holes = $set->holes;
+	say "$length: $holes";
+	}
