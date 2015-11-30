@@ -1,8 +1,9 @@
 #!perl
 use v5.22.0;
 use utf8;
-use strict;
-use warnings;
+
+use feature qw(signatures postderef);
+no warnings map { "experimental::$_" } qw(signatures postderef);
 
 use FindBin;
 use lib "$FindBin::Bin/../lib";
@@ -15,9 +16,10 @@ use IO::Interactive qw(interactive);
 my $output_dir = $ARGV[0] // 'output';
 opendir my $dh, $output_dir or die "Could not open [$output_dir]: $!\n";
 
-my %hash;
+my $hash;
 FILE: while( my $output_file = readdir $dh ) {
 	next FILE if $output_file =~ /\A\./;
+	my $this = $hash->{$output_file} = {};
 	my $path = catfile( $output_dir, $output_file );
 	next FILE unless -T $path;
 	say {interactive} "Checking on $output_file";
@@ -27,20 +29,22 @@ FILE: while( my $output_file = readdir $dh ) {
 
 	LINE: while( <$fh> ) {
 		if( /\A \Q***\E \s* (?<start>[0-9]+) \s* \Q..\E \s* (?<end>[0-9]+) /x ) {
-			$hash->{$output_file}->%[ qw(start end) ] = @+{qw(start end)};
-			say {interactive} "Found start [$start] and end [$end]";
+			$this->@{ qw(start end) } = @+{qw(start end)};
+		#	say {interactive} "Found start [$+{start}] and end [$+{end}]";
 			}
 		elsif( /\A \Q***\E \s* start \s+ a \s+ is \s+ (?<start>[0-9]+) /x ) {
-			$hash->{$output_file}->%{ start ) = $+{start};
-			say {interactive} "Found start [$start]";
+			$this->{ 'start' } = $+{start};
+		#	say {interactive} "Found start [$+{start}]";
 			}
 		elsif( /\A \Q***\E \s* end \s+ a \s+ is \s+ (?<end>[0-9]+) /x ) {
-			( $end ) = $+{end};
-			say {interactive} "Found end [$end]";
+			$this->{'end'} = $+{end};
+		#	say {interactive} "Found end [$+{end}]";
 			}
-		elsif( /\A \Q***\E (?:\[.*?])? \s* Working \s+ on:? \s+ (?<progress>[0-9]+) \s+/x ) {
-			$progress = $+{progress};
-			say {interactive} "Found progress [$progress]";
+		elsif( /\A \Q***\E (?:\[.*?])? \s* Working \s+ on:? \s+ (?<progress>[0-9]+) \s+/xi ) {
+			$this->{'progress'} = $+{progress};
+		#	say {interactive} "Found progress [$+{progress}]";
 			}
 		}
 	}
+
+say Dumper( $hash ); use Data::Dumper;
