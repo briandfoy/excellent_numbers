@@ -12,8 +12,7 @@ bA162700.txt: excellent.txt
 	@ ${PERL} -ne 'print qq($$. $$_)' excellent.txt >> $@
 
 excellent.txt: FORCE
-	${PERL} tools/scan_output
-	${PERL} tools/scan_output c
+	${PERL} tools/scan_output output c
 	@ sort -n -u $@ > $@.sorted
 	@ mv $@.sorted $@
 	@ echo "There are \c"
