@@ -514,3 +514,15 @@
 +++ Checked [53023094517568] to [53127733828076]
 ***[1449359100] working on: 53127733828076 tried: 3553009906 rate: 3947788 / sec
 *** time left: 0 wk 1 d 2 h 26 m 11 s
++++ Checked [53023094517568] to [53131285387120]
+***[1449360000] working on: 53131285387120 tried: 3551559044 rate: 3946176 / sec
+*** time left: 0 wk 1 d 1 h 25 m 57 s
++++ Checked [53023094517568] to [53134836089428]
+***[1449360900] working on: 53134836089428 tried: 3550702308 rate: 3945224 / sec
+*** time left: 0 wk 1 d 1 h 25 m 42 s
++++ Checked [53023094517568] to [53138312707128]
+***[1449361800] working on: 53138312707128 tried: 3476617700 rate: 3862908 / sec
+*** time left: 0 wk 1 d 2 h 26 m 0 s
++++ Checked [53023094517568] to [53141871236948]
+***[1449362700] working on: 53141871236948 tried: 3558529820 rate: 3953922 / sec
+*** time left: 0 wk 1 d 1 h 25 m 9 s
