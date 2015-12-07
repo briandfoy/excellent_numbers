@@ -809,3 +809,15 @@
 +++ Checked [55488240512038] to [55949823905624]
 ***[1449449100] working on: 55949823905624 tried: 3600620938 rate: 4000689 / sec
 *** time left: 0 wk 3 d 0 h 12 m 54 s
++++ Checked [55488240512038] to [55953421255970]
+***[1449450000] working on: 55953421255970 tried: 3597350346 rate: 3997055 / sec
+*** time left: 0 wk 3 d 0 h 12 m 43 s
++++ Checked [55488240512038] to [55957014588490]
+***[1449450900] working on: 55957014588490 tried: 3593332520 rate: 3992591 / sec
+*** time left: 0 wk 3 d 0 h 12 m 33 s
++++ Checked [55488240512038] to [55960608558444]
+***[1449451800] working on: 55960608558444 tried: 3593969954 rate: 3993299 / sec
+*** time left: 0 wk 3 d 0 h 12 m 18 s
++++ Checked [55488240512038] to [55964207936962]
+***[1449452700] working on: 55964207936962 tried: 3599378518 rate: 3999309 / sec
+*** time left: 0 wk 2 d 23 h 11 m 56 s
