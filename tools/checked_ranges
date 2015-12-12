@@ -19,6 +19,37 @@ my $output_dir = $ARGV[0] // 'output';
 opendir my $dh, $output_dir or die "Could not open [$output_dir]: $!\n";
 
 my $hash;
+
+=pod
+
+*** [89849] [1449865800] working on: 572965008746 tried: 3696589318 rate: 4107321 / sec
+*** [89849] time left: 0 wk 0 d 3 h 3 m 2 s
++++ [89849] Checked [100000000000] to [576664001452]
+*** [89849] [1449866700] working on: 576664001452 tried: 3698992706 rate: 4109991 / sec
+*** [89849] time left: 0 wk 0 d 2 h 2 m 47 s
+578571099120955675476225 is excellent
+579021625716956183909488 is excellent
++++ [89849] Checked [100000000000] to [580365067368]
+
+=cut
+
+my %r = (
+	stars         => qr/\A\Q***\E\s*/,
+	pluses        => qr/\A\Q+++\E\s*/,
+	bangs         => qr/\A\Q!!!\E\s*/,
+	pid           => q/\s*\[[0-9]{1,5}\]\s*/,
+	);
+
+my %regexes = (
+	old_start_end => qr/$r{stars}  (?:$r{pid})? (?<start>[0-9]+) \s* \Q..\E \s* (?<end>[0-9]+) /x,
+
+	start         => qr/$r{stars}  (?:$r{pid})? start \s+ a \s+ is \s+ (?<start>[0-9]+) /x,
+	end           => qr/$r{stars}  (?:$r{pid})? end \s+ a \s+ is \s+ (?<end>[0-9]+) /x,
+
+	old_progess   => qr/$r{stars}  (?:$r{pid})? (?:\[.*?])? \s* Working \s+ on :? \s+ (?<progress>[0-9]+) \s+/xi,
+	progress      => qr/$r{pluses} (?:$r{pid})? Checked \s+ \[(?<start>[0-9]+)\] \s+ to \s+ \[(?<progress>[0-9]+)\]/xi,
+	);
+
 FILE: while( my $output_file = readdir $dh ) {
 	next FILE if $output_file =~ /\A\./;
 	my $this = $hash->{$output_file} = {};
@@ -29,19 +60,19 @@ FILE: while( my $output_file = readdir $dh ) {
 	open my $fh, '<:utf8', $path or do { warn "Could not open file [$path]: $!"; next FILE };
 
 	LINE: while( <$fh> ) {
-		if( /\A \Q***\E \s* (?<start>[0-9]+) \s* \Q..\E \s* (?<end>[0-9]+) /x ) {
+		if( m/$R{old_start_end}/ ) {
 			$this->@{ qw(start end) } = @+{qw(start end)};
 		#	say {interactive} "Found start [$+{start}] and end [$+{end}]";
 			}
-		elsif( /\A \Q***\E \s* start \s+ a \s+ is \s+ (?<start>[0-9]+) /x ) {
+		elsif( m/$R{start}/x ) {
 			$this->{ 'start' } = $+{start};
 		#	say {interactive} "Found start [$+{start}]";
 			}
-		elsif( /\A \Q***\E \s* end \s+ a \s+ is \s+ (?<end>[0-9]+) /x ) {
+		elsif( m/$R{end}/x ) {
 			$this->{'end'} = $+{end};
 		#	say {interactive} "Found end [$+{end}]";
 			}
-		elsif( /\A \Q***\E (?:\[.*?])? \s* Working \s+ on:? \s+ (?<progress>[0-9]+) \s+/xi ) {
+		elsif( m/$R{old_progress}/ or m/$R{progress}/ ) {
 			$this->{'progress'} = $+{progress};
 		#	say {interactive} "Found progress [$+{progress}]";
 			}
