@@ -1,0 +1,30 @@
+#!perl -s
+use v5.22.0;
+use utf8;
+
+use feature qw(signatures postderef);
+no warnings map { "experimental::$_" } qw(signatures postderef);
+
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
+my $unchecked_ranges = $ARGV[0] // 'unchecked_ranges.txt';
+
+open my $fh, '<',  $unchecked_ranges
+	or die "Could not open [$unchecked_ranges]: $!\n";
+
+while( <$fh> ) {
+	my( $digits, $ranges ) = m/\A(\d+):\s+(.*)/;
+
+	my @ranges =
+		grep { length $_->[0] }
+		map  { [ split /\s*-\s*/ ] }
+		split /\s*,\s*/,
+		$ranges;
+
+	foreach my $range ( @ranges ) {
+		my $command = "c/excellent-gmp $digits $range->[0] $range->[1] > output/$digits.$range->[0]";
+		say $command;
+		system $command;
+		}
+	}
