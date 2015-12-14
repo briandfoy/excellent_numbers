@@ -4,15 +4,16 @@ use v5.22.0;
 use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
+use FindBin                 qw($Bin);
+use lib "$Bin/../lib";
+
 use CpuCount;
 use Data::Dumper;
 use File::Path              qw(make_path);
 use File::Spec::Functions   qw(catfile updir);
-use FindBin                 qw($Bin);
 use Getopt::Long            qw(GetOptions);
 use POSIX                   qw(ceil :sys_wait_h);
 
-use lib "$Bin/../lib";
 
 =head1 NAME
 
@@ -117,8 +118,8 @@ die "Invalid options or values\n" unless GetOptions( \my %opts,
 	'sleep|s=i',
   	 );
 
-$opts{'processes'}    //=  2;
-$opts{'length'}       //= 10;
+$opts{'processes'}    //= CpuCount::get_cpu_count();
+$opts{'length'}       //= 26;
 $opts{'start'}        //=  1;
 $opts{'end'}          //= 62;
 $opts{'output_dir'}   //= 'output';
@@ -188,6 +189,7 @@ while(1) {
 	my $rc = waitpid( -1, WNOHANG );
 	last if $rc == -1;
 	say "*** Process $rc ended ($children{$rc}{start} - $children{$rc}{end})" if $rc;
+	redo if $rc;
 	sleep $opts{'sleep'};
 	}
 
