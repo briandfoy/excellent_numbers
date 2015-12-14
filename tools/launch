@@ -4,11 +4,15 @@ use v5.22.0;
 use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
+use CpuCount;
 use Data::Dumper;
 use File::Path              qw(make_path);
 use File::Spec::Functions   qw(catfile updir);
+use FindBin                 qw($Bin);
 use Getopt::Long            qw(GetOptions);
 use POSIX                   qw(ceil :sys_wait_h);
+
+use lib "$Bin/../lib";
 
 =head1 NAME
 
@@ -36,7 +40,7 @@ launch - start a bunch of processes to look for excellent numbers
 
 =item * --processes, -j
 
-The number of processes to use.
+The number of processes to use. The default is to use them all.
 
 Default: 2
 
