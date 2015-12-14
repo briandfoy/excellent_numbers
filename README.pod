@@ -215,6 +215,8 @@ I'm currently working on the 30-digit numbers. So far:
 
 =item * Joe Zbiciak contributed the modulus congruence optimization
 
+=item * Phil Doroff from ServerCentral provided a fat box with 80 CPUs so I could run the 30 digit list in a reasonable time.
+
 =back
 
 =head2 Other Readings
