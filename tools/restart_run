@@ -1,0 +1,61 @@
+#!perl
+use v5.22;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+use FindBin                 qw($Bin);
+use lib "$Bin/../lib";
+
+use Data::Dumper;
+use File::Path              qw(make_path);
+use File::Spec::Functions   qw(catfile updir);
+use Getopt::Long            qw(GetOptions);
+use POSIX                   qw(ceil :sys_wait_h);
+
+my $output_dir = catfile( $Bin, '..', 'output' );
+my $length     = 30;
+
+$|++;
+
+opendir my $dh, $output_dir or die "Could not open $output_dir";
+while( my $file = readdir $dh ) {
+	next unless $file =~ / \A \Q$length\E \. /x;
+
+	say "$file";
+
+	my $path = catfile( $output_dir, $file );
+
+	open my $fh, '<:utf8', $path or warn "Could not open [$path]: $!\n";
+	my $end = 0;
+	my $progress = 0;
+	LINE: while( <$fh> ) {
+		chomp;
+		if( / \A \Q***\E \s+ \[(?<pid>[0-9]+)] \s+ end \s+ a \s+ is \s+ (?<end>[0-9]+) /x ) {
+			$end = $+{end};
+			say "\tEnd is $end";
+			next LINE;
+			}
+		elsif( / \A \Q+++\E \s+ \[(?<pid>[0-9]+)] \s+ Checked \s+ \[(?<start>[0-9]+)] \s+ to \s+ \[(?<progress>[0-9]+)] /x ) {
+			$progress = $+{progress};
+			next LINE;
+			}
+		}
+
+	my $command = catfile( 'c', 'excellent-gmp' );
+	my @args = ( $length, $progress, $end );
+
+	if( my $child_pid = fork ) { # parent
+		say "*** Parent process $$ forked child $child_pid, saving in $path";
+		}
+	else { # child
+		open STDOUT, '>>:utf8', $path or die "Could not open $path: $!\n";
+		say "\t$command @args";
+		exec { $command } @args or die "Could not exec! $!";
+		}
+
+	}
+
+__END__
+
+*** [46345] start a is 612571428571468
+*** [46345] end a is 620000000000000
