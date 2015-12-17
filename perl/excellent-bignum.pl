@@ -301,7 +301,7 @@ I<b*b – b> (mod 10), only values of I<b> ending in { 0, 6 } work:
 
 The I<b> side will only produce values ending in { 0, 6 }, and the
 only values of I<a> that will produce { 0, 6 } as a square are { 0, 4,
-6, 8 }. This means that I can skip all I<a> that are { 1, 2, 3, 5, 7,
+6 }. This means that I can skip all I<a> that are { 1, 2, 3, 5, 7,
 9 }. That's 60% of the candidates!
 
 
