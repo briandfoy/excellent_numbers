@@ -49,7 +49,6 @@ while( my $file = readdir $dh ) {
 		}
 	else { # child
 		open STDOUT, '>>:utf8', $path or die "Could not open $path: $!\n";
-		say "\t$command @args";
 		exec { $command } @args or die "Could not exec! $!";
 		}
 
