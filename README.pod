@@ -3,7 +3,7 @@
 =head1 Excellent Numbers
 
 A seemingly useless number theory problem wastes so much time, but
-is so much fun! I want to compute very large "Excellent Numbers"
+is so much fun! I want to compute very large "Excellent Numbers".
 
 A number I<ab> is excellent if I<b²> - I<a²> is the number I<ab>,
 where I<a> and I<b> have an equal number of digits. For instance, 48
