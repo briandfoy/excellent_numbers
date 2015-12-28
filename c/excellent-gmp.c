@@ -81,12 +81,13 @@ int main( int argc, char *argv[] ) {
 		return( 1 );
 		}
 
-	mpz_t one, ten, two, zero, ten_k;
-	mpz_inits( one, ten, two, zero, ten_k, NULL );
-	mpz_set_ui( one, 1L );
-	mpz_set_ui( ten, 10L );
-	mpz_set_ui( two, 2L );
-	mpz_set_ui( zero, 0L );
+	mpz_t zero, one, two, eight, ten, ten_k;
+	mpz_inits( zero, one, two, eight, ten, ten_k, NULL );
+	mpz_set_ui( zero,  0L );
+	mpz_set_ui( one,   1L );
+	mpz_set_ui( two,   2L );
+	mpz_set_ui( eight, 8L );
+	mpz_set_ui( ten,  10L );
 
 	mpz_pow_ui( ten_k, ten, k );
 
@@ -138,16 +139,15 @@ int main( int argc, char *argv[] ) {
 			last_time = this_time;
 			}
 
-		/* skip those that end in 2 */
+		/* skip those that end in 2 or 8 */
 		mpz_mod( mod10, i, ten );
-		if( mpz_cmp( mod10, two ) == 0 ) {
+		if( (mpz_cmp( mod10, two ) == 0) || (mpz_cmp( mod10, eight ) == 0) ) {
 			continue;
 			}
 
 		/* the front part of the number */
 		mpz_add( front, ten_k, i );
 		mpz_mul( front, front, i );
-
 
 		/* the back part of the number */
 		mpz_sqrt( root, front );
