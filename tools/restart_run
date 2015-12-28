@@ -42,14 +42,14 @@ while( my $file = readdir $dh ) {
 		}
 
 	my $command = catfile( 'c', 'excellent-gmp' );
-	my @args = ( $length, $progress, $end );
+	my @args = ( $command, $length, $progress, $end );
 
 	if( my $child_pid = fork ) { # parent
 		say "*** Parent process $$ forked child $child_pid, saving in $path";
 		}
 	else { # child
 		open STDOUT, '>>:utf8', $path or die "Could not open $path: $!\n";
-		exec { $command } @args or die "Could not exec! $!";
+		exec { $args[0] } @args or die "Could not exec! $!";
 		}
 
 	}
