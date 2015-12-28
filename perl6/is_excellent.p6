@@ -1,14 +1,10 @@
 #!perl6
 
-my $digits = @*ARGS[0] // 10;
-my $start  = @*ARGS[1] // 1001;
-my $end    = @*ARGS[2] // 6200;
-
-say "Digits are $digits\nstart is $start\nend is $end";
-
-is_excellent( $start );
-
-sub is_excellent ( $number ) {
-	say "Number is $number";
-
+sub is-even(Int $number) {
+	return False if $number % 2;
+	return 1;
 	}
+
+say is-even( 137 );
+
+say is-even( 2 );
