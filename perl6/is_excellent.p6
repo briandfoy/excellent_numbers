@@ -1,10 +1,9 @@
 #!perl6
 
-sub is-even(Int $number) {
+sub is-even(Int:D $number --> Bool:D) {
 	return False if $number % 2;
-	return 1;
+	return True;
 	}
 
 say is-even( 137 );
-
-say is-even( 2 );
+say is-even( Int );
