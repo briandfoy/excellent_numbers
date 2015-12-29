@@ -69,5 +69,11 @@ foreach my $number ( keys %numbers ) {
 		say { interactive } "Skipping $number because it's too low";
 		next;
 		}
-	}
 	$nt->update( "$number is excellent" ) unless $Options{dry_run};
+	}
+
+SIZE: foreach my $size ( sort { $a <=> $b } keys %Sizes ) {
+	state $total = 0;
+	$total += $Sizes{$size};
+	say { interactive } sprintf '%2d %3d %3d', $size, $Sizes{$size}, $total;
+	}
