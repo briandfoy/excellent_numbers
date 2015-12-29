@@ -4,9 +4,17 @@ use v5.22;
 use FindBin;
 use lib "$FindBin::Bin/../lib";
 
-use ExcellentNumber qw(is_excellent);
+use Getopt::Long;
 use IO::Interactive qw(interactive);
 use Net::Twitter;
+
+use ExcellentNumber qw(is_excellent);
+
+
+my %Options;
+GetOptions(
+	'dry-run|n' => \$Options{dry_run},
+	);
 
 my $file = "$FindBin::Bin/../excellent.txt";
 open my $fh, '<:utf8', $file
@@ -58,5 +66,5 @@ foreach my $number ( keys %numbers ) {
 		say { interactive } "Skipping $number because it's too low";
 		next;
 		}
-	$nt->update( "$number is excellent" )
 	}
+	$nt->update( "$number is excellent" ) unless $Options{dry_run};
