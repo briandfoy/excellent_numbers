@@ -199,102 +199,22 @@ By guessing through bisection, we can find this maximum value, which is a little
 But it gets better. We can immediately discount some values of $a$. First, $a$ must be even and not end in $2$. We know this when we look at the values mod 10:
 </p>
 
-<math class="block">
-<mrow>
-	<mo>(</mo>
-	<msup><mi>b</mi><mn>2</mn></msup>
-	<mo>-</mo>
-	<msup><mi>a</mi><mn>2</mn></msup>
-	<mo>)</mo>
-	<mtext>mod 10</mtext>
+$$
+\begin{align}
+( b^2 - a^2 ) \mod 10 & = (a 10^k + b ) \mod 10 \\
 
-	<mo>=</mo>
+b^2 \mod 10 - a^2 \mod 10 & = a 10^k \mod 10 + b \mod 10 \\
 
-	<mo>(</mo>
-	<mi>a</mi>	<mo>&InvisibleTimes;</mo><msup><mn>10</mn><mi>n</mi></msup>
+b^2 \mod 10 - a^2 \mod 10 & = b \mod 10 \\
 
-	<mo>+</mo>
-
-	<mi>b</mi>
-	<mo>)</mo>
-	<mtext>mod 10</mtext>
-</mrow>
-</math>
-
-<br/>
-
-<math class="block">
-<mrow>
-	<msup><mi>b</mi><mn>2</mn></msup>
-	<mtext>mod 10</mtext>
-	<mo>-</mo>
-	<msup><mi>a</mi><mn>2</mn></msup>
-	<mtext>mod 10</mtext>
-
-	<mo>=</mo>
-
-	<mi>a</mi>	<mo>&InvisibleTimes;</mo><msup><mn>10</mn><mi>n</mi></msup>
-	<mtext>mod 10</mtext>
-
-	<mo>+</mo>
-
-	<mi>b</mi>
-	<mtext>mod 10</mtext>
-</mrow>
-</math>
-
-<p>The term <math class="inline"><mi>a</mi>	<mo>&InvisibleTimes;</mo><msup><mn>10</mn><mi>n</mi></msup><mtext>mod 10</mtext></math>, being a multiple of <math><mn>10</mn></math>, drops out, leaving:</p>
-
-<math class="block">
-<mrow>
-	<msup><mi>b</mi><mn>2</mn></msup>
-	<mtext>mod 10</mtext>
-	<mo>-</mo>
-	<msup><mi>a</mi><mn>2</mn></msup>
-	<mtext>mod 10</mtext>
-
-	<mo>=</mo>
-
-	<mi>b</mi>
-	<mtext>mod 10</mtext>
-</mrow>
-</math>
-
-<p>Or:</p>
-
-<math class="block">
-<mrow>
-	<msup><mi>b</mi><mn>2</mn></msup>
-	<mtext>mod 10</mtext>
-	<mo>-</mo>
-	<mi>b</mi>
-	<mtext>mod 10</mtext>
-
-	<mo>=</mo>
-
-	<msup><mi>a</mi><mn>2</mn></msup>
-	<mtext>mod 10</mtext>
-</mrow>
-</math>
+b^2 \mod 10 - b \mod 10 & = a^2 \mod 10
+\end{align}
+$$
 
 <p>
-A square ends in the digits { 0, 1, 4, 5, 6, 9 }, so <math class="inline">
-<mrow>
-	<msup><mi>b</mi><mn>2</mn></msup>
-	<mtext>mod 10</mtext>
-	<mo>-</mo>
-	<mi>b</mi>
-	<mtext>mod 10</mtext>
-</mrow></math> must also end in { 0, 1, 4, 5, 6, 9 } because
-it's the same number. If we take some <math class="inline"><mi>b</mi></math> and compute
-<math class="inline">
-	<mo>(</mo>
-	<msup><mi>b</mi><mn>2</mn></msup>
-	<mo>-</mo>
-	<mi>b</mi>
-	<mo>)</mo>
-	<mtext>mod 10</mtext>
-</math>, only values of <math class="inline"><mi>b</mi></math> ending in { 0, 1, 3, 5, 6, 8 } produce a value that are in  { 0, 1, 4, 5, 6, 9 } (those values being { 0, 6 }):
+A square ends in the digits $\{ 0, 1, 4, 5, 6, 9 \}$, so $b^2 \mod 10 - b \mod 10$ must also end with one of those digits because
+it's the same number. If we take some $b$ and compute
+$(b^2 - b) mod 10$, only values of $b$ ending in $\{ 0, 1, 3, 5, 6, 8 \}$ produce a value that are in  $\{ 0, 1, 4, 5, 6, 9 \}$. (those values being $\{ 0, 6 \}$):
 </p>
 
 <pre>
@@ -311,11 +231,11 @@ it's the same number. If we take some <math class="inline"><mi>b</mi></math> and
 </pre>
 
 <p>
-The only values of <math class="inline"><mi>a</mi></math> that will produce { 0, 6 } as a square are { 0, 4, 6, 8 }. This means that we can skip all <math class="inline"><mi>a</mi></math> that are { 1, 2, 3, 5, 7, 9 }.
+The only values of $a$ that will produce $\{ 0, 6 \}$ as a square are $\{ 0, 4, 6 \}$. This means that we can skip all <math class="inline"><mi>a</mi></math> that are $\{ 1, 2, 3, 5, 7, 8, 9 \}$.
 </p>
 
 <p>
-From there, it's brute force to check all <math class="inline"><mi>a</mi></math> ending in { 0, 4, 6, 8 } from 0 to <math><mn>6.2</mn><mo>⋅</mo><msup><mn>10</mn><mrow><mi>n</mi><mo>-</mo><mi>1</mi></msup></math>.
+From there, it's brute force to check all $a$ ending in $\{ 0, 4, 6 \}$ from $1 \cdot 10^{k-1}$ to $6.2 \cdot 10^{k-1}$.
 </p>
 
 <h2>Brass tacks</h2>
@@ -327,7 +247,7 @@ Now that we have an algorithm that excludes most of the numbers, we have to comp
 Each jump in digits, say from 24- to 26-digits, is a ten-fold increase in numbers to check. If I wanted to do this on my MacBook Air, here's the progression of times (slowly getting slower as the numbers get bigger):
 </p>
 
-<div id="timings" class="center">
+<div id="timings" class="center" align="center">
 <table>
 <tr><th>Digits</th><th>Processor time</th></tr>
 <tr><td>2</td><td>5 microseconds</td></tr>
@@ -361,6 +281,10 @@ I first found this problem through Mark Jason Dominus's <a href="http://blog.plo
 
 <p>
 Joe Zbiciak contributed the modulus congruence optimization.
+</p>
+
+<p>
+Sinan Ünür helped with <a href="https://www.mathjax.org">MathJax</a> to bring some $\TeX$ goodness to this page.
 </p>
 
 <h2>How to contribute</h2>
