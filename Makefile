@@ -27,4 +27,5 @@ primes.txt: excellent.txt tools/primes
 
 tweet: FORCE
 	@ ${PERL} tools/get_tweets
+
 FORCE:

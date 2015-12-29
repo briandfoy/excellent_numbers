@@ -31,11 +31,11 @@ my $nt = Net::Twitter->new(
 	);
 
 my $statuses = $nt->user_timeline({
-	count       => 200,
+	count       => 300,
 	screen_name => 'excellent_nums',
 	});
 
-say { interactive } "There are " . @$statuses . " tweeted excellent numbers";
+say { interactive } "There are " . @$statuses . " previously tweeted excellent numbers";
 
 my %tweets;
 foreach my $status ( @$statuses ) {
@@ -55,5 +55,9 @@ foreach my $number ( keys %numbers ) {
 		}
 	warn "[$number] has not been tweeted\n";
 	say { interactive } "Tweeting $number";
+	if( length $number < 30 ) {
+		say { interactive } "Skipping $number because it's too low";
+		next;
+		}
 	$nt->update( "$number is excellent" )
 	}
