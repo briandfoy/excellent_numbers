@@ -40,22 +40,33 @@ my $nt = Net::Twitter->new(
 			)
 	);
 
-my $statuses = $nt->user_timeline({
-	count       => 300,
-	screen_name => 'excellent_nums',
-	});
-
-say { interactive } "There are " . @$statuses . " previously tweeted excellent numbers";
-
 my %tweets;
-foreach my $status ( @$statuses ) {
-	my( $number ) = $status->{text} =~ m/(\d+)/;
-	warn "[$number] has more than one tweet!\n" if exists $tweets{$number};
-	$tweets{$number} = undef;
-	unless( is_excellent( $number ) ) {
-		warn "Tweet for [$number] is an unexcellent error\n";
+STATUSES: while( 1 ) {
+	state $min_id = 1;
+	state $fetch_size = 200;
+
+	my $max_key = $min_id == 1 ? 'since_id' : 'max_id';
+
+	my $statuses = $nt->user_timeline({
+		count       => $fetch_size,
+		screen_name => 'excellent_nums',
+		$max_key    => $min_id,
+		});
+
+	say { interactive } "Found " . @$statuses . " statuses";
+	$min_id = $statuses->[-1]{id} - 1 if $min_id == 1;
+
+	foreach my $status ( @$statuses ) {
+		$min_id = $status->{id} - 1 if $min_id > $status->{id};
+		my( $number ) = $status->{text} =~ m/(\d+)/;
+		warn "[$number] has more than one tweet!\n" if exists $tweets{$number};
+		$tweets{$number} = undef;
+		unless( is_excellent( $number ) ) {
+			warn "Tweet for [$number] is an unexcellent error\n";
+			}
 		}
-	delete $numbers{$number};
+
+	last if @$statuses < $fetch_size;
 	}
 
 foreach my $number ( keys %numbers ) {
