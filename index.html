@@ -18,6 +18,14 @@
       })
     </script>
     <title>Excellent numbers by briandfoy</title>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
   </head>
 
   <body>
@@ -94,7 +102,7 @@ div.center {
 
 <h2>The numbers</h2>
 
-<p>The full list is in the <a href="https://github.com/briandfoy/excellent_numbers/blob/0baa9ea7c8e03467aaae08df61ad11bb7c9a9190/excellent.txt">excellent.txt file in the repo</a>, but we also <a href="https://twitter.com/excellent_nums">tweet them</a> as they come in.</p>
+<p>The full list is in the <a href="https://github.com/briandfoy/excellent_numbers/blob/master/excellent.txt">excellent.txt file in the repo</a>, but we also <a href="https://twitter.com/excellent_nums">tweet them</a> as they come in (albeit out of sequence).</p>
 
 <div align="center">
 <a class="twitter-timeline" href="https://twitter.com/excellent_nums" data-widget-id="669094319110774784">Tweets by @excellent_nums</a>
@@ -104,59 +112,30 @@ div.center {
 <h2>The math</h2>
 
 <p>
-A number <math class="inline"><mi>N</mi></math> is excellent if you can break its digits into equal halves <math class="inline"><mi>a</mi></math> and <math class="inline"><mi>b</mi></math> such that <math class="inline"><msup><mi>b</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> </math> is <math class="inline"><mi>N</mi></math>.</p>
+A number $N$ is excellent if you can break its digits into equal halves $a$ and $b$ such that $b^2 - a^2$ is $N$.
+</p>
 
-<p>For example, for <math class="inline"><mn>530901</mn></math>:</p>
+<p>For example, for $530901$:</p>
+
+$$
+\begin{align}
+530901 & \rightarrow \overset{a}{530} \quad \overset{b}{901} \\
+
+b^2 - a^2 & = 901^2 - 530^2 \\
+
+          & = 811801 - 280900 \\
+
+          & = 530901
+\end{align}
+$$
 
 <p>
-<math class="block">
-  <mrow><mn>530901</mn> <mo> &RightArrow; </mo>
-  <mover>
-   <mn>530</mn>
-   <mi>a</mi>
-  </mover>
-
-  <mo  lspace=".2em"  rspace=".2em"> &InvisibleTimes; </mo>
-
-  <mover>
-   <mn>901</mn>
-   <mi>b</mi>
-  </mover>
-  </mrow>
-</math>
-</p>
-
-<p class="math-block">
-<math>
-<msup><mi>b</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> <mo>=</mo>
-
-<msup><mn>901</mn><mn>2</mn></msup> <mo>-</mo> <msup><mn>530</mn><mn>2</mn></msup>
-</math>
-</p>
-
-<p class="math-block">
-<math>
-<msup><mi>b</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> <mo>=</mo>
-
-<mn>811801</mn> <mo>-</mo> <mn>280900</mn>
-</math>
-</p>
-
-<p>
-<math class="block">
-<msup><mi>b</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> <mo>=</mo>
-
-<mn>530901</mn>
-</math>
-</p>
-
-<p>
-Represent the number <math class="inline"><mi>N</mi></math> as <math class="inline"><mi>a</mi><mi>b</mi></math> where that is the concatenation of digits in <math class="inline"><mi>a</mi></math> and <math class="inline"><mi>b</mi></math> and not the product of them. Thus, <math class="inline"><mi>N</mi></math> is <math class="inline"><mi>a</mi><msup><mn>10</mn><mi>n</mi></msup><mo>+</mo><mi>b</mi></math>, where <math class="inline"><mi>n</mi></math> is the number of digits in <math class="inline"><mi>a</mi></math>. Given that, an excellent number is one where <math class="inline"><msup><mi>b</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> <mo>=</mo> <mi>a</mi><mi>b</mi> </math>.
+Represent the number $N$ as $ab$ where that is the concatenation of digits in $a$ and $b$ and not the product of them. Thus, $N$ is $a \cdot 10^k + b$, where $k$ is the number of digits in $a$. Given that, an excellent number is one where $b^2 - a^2 = a \cdot 10^k + b$.
 </p>
 
 <h3>An interesting pattern</h3>
 
-<p>If a number <math class="inline"><mi>N</mi></math> is excellent, that number concatenated an odd number of times is also excellent.</p>
+<p>If a number $N$ is excellent, that number concatenated an odd number of times is also excellent. $3468$ is excellent, so $346834683468$ is excellent.</p>
 
 <h3>Another interesting pattern</h3>
 
@@ -177,105 +156,38 @@ Represent the number <math class="inline"><mi>N</mi></math> as <math class="inli
 
 <p>These numbers are an interesting programming exercise, although most people stop programming before they get to the interesting bits. If you apply brute force and check every number, you can easily do 10- or 12-digit numbers. After that things start to get slow. When their programs get slow, people find something else to do, leaving the good parts for those who stuck at it.</p>
 
-<p>You don't have to check every number. Instead of taking <math class="inline"><mi>a</mi><mi>b</mi></math> and applying some <code>is_excellent()</code> function to it, you can start with <math class="inline"><mi>a</mi></math> and determine if some <math class="inline"><mi>b</mi></math> exists that makes <math class="inline"><mi>a</mi><mi>b</mi></math> excellent.</p>
+<p>You don't have to check every number. Instead of taking $ab$ and applying some <code>is_excellent()</code> function to it, you can start with $a$ and determine if some $b$ exists that makes $ab$ excellent.</p>
 
-<p>By checking <math class="inline"><mi>a</mi></math>, you eliminate <math class="inline"><msup><mn>10</mn><mi>n</mi></msup> <mo>-</mo> <mn>1</mn></math> cases. Instead of checking <math class="inline">
-	<mn>530</mn><mo class="ab_sep">&InvisibleTimes;</mo><mn>000</mn>
-	<mo>,</mo>
-	<mn>530</mn><mo class="ab_sep">&InvisibleTimes;</mo><mn>001</mn>
-	<mo>,</mo>
-	<mn>530</mn><mo class="ab_sep">&InvisibleTimes;</mo><mn>002</mn>
-	<mo>,</mo>
-	<mi>&#x22EF;</mi>
-	<mo>,</mo>
-	<mn>530</mn><mo class="ab_sep">&InvisibleTimes;</mo><mn>999</mn>
-</math>, you use <math><mn>530</mn></math> to find one value of <math><mi>b</mi></math> that might work.
+<p>By checking $a$, you eliminate $10^n - 1$ cases. Instead of checking:</p>
 
-<p>To do this, you can rearrange the equation. First, represent the single value <math class="inline"><mi>a</mi><mi>b</mi></math> as a sum that separates the digits of <math class="inline"><mi>a</mi></math> from the digits of <math class="inline"><mi>b</mi></math>, where <math class="inline"><mi>n</mi></math> is the number of digits in <math class="inline"><mi>a</mi></math>:</p>
+$$530 \; 000, 530 \; 001, 530 \; 002, \cdots 530 \; 999$$
 
-<math class="block">
-<msup><mi>b</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> <mo>=</mo>
-<mi>a</mi><mi>b</mi>
-</math>
+<p>you use $530$ to find one value of $b$ that might work.</p>
 
-<br/>
+<p>To do this, you can rearrange the equation. First, represent the single value $b$ as a sum that separates the digits of $a$ from the digits of $b$, where $k$ is the number of digits in $a$:</p>
 
-<math class="block">
-<msup><mi>b</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> <mo>=</mo>
-<mrow><mi>a</mi><mo>&InvisibleTimes;</mo><msup><mn>10</mn><mi>n</i></msup></mrow> <mo>+</mo> <mi>b</mi>
-</math>
+$$
+\begin{align}
+b^2 - a^2 & = ab \\
+& = a 10^k + b
+\end{align}
+$$
 
-<p>Collecting terms:</p>
+Collecting terms and rearranging:
 
+$$
+\begin{align}
+a^2 - a 10^k & = b^2 - b \\
+& = b ( b - 1 )
+\end{align}
+$$
 
-<math class="block">
-
-<mrow>
-<msup><mi>a</mi><mn>2</mn></msup>
-<mo>+</mo>
-<mrow><mi>a</mi><mo>&InvisibleTimes;</mo><msup><mn>10</mn><mi>n</i></msup></mrow>
-<mrow>
-</math>
-
-	<mo>=</mo>
-
-<mrow>
-<msup><mi>b</mi><mn>2</mn></msup>
-	<mo>-</mo>
-<mi>b</mi>
-</mrow>
-
-
-<p>Rearranging:</p>
-
-
-<math class="block">
-
-<mrow>
-<msup><mi>a</mi><mn>2</mn></msup>
-<mo>+</mo>
-<mrow><mi>a</mi><mo>&InvisibleTimes;</mo><msup><mn>10</mn><mi>n</i></msup></mrow>
-<mrow>
-
-	<mo>=</mo>
-
-<mrow>
-<mi>b</mi>
-	<mo>(</mo>
-		<mi>b</mi>
-		<mo>-</mo>
-		<mn>1</mn>
-	<mo>)</mo>
-</mrow>
-
-</math>
 
 <p>
-We know the value of <math class="inline"><mi>a</mi></math> because we chose it, and we know the value of <math class="inline"><mrow>
-<msup><mi>a</mi><mn>2</mn></msup>
-<mo>+</mo>
-<mrow><mi>a</mi><mo>&InvisibleTimes;</mo><msup><mn>10</mn><mi>n</i></msup></mrow>
-<mrow></math>. We have to find the value of <math class="inline"><mi>b</mi></math> where <math class="inline"><mrow>
-<mi>b</mi>
-	<mo>(</mo>
-		<mi>b</mi>
-		<mo>-</mo>
-		<mn>1</mn>
-	<mo>)</mo>
-</mrow>
-</math> is the same value. For large enough <math class="inline"><mi>b</mi></math>, <math class="inline"><mrow>
-<mi>b</mi>
-	<mo>(</mo>
-		<mi>b</mi>
-		<mo>-</mo>
-		<mn>1</mn>
-	<mo>)</mo>
-</mrow>
-</math> is almost the same as <math class="inline"><msup>
-<mi>b</mi><mn>2</mn></msup></math>. We can easily calculate <math><mi>b</mi><mo>=</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup>
-<mo>+</mo>
-<mrow><mi>a</mi><mo>&InvisibleTimes;</mo><msup><mn>10</mn><mi>n</i></msup></mrow></msqrt>
-</math>. </p>
+We know the value of $a$ because we chose it, and we know the value of $a^2 + a 10^k$. We have to find the value of $b$ where $b ( b - 1 )$ is the same value. For large enough $b$, $b ( b - 1 )$ is almost the same as $b^2$. We can easily calculate
+</p>
+
+$$b = \sqrt{a^2 + a 10^k}$$
 
 <p>Furthermore, for <math class="inline"><msup><mi>b</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> </math>, there's some maximum value of <math class="inline"><mi>a</mi></math> for which there are no longer a possible value of <math class="inline"><mi>b</mi></math>. The largest <math class="inline"><mi>b</mi></math> comprises only the digit <math class="inline"><mn>9</mn></math>. If <math class="inline"><mi>b</mi></math> has four digits, its maximum value is <math class="inline"><mn>9999</mn></math>. There's some value of <math class="inline"><mi>a</mi></math> past which <math class="inline"><msup><mi>9999</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> <mo>=</mo> <mi>a</mi><mn>9999</mn> </math> has a solution.</p>
 
