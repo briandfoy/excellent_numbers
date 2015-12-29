@@ -189,14 +189,14 @@ We know the value of $a$ because we chose it, and we know the value of $a^2 + a 
 
 $$b = \sqrt{a^2 + a 10^k}$$
 
-<p>Furthermore, for <math class="inline"><msup><mi>b</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> </math>, there's some maximum value of <math class="inline"><mi>a</mi></math> for which there are no longer a possible value of <math class="inline"><mi>b</mi></math>. The largest <math class="inline"><mi>b</mi></math> comprises only the digit <math class="inline"><mn>9</mn></math>. If <math class="inline"><mi>b</mi></math> has four digits, its maximum value is <math class="inline"><mn>9999</mn></math>. There's some value of <math class="inline"><mi>a</mi></math> past which <math class="inline"><msup><mi>9999</mi><mn>2</mn></msup> <mo>-</mo> <msup><mi>a</mi><mn>2</mn></msup> <mo>=</mo> <mi>a</mi><mn>9999</mn> </math> has a solution.</p>
+<p>Furthermore, for $b^2 - a^2$, there's some maximum value of $a$ for which there are no longer a possible value of $b$. The largest $b$ comprises only the digit $9$ repeated $k$ times. If $b$ has four digits, its maximum value is $9999$. There's some value of $a$ past which $9999^2 - a^2 = a 10^k + 9999$ has a solution.</p>
 
 <p>
-By guessing through bisection, we can find this maximum value, which is a little less than <math><mn>6.2</mn><mo>⋅</mo><msup><mn>10</mn><mrow><mi>n</mi><mo>-</mo><mi>1</mi></msup></math>.
+By guessing through bisection, we can find this maximum value, which is a little less than $6.2 \cdot 10^{k-1}$.
 </p>
 
 <p>
-But it gets better. We can immediately discount some values of <math class="inline"><mi>a</mi></math>. First, <math class="inline"><mi>a</mi></math> must be even and not end in <math class="inline"><mn>2</mn></math>. We know this when we look at the values mod 10:
+But it gets better. We can immediately discount some values of $a$. First, $a$ must be even and not end in $2$. We know this when we look at the values mod 10:
 </p>
 
 <math class="block">
