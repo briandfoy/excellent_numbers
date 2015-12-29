@@ -41,7 +41,6 @@ package ExcellentNumber {
 			};
 		}
 
-
 	}
 
 1;
