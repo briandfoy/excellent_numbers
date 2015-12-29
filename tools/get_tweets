@@ -17,14 +17,17 @@ GetOptions(
 	);
 
 my $file = "$FindBin::Bin/../excellent.txt";
-open my $fh, '<:utf8', $file
-	or die "Could not open $file: $!";
-my @numbers = <$fh>;
-close $fh;
-chomp @numbers;
-my %numbers = map { $_, undef } @numbers;
 
-say { interactive } "There are " . @numbers . " listed excellent numbers";
+my %numbers = do {
+	open my $fh, '<:utf8', $file
+		or die "Could not open $file: $!";
+	my @numbers = <$fh>;
+	close $fh;
+	chomp @numbers;
+	map { $_, undef } @numbers;
+	};
+
+say { interactive } "There are " . keys(%numbers) . " locally listed excellent numbers";
 
 my $nt = Net::Twitter->new(
 	traits   => [qw/OAuth API::RESTv1_1/],
