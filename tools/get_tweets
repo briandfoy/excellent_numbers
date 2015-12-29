@@ -69,7 +69,16 @@ STATUSES: while( 1 ) {
 	last if @$statuses < $fetch_size;
 	}
 
-foreach my $number ( keys %numbers ) {
+say { interactive } "Found " . keys(%tweets) . " previously tweeted excellent numbers";
+
+my %Sizes;
+NUMBER: foreach my $number ( sort { $a <=> $b } keys %numbers ) {
+	$Sizes{ length $number }++;
+	if( exists $tweets{$number} ) {
+		say { interactive } "Already tweeted $number";
+		delete $numbers{$number};
+		next NUMBER;
+		}
 	unless( is_excellent( $number ) ) {
 		warn "[$number] in file is an unexcellent error\n";
 		next;
