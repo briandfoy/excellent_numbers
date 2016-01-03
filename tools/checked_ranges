@@ -132,10 +132,15 @@ FILE: while( my $output_file = readdir $dh ) {
 say Dumper( $hash ) if $d;
 
 my $ranges;
-foreach my $file ( keys %$hash ) {
+FILE: foreach my $file ( keys %$hash ) {
 	my $this = $hash->{$file};
 
 	my $length = 2 * length $this->{start};
+	unless( $this->{progress} ) {
+		warn "No progress info in $file: Skipping\n";
+		next FILE;
+		}
+
 	my $set_spec = join '-', $this->@{ qw(start progress) };
 	say "$length: $set_spec" if $d;
 	push $ranges->{$length}->@*, $set_spec;
@@ -144,7 +149,8 @@ foreach my $file ( keys %$hash ) {
 say Dumper( $ranges ) if $d;
 
 foreach my $length ( sort { $a <=> $b } keys %$ranges ) {
-	my $set = Set::IntSpan->new( $ranges->{$length}->@* );
+	my $set = eval { Set::IntSpan->new( $ranges->{$length}->@* ) };
+	next unless $set;
 
 	my $holes = $set->holes;
 	say "$length: $holes";
