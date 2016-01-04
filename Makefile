@@ -5,7 +5,6 @@ FILES=excellent.txt README.pod bA162700.txt primes.txt
 all: README.pod bA162700.txt primes.txt tweet
 	git commit -m 'Update excellent number list' ${FILES}
 	git push --all
-	@ ${PERL} tools/get_tweets
 
 bA162700.txt: excellent.txt
 	@ echo "# A162700 (b-file created by https://github.com/briandfoy/excellent_numbers)" > $@
