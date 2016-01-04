@@ -152,6 +152,26 @@ Represent the number $N$ as $ab$ where that is the concatenation of digits in $a
 3333333 4 6666666 8
 </pre>
 
+<p>
+These numbers are of the form of a summation of powers of 10 with a little extra added to the $10^0$ term:
+</p>
+
+$$
+\begin{align}
+a & = 3 ( \sum\limits_{i=0}^n 10^n ) + 1 \\
+b & = 6 ( \sum\limits_{i=0}^n 10^n ) + 2
+\end{align}
+$$
+
+But $b$ is really just double $a$:
+
+$$
+\begin{align}
+a & = & 3 ( \sum\limits_{i=0}^n 10^n ) + 1 \\
+b & = 2 ( & 3 ( \sum\limits_{i=0}^n 10^n ) + 1 \: \: )
+\end{align}
+$$
+
 <h2>The Algorithm</h2>
 
 <p>These numbers are an interesting programming exercise, although most people stop programming before they get to the interesting bits. If you apply brute force and check every number, you can easily do 10- or 12-digit numbers. After that things start to get slow. When their programs get slow, people find something else to do, leaving the good parts for those who stuck at it.</p>
