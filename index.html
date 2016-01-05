@@ -306,8 +306,17 @@ $$
                  & = (\sum\limits_{i=0}^{r'} 10^{2ik} )^2 - (\sum\limits_{i=0}^{r'-1} 10^{(2i+1)k})^2 \\
 
                  & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{2ik}10^{2jk} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j=0}^{r'-1} 10^{(2i+1)k} 10^{(2j+1)k} \\
+\end{align}
+$$
 
-                 & = \sum\limits_{i=0}^{r'} 10^{2ik} +  \sum\limits_{i=1}^{r'} 10^{2r'k}10^{2ik} \\
+<p>
+The subtraction knocks out the terms with $i$ from $1$ to $r'-1$ and with $j$ from $0$ to $r'-1$. This leaves the terms with $i = 0$ and $j = r'-1$.
+</p>
+
+
+$$
+\begin{align}
+( S'^2 - S''^2 ) & = \sum\limits_{i=0}^{r'} 10^{2ik} +  \sum\limits_{i=1}^{r'} 10^{2r'k}10^{2ik} \\
 
                  & = \sum\limits_{i=0}^{(r-1)/2} 10^{2ik} +  \sum\limits_{i=1}^{(r-1)/2} 10^{(r-1)k}10^{2ik} \\
 
