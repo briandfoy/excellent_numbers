@@ -112,7 +112,7 @@ div.center {
 <h2>The math</h2>
 
 <p>
-A number $N$ is excellent if you can break its digits into equal halves $a$ and $b$ such that $b^2 - a^2$ is $N$.
+A number $n$ is excellent if you can break its digits into equal halves $a$ and $b$ such that $b^2 - a^2$ is $n$. I represent $n$ as $ab$ where $a$ and $b$ represent an equal number of digits of $n$ (and not the product of $a$ and $b$).
 </p>
 
 <p>For example, for $530901$:</p>
@@ -137,19 +137,20 @@ Represent the number $N$ as $ab$ where that is the concatenation of digits in $a
 
 <p>This pyramid is a pattern of numbers that are excellent:</p>
 
-<pre>
-        4 8
-      3 4 6 8
-     33 4 66 8
-    333 4 666 8
-   3333 4 6666 8
-  33333 4 66666 8
- 333333 4 666666 8
-3333333 4 6666666 8
-</pre>
-
+$$
+\begin{align}
+           & 4 \:     8 \\
+      3 \: & 4 \: 6 \: 8 \\
+     33 \: & 4 \: 66 \: 8 \\
+    333 \: & 4 \: 666 \: 8 \\
+   3333 \: & 4 \: 6666 \: 8 \\
+  33333 \: & 4 \: 66666 \: 8 \\
+ 333333 \: & 4 \: 666666 \: 8 \\
+3333333 \: & 4 \: 6666666 \: 8
+\end{align}
+$$
 <p>
-These numbers are of the form of a summation of powers of 10 with a little extra added to the $10^0$ term. Let $k$ be the number of decimal digits in $a$ (or $b):
+These numbers are of the form of a summation of powers of 10 with a little extra added to the $10^0$ term. Let $k$ be the number of decimal digits in $a$ (or $b$):
 </p>
 
 $$
@@ -172,7 +173,15 @@ b & = 2 a
 $$
 
 <p>
-Call that summation (with a little extra) $N$. The number $ab$ is a multiple of $N$. Shift the digits of $a$ over $k+1$ powers of $10$ to give them the right magnitude:
+Call that summation (with a little extra) $N$.
+</p>
+
+$$
+N = 3 ( \sum\limits_{i=0}^k 10^i ) + 1
+$$
+
+<p>
+The number $ab$ is a multiple of $N$. Shift the digits of $a$ over $k+1$ powers of $10$ to give them the right magnitude:
 </p>
 
 $$
@@ -220,11 +229,12 @@ $$
 b^2 - a^2 & = (2N)^2 - N^2 \\
           & = 2^2 N^2 - N^2 \\
           & = ( 2^2 - 1 ) N^2 \\
-          & = 3 N^2
+          & = 3 N^2 \\
+          & = ab
 \end{align}
 $$
 
-<p>Both sides of $b^2 - a^2 = ab$ are $3 N^2$, so all numbers of this form are excellent. This includes the number $48$, which is the case for $i = 0$. This also means that there is at least one excellent number for every range of length $2k$ and that there are an infinite number of excellent numbers.</p>
+<p>Both sides of $b^2 - a^2 = ab$ are $3 N^2$, so all numbers of this form are excellent. This includes the number $48$, which is the case for $i = 0$. This also means that there is at least one excellent number for every set of numbers of length $2k$ and that there are an infinite number of excellent numbers.</p>
 
 
 <h3>Another interesting pattern</h3>
