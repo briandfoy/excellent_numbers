@@ -192,7 +192,7 @@ ab & = 10^k N  + 2 N \\
 $$
 
 <p>
-The term $10^k + 2$ doesn't look that interesting at first, but it's also $9$ repeated $k-1$ times (with a little extra little extra):
+The term $10^k + 2$ doesn't look that interesting at first, but it's also $9$ repeated $k$ times (with a little extra little extra):
 </p>
 
 $$
@@ -239,7 +239,98 @@ $$
 
 <h3>Another interesting pattern</h3>
 
-<p>If a number $ab$ is excellent, that number concatenated an odd number of times is also excellent. The number $3468$ is excellent, so $346834683468$ is excellent.</p>
+<p>If a number $ab$ is excellent, that number concatenated an odd number of times is also excellent. For example, the number $3468$ is excellent, so $346834683468$ is excellent.</p>
+
+<p>
+Let $n'$ be a number of the form $abab \ldots ab$ where there are an odd number of repetitions, $r$, of $ab$, where $k$ is the number of decimal digits in $a$. In that case:
+</p>
+
+$$
+\begin{align}
+abab \ldots ab & = ab  \sum\limits_{i=0}^{r-1} 10^{2ik} \\
+\end{align}
+$$
+
+<p>
+Let $a'$ be $ab \ldots aba$ (the first half of the digits) and $b'$ be $ba \ldots bab$ (the second half of the digit). The difference between the squares is then:
+</p>
+
+
+$$
+\begin{align}
+b'^2 - a'^2 & = (ba \ldots bab)^2 - (ab \ldots aba)^2 \\
+            & = ( b \sum\limits_{i=0}^{(r-1)/2} 10^{2ik}
+            + a \sum\limits_{i=0}^{(r-3)/2} 10^{(2i+1)k} )^2
+            -
+            ( a \sum\limits_{i=0}^{(r-1)/2} 10^{2ik}
+            + b \sum\limits_{i=0}^{(r-3)/2} 10^{(2i+1)k} )^2 \\
+\end{align}
+$$
+
+<p>
+All those series are annoying, so represent them as $S'$ and $S''$:
+</p>
+
+$$
+\begin{align}
+S' & = \sum\limits_{i=0}^{(r-1)/2} 10^{2ik} \\
+S'' & = \sum\limits_{i=0}^{(r-3)/2} 10^{(2i+1)k} \\
+\end{align}
+$$
+
+<p>
+This now looks much more tractable. Expand the squares and refactor:
+</p>
+
+$$
+\begin{align}
+b'^2 - a'^2 & = ( b S' + a S'' )^2 - ( a S' + b S'' )^2 \\
+
+            & = ( b^2 S'^2 + 2a \cdot b S' S'' + a^2 S''^2 ) - ( a^2 S'^2 + 2a \cdot b S' S'' + b^2 S''^2 ) \\
+            & = ( b^2 S'^2 + a^2 S''^2 ) - ( a^2 S'^2  + b^2 S''^2 ) \\
+            & = ( b^2 S'^2 - b^2 S''^2 ) + ( a^2 S''^2 - a^2 S'^2 )  \\
+            & = b^2 ( S'^2 - S''^2 ) - a^2 ( S'^2 - S''^2 )  \\
+            & = ( b^2 - a^2 )( S'^2 - S''^2 )  \\
+            & = ab ( S'^2 - S''^2 )  \\
+\end{align}
+$$
+
+<p>
+The trick now is to show that the difference in the squares of these series is the series we started with. Let $r' = (r-1)/2$:
+</p>
+
+$$
+\begin{align}
+( S'^2 - S''^2 ) & = (\sum\limits_{i=0}^{(r-1)/2} 10^{2ik} )^2 - (\sum\limits_{i=0}^{(r-3)/2} 10^{(2i+1)k})^2 \\
+
+                 & = (\sum\limits_{i=0}^{r'} 10^{2ik} )^2 - (\sum\limits_{i=0}^{r'-1} 10^{(2i+1)k})^2 \\
+
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{2ik}10^{2jk} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j=0}^{r'-1} 10^{(2i+1)k} 10^{(2j+1)k} \\
+
+                 & = \sum\limits_{i=0}^{r'} 10^{2ik} +  \sum\limits_{i=1}^{r'} 10^{2r'k}10^{2ik} \\
+
+                 & = \sum\limits_{i=0}^{(r-1)/2} 10^{2ik} +  \sum\limits_{i=1}^{(r-1)/2} 10^{(r-1)k}10^{2ik} \\
+
+                 & = \sum\limits_{i=0}^{(r-1)/2} 10^{2ik} +  \sum\limits_{i=1}^{(r-1)/2} 10^{(2i+r-1)k} \\
+
+                 & = \sum\limits_{i=0}^{(r-1)/2} 10^{2ik} +  \sum\limits_{i=(r+1)/2}^{r-1} 10^{2ik} \\
+
+                 & = \sum\limits_{i=0}^{r-1} 10^{2ik} \\
+\end{align}
+$$
+
+<p>
+Finally, an odd number of repetitions of $ab$ is also excellent:
+</p>
+
+
+$$
+\begin{align}
+b'^2 - a'^2 & = ab ( S'^2 - S''^2 ) \\
+            & = ab \sum\limits_{i=0}^{r-1} 10^{2ik} \\
+            & = a'b'
+\end{align}
+$$
 
 <h2>The Algorithm</h2>
 
@@ -401,7 +492,7 @@ I started this as a Perl project, so I've written about this on my Perl blogs. S
 </p>
 
 <p>
-Watch out for some of the other stuff you find out there. Most other spots have errors. If you see an excellent number that starts in 6 or has an odd number of digits, you know they messed up somewhere.
+Watch out for some of the other stuff you find out there. Most other spots have errors. If you see an excellent number that has an odd number of digits, you know they messed up somewhere.
 </p>
 
 <ul>
