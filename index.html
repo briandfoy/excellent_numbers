@@ -153,24 +153,81 @@ Represent the number $N$ as $ab$ where that is the concatenation of digits in $a
 </pre>
 
 <p>
-These numbers are of the form of a summation of powers of 10 with a little extra added to the $10^0$ term:
+These numbers are of the form of a summation of powers of 10 with a little extra added to the $10^0$ term. Let $k$ be the number of decimal digits in $a$ (or $b):
 </p>
 
 $$
 \begin{align}
-a & = 3 ( \sum\limits_{i=0}^n 10^n ) + 1 \\
-b & = 6 ( \sum\limits_{i=0}^n 10^n ) + 2
+a & = 3 ( \sum\limits_{i=0}^k 10^i ) + 1 \\
+b & = 6 ( \sum\limits_{i=0}^k 10^i ) + 2
 \end{align}
 $$
 
-But $b$ is really just double $a$:
+<p>
+But $b$ is really just double $a$, which you see by inspection even without the fancy symbols:
+</p>
 
 $$
 \begin{align}
-a & = & 3 ( \sum\limits_{i=0}^n 10^n ) + 1 \\
-b & = 2 ( & 3 ( \sum\limits_{i=0}^n 10^n ) + 1 \: \: )
+a & = & 3 ( \sum\limits_{i=0}^k 10^i ) + 1 \\
+b & = 2 ( & 3 ( \sum\limits_{i=0}^k 10^i ) + 1 \: \: ) \\
+b & = 2 a
 \end{align}
 $$
+
+<p>
+Call that summation (with a little extra) $N$. Now the number $ab$ is a multiple of $N$. You shift the digits of $a$ over $k+1$ powers of $10$ to give them the right magnitude:
+</p>
+
+$$
+\begin{align}
+ab & = 10^{k+1} N  + 2 N \\
+   & = N ( 10^{k+1} + 2 )
+\end{align}
+$$
+
+<p>
+The term $10^{k+1} + 2$ doesn't look that interesting at first, but it's also $9$ repeated $k$ times (with a little extra little extra):
+</p>
+
+$$
+\begin{align}
+10^{k+1} + 2 & = 9 \cdot 10^k + 3 \\
+             & = 3 ( 3 ( \sum\limits_{i=0}^k 10^i ) + 1 ) \\
+             & = 3 N
+\end{align}
+$$
+
+<p>
+Putting this back into $ab$:
+</p>
+
+$$
+\begin{align}
+ab & = N ( 10^{k+1} + 2 ) \\
+   & = N ( 3 N ) \\
+   & = 3 N^2
+\end{align}
+$$
+
+
+<p>
+The difference in squares reduces to the same thing:
+</p>
+
+
+$$
+\begin{align}
+b^2 - a^2 & = (2N)^2 - N^2 \\
+          & = 2^2 N^2 - N^2 \\
+          & = ( 2^2 - 1 ) N^2 \\
+          & = 3 N^2
+\end{align}
+$$
+
+<p>Both sides of $b^2 - a^2 = ab$ are $3 N^2$, so all numbers of this form are excellent. This includes the number $48$, which is the case for $n = 0$.</p>
+
+
 
 <h2>The Algorithm</h2>
 
@@ -189,7 +246,7 @@ $$530 \; 000, 530 \; 001, 530 \; 002, \cdots 530 \; 999$$
 $$
 \begin{align}
 b^2 - a^2 & = ab \\
-& = a 10^k + b
+& = a 10^{k+1} + b
 \end{align}
 $$
 
@@ -197,17 +254,17 @@ Collecting terms and rearranging:
 
 $$
 \begin{align}
-a^2 - a 10^k & = b^2 - b \\
+a^2 - a 10^{k+1} & = b^2 - b \\
 & = b ( b - 1 )
 \end{align}
 $$
 
 
 <p>
-We know the value of $a$ because we chose it, and we know the value of $a^2 + a 10^k$. We have to find the value of $b$ where $b ( b - 1 )$ is the same value. For large enough $b$, $b ( b - 1 )$ is almost the same as $b^2$. We can easily calculate
+We know the value of $a$ because we chose it, and we know the value of $a^2 + a 10^{k+1}$. We have to find the value of $b$ where $b ( b - 1 )$ is the same value. For large enough $b$, $b ( b - 1 )$ is almost the same as $b^2$. We can easily calculate
 </p>
 
-$$b = \sqrt{a^2 + a 10^k}$$
+$$b = \sqrt{a^2 + a 10^{k+1}}$$
 
 <p>Furthermore, for $b^2 - a^2$, there's some maximum value of $a$ for which there are no longer a possible value of $b$. The largest $b$ comprises only the digit $9$ repeated $k$ times. If $b$ has four digits, its maximum value is $9999$. There's some value of $a$ past which $9999^2 - a^2 = a 10^k + 9999$ has a solution.</p>
 
