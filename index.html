@@ -306,27 +306,49 @@ $$
                  & = (\sum\limits_{i=0}^{r'} 10^{2ik} )^2 - (\sum\limits_{i=0}^{r'-1} 10^{(2i+1)k})^2 \\
 
                  & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{2ik}10^{2jk} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j=0}^{r'-1} 10^{(2i+1)k} 10^{(2j+1)k} \\
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j=0}^{r'-1} 10^{(i+j+1)2k} \\
 \end{align}
 $$
 
 <p>
-The subtraction knocks out the terms with $i$ from $1$ to $r'$ and with $j$ from $0$ to $r'-1$. This leaves the terms with $i = 0$ and the terms with $j = r'$ (with one term with $i = 0, j = r'$). Rewriting all terms as $10^{2ik}$ gets the rest of the way there:
+Let $j' = j + 1$ to start the path to making the second double summation look like the first one. This misses the $j' = 0$ case, but that comes back by adding and subtracting a summation. Do the same for the $i = r'$. This transforms the second double summation to look just like the first one, canceling out both of them:
 </p>
-
 
 $$
 \begin{align}
-( S'^2 - S''^2 ) & = \sum\limits_{i=0}^{r'} 10^{2ik} +  \sum\limits_{i=1}^{r'} 10^{2r'k}10^{2ik} \\
+( S'^2 - S''^2 ) & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j=0}^{r'-1} 10^{(i+j+1)2k} \\
 
-                 & = \sum\limits_{i=0}^{(r-1)/2} 10^{2ik} +  \sum\limits_{i=1}^{(r-1)/2} 10^{(r-1)k}10^{2ik} \\
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j'=1}^{r'} 10^{(i+j')2k} \\
 
-                 & = \sum\limits_{i=0}^{(r-1)/2} 10^{2ik} +  \sum\limits_{i=1}^{(r-1)/2} 10^{(2i+r-1)k} \\
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=1}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j'=1}^{r'} 10^{(i+j')k} - \sum\limits_{i=0}^{r'-1} 10^{2ik} + \sum\limits_{i=0}^{r'-1} 10^{2ik} \\
 
-                 & = \sum\limits_{i=0}^{(r-1)/2} 10^{2ik} +  \sum\limits_{i=(r+1)/2}^{r-1} 10^{2ik} \\
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=1}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j'=0}^{r'} 10^{(i+j')k} + \sum\limits_{i=0}^{r'-1} 10^{2ik} \\
+
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=1}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j'=0}^{r'} 10^{(i+j')k}
+                 + \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 - \sum\limits_{j'=0}^{r'} 10^{(r' + j')2k}
+                 + \sum\limits_{j'=0}^{r'} 10^{(r' + j')2k} \\
+
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=1}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'} \sum\limits_{j'=0}^{r'} 10^{(i+j')k}
+                 + \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 + \sum\limits_{j'=0}^{r'} 10^{(r' + j')2k} \\
+
+                 & = \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 + \sum\limits_{j'=0}^{r'} 10^{(r' + j')2k} \\
+
+                 & = \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 + \sum\limits_{j'=r'}^{2r'} 10^{j'2k} \\
+
+                 & = \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 + \sum\limits_{i=r'}^{2r'} 10^{2ik} \\
+
+                 & = \sum\limits_{i=0}^{2r'} 10^{2ik} \\
 
                  & = \sum\limits_{i=0}^{r-1} 10^{2ik} \\
 \end{align}
 $$
+
+
 
 <p>
 Finally, an odd number of repetitions of $ab$ is also excellent:
