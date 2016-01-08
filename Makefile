@@ -11,7 +11,7 @@ bA162700.txt: excellent.txt
 	@ ${PERL} -ne 'print qq($$. $$_)' excellent.txt >> $@
 
 excellent.txt: FORCE
-	${PERL} tools/scan_output output c
+	-${PERL} tools/scan_output output c
 	@ sort -n -u $@ > $@.sorted
 	@ mv $@.sorted $@
 	@ echo "There are \c"
@@ -22,7 +22,7 @@ README.pod: excellent.txt
 	@ ${PERL} tools/put_nums_in_readme
 
 primes.txt: excellent.txt tools/primes
-	@ ${PERL} tools/primes
+	@ ${PERL} tools/primes excellent.txt > $@
 
 tweet: FORCE
 	@ ${PERL} tools/get_tweets
