@@ -14,7 +14,6 @@ is 8² - 4².
 I'm currently working on the 30-digit numbers. So far:
 
 	[12 digits]
-<<<<<<< HEAD
 	48
 
 	[4 digits]
