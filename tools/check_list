@@ -1,0 +1,27 @@
+#!perl6
+
+use ExcellentNumber;
+
+my $file = 'excellent.txt';
+
+my @errors;
+
+for $file.IO.lines -> $candidate {
+	my $rc = is_excellent( + $candidate );
+	unless $rc {
+		say "$candidate is not excellent";
+		@errors.push( [ $candidate, .ins ] );
+		next;
+		}
+
+	say "$candidate is excellent";
+	say "\tb = $rc.{'b'} => b² = $rc.{'b²'}";
+	say "\ta = $rc.{'a'} => a² = $rc.{'a²'}";
+	say "\tdiff is $rc.{'diff'}";
+	}
+
+say '-' x 30 if @errors.elems;
+
+for @errors -> $error {
+	say "error.[1] : $error[0] is not excellent";
+	}
