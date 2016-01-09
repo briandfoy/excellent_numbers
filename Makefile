@@ -1,4 +1,5 @@
 PERL=perl5.22.0
+PERL6=perl6
 PERL5OPT=-Mlib=lib
 FILES=excellent.txt README.pod bA162700.txt primes.txt
 
