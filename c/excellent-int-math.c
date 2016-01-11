@@ -48,6 +48,14 @@ const uint64_t stop_a[] = {
         6180339887498948483LL,
 };
 
+const int next_a[] = {
+		4,         /* previous a ends in 0 */
+		0, 0, 0,
+		2,         /* previous a ends in 4 */
+		0,
+		4          /* previous a ends in 4 */
+};
+
 /* see http://stackoverflow.com/a/13187798 */
 static uint64_t
 UnsignedMultiply128(uint64_t x, uint64_t y, uint64_t *hi) {
@@ -87,13 +95,8 @@ int main(int argc, char *argv[])
     start = powers_of_10[ k - 1 ];
 	end   = stop_a[ k ];
 
-    for (front = start; front <= end; front += 2)
+    for (front = start; front <= end; front += next_a[ front % 10 ])
     {
-        last_digit = (front % 10);
-        if ( (last_digit != 0) && (last_digit != 4) && (last_digit != 6)) {
-            continue;
-        }
-
         back = (uint64_t) (1.0 + front * sqrt(1 + ((double) K) / front));
         if (back >= K) {
             break;
