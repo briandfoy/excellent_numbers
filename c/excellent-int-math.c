@@ -87,11 +87,6 @@ int main(int argc, char *argv[])
     start = powers_of_10[ k - 1 ];
 	end   = stop_a[ k ];
 
-	printf(
-		"    k: %d\n    K: %llu\nstart: %llu\n  end: %llu\n",
-		k, K, start, end
-		);
-
     for (front = start; front <= end; front += 1)
     {
         last_digit = (front % 10);
