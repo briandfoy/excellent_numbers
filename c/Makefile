@@ -1,6 +1,6 @@
 CC=cc
 LIBS=-lgmp
-CFLAGS=-O2
+CFLAGS=-O2 -march=native
 GRAND_CC=${CC} ${CFLAGS}
 
 C_FILES=excellent-int-math.c
