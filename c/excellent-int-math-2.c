@@ -25,42 +25,18 @@ const uint64_t powers_of_10[] = {
     1000000000000000000LL,
 };
 
-const uint64_t stop_a[] = {
-		0,
-		6,
-        63,
-        619,
-        6181,
-        61805,
-        618034,
-        6180340,
-        61803400,
-        618033989,
-        6180339888LL,
-        61803398875LL,
-        618033988751LL,
-        6180339887499LL,
-        61803398874990LL,
-        618033988749895LL,
-        6180339887498949LL,
-        61803398874989485LL,
-        618033988749894849LL,
-        6180339887498948483LL,
-};
-
 /* see http://stackoverflow.com/a/13187798 */
-static uint64_t
-UnsignedMultiply128(uint64_t x, uint64_t y, uint64_t *hi) {
+static unsigned __int128
+mult64x64_128(uint64_t x, uint64_t y) {
     unsigned __int128 z = ((unsigned __int128) x) * ((unsigned __int128) y);
-    *hi = z >> 64;
-    return (uint64_t) z;
+    return z;
 }
 
 int main(int argc, char *argv[])
 {
     int d, k;
-    uint64_t K, start, end, front, back, last_digit, count = 0;
-    uint64_t lhs[2], rhs[2], frontsq[2];
+    uint64_t K, start, front, back, last_digit, count = 0;
+    unsigned __int128 lhs, rhs, frontsq;
 
     if (argc < 2) {
         fputs("Need number of digits", stderr);
@@ -83,16 +59,10 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    K     = powers_of_10[ k ];
+    K = powers_of_10[ k ];
     start = powers_of_10[ k - 1 ];
-	end   = stop_a[ k ];
 
-	printf(
-		"    k: %d\n    K: %llu\nstart: %llu\n  end: %llu\n",
-		k, K, start, end
-		);
-
-    for (front = start; front <= end; front += 1)
+    for (front = start; front < 7 * start; front += 1)
     {
         last_digit = (front % 10);
         if ( (last_digit != 0) && (last_digit != 4) && (last_digit != 6)) {
@@ -104,20 +74,13 @@ int main(int argc, char *argv[])
             break;
         }
 
-        lhs[0] = lhs[1] = rhs[0] = rhs[1] = frontsq[0] = frontsq[1] = 0;
+        lhs = mult64x64_128(back,  back - 1);
+        rhs = mult64x64_128(front, K);
+        frontsq = mult64x64_128(front, front);
 
-        lhs[0] = UnsignedMultiply128(back,  back - 1, lhs + 1);
-        rhs[0] = UnsignedMultiply128(front, K, rhs + 1);
-        frontsq[0] = UnsignedMultiply128(front, front, frontsq + 1);
+        rhs += frontsq;
 
-        rhs[0] += frontsq[0];
-        rhs[1] += frontsq[1];
-
-        if (rhs[0] < frontsq[0]) {
-            rhs[1] += 1;
-        }
-
-        if ((lhs[1] == rhs[1]) && (lhs[0] == rhs[0])) {
+        if (lhs == rhs) {
             count += 1;
             printf("%llu%llu\n", front, back);
         }

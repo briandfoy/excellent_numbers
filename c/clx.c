@@ -41,7 +41,7 @@ const uint64_t powers_of_10[] = {
     1000000000000000000LL,
 };
 
-int main(int argc, char *argv[1])
+int main(int argc, char *argv[])
 {
     int d, k;
     uint64_t K, start, front, back, last_digit, count = 0;
