@@ -2,8 +2,19 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <inttypes.h>
 
+#ifdef WINDOWS
 #include <windows.h>
+#endif
+
+uint64_t UnsignedMultiply128( uint64_t a, uint64_t b, uint64_t *hi);
+
+uint64_t UnsignedMultiply128( uint64_t a, uint64_t b, uint64_t *hi) {
+    __int128 result = (__int128)a * (__int128)b;
+    *hi = result >> 64;
+    return (size_t)result;
+	}
 
 const uint64_t powers_of_10[] = {
     1,
@@ -16,15 +27,15 @@ const uint64_t powers_of_10[] = {
     10000000,
     100000000,
     1000000000,
-    10000000000i64,
-    100000000000i64,
-    1000000000000i64,
-    10000000000000i64,
-    100000000000000i64,
-    1000000000000000i64,
-    10000000000000000i64,
-    100000000000000000i64,
-    1000000000000000000i64,
+    10000000000LL,
+    100000000000LL,
+    1000000000000LL,
+    10000000000000LL,
+    100000000000000LL,
+    1000000000000000LL,
+    10000000000000000LL,
+    100000000000000000LL,
+    1000000000000000000LL,
 };
 
 int main(int argc, char *argv[1])
@@ -84,11 +95,11 @@ int main(int argc, char *argv[1])
 
         if ((lhs[1] == rhs[1]) && (lhs[0] == rhs[0])) {
             count += 1;
-            printf("%I64d%I64d\n", front, back);
+            printf("%lld%lld\n", front, back);
         }
     }
 
-    printf("%I64d excellent numbers with %d digits\n", count, d);
+    printf("%lld excellent numbers with %d digits\n", count, d);
 
     return 0;
 
