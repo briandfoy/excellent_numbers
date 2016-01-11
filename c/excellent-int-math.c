@@ -98,9 +98,6 @@ int main(int argc, char *argv[])
     for (front = start; front <= end; front += next_a[ front % 10 ])
     {
         back = (uint64_t) (1.0 + front * sqrt(1 + ((double) K) / front));
-        if (back >= K) {
-            break;
-        }
 
         lhs[0] = lhs[1] = rhs[0] = rhs[1] = frontsq[0] = frontsq[1] = 0;
 
