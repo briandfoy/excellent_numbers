@@ -392,6 +392,9 @@ The count of excellent numbers for a length $N$ have a curious pattern that seem
 28  17 159      4x7
 30 208 367  2x15    6x5     10x3
 32   ?   ?
+34   ?   ?  2x17
+36   ?   ?      4x9             12x3
+38   ?   ?  2x19
 </pre>
 
 <p>Some observations</p>
@@ -492,37 +495,45 @@ From there, it's brute force to check all $a$ ending in $\{ 0, 4, 6 \}$ from $1 
 <h2>Brass tacks</h2>
 
 <p>
-Now that we have an algorithm that excludes most of the numbers, we have to compute some large numbers, where large is relative to the integer size of computer processors. The GMP library can do that for us. I first tried to do that with the <a href="http://www.metacpan.org/module/Math::GMP">Math::GMP</a> library for Perl but it was too slow since it had to convert Perl data structures to the C data structures. I eventually dropped down to C completely. That's pretty fast. I can exhaust the 26-digit space in a couple of days on a handful of less-than-decent processors.
+Now that we have an algorithm that excludes most of the numbers, we have to compute some large numbers, where large is relative to the integer size of computer processors. Each jump in number of digits, say from 24- to 26-digits, is a ten-fold increase in numbers to check.
 </p>
 <p>
-Each jump in digits, say from 24- to 26-digits, is a ten-fold increase in numbers to check. If I wanted to do this on my MacBook Air, here's the progression of times (slowly getting slower as the numbers get bigger):
+The GMP library can do that for us. I first tried to do that with the <a href="http://www.metacpan.org/module/Math::GMP">Math::GMP</a> library for Perl but it was too slow since it had to convert Perl data structures to the C data structures. I eventually dropped down to C completely. That's pretty fast. I can exhaust the 26-digit space in a couple of days on a handful of less-than-decent processors.
 </p>
+<p>
+But then Sinan Ünür had the idea to try it in 128-bit integer math using compiler support for that size on 64-bit hardware. Instead of using GMP's general purpose high precision stuff, we could make very specific optimizations with none of the stuff we didn't want. This would handle at least up to 36-digit numbers.
+</p>
+
+<p>This table has timings from my mid-2012 MacBook Air running an 1.8GHz Intel Core i5.</p>
 
 <div id="timings" class="center" align="center">
 <table>
-<tr><th>Digits</th><th>Processor time</th></tr>
-<tr><td>2</td><td>5 microseconds</td></tr>
-<tr><td>4</td><td>5 microseconds</td></tr>
-<tr><td>6</td><td>5 microseconds</td></tr>
-<tr><td>8</td><td>5 microseconds</td></tr>
-<tr><td>10</td><td>15 microseconds</td></tr>
-<tr><td>12</td><td>110 microseconds</td></tr>
-<tr><td>14</td><td>1 second</td></tr>
-<tr><td>16</td><td>11 seconds</td></tr>
-<tr><td>18</td><td>130 seconds</td></tr>
-<tr><td>20</td><td>20 minutes</td></tr>
-<tr><td>22</td><td>3.5 hours</td></tr>
-<tr><td>24</td><td>1.5 days</td></tr>
-<tr><td>26</td><td>15 days</td></tr>
-<tr><td>28</td><td>150 days</td></tr>
-<tr><td>30</td><td>4 years</td></tr>
+<tr><th>Digits</th><th colspan="2">Processor time</th></tr>
+<tr><th></th><th>GMP</th><th>int128</th>
+<tr> <td> 2</td> <td>5 μs</td>      <td>4 μs</td>      </tr>
+<tr> <td> 4</td> <td>5 μs</td>      <td>4 μs</td>      </tr>
+<tr> <td> 6</td> <td>5 μs</td>      <td>6 μs</td>      </tr>
+<tr> <td> 8</td> <td>5 μs</td>      <td>6 μs</td>      </tr>
+<tr> <td>10</td> <td>15 μs</td>     <td>6 μs</td>      </tr>
+<tr> <td>12</td> <td>110 μs</td>    <td>7 μs</td>      </tr>
+<tr> <td>14</td> <td>1 s</td>       <td>25 μs</td>     </tr>
+<tr> <td>16</td> <td>11 s</td>      <td>221 μs</td>    </tr>
+<tr> <td>18</td> <td>130 s</td>     <td>2.2 s</td>     </tr>
+<tr> <td>20</td> <td>20 min</td>    <td>22 s</td>      </tr>
+<tr> <td>22</td> <td>3.5 hours</td> <td>220 s</td>     </tr>
+<tr> <td>24</td> <td>1.5 days</td>  <td>37 min</td>    </tr>
+<tr> <td>26</td> <td>15 days</td>   <td>6.1 hours</td> </tr>
+<tr> <td>28</td> <td>150 days</td>  <td>2.5 days</td>  </tr>
+<tr> <td>30</td> <td>4 years</td>   <td>21 days</td>   </tr>
+<tr> <td>32</td> <td></td>          <td>210 days</td>  </tr>
+<tr> <td>34</td> <td></td>          <td>6 years</td>   </tr>
+<tr> <td>36</td> <td></td>          <td>60 years</td>  </tr>
 </table>
 </div>
 
 <p>
-That's just my laptop. The next tactic is to go wide. Instead of one processor, break up the problem and distribute it among several processors. For instance, for 28-digit numbers, it takes 150 days on one processor, or a month on 5 processors or two weeks on 10 processors. We can spin up Amazon EC2 and let it chew away at the problem.
+That's just my laptop. The next tactic is to go wide. Instead of one processor, break up the problem and distribute it among several processors. For instance, for 32-digit numbers, it takes 210 days on one processor, or a month on 7 processors or 3 days on 70 processors.
 </p>
-
 
 <h2>Contributions</h2>
 
@@ -535,7 +546,7 @@ Joe Zbiciak contributed the modulus congruence optimization.
 </p>
 
 <p>
-Phil Doroff from <a href="http://www.servercentral.com">ServerCentral</a> donated some time on their big hardware.
+Phil Doroff from <a href="http://www.servercentral.com">ServerCentral</a> donated some time on their big hardware. This allowed us to go very wide.
 </p>
 
 <p>
