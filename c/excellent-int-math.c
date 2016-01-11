@@ -25,6 +25,29 @@ const uint64_t powers_of_10[] = {
     1000000000000000000LL,
 };
 
+const uint64_t stop_a[] = {
+		0,
+		6,
+        63,
+        619,
+        6181,
+        61805,
+        618034,
+        6180340,
+        61803400,
+        618033989,
+        6180339888LL,
+        61803398875LL,
+        618033988751LL,
+        6180339887499LL,
+        61803398874990LL,
+        618033988749895LL,
+        6180339887498949LL,
+        61803398874989485LL,
+        618033988749894849LL,
+        6180339887498948483LL,
+};
+
 static uint64_t
 UnsignedMultiply128(uint64_t x, uint64_t y, uint64_t *hi) {
     unsigned __int128 z = ((unsigned __int128) x) * ((unsigned __int128) y);
@@ -35,7 +58,7 @@ UnsignedMultiply128(uint64_t x, uint64_t y, uint64_t *hi) {
 int main(int argc, char *argv[1])
 {
     int d, k;
-    uint64_t K, start, front, back, last_digit, count = 0;
+    uint64_t K, start, end, front, back, last_digit, count = 0;
     uint64_t lhs[2], rhs[2], frontsq[2];
 
     if (argc < 2) {
@@ -59,10 +82,16 @@ int main(int argc, char *argv[1])
         exit(1);
     }
 
-    K = powers_of_10[ k ];
+    K     = powers_of_10[ k ];
     start = powers_of_10[ k - 1 ];
+	end   = stop_a[ k ];
 
-    for (front = start; front < 7 * start; front += 1)
+	printf(
+		"    k: %d\n    K: %llu\nstart: %llu\n  end: %llu\n",
+		k, K, start, end
+		);
+
+    for (front = start; front <= end; front += 1)
     {
         last_digit = (front % 10);
         if ( (last_digit != 0) && (last_digit != 4) && (last_digit != 6)) {

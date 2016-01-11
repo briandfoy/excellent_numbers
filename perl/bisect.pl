@@ -6,6 +6,9 @@ no warnings qw(experimental::signatures);
 use vars qw($d);
 use bigint;
 
+
+say "const uint64_t stop_a[] = {\n\t0,";
+
 foreach my $k ( 1 .. 18 ) {
 	my $max_a = bisect(
 		sub ( $a, $k ) { sqrt( $a * 10 **($k) + $a**2 ) },
@@ -13,9 +16,10 @@ foreach my $k ( 1 .. 18 ) {
 		my $threshold = 1
 		);
 
-	say 2*$k . ": $max_a";
+	say "\t${max_a}LL,";
 	}
 
+say "};";
 
 sub bisect ( $sub, $k, $threshold=1 ) {
 	my $k = $k + 1;
