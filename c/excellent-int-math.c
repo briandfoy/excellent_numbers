@@ -32,7 +32,7 @@ UnsignedMultiply128(uint64_t x, uint64_t y, uint64_t *hi) {
     return (uint64_t) z;
 }
 
-int main(int argc, char *argv[1])
+int main(int argc, char *argv[])
 {
     int d, k;
     uint64_t K, start, front, back, last_digit, count = 0;
