@@ -58,10 +58,11 @@ checking the last decimal digit, use the last decimal digit to choose
 the increment value. 0->4, 4->6, 6->0 */
 const int next_a[] = {
 		4,         /* previous a ends in 0 */
-		0, 0, 0,
+		1, 1, 1,
 		2,         /* previous a ends in 4 */
-		0,
-		4          /* previous a ends in 4 */
+		1,
+		4,         /* previous a ends in 6 */
+		1, 1, 1
 };
 
 /* see http://stackoverflow.com/a/13187798 */
