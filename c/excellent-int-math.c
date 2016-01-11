@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
     start = powers_of_10[ k - 1 ];
 	end   = stop_a[ k ];
 
-    for (front = start; front <= end; front += 1)
+    for (front = start; front <= end; front += 2)
     {
         last_digit = (front % 10);
         if ( (last_digit != 0) && (last_digit != 4) && (last_digit != 6)) {
