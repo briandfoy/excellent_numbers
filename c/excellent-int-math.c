@@ -25,6 +25,46 @@ const uint64_t powers_of_10[] = {
     1000000000000000000LL,
 };
 
+/* This was created by perl/bisect.pl. Take the maximum b (all 9s)
+and compute the largest a from that.
+
+Each position represents a value of k (half digits), with 0 as a placeholder
+for k=0 */
+const uint64_t stop_a[] = {
+		0,
+		6,
+        63,
+        619,
+        6181,
+        61805,
+        618034,
+        6180340,
+        61803400,
+        618033989,
+        6180339888LL,
+        61803398875LL,
+        618033988751LL,
+        6180339887499LL,
+        61803398874990LL,
+        618033988749895LL,
+        6180339887498949LL,
+        61803398874989485LL,
+        618033988749894849LL,
+        6180339887498948483LL,
+};
+
+/* a has to end in 0, 4, or 6. Instead of incrementing by 2 and
+checking the last decimal digit, use the last decimal digit to choose
+the increment value. 0->4, 4->6, 6->0 */
+const int next_a[] = {
+		4,         /* previous a ends in 0 */
+		1, 1, 1,
+		2,         /* previous a ends in 4 */
+		1,
+		4,         /* previous a ends in 6 */
+		1, 1, 1
+};
+
 /* see http://stackoverflow.com/a/13187798 */
 static uint64_t
 UnsignedMultiply128(uint64_t x, uint64_t y, uint64_t *hi) {
@@ -36,7 +76,7 @@ UnsignedMultiply128(uint64_t x, uint64_t y, uint64_t *hi) {
 int main(int argc, char *argv[])
 {
     int d, k;
-    uint64_t K, start, front, back, last_digit, count = 0;
+    uint64_t K, start, end, front, back, last_digit, count = 0;
     uint64_t lhs[2], rhs[2], frontsq[2];
 
     if (argc < 2) {
@@ -60,20 +100,13 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    K = powers_of_10[ k ];
+    K     = powers_of_10[ k ];
     start = powers_of_10[ k - 1 ];
+	end   = stop_a[ k ];
 
-    for (front = start; front < 7 * start; front += 1)
+    for (front = start; front <= end; front += next_a[ front % 10 ])
     {
-        last_digit = (front % 10);
-        if ( (last_digit != 0) && (last_digit != 4) && (last_digit != 6)) {
-            continue;
-        }
-
         back = (uint64_t) (1.0 + front * sqrt(1 + ((double) K) / front));
-        if (back >= K) {
-            break;
-        }
 
         lhs[0] = lhs[1] = rhs[0] = rhs[1] = frontsq[0] = frontsq[1] = 0;
 

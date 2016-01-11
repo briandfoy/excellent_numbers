@@ -5,3 +5,5 @@ c/excellent-gmp
 c/excellent-gmp.dSYM
 c/*.txt
 perl6/lib/.precomp
+c/excellent-int-math
+c/clx

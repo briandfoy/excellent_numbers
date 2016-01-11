@@ -1,10 +1,10 @@
 CC=cc
 LIBS=-lgmp
+CFLAGS=-O2 -march=native
+GRAND_CC=${CC} ${CFLAGS}
 
-GRAND_CC=${CC} ${LIBS}
-
-C_FILES=excellent-gmp.c
-BASE=excellent-gmp
+C_FILES=excellent-int-math.c
+BASE=excellent-int-math
 
 all:
 	${GRAND_CC} -o ${BASE} ${C_FILES}

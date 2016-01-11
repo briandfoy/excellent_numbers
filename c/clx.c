@@ -8,6 +8,9 @@
 #include <windows.h>
 #endif
 
+
+/* See also http://math.nemcc.edu/courses/cp2/cpp/include/crt/intsafe.h */
+
 uint64_t UnsignedMultiply128( uint64_t a, uint64_t b, uint64_t *hi);
 
 uint64_t UnsignedMultiply128( uint64_t a, uint64_t b, uint64_t *hi) {
