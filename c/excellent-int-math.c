@@ -25,6 +25,7 @@ const uint64_t powers_of_10[] = {
     1000000000000000000LL,
 };
 
+/* see http://stackoverflow.com/a/13187798 */
 static uint64_t
 UnsignedMultiply128(uint64_t x, uint64_t y, uint64_t *hi) {
     unsigned __int128 z = ((unsigned __int128) x) * ((unsigned __int128) y);
