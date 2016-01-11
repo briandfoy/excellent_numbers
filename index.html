@@ -390,7 +390,7 @@ The count of excellent numbers for a length $N$ have a curious pattern that seem
 24  51 137              8x3
 26   5 142  2x13
 28  17 159      4x7
-30 208 367  2x15    6x5     10x3
+30 334 367  2x15    6x5     10x3
 32   ?   ?
 34   ?   ?  2x17
 36   ?   ?      4x9             12x3
@@ -501,7 +501,7 @@ Now that we have an algorithm that excludes most of the numbers, we have to comp
 The GMP library can do that for us. I first tried to do that with the <a href="http://www.metacpan.org/module/Math::GMP">Math::GMP</a> library for Perl but it was too slow since it had to convert Perl data structures to the C data structures. I eventually dropped down to C completely. That's pretty fast. I can exhaust the 26-digit space in a couple of days on a handful of less-than-decent processors.
 </p>
 <p>
-But then Sinan Ünür had the idea to try it in 128-bit integer math using compiler support for that size on 64-bit hardware. Instead of using GMP's general purpose high precision stuff, we could make very specific optimizations with none of the stuff we didn't want. He reduced the runtime by 98%, although this method would handle up to 36-digit numbers.
+But then Sinan Ünür had the idea to try it in 128-bit integer math using compiler support for that size on 64-bit hardware. Instead of using GMP's general purpose high precision stuff, we could make very specific optimizations with none of the stuff we didn't want. This would handle at least up to 36-digit numbers.
 </p>
 
 <p>This table has timings from my mid-2012 MacBook Air running an 1.8GHz Intel Core i5.</p>
@@ -532,7 +532,7 @@ But then Sinan Ünür had the idea to try it in 128-bit integer math using compi
 </div>
 
 <p>
-That's just my laptop. The current tactic is to go wide. Instead of one processor, break up the problem and distribute it among several processors. For instance, for 32-digit numbers, it takes 210 days on one processor, or a month on 7 processors or 3 days on 70 processors.
+That's just my laptop. The next tactic is to go wide. Instead of one processor, break up the problem and distribute it among several processors. For instance, for 32-digit numbers, it takes 210 days on one processor, or a month on 7 processors or 3 days on 70 processors.
 </p>
 
 <h2>Contributions</h2>
