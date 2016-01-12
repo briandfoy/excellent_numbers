@@ -263,7 +263,7 @@ int main( int argc, char *argv[] ) {
     iter = 0;
 
     for (a = start_a; a <= end_a; a += next_a[ a % 10 ]) {
-        if ((iter % (100000000)) == 0) {
+        if ((iter % (300000000)) == 0) {
             if( int_flag > 0 ) {
                 printf( "!!! [%d] Caught interrupt\n", getpid() );
                 break;
