@@ -65,13 +65,13 @@ the increment value. 0->4, 4->6, 6->0
 
 Increment by 1 for any other ending and eventually we'll be back in sync.
 */
-const int next_a[] = {
-		4,         /* previous a ends in 0 */
-		1, 1, 1,
-		2,         /* previous a ends in 4 */
-		1,
-		4,         /* previous a ends in 6 */
-		1, 1, 1
+const uint8_t next_a[] = {
+    4,         /* previous a ends in 0 */
+    1, 1, 1,
+    2,         /* previous a ends in 4 */
+    1,
+    4,         /* previous a ends in 6 */
+    1, 1, 1
 };
 
 const uint8_t  seconds_per_minute = 60;
