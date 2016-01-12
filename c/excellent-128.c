@@ -75,9 +75,9 @@ const uint8_t next_a[] = {
 };
 
 const uint8_t  seconds_per_minute = 60;
-const uint16_t seconds_per_hour = seconds_per_minute * 60;
-const uint32_t seconds_per_day = seconds_per_hour * 24;
-const uint32_t seconds_per_week = seconds_per_day * 7;
+const uint16_t seconds_per_hour   = seconds_per_minute * 60;
+const uint32_t seconds_per_day    = seconds_per_hour   * 24;
+const uint32_t seconds_per_week   = seconds_per_day    *  7;
 
 const uint64_t iterations_per_signal_check = 300000000;
 
