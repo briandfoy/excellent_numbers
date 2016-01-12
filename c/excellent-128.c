@@ -81,6 +81,8 @@ const uint32_t seconds_per_week = seconds_per_day * 7;
 
 const uint64_t iterations_per_signal_check = 300000000;
 
+const uint8_t alarm_minutes = 1;
+
 struct excellent_progress_info {
     uint64_t last_a;
     uint64_t numbers_done;
@@ -125,6 +127,8 @@ report_progress(
 static void
 alarm_handler( int signo ) {
     alarm_flag += 1;
+    /* Reset the alarm so we get output more than once */
+    alarm( alarm_minutes * seconds_per_minute);
 }
 
 static void
@@ -167,7 +171,7 @@ setup_alarm( void ) {
     if ( sigaction(SIGALRM, &act, NULL) == -1 ) {
         perror( "sigaction couldn't install SIGALRM" );
     }
-    alarm(15 * seconds_per_minute);
+    alarm(alarm_minutes * seconds_per_minute);
 }
 
 static void
