@@ -31,6 +31,11 @@ const uint64_t powers_of_10[] = {
     1000000000000000000LL,
 };
 
+/* This was created by perl/bisect.pl. Take the maximum b (all 9s)
+and compute the largest a from that.
+
+Each position represents a value of k (half digits), with 0 as a placeholder
+for k=0 */
 const uint64_t stop_a[] = {
     0,
     6,
