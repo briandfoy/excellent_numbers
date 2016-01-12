@@ -3,15 +3,6 @@
 my %hash;
 
 for @*ARGS -> $command {
-	unless $command.IO.e {
-		say "Command [$command] does not exist!";
-		next;
-		};
-	unless $command.IO.x {
-		say "Command [$command] is not executable!";
-		next;
-		};
-
 	say "===== $command";
 
 	for 2, 4 ... 18 -> $n {
