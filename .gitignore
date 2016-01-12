@@ -4,6 +4,7 @@ nohup.out
 c/excellent-gmp
 c/excellent-gmp.dSYM
 c/*.txt
+c/*.exe
 perl6/lib/.precomp
 c/excellent-int-math
 c/clx
