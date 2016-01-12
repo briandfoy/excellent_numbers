@@ -3,7 +3,8 @@
 =head1 Excellent Numbers
 
 A seemingly useless number theory problem wastes so much time, but
-is so much fun! I want to compute very large "Excellent Numbers".
+is too much fun to put that time to good use. I want to compute very
+large "Excellent Numbers".
 
 A number I<ab> is excellent if I<b²> - I<a²> is the number I<ab>,
 where I<a> and I<b> have an equal number of digits. For instance, 48
@@ -555,6 +556,8 @@ I'm currently working on the 30-digit numbers. So far:
 =item * Joe Zbiciak contributed the modulus congruence optimization
 
 =item * Phil Doroff from ServerCentral provided a fat box with 80 CPUs so I could run the 30 digit list in a reasonable time.
+
+=item * Sinan Ünür made everything really fast by using int128 math
 
 =back
 
