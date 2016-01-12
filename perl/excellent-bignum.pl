@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!perl
 package ExcellentNumbers;
 
 use v5.22;
