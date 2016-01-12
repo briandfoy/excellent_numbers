@@ -117,7 +117,7 @@ report_progress(
             getpid(), start_a, a );
     printf( "*** [%d] [%u] working on: %" PRIu64 " tried: %" PRIu64 " rate: %" PRIu64 " / sec\n",
             getpid(), this_time, a, pinfo->numbers_done, pinfo->rate );
-
+	fflush( stdout );
     pinfo->last_time = this_time;
     pinfo->last_a = a;
 
@@ -196,6 +196,7 @@ time_left ( uint64_t rate, uint64_t this_a, uint64_t end_a ) {
 
     printf( "*** [%d] time left: %u wk %u d %u h %u m %u s\n",
             getpid(), weeks, days, hours, minutes, seconds );
+	fflush( stdout );
 
     return;
 }
