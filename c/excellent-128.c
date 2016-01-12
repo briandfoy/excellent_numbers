@@ -31,6 +31,11 @@ const uint64_t powers_of_10[] = {
     1000000000000000000LL,
 };
 
+/* This was created by perl/bisect.pl. Take the maximum b (all 9s)
+and compute the largest a from that.
+
+Each position represents a value of k (half digits), with 0 as a placeholder
+for k=0 */
 const uint64_t stop_a[] = {
     0,
     6,
@@ -54,6 +59,21 @@ const uint64_t stop_a[] = {
     6180339887498948483LL,
 };
 
+/* a has to end in 0, 4, or 6. Instead of incrementing by 2 and
+checking the last decimal digit, use the last decimal digit to choose
+the increment value. 0->4, 4->6, 6->0
+
+Increment by 1 for any other ending and eventually we'll be back in sync.
+*/
+const int next_a[] = {
+		4,         /* previous a ends in 0 */
+		1, 1, 1,
+		2,         /* previous a ends in 4 */
+		1,
+		4,         /* previous a ends in 6 */
+		1, 1, 1
+};
+
 const uint8_t  seconds_per_minute = 60;
 const uint16_t seconds_per_hour = seconds_per_minute * 60;
 const uint32_t seconds_per_day = seconds_per_hour * 24;
@@ -61,22 +81,12 @@ const uint32_t seconds_per_week = seconds_per_day * 7;
 
 const uint64_t iterations_per_signal_check = 300000000;
 
-const uint8_t next_a[] = {
-    4,         /* previous a ends in 0 */
-    0, 0, 0,
-    2,         /* previous a ends in 4 */
-    0,
-    4          /* previous a ends in 4 */
-};
-
-
 struct excellent_progress_info {
     uint64_t last_a;
     uint64_t numbers_done;
     uint64_t rate;
     uint32_t last_time;
 };
-
 
 volatile sig_atomic_t alarm_flag = 0;
 volatile sig_atomic_t int_flag  = 0;

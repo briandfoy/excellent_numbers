@@ -3,8 +3,8 @@ LIBS=-lgmp
 CFLAGS=-O2 -march=native
 GRAND_CC=${CC} ${CFLAGS}
 
-C_FILES=excellent-int-math.c
-BASE=excellent-int-math
+C_FILES=excellent-128.c
+BASE=excellent-128
 
 all:
 	${GRAND_CC} -o ${BASE} ${C_FILES}
@@ -12,7 +12,7 @@ all:
 # make file target name?
 try:
 	${GRAND_CC} -o ${BASE}-try ${C_FILES}
-	./excellent-gmp-try
+	./${BASE}-try
 
 debug:
 	${GRAND_CC} -o ${BASE}-debug -DDEBUGGING=1 ${C_FILES}
