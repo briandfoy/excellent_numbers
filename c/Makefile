@@ -3,8 +3,8 @@ LIBS=-lgmp
 CFLAGS=-O2 -march=native
 GRAND_CC=${CC} ${CFLAGS}
 
-C_FILES=excellent-int-math.c
-BASE=excellent-int-math
+C_FILES=excellent-128.c
+BASE=excellent-128
 
 all:
 	${GRAND_CC} -o ${BASE} ${C_FILES}
