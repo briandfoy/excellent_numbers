@@ -12,7 +12,7 @@ all:
 # make file target name?
 try:
 	${GRAND_CC} -o ${BASE}-try ${C_FILES}
-	./excellent-gmp-try
+	./${BASE}-try
 
 debug:
 	${GRAND_CC} -o ${BASE}-debug -DDEBUGGING=1 ${C_FILES}
