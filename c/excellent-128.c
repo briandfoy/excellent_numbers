@@ -290,7 +290,9 @@ int main( int argc, char *argv[] ) {
 
         if ((current_iter % (iterations_per_signal_check)) == 0) {
             if( int_flag > 0 ) {
-                printf( "!!! [%d] Caught interrupt\n", getpid() );
+                printf( "!!! [%d] [%u] Caught interrupt\n",
+                	getpid(),  (unsigned)time(NULL)
+                	);
                 break;
             }
 
@@ -308,7 +310,9 @@ int main( int argc, char *argv[] ) {
         }
     }
 
-    printf( "+++ [%d] Checked [%" PRIu64 "] to [%" PRIu64 "]\n", getpid(), start_a, a );
+    printf(
+    	"+++ [%d] [%u] Checked [%" PRIu64 "] to [%" PRIu64 "]\n",
+    	getpid(),  (unsigned)time(NULL), start_a, a );
     fflush( stdout );
 
     return( 0 );
