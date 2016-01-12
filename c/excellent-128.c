@@ -81,7 +81,11 @@ const uint32_t seconds_per_week   = seconds_per_day    *  7;
 
 const uint64_t iterations_per_signal_check = 300000000;
 
-const uint8_t alarm_minutes = 1;
+#ifdef ALARM_MINUTES
+const uint8_t alarm_minutes = ALARM_MINUTES;
+#else
+const uint8_t alarm_minutes = 15;
+#endif
 
 struct excellent_progress_info {
     uint64_t last_a;
