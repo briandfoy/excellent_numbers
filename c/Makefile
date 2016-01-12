@@ -16,7 +16,7 @@ try:
 
 debug:
 	${GRAND_CC} -o ${BASE}-debug -DDEBUGGING=1 ${C_FILES}
-	./excellent-gmp-try
+	./${BASE}-try
 
 valgrind:
 	${GRAND_CC} -g -o ${BASE}-valgrind ${C_FILES}
