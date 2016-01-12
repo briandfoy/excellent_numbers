@@ -91,7 +91,7 @@ volatile sig_atomic_t usr1_flag = 0;
 static unsigned __int128 umult64x64_128(uint64_t, uint64_t);
 static uint64_t default_start_a( uint8_t );
 static uint64_t default_end_a( uint8_t );
-static void time_left ( uint64_t, uint64_t, uint64_t );
+static void time_left ( uint64_t, uint64_t );
 static void alarm_handler( int signo );
 static void int_handler(  int signo );
 static void usr1_handler( int signo );
@@ -167,15 +167,14 @@ setup_alarm( void ) {
 }
 
 static void
-time_left ( uint64_t rate, uint64_t this_a, uint64_t end_a ) {
-    uint64_t left_a, seconds_left;
+time_left ( uint64_t rate, uint64_t left_a ) {
+    uint64_t seconds_left;
     uint8_t weeks, days, hours, minutes, seconds;
 
     static const uint16_t seconds_per_hour = seconds_per_minute * 60;
     static const uint32_t seconds_per_day  = seconds_per_hour * 24;
     static const uint32_t seconds_per_week = seconds_per_day * 7;
 
-    left_a = end_a - this_a;
     seconds_left = (uint64_t) (1 + ((double) left_a) / rate);
 
     weeks   = seconds_left / seconds_per_week;
@@ -289,13 +288,13 @@ int main( int argc, char *argv[] ) {
 
             if ( usr1_flag > 0 ) {
                 report_progress( &pinfo, start_a, a );
-                time_left( pinfo.rate, a, end_a );
+                time_left( pinfo.rate, end_a - a );
                 usr1_flag = 0;
             }
 
             if ( alarm_flag > 0 ) {
                 report_progress( &pinfo, start_a, a );
-                time_left( pinfo.rate, a, end_a );
+                time_left( pinfo.rate, end_a - a );
                 alarm_flag = 0;
             }
         }
