@@ -59,6 +59,8 @@ const uint16_t seconds_per_hour = seconds_per_minute * 60;
 const uint32_t seconds_per_day = seconds_per_hour * 24;
 const uint32_t seconds_per_week = seconds_per_day * 7;
 
+const uint64_t iterations_per_signal_check = 300000000;
+
 const uint8_t next_a[] = {
     4,         /* previous a ends in 0 */
     0, 0, 0,
@@ -201,14 +203,30 @@ umult64x64_128(uint64_t x, uint64_t y)
     return z;
 }
 
+static void
+check_excellent(uint64_t a, uint64_t K) {
+    unsigned __int128 lhs, rhs;
+    uint64_t b = (uint64_t) (1.0 + a * sqrt(1 + ((double) K)/ a));
+
+    lhs = umult64x64_128(b, b - 1);
+    rhs = umult64x64_128(a, K) + umult64x64_128(a, a);
+
+    if ( lhs == rhs ) {
+        printf("%" PRIu64 "%" PRIu64 " is excellent\n", a, b );
+        fflush( stdout );
+    }
+
+    return;
+}
+
+
 int main( int argc, char *argv[] ) {
     setup_interrupt();
     setup_usr1();
     setup_alarm();
 
-    unsigned __int128 lhs, rhs;
-    uint64_t a, start_a, end_a, b;
-    uint64_t iter, K;
+    uint64_t a, start_a, end_a;
+    uint64_t current_iter, K;
     uint8_t digits, k;
     struct excellent_progress_info pinfo = { 0 };
 
@@ -248,10 +266,13 @@ int main( int argc, char *argv[] ) {
 
     K = powers_of_10[ k ];
 
-    iter = 0;
+    current_iter = 0;
 
     for (a = start_a; a <= end_a; a += next_a[ a % 10 ]) {
-        if ((iter % (100000000)) == 0) {
+        check_excellent(a, K);
+        current_iter += 1;
+
+        if ((current_iter % (iterations_per_signal_check)) == 0) {
             if( int_flag > 0 ) {
                 printf( "!!! [%d] Caught interrupt\n", getpid() );
                 break;
@@ -269,17 +290,6 @@ int main( int argc, char *argv[] ) {
                 alarm_flag = 0;
             }
         }
-
-        b = (uint64_t) (1.0 + a * sqrt(1 + ((double) K)/ a));
-        lhs = umult64x64_128(b, b - 1);
-        rhs = umult64x64_128(a, K) + umult64x64_128(a, a);
-
-        if ( lhs == rhs ) {
-            printf("%" PRIu64 "%" PRIu64 " is excellent\n", a, b );
-            fflush( stdout );
-        }
-
-        iter += 1;
     }
 
     printf( "+++ [%d] Checked [%" PRIu64 "] to [%" PRIu64 "]\n", getpid(), start_a, a );
