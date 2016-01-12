@@ -272,7 +272,8 @@ int main( int argc, char *argv[] ) {
         start_a += 1;
     }
 
-    printf( "*** [%d] start a is %" PRIu64 "\n", getpid(), start_a );
+	printf( "*** [%d] [%u] Starting up\n", getpid(), (unsigned)time(NULL) );
+	printf( "*** [%d] start a is %" PRIu64 "\n", getpid(), start_a );
     printf( "*** [%d] end a is %" PRIu64 "\n",   getpid(), end_a   );
     fflush( stdout );
 
