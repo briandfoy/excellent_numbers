@@ -213,11 +213,9 @@ umult64x64_128(uint64_t x, uint64_t y)
 
 static void
 check_excellent(uint64_t a, uint64_t K) {
-    unsigned __int128 lhs, rhs;
     uint64_t b = (uint64_t) (1.0 + a * sqrt(1 + ((double) K)/ a));
-
-    lhs = umult64x64_128(b, b - 1);
-    rhs = umult64x64_128(a, K) + umult64x64_128(a, a);
+    unsigned __int128 lhs = umult64x64_128(b, b - 1);
+    unsigned __int128 rhs = umult64x64_128(a, K) + umult64x64_128(a, a);
 
     if ( lhs == rhs ) {
         printf("%" PRIu64 "%" PRIu64 " is excellent\n", a, b );
