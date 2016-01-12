@@ -1,10 +1,10 @@
 CC=cc
 LIBS=-lgmp
+CFLAGS=-O2 -march=native
+GRAND_CC=${CC} ${CFLAGS}
 
-GRAND_CC=${CC} ${LIBS}
-
-C_FILES=excellent-gmp.c
-BASE=excellent-gmp
+C_FILES=excellent-128.c
+BASE=excellent-128
 
 all:
 	${GRAND_CC} -o ${BASE} ${C_FILES}
@@ -12,11 +12,11 @@ all:
 # make file target name?
 try:
 	${GRAND_CC} -o ${BASE}-try ${C_FILES}
-	./excellent-gmp-try
+	./${BASE}-try
 
 debug:
 	${GRAND_CC} -o ${BASE}-debug -DDEBUGGING=1 ${C_FILES}
-	./excellent-gmp-try
+	./${BASE}-try
 
 valgrind:
 	${GRAND_CC} -g -o ${BASE}-valgrind ${C_FILES}
