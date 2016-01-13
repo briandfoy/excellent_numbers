@@ -77,6 +77,12 @@ const uint8_t next_a[] = {
 const uint8_t  seconds_per_minute = 60;
 const uint64_t iterations_per_signal_check = 300000000;
 
+#ifdef ALARM_MINUTES
+const uint8_t alarm_minutes = ALARM_MINUTES;
+#else
+const uint8_t alarm_minutes = 15;
+#endif
+
 struct excellent_progress_info {
     uint64_t last_a;
     uint64_t numbers_done;
@@ -111,7 +117,7 @@ report_progress(
             getpid(), start_a, a );
     printf( "*** [%d] [%u] working on: %" PRIu64 " tried: %" PRIu64 " rate: %" PRIu64 " / sec\n",
             getpid(), this_time, a, pinfo->numbers_done, pinfo->rate );
-
+	fflush( stdout );
     pinfo->last_time = this_time;
     pinfo->last_a = a;
 
@@ -121,6 +127,8 @@ report_progress(
 static void
 alarm_handler( int signo ) {
     alarm_flag += 1;
+    /* Reset the alarm so we get output more than once */
+    alarm( alarm_minutes * seconds_per_minute);
 }
 
 static void
@@ -163,7 +171,7 @@ setup_alarm( void ) {
     if ( sigaction(SIGALRM, &act, NULL) == -1 ) {
         perror( "sigaction couldn't install SIGALRM" );
     }
-    alarm(15 * seconds_per_minute);
+    alarm(alarm_minutes * seconds_per_minute);
 }
 
 static void
@@ -190,6 +198,7 @@ time_left ( uint64_t rate, uint64_t left_a ) {
 
     printf( "*** [%d] time left: %u wk %u d %u h %u m %u s\n",
             getpid(), weeks, days, hours, minutes, seconds );
+	fflush( stdout );
 
     return;
 }
@@ -263,7 +272,8 @@ int main( int argc, char *argv[] ) {
         start_a += 1;
     }
 
-    printf( "*** [%d] start a is %" PRIu64 "\n", getpid(), start_a );
+	printf( "*** [%d] [%u] Starting up\n", getpid(), (unsigned)time(NULL) );
+	printf( "*** [%d] start a is %" PRIu64 "\n", getpid(), start_a );
     printf( "*** [%d] end a is %" PRIu64 "\n",   getpid(), end_a   );
     fflush( stdout );
 
@@ -280,7 +290,9 @@ int main( int argc, char *argv[] ) {
 
         if ((current_iter % (iterations_per_signal_check)) == 0) {
             if( int_flag > 0 ) {
-                printf( "!!! [%d] Caught interrupt\n", getpid() );
+                printf( "!!! [%d] [%u] Caught interrupt\n",
+                	getpid(),  (unsigned)time(NULL)
+                	);
                 break;
             }
 
@@ -298,7 +310,9 @@ int main( int argc, char *argv[] ) {
         }
     }
 
-    printf( "+++ [%d] Checked [%" PRIu64 "] to [%" PRIu64 "]\n", getpid(), start_a, a );
+    printf(
+    	"+++ [%d] [%u] Checked [%" PRIu64 "] to [%" PRIu64 "]\n",
+    	getpid(),  (unsigned)time(NULL), start_a, a );
     fflush( stdout );
 
     return( 0 );
