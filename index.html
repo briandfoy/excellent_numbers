@@ -384,151 +384,16 @@ I've noticed this pattern that popped out after finding the 30-digit number:
 
 
 <p>
-These numbers have the form $a = 3_n20_n16_{n-1}$ and $b = 6_n50_n13_{n-1}$ where $n$ signifies a repetition of that digit.
-
-In general, I can write these numbers as:
+These numbers have the form $a = 3_n20_n16_{n-1}$ and $b = 6_n50_n13_{n-1}$ where $n$ signifies a repetition of that digit. In general, I can write these numbers as:
 </p>
 
 $$
 \begin{align}
-a & = 3 (\sum\limits_{i=0}^{n-1} 10^i) \cdot 10^{3n} + 2 \cdot 10^{2n+2} + 10^n + 6 (\sum\limits_{i=0}^n 10^i) \\
-b & = 6 (\sum\limits_{i=0}^{n-1} 10^i) \cdot 10^{3n} + 5 \cdot 10^{2n+2} + 10^n + 3 (\sum\limits_{i=0}^n 10^i)
+a & = ( 3 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^n + 6 (\sum\limits_{i=0}^n 10^i) \\
+b & = ( 6 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^n + 3 (\sum\limits_{i=0}^n 10^i)
 \end{align}
 $$
 
-<p>
-I can make those summations match:
-</p>
-
-
-$$
-\begin{align}
-a & = 3 (\sum\limits_{i=0}^{n} 10^i) \cdot 10^{3n} - 3\cdot10^{4n} + 2 \cdot 10^{2n+2} + 10^n + 6 (\sum\limits_{i=0}^n 10^i) \\
-b & = 6 (\sum\limits_{i=0}^{n} 10^i) \cdot 10^{3n} - 6\cdot10^{4n} + 5 \cdot 10^{2n+2} + 10^n + 3 (\sum\limits_{i=0}^n 10^i)
-\end{align}
-$$
-
-<p>
-Call the summation $S$:
-</p>
-
-$$
-\begin{align}
-a & = 3 \cdot S \cdot 10^{3n} - 3\cdot10^{4n} + 2 \cdot 10^{2n+2} + 10^n + 6  \cdot S \\
-b & = 6  \cdot S \cdot 10^{3n} - 6\cdot10^{4n} + 5 \cdot 10^{2n+2} + 10^n + 3  \cdot S
-\end{align}
-$$
-
-<p>
-And let $S' = 3 S$ and $T = 3 \cdot 10^{4n}$:
-</p>
-
-$$
-\begin{align}
-a & = S' \cdot 10^{3n} - T + 2 \cdot 10^{2n+2} + 10^n + 2  \cdot S' \\
-b & = 2  \cdot S' \cdot 10^{3n} - 2 \cdot T + 5 \cdot 10^{2n+2} + 10^n + S'
-\end{align}
-$$
-
-<p>
-Rearrange:
-</p>
-
-$$
-\begin{align}
-a & = (10^{3n} + 2) S' - T + 2 \cdot 10^{2n+2} + 10^n \\
-b & = (2 \cdot 10^{3n} + 1 ) S' - 2 \cdot T + 5 \cdot 10^{2n+2} + 10^n
-\end{align}
-$$
-
-<p>
-Let:
-</p>
-
-$$
-\begin{align}
-U & = 10^{3n} + 2   \\
-V & = 10^{n+2} + 1  \\
-V' & = V \cdot 10^n \\
-\end{align}
-$$
-
-<p>
-So:
-</p>
-
-$$
-\begin{align}
-2 \cdot 10^{3n} + 1 & = 2 \cdot 10^{3n} + 4 - 3 \\
-                    & = 2 \cdot (10^{3n} + 2) - 3 \\
-                    & = 2U - 3
-\end{align}
-$$
-
-<p>
-$a$ and $b$ now are:
-</p>
-
-$$
-\begin{align}
-a & =    U      S' -   T + 2 \cdot 10^n (10^{n+2} + 1) \\
-  & =    U      S' -   T + 2 V 10^n \\
-  & =    U      S' -   T + 2 V' \\
-b & = (2 U - 3) S' - 2 T + 5 \cdot 10^n (10^{n+2} + 1) \\
-  & = (2 U - 3) S' - 2 T + 5 V 10^n \\
-  & = (2 U - 3) S' - 2 T + 5 V' \\
-ab & = ( U      S' -   T + 2 V' ) 10^{3n} + ( (2 U - 3) S' - 2 T + 5 V' )
-\end{align}
-$$
-
-
-<p>
-Expanding $b^2$ and $a^2$:
-</p>
-
-$$
-\begin{align}
-a^2 & =  S'^2U^2         +  T^2 +  4 V'^2 - 2S'TU         + 4S'UV' - 4TV' \\
-b^2 & = (2 U - 3)^2 S'^2 + 4T^2 + 25 V'^2 - 4S'T(2 U - 3) + 10S'V'(2 U - 3) - 20TV' \\
-\end{align}
-$$
-
-<p>
-Then $b^2 - a^2$ is:
-</p>
-
-$$
-\begin{align}
-b^2 - a^2 = \: & S'^2 ( (2 U - 3)^2 - U^2 ) \\
-               & + 4T^2            - T^2 \\
-               & + 25 V'^2         - 4 V'^2 \\
-               & + 4S'T'(2 U - 3)   - 2S'TU \\
-               & + 10S'V'(2 U - 3) - 4S'UV' \\
-               & - 20TV'           + 4TV' \\
-\end{align}
-$$
-
-$$
-\begin{align}
-b^2 - a^2 = \: & S'^2 ( 4U^2 - 12 U + 9 - U^2 ) \\
-               & + 3T^2 \\
-               & + 21 V'^2 \\
-               & + 8S'TU - 12S'T   - 2S'TU \\
-               & + 20S'UV' - 30S'V' - 4S'UV' \\
-               & - 16TV' \\
-\end{align}
-$$
-
-$$
-\begin{align}
-b^2 - a^2 = \: & 3S'^2 ( U^2 - 4 U + 3 ) \\
-               & + 3T^2 \\
-               & + 21 V'^2 \\
-               & + 6S'TU - 12S'T \\
-               & + 16UV'S' - 30V'S' \\
-               & - 16TV' \\
-\end{align}
-$$
 
 
 <p>
