@@ -1,0 +1,71 @@
+*** Starting run at Sun Oct  4 00:34:15 2015
+*** PID is 65518
+*** k is 8
+400000000 .. 618033990
+*** Working on 402571822
+*** Working on 405418304
+*** Working on 408258000
+*** Working on 411953649
+415233416766584768
+*** Working on 415648511
+416768416768416768
+*** Working on 419337062
+*** Working on 423024916
+*** Working on 426712677
+*** Working on 430401016
+*** Working on 434081384
+*** Working on 437767220
+*** Working on 441372206
+*** Working on 444983310
+*** Working on 448612812
+*** Working on 452290781
+*** Working on 456012407
+*** Working on 459732668
+*** Working on 463454336
+*** Working on 467175842
+468197520829099776
+*** Working on 470900795
+*** Working on 474596444
+*** Working on 478325956
+*** Working on 482043400
+483153484846516848
+484848484848484848
+*** Working on 485689281
+*** Working on 489329773
+*** Working on 492981110
+*** Working on 496704747
+*** Working on 500467248
+*** Working on 504272199
+*** Working on 508064312
+*** Working on 511854593
+*** Working on 515637357
+*** Working on 519430235
+*** Working on 523216083
+*** Working on 527002372
+529100530899470901
+*** Working on 530777922
+530901530901530901
+*** Working on 534473858
+*** Working on 538200152
+*** Working on 541974466
+*** Working on 545762006
+*** Working on 549551273
+*** Working on 553339955
+*** Working on 557127048
+*** Working on 560903029
+*** Working on 564680954
+*** Working on 568463669
+*** Working on 572247157
+572945416949321793
+*** Working on 576033477
+*** Working on 579825125
+*** Working on 583615491
+*** Working on 587410205
+*** Working on 591204471
+*** Working on 594999695
+*** Working on 598793806
+*** Working on 602586717
+*** Working on 606376535
+*** Working on 610167260
+*** Working on 613953267
+*** Working on 617746744

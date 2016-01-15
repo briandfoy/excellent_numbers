@@ -1,0 +1,23 @@
+*** Starting run at Tue Oct  6 17:52:22 2015
+*** PID is 6749
+*** k is 10
+*** 45108213666 .. 48484848483
+*** Working on 45108949360
+*** Working on 45110387328
+*** Working on 45111835466
+*** Working on 45113285088
+*** Working on 45114741744
+*** Working on 45116182378
+*** Working on 45117658188
+*** Working on 45119128248
+*** Working on 45120589768
+*** Working on 45122068876
+*** Working on 45123554476
+*** Working on 45124997684
+*** Working on 45126460834
+*** Working on 45127949548
+*** Working on 45129432298
+*** Working on 45130880018
+*** Working on 45132253796
+
+Ended at 45132975196

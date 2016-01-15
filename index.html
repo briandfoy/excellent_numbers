@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Excellent numbers by briandfoy</title>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+  </head>
+
+  <body>
+<style>
+p.math-block > math {
+	margin-left: 40px;
+	}
+
+math.block {
+	margin-left: 40px;
+	}
+
+math.inline {
+	display: inline;
+	}
+
+mo.ab_sep {
+	lspace: 0.2em;
+	rspace: 0.2em;
+	}
+
+div#timings {
+	width: 50%;
+	align: center;
+	}
+
+p.note {
+	font-style: italic;
+	color: #aaa;
+	}
+
+p.indent {
+	margin.left: 40px;
+	}
+
+div.center {
+	text-align: center;
+	}
+</style>
+
+    <a id="forkme_banner" href="https://github.com/briandfoy/excellent_numbers">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Excellent numbers</h1>
+            <h2>Compute excellent numbers</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/briandfoy/excellent_numbers/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/briandfoy/excellent_numbers/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+
+<p class="note"><i>Not the phone number website <a href="http://www.excellentnumbers.com">excellentnumbers.com</a></i></p>
+
+<h2>The project</h2>
+
+<p>I started computing some interesting numbers by brute force in Perl. As the numbers got bigger Perl got slower and slower. I optimized the algorithm and that worked for awhile, but that only went so far. For much bigger numbers, I had to drop into C. Once in C, I had to go wide. I've got a good case study for improving the performance of a program.</p>
+
+<p class="indent">—brian d foy &lt;brian.d.foy@gmail.com&gt;</p>
+
+<h2>The numbers</h2>
+
+<p>The full list is in the <a href="https://github.com/briandfoy/excellent_numbers/blob/master/excellent.txt">excellent.txt file in the repo</a>, but we also <a href="https://twitter.com/excellent_nums">tweet them</a> as they come in (albeit out of sequence). I've constructed a list of over 350 excellent numbers, most of which were not previously discovered.</p>
+
+<div align="center">
+<a class="twitter-timeline" href="https://twitter.com/excellent_nums" data-widget-id="669094319110774784">Tweets by @excellent_nums</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+<h2>The math</h2>
+
+<p>
+A number $n$ is excellent if you can break its digits into equal halves $a$ and $b$ such that $b^2 - a^2$ is $n$. I represent $n$ as $ab$ where $a$ and $b$ represent an equal number of digits of $n$ (and not the product of $a$ and $b$).
+</p>
+
+<p>For example, for $530901$:</p>
+
+$$
+\begin{align}
+530901 & \rightarrow \overset{a}{530} \quad \overset{b}{901} \\
+
+b^2 - a^2 & = 901^2 - 530^2 \\
+
+          & = 811801 - 280900 \\
+
+          & = 530901
+\end{align}
+$$
+
+<p>
+Represent the number $n$ as $ab$ where that is the concatenation of digits in $a$ and $b$ and not the product of them. Thus, $n$ is $a \cdot 10^k + b$, where $k$ is the number of digits in $a$. Given that, an excellent number is one where $b^2 - a^2 = a \cdot 10^k + b$.
+</p>
+
+<h3>An interesting pattern</h3>
+
+<p>This pyramid is a pattern of numbers that are excellent:</p>
+
+$$
+\begin{align}
+           & 4 \:     8 \\
+      3 \: & 4 \: 6 \: 8 \\
+     33 \: & 4 \: 66 \: 8 \\
+    333 \: & 4 \: 666 \: 8 \\
+   3333 \: & 4 \: 6666 \: 8 \\
+  33333 \: & 4 \: 66666 \: 8 \\
+ 333333 \: & 4 \: 666666 \: 8 \\
+3333333 \: & 4 \: 6666666 \: 8
+\end{align}
+$$
+
+<p>
+These numbers are of the form of a summation of powers of 10 with a little extra added to the $10^0$ term. Let $k$ be the number of decimal digits in $a$ (or $b$):
+</p>
+
+$$
+\begin{align}
+a & = 3 ( \sum\limits_{i=0}^{k-1} 10^i ) + 1 \\
+b & = 6 ( \sum\limits_{i=0}^{k-1} 10^i ) + 2
+\end{align}
+$$
+
+<p>
+But $b$ is really just double $a$, which you see by inspection even without the fancy symbols:
+</p>
+
+$$
+\begin{align}
+a & = & 3 ( \sum\limits_{i=0}^{k-1} 10^i ) + 1 \\
+b & = 2 ( & 3 ( \sum\limits_{i=0}^{k-1} 10^i ) + 1 \: \: ) \\
+b & = 2 a
+\end{align}
+$$
+
+<p>
+Call that summation (with a little extra) $N$:
+</p>
+
+$$
+N = 3 ( \sum\limits_{i=0}^{k-1} 10^i ) + 1
+$$
+
+<p>
+The number $ab$ is a multiple of $N$. Shift the digits of $a$ over $k$ powers of $10$ to give them the right magnitude:
+</p>
+
+$$
+\begin{align}
+ab & = 10^k N  + 2 N \\
+   & = ( 10^k + 2 ) N
+\end{align}
+$$
+
+<p>
+The term $10^k + 2$ doesn't look that interesting at first, but it's also $9$ repeated $k$ times (with a little extra little extra):
+</p>
+
+$$
+\begin{align}
+10^{k}       & = 9 ( \sum\limits_{i=0}^{k-1} 10^i ) + 1 \\
+
+10^{k} + 2   & = 9 ( \sum\limits_{i=0}^{k-1} 10^i ) + 1 + 2 \\
+             & = 9 ( \sum\limits_{i=0}^{k-1} 10^i ) + 3 \\
+             & = 3 ( 3 ( \sum\limits_{i=0}^{k-1} 10^i ) + 1 ) \\
+             & = 3 N
+\end{align}
+$$
+
+<p>
+Put this back into $ab$:
+</p>
+
+$$
+\begin{align}
+ab & = ( 10^k + 2 ) N\\
+   & = ( 3 N ) N\\
+   & = 3 N^2
+\end{align}
+$$
+
+
+<p>
+The difference in squares also reduces to  $3 N^2$:
+</p>
+
+
+$$
+\begin{align}
+b^2 - a^2 & = (2N)^2 - N^2 \\
+          & = 2^2 N^2 - N^2 \\
+          & = ( 2^2 - 1 ) N^2 \\
+          & = 3 N^2 \\
+          & = ab
+\end{align}
+$$
+
+<p>Both sides of $b^2 - a^2 = ab$ are $3 N^2$, so all numbers of this form are excellent. This includes the number $48$, which is the case for $i = 0$. This also means that there is at least one excellent number for every set of numbers of length $2k$ and that there are an infinite number of excellent numbers.</p>
+
+
+<h3>Odd repetitions of an excellent number are excellent</h3>
+
+<p>If a number $ab$ is excellent, that number concatenated an odd number of times is also excellent. For example, the number $3468$ is excellent, so $346834683468$ is excellent.</p>
+
+<p>
+Let $n'$ be a number of the form $abab \ldots ab$ where there are an odd number of repetitions, $r$, of $ab$, where $k$ is the number of decimal digits in $a$. In that case:
+</p>
+
+$$
+\begin{align}
+abab \ldots ab & = a'b' = ab  \sum\limits_{i=0}^{r-1} 10^{2ik} \\
+\end{align}
+$$
+
+<p>
+Let $a'$ be $ab \ldots aba$ (the first half of the digits) and $b'$ be $ba \ldots bab$ (the second half of the digit). The difference between the squares is then:
+</p>
+
+
+$$
+\begin{align}
+b'^2 - a'^2 & = (ba \ldots bab)^2 - (ab \ldots aba)^2 \\
+            & = ( b \sum\limits_{i=0}^{(r-1)/2} 10^{2ik}
+            + a \sum\limits_{i=0}^{(r-3)/2} 10^{(2i+1)k} )^2
+            -
+            ( a \sum\limits_{i=0}^{(r-1)/2} 10^{2ik}
+            + b \sum\limits_{i=0}^{(r-3)/2} 10^{(2i+1)k} )^2 \\
+\end{align}
+$$
+
+<p>
+All those series are annoying, so represent them as $S'$ and $S''$:
+</p>
+
+$$
+\begin{align}
+S' & = \sum\limits_{i=0}^{(r-1)/2} 10^{2ik} \\
+S'' & = \sum\limits_{i=0}^{(r-3)/2} 10^{(2i+1)k} \\
+\end{align}
+$$
+
+<p>
+This now looks much more tractable. Expand the squares and refactor:
+</p>
+
+$$
+\begin{align}
+b'^2 - a'^2 & = ( b S' + a S'' )^2 - ( a S' + b S'' )^2 \\
+
+            & = ( b^2 S'^2 + 2a \cdot b S' S'' + a^2 S''^2 ) - ( a^2 S'^2 + 2a \cdot b S' S'' + b^2 S''^2 ) \\
+            & = ( b^2 S'^2 + a^2 S''^2 ) - ( a^2 S'^2  + b^2 S''^2 ) \\
+            & = ( b^2 S'^2 - b^2 S''^2 ) + ( a^2 S''^2 - a^2 S'^2 )  \\
+            & = b^2 ( S'^2 - S''^2 ) - a^2 ( S'^2 - S''^2 )  \\
+            & = ( b^2 - a^2 )( S'^2 - S''^2 )  \\
+            & = ab ( S'^2 - S''^2 )  \\
+\end{align}
+$$
+
+<p>
+The trick now is to show that the difference in the squares of these series is the series we started with. Let $r' = (r-1)/2$:
+</p>
+
+$$
+\begin{align}
+( S'^2 - S''^2 ) & = (\sum\limits_{i=0}^{(r-1)/2} 10^{2ik} )^2 - (\sum\limits_{i=0}^{(r-3)/2} 10^{(2i+1)k})^2 \\
+
+                 & = (\sum\limits_{i=0}^{r'} 10^{2ik} )^2 - (\sum\limits_{i=0}^{r'-1} 10^{(2i+1)k})^2 \\
+
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{2ik}10^{2jk} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j=0}^{r'-1} 10^{(2i+1)k} 10^{(2j+1)k} \\
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j=0}^{r'-1} 10^{(i+j+1)2k} \\
+\end{align}
+$$
+
+<p>
+Let $j' = j + 1$ to start the path to making the second double summation look like the first one. This misses the $j' = 0$ case, but that comes back by adding and subtracting a summation. Do the same for the $i = r'$. This transforms the second double summation to look just like the first one, canceling out both of them:
+</p>
+
+$$
+\begin{align}
+( S'^2 - S''^2 ) & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j=0}^{r'-1} 10^{(i+j+1)2k} \\
+
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j'=1}^{r'} 10^{(i+j')2k} \\
+
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j'=1}^{r'} 10^{(i+j')2k} + \sum\limits_{i=0}^{r'-1} 10^{2ik} - \sum\limits_{i=0}^{r'-1} 10^{2ik} \\
+
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j'=0}^{r'} 10^{(i+j')2k} + \sum\limits_{i=0}^{r'-1} 10^{2ik} \\
+
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'-1} \sum\limits_{j'=0}^{r'} 10^{(i+j')2k}
+                 + \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 + \sum\limits_{j'=0}^{r'} 10^{(r' + j')2k}
+                 - \sum\limits_{j'=0}^{r'} 10^{(r' + j')2k} \\
+
+                 & =  \sum\limits_{i=0}^{r'} \sum\limits_{j=0}^{r'} 10^{(i+j)2k} - \sum\limits_{i=0}^{r'} \sum\limits_{j'=0}^{r'} 10^{(i+j')2k}
+                 + \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 + \sum\limits_{j'=0}^{r'} 10^{(r' + j')2k} \\
+
+                 & = \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 + \sum\limits_{j'=0}^{r'} 10^{(r' + j')2k} \\
+
+                 & = \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 + \sum\limits_{j'=r'}^{2r'} 10^{j'2k} \\
+
+                 & = \sum\limits_{i=0}^{r'-1} 10^{2ik}
+                 + \sum\limits_{i=r'}^{2r'} 10^{2ik} \\
+
+                 & = \sum\limits_{i=0}^{2r'} 10^{2ik} \\
+
+                 & = \sum\limits_{i=0}^{r-1} 10^{2ik} \\
+\end{align}
+$$
+
+
+
+<p>
+Finally, an odd number of repetitions of $ab$ is also excellent:
+</p>
+
+
+$$
+\begin{align}
+b'^2 - a'^2 & = ab ( S'^2 - S''^2 ) \\
+            & = ab \sum\limits_{i=0}^{r-1} 10^{2ik} \\
+            & = a'b'
+\end{align}
+$$
+
+<p>
+This again shows that if there is an excellent number, there is an infinite number of them. But, this also leads to the next interesting pattern.
+</p>
+
+<h2>A pattern in multiples of six</h2>
+
+<p>
+I've noticed this pattern that popped out after finding the 30-digit number:
+</p>
+
+<pre>
+ (6)     2      1     6     5      1 3
+(12)   3 2    0 1    666    5 0    1 33
+(18)  33 2   00 1   66666   5 00   1 333
+(24) 333 2  000 1  6666666  5 000  1 3333
+(30)3333 2 0000 1 666666666 5 0000 1 33333
+</pre>
+
+
+<p>
+These numbers have the form $a = 3_n20_n16_{n-1}$ and $b = 6_n50_n13_{n-1}$ where $n$ signifies a repetition of that digit. In general, I can write these numbers as:
+</p>
+
+$$
+\begin{align}
+a & = ( 3 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^n + 6 (\sum\limits_{i=0}^n 10^i) \\
+b & = ( 6 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^n + 3 (\sum\limits_{i=0}^n 10^i)
+\end{align}
+$$
+
+<p>All of the summations are the same, so replace them with $S$:</p>
+
+$$
+\begin{align}
+S & = 3 (\sum\limits_{i=0}^{n} 10^i)           \\
+a & = (   S - 1 ) \cdot 10^{2n+2} + 10^n + 2 S \\
+b & = ( 2 S - 1 ) \cdot 10^{2n+2} + 10^n +   S \\
+\end{align}
+$$
+
+<p>The squares are then:</p>
+
+$$
+\begin{align}
+a^2 & = (   S - 1 )^2 \cdot 10^{2(2n+2)} + 10^{2n} + 2^2 S^2 \\
+    & + 2 (   S - 1 ) \cdot 10^{2n+2} 10^n \\
+    & + 2 (   S - 1 ) \cdot 10^{2n+2} 2 S \\
+    & + 2^2 S 10^n \\
+    & = ( S^2 - 2S + 1 ) 10^{4n+4} + 10^{2n} + 4 S^2 \\
+    & + 2 (   S - 1 ) \cdot 10^{3n+2} \\
+    & + 4 S ( S - 1 ) \cdot 10^{2n+2} \\
+    & + 2^2 S 10^n \\
+\end{align}
+$$
+
+
+
+
+\begin{align}
+b^2 & = ( 2 S - 1 )^2 \cdot 10^{2(2n+2)} + 10^{2n} +   S^2 \\
+    & + 2 ( 2 S - 1 ) \cdot 10^{2n+2} 10^n \\
+    & + ( 2 S - 1 ) \cdot 10^{2n+2} S \\
+    & + S 10^n \\
+b^2 & = ( 4 S^2 - 4S + 1 ) \cdot 10^{4n+4} + 10^{2n} +   S^2 \\
+    & + 2 ( 2 S - 1 ) \cdot 10^{3n+2} \\
+    & + S ( 2 S - 1 ) \cdot 10^{2n+2} \\
+    & + S 10^n \\
+\end{align}
+$$
+
+<p>
+And this is how far I've worked on this problem.
+</p>
+
+
+<p>
+The other numbers have some interesting patterns in their factorizations:
+</p>
+
+
+<pre>
+216513: 3 3 3 3 3 3 3 3 3 11
+	216: 2 2 2 3 3 3
+	513: 3 3 3 19
+
+320166650133: 3 3 3 3 3 3 3 3 3 11 11 11 11 11 101
+	320166: 2 3 3 3 7 7 11 11
+	650133: 3 3 3 11 11 199
+
+332001666665001333: 3 3 3 3 3 3 3 3 3 3 3 3 3 3 7 11 13 37 37 37 37 37
+	332001666: 2 3 3 3 3 3 37 37 499
+	665001333: 3 3 3 3 3 37 37 1999
+
+333200016666666500013333: 3 3 3 3 3 3 3 3 3 11 11 11 11 11 73 101 101 101 101 101 137
+	333200016666: 2 3 3 3 11 11 101 101 4999
+	666500013333: 3 3 3 7 11 11 101 101 2857
+</pre>
+
+<h2>The count of excellent numbers in a range</h2>
+
+<p>
+The count of excellent numbers for a length $N$ have a curious pattern that seems predictable based on the number of ways that you can write $N$ with an odd factor. The count of excellent numbers in $N$ is $\#$, and the sum of the count of previous excellent numbers is $\#'$.
+</p>
+
+<pre>
+ N   #   #' factors with odd number
+ 2   1   1
+ 4   1   2
+ 6   8  10  2x3
+ 8   3  13
+10   3  16  2x5
+12  13  29      4x3
+14   2  31  2x7
+16   3  34
+18  28  62  2x9     6x3
+20  15  77      4x5
+22   9  86  2x11
+24  51 137              8x3
+26   5 142  2x13
+28  17 159      4x7
+30 381 540  2x15    6x5     10x3
+32   ?   ?
+34   ?   ?  2x17
+36   ?   ?      4x9             12x3
+38   ?   ?  2x19
+</pre>
+
+<p>Some observations</p>
+
+<ul>
+<li>A length that is a power of $2$ have few excellent numbers.
+<li>A length with several such factorizations have many more excellent compared to the lengths around them, like $N=18$ or $N=30$.
+<li>The lengths with an odd factor and $4$ have the pattern 1,13,15,17. The next one would be $N=36$, but that also has $12x3$.
+<li>I expect only three (or five) excellent numbers in $N=32$, and I already know one of them: $3_{15}46_{15}8$.
+</ul>
+
+<h2>The Algorithm</h2>
+
+<p>These numbers are an interesting programming exercise, although most people stop programming before they get to the interesting bits. If you apply brute force and check every number, you can easily do 10- or 12-digit numbers. After that things start to get slow. When their programs get slow, people find something else to do, leaving the good parts for those who stuck at it.</p>
+
+<p>You don't have to check every number. Instead of taking $ab$ and applying some <code>is_excellent()</code> function to it, you can start with $a$ and determine if some $b$ exists that makes $ab$ excellent.</p>
+
+<p>By checking $a$, you eliminate $10^n - 1$ cases. Instead of checking:</p>
+
+$$530 \; 000, 530 \; 001, 530 \; 002, \cdots 530 \; 999$$
+
+<p>you use $530$ to find one value of $b$ that might work.</p>
+
+<p>To do this, you can rearrange the equation. First, represent the single value $b$ as a sum that separates the digits of $a$ from the digits of $b$, where $k$ is the number of digits in $a$:</p>
+
+$$
+\begin{align}
+b^2 - a^2 & = ab \\
+& = a 10^k + b
+\end{align}
+$$
+
+Collecting terms and rearranging:
+
+$$
+\begin{align}
+a^2 - a 10^k & = b^2 - b \\
+& = b ( b - 1 )
+\end{align}
+$$
+
+
+<p>
+We know the value of $a$ because we chose it, and we know the value of $a^2 + a 10^k$. We have to find the value of $b$ where $b ( b - 1 )$ is the same value. For large enough $b$, $b ( b - 1 )$ is almost the same as $b^2$. We can easily calculate
+</p>
+
+$$b = \sqrt{a^2 + a 10^k}$$
+
+<p>Furthermore, for $b^2 - a^2$, there's some maximum value of $a$ for which there are no longer a possible value of $b$. The largest $b$ comprises only the digit $9$ repeated $k$ times. If $b$ has four digits, its maximum value is $9999$. There's some value of $a$ past which $9999^2 - a^2 = a 10^k + 9999$ has a solution.</p>
+
+<p>
+By guessing through bisection, we can find this maximum value, which is a little less than $6.2 \cdot 10^{k}$.
+</p>
+
+<p>
+But it gets better. We can immediately discount some values of $a$. First, $a$ must be even and not end in $2$. We know this when we look at the values mod 10:
+</p>
+
+$$
+\begin{align}
+( b^2 - a^2 ) \mod 10 & = (a 10^k + b ) \mod 10 \\
+
+b^2 \mod 10 - a^2 \mod 10 & = a 10^k \mod 10 + b \mod 10 \\
+
+b^2 \mod 10 - a^2 \mod 10 & = b \mod 10 \\
+
+b^2 \mod 10 - b \mod 10 & = a^2 \mod 10
+\end{align}
+$$
+
+<p>
+A square ends in the digits $\{ 0, 1, 4, 5, 6, 9 \}$, so $b^2 \mod 10 - b \mod 10$ must also end with one of those digits because
+it's the same number. If we take some $b$ and compute
+$(b^2 - b) mod 10$, only values of $b$ ending in $\{ 0, 1, 3, 5, 6, 8 \}$ produce a value that are in  $\{ 0, 1, 4, 5, 6, 9 \}$. (those values being $\{ 0, 6 \}$):
+</p>
+
+<pre>
+	0*0 - 0 = 0  works
+	1*1 - 1 = 0  works
+	2*2 - 2 = 2  doesn't work
+	3*3 - 3 = 6  works
+	4*4 - 4 = 2  doesn't work
+	5*5 - 5 = 0  works
+	6*6 - 6 = 0  works
+	7*7 - 7 = 2  doesn't work
+	8*8 - 8 = 6  works
+	9*9 - 9 = 2  doesn't work
+</pre>
+
+<p>
+The only values of $a$ that will produce $\{ 0, 6 \}$ as a square are $\{ 0, 4, 6 \}$. This means that we can skip all <math class="inline"><mi>a</mi></math> that are $\{ 1, 2, 3, 5, 7, 8, 9 \}$.
+</p>
+
+<p>
+From there, it's brute force to check all $a$ ending in $\{ 0, 4, 6 \}$ from $1 \cdot 10^{k-1}$ to $6.2 \cdot 10^{k-1}$.
+</p>
+
+<h2>Brass tacks</h2>
+
+<p>
+Now that we have an algorithm that excludes most of the numbers, we have to compute some large numbers, where large is relative to the integer size of computer processors. Each jump in number of digits, say from 24- to 26-digits, is a ten-fold increase in numbers to check.
+</p>
+<p>
+The GMP library can do that for us. I first tried to do that with the <a href="http://www.metacpan.org/module/Math::GMP">Math::GMP</a> library for Perl but it was too slow since it had to convert Perl data structures to the C data structures. I eventually dropped down to C completely. That's pretty fast. I can exhaust the 26-digit space in a couple of days on a handful of less-than-decent processors.
+</p>
+<p>
+But then Sinan Ünür had the idea to try it in 128-bit integer math using compiler support for that size on 64-bit hardware. Instead of using GMP's general purpose high precision stuff, we could make very specific optimizations with none of the stuff we didn't want. This would handle at least up to 36-digit numbers.
+</p>
+
+<p>This table has timings from my mid-2012 MacBook Air running an 1.8GHz Intel Core i5.</p>
+
+<div id="timings" class="center" align="center">
+<table>
+<tr><th>Digits</th><th colspan="2">Processor time</th></tr>
+<tr><th></th><th>GMP</th><th>int128</th>
+<tr> <td> 2</td> <td>5 ms</td>      <td>4 ms</td>      </tr>
+<tr> <td> 4</td> <td>5 ms</td>      <td>4 ms</td>      </tr>
+<tr> <td> 6</td> <td>5 ms</td>      <td>6 ms</td>      </tr>
+<tr> <td> 8</td> <td>5 ms</td>      <td>6 ms</td>      </tr>
+<tr> <td>10</td> <td>15 ms</td>     <td>6 ms</td>      </tr>
+<tr> <td>12</td> <td>110 ms</td>    <td>7 ms</td>      </tr>
+<tr> <td>14</td> <td>1 s</td>       <td>25 ms</td>     </tr>
+<tr> <td>16</td> <td>11 s</td>      <td>221 ms</td>    </tr>
+<tr> <td>18</td> <td>130 s</td>     <td>2.2 s</td>     </tr>
+<tr> <td>20</td> <td>20 min</td>    <td>22 s</td>      </tr>
+<tr> <td>22</td> <td>3.5 hours</td> <td>220 s</td>     </tr>
+<tr> <td>24</td> <td>1.5 days</td>  <td>37 min</td>    </tr>
+<tr> <td>26</td> <td>15 days</td>   <td>6.1 hours</td> </tr>
+<tr> <td>28</td> <td>150 days</td>  <td>2.5 days</td>  </tr>
+<tr> <td>30</td> <td>4 years</td>   <td>21 days</td>   </tr>
+<tr> <td>32</td> <td></td>          <td>210 days</td>  </tr>
+<tr> <td>34</td> <td></td>          <td>6 years</td>   </tr>
+<tr> <td>36</td> <td></td>          <td>60 years</td>  </tr>
+</table>
+</div>
+
+<p>
+That's just my laptop. The next tactic is to go wide. Instead of one processor, break up the problem and distribute it among several processors. For instance, for 32-digit numbers, it takes 210 days on one processor, or a month on 7 processors or 3 days on 70 processors.
+</p>
+
+<h2>Contributions</h2>
+
+<p>
+I first found this problem through Mark Jason Dominus's <a href="http://blog.plover.com/math/excellent.html">Excellent Numbers</a>. He provided some optimizations that I worked out before I read far enough ahead.
+</p>
+
+<p>
+Joe Zbiciak contributed the modulus congruence optimization.
+</p>
+
+<p>
+Phil Doroff from <a href="http://www.servercentral.com">ServerCentral</a> donated some time on their big hardware. This allowed us to go very wide.
+</p>
+
+<p>
+Sinan Ünür helped with <a href="https://www.mathjax.org">MathJax</a> to bring some $\TeX$ goodness to this page. He also listened to me talk about much more math than anyone really wants to talk about.
+</p>
+
+<h2>How to contribute</h2>
+
+<p>
+There are a list of things you can do:
+</p>
+
+<ul>
+<li>Implement the algorithm in another language. So far I have C, Perl, and Julia.</li>
+<li>Find more optimizations.</li>
+<li>Verify that I haven't missed any numbers, or that the ones I have found are indeed excellent.</li>
+<li>Add the number to the <a href="https://oeis.org/A162700">excellent number sequence in the Online Encyclopedia of Integer Sequences</a>.</li>
+<li>Lend me a big cluster of 1,000 processors.</li>
+</ul>
+
+<h2>Further reading</h2>
+
+<p>
+I started this as a Perl project, so I've written about this on my Perl blogs. Since then, I've left Perl behind because native C is so much faster.
+</p>
+
+<p>
+Watch out for some of the other stuff you find out there. Most other spots have errors. If you see an excellent number that has an odd number of digits, you know they messed up somewhere.
+</p>
+
+<ul>
+<li> <a href="http://www.masteringperl.org/2015/05/computing-excellent-numbers/">Computing excellent numbers</a></li>
+
+<li> <a href="http://www.masteringperl.org/2015/10/doing-less-work-to-compute-excellent-numbers/">Doing less work to compute excellent numbers</a></li>
+
+<li> <a href="http://blog.plover.com/math/excellent.html">Excellent Numbers</a>, from Mark Jason Dominus</li>
+
+<li> <a href="http://www.masteringperl.org/tag/excellent-numbers/">The "excellent numbers" tag at Mastering Perl</a></li>
+
+<li> <a href="http://blog.plover.com/math/484848.html">484848 is excellent</a>, from Mark Jason Dominus</li>
+
+<li> <a href="https://oeis.org/A162700">The Online Encyclopedia of Integer Sequences, A162700</a></li>
+</ul>
+
+</body>
+</html>
