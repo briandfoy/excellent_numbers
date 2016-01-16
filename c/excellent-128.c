@@ -32,37 +32,6 @@ const excellent_half_t powers_of_10[] = {
 const uint8_t MAX_NDIGITS = 2 * ((sizeof powers_of_10)/(sizeof powers_of_10[0]));
 
 /*
-   stop_a was created by perl/bisect.pl. Take the maximum b (all 9s)
-   and compute the largest a from that.
-
-   Each position represents a value of k (half digits), with 0 as a placeholder
-   for k=0
-*/
-
-const excellent_half_t stop_a[] = {
-    0,
-    6,
-    63,
-    619,
-    6181,
-    61805,
-    618034,
-    6180340,
-    61803400,
-    618033989,
-    6180339888LL,
-    61803398875LL,
-    618033988751LL,
-    6180339887499LL,
-    61803398874990LL,
-    618033988749895LL,
-    6180339887498949LL,
-    61803398874989485LL,
-    618033988749894849LL,
-    6180339887498948483LL,
-};
-
-/*
    a has to end in 0, 4, or 6. Instead of incrementing by 2 and
    checking the last decimal digit, use the last decimal digit to choose
    the increment value. 0->4, 4->6, 6->0
@@ -418,9 +387,17 @@ default_start_a( uint8_t d ) {
     return powers_of_10[ (d / 2) - 1 ];
 }
 
+/*
+ * given a, we have:
+ * b = 0.5 + sqrt(.25 + a**2 + a10**K)
+ * b < K must hold. Use this to find a(K)
+ */
+
 excellent_half_t
 default_end_a( uint8_t d ) {
-    return stop_a[ d / 2 ];
+    excellent_float_t K = powers_of_10[ d / 2 ];
+    excellent_half_t a = 1 + K * (sqrt(5 - 4/K) - 1);
+    return a / 2;
 }
 
 uint8_t
