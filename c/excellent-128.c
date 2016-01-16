@@ -412,11 +412,13 @@ initialize_K(const excellent_opt_t *opt) {
 
 void
 check_excellent(excellent_half_t a, excellent_half_t K) {
-    excellent_half_t b = 1.0 + a * sqrt(1 + ((excellent_float_t) K)/ a);
-    excellent_full_t lhs = multiply_halves(b, b - 1);
-    excellent_full_t rhs = multiply_halves(a, K) + multiply_halves(a, a);
+    excellent_full_t rhs = multiply_halves(a, a) + multiply_halves(a, K);
+    excellent_half_t b = 1 +
+        sqrt((excellent_float_t) a) *
+        sqrt((excellent_float_t) (a + K))
+    ;
 
-    if ( lhs == rhs ) {
+    if ( rhs == multiply_halves(b, b - 1) ) {
         print_excellent_number(a, b);
     }
 
