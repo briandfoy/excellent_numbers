@@ -116,6 +116,7 @@ void print_excellent_number(
         const excellent_half_t
         );
 
+void print_startup_report(excellent_info_t *, const excellent_opt_t *);
 void print_termination_report(excellent_half_t, excellent_half_t);
 
 #define EXCELLENT_H_INCLUDED

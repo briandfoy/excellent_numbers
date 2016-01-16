@@ -86,18 +86,10 @@ search_excellent_numbers(
     const excellent_half_t end_a = opt->end_a;
     const excellent_half_t K = initialize_K( opt );
 
-    uint32_t start_time = time(NULL);
-
-    printf( "*** [%d] [%u] Starting up\n",              getpid(), start_time );
-    printf( "*** [%d] start a is %" EXCELLENT_FMT "\n", getpid(), opt->start_a );
-    printf( "*** [%d] end a is %" EXCELLENT_FMT "\n",   getpid(), opt->end_a );
-    printf( "*** [%d] report interval is %u\n",         getpid(), opt->minutes_between_progress_reports );
-    printf( "*** [%d] signal check interval is %u\n",   getpid(), opt->seconds_between_signal_checks );
-    fflush( stdout );
-
     info->last_a = opt->start_a;
-    info->last_time = start_time;
     info->rate = RATE_GUESS;
+
+    print_startup_report(info, opt);
 
     current_iter = 0;
     iterations_per_signal_check = info->rate * opt->seconds_between_signal_checks;
@@ -129,6 +121,20 @@ search_excellent_numbers(
 }
 
 void
+print_startup_report(excellent_info_t *info, const excellent_opt_t *opt) {
+    uint32_t start_time = time(NULL);
+    info->last_time = start_time;
+
+    printf( "*** [%d] [%u] Starting up\n",              getpid(), start_time );
+    printf( "*** [%d] start a is %" EXCELLENT_FMT "\n", getpid(), opt->start_a );
+    printf( "*** [%d] end a is %" EXCELLENT_FMT "\n",   getpid(), opt->end_a );
+    printf( "*** [%d] report interval is %u\n",         getpid(), opt->minutes_between_progress_reports );
+    printf( "*** [%d] signal check interval is %u\n",   getpid(), opt->seconds_between_signal_checks );
+    fflush( stdout );
+    return;
+}
+
+void
 print_termination_report(excellent_half_t start_a, excellent_half_t a) {
     printf(
         "+++ [%d] [%u] Checked [%" EXCELLENT_FMT "] to [%" EXCELLENT_FMT "]\n",
@@ -136,7 +142,6 @@ print_termination_report(excellent_half_t start_a, excellent_half_t a) {
     fflush( stdout );
     return;
 }
-
 
 excellent_full_t
 multiply_halves(
