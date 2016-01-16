@@ -334,17 +334,17 @@ handle_usr1(
 }
 void
 alarm_raised( int signo ) {
-    ALARM_RAISED += 1;
+    ++ ALARM_RAISED;
 }
 
 void
 int_raised( int signo ) {
-    INT_RAISED += 1;
+    ++ INT_RAISED;
 }
 
 void
 usr1_raised( int signo ) {
-    USR1_RAISED += 1;
+    ++ USR1_RAISED;
 }
 
 void
