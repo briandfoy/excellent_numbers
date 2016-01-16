@@ -3,6 +3,7 @@
 #include <inttypes.h>
 #include <stdint.h>
 #include <signal.h>
+#include <time.h>
 
 typedef uint64_t excellent_half_t;
 typedef unsigned __int128 excellent_full_t;
@@ -27,7 +28,7 @@ struct excellent_opt {
 struct excellent_info {
     excellent_half_t last_a;
     excellent_half_t rate;
-    uint32_t last_time;
+    time_t last_time;
 };
 
 typedef struct excellent_info excellent_info_t;
@@ -118,6 +119,8 @@ void print_excellent_number(
 
 void print_startup_report(excellent_info_t *, const excellent_opt_t *);
 void print_termination_report(excellent_half_t, excellent_half_t);
+
+const char *timestamp(time_t);
 
 #define EXCELLENT_H_INCLUDED
 #endif

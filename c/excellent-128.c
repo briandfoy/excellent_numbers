@@ -122,10 +122,9 @@ search_excellent_numbers(
 
 void
 print_startup_report(excellent_info_t *info, const excellent_opt_t *opt) {
-    uint32_t start_time = time(NULL);
-    info->last_time = start_time;
+    time( & (info->last_time) );
 
-    printf( "*** [%d] [%u] Starting up\n",              getpid(), start_time );
+    printf( "*** [%d] [%s] Starting up\n",              getpid(), timestamp(info->last_time) );
     printf( "*** [%d] start a is %" EXCELLENT_FMT "\n", getpid(), opt->start_a );
     printf( "*** [%d] end a is %" EXCELLENT_FMT "\n",   getpid(), opt->end_a );
     printf( "*** [%d] report interval is %u\n",         getpid(), opt->minutes_between_progress_reports );
@@ -141,6 +140,14 @@ print_termination_report(excellent_half_t start_a, excellent_half_t a) {
         getpid(),  (unsigned) time(NULL), start_a, a);
     fflush( stdout );
     return;
+}
+
+const char *
+timestamp(const time_t timer) {
+    static char buffer[26] = { 0 };
+    struct tm* tm_info = gmtime(&timer);
+    strftime(buffer, 26, "%Y-%m-%dT%H:%M:%S-00:00", tm_info);
+    return buffer;
 }
 
 excellent_full_t
@@ -169,16 +176,13 @@ report_progress(
         const excellent_opt_t *opt
         ) {
     excellent_half_t numbers_done = a - info->last_a;
-    uint32_t this_time = time( NULL );
+    time_t this_time = time( NULL );
 
     info->rate = ((excellent_float_t) numbers_done) / (this_time - info->last_time);
 
-    printf( "+++ [%d] Checked [%" EXCELLENT_FMT "] to [%" EXCELLENT_FMT "]\n",
-            getpid(), opt->start_a, a );
-    printf( "*** [%d] [%u] working on: %" EXCELLENT_FMT
-            " tried: %" EXCELLENT_FMT
-            " rate: %" EXCELLENT_FMT " / sec\n",
-            getpid(), this_time, a, numbers_done, info->rate );
+    printf( "+++ [%d] Checked [%" EXCELLENT_FMT "] to [%" EXCELLENT_FMT "]\n", getpid(), opt->start_a, a );
+    printf( "*** [%d] [%s] working on: %" EXCELLENT_FMT " tried: %" EXCELLENT_FMT " rate: %" EXCELLENT_FMT " / sec\n",
+            getpid(), timestamp( this_time ), a, numbers_done, info->rate );
     fflush( stdout );
     info->last_time = this_time;
     info->last_a = a;
