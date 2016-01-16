@@ -1,5 +1,5 @@
 CC=cc
-LIBS=-lgmp
+LIBS=-lm
 CFLAGS=-O2 -march=native
 GRAND_CC=${CC} ${CFLAGS}
 
