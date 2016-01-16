@@ -136,8 +136,8 @@ print_startup_report(excellent_info_t *info, const excellent_opt_t *opt) {
 void
 print_termination_report(excellent_half_t start_a, excellent_half_t a) {
     printf(
-        "+++ [%d] [%u] Checked [%" EXCELLENT_FMT "] to [%" EXCELLENT_FMT "]\n",
-        getpid(),  (unsigned) time(NULL), start_a, a);
+        "+++ [%d] [%s] Checked [%" EXCELLENT_FMT "] to [%" EXCELLENT_FMT "]\n",
+        getpid(),  timestamp( time(NULL) ), start_a, a);
     fflush( stdout );
     return;
 }
