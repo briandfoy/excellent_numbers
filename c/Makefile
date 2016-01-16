@@ -5,7 +5,6 @@ GRAND_CC=${CC} ${CFLAGS}
 
 C_FILES=excellent-128.c
 BASE=excellent-128
-ALARM_MINUTES ?= 3
 
 all:
 	${GRAND_CC} -o ${BASE} ${C_FILES}
