@@ -84,7 +84,7 @@ search_excellent_numbers(
 
     const excellent_half_t start_a = opt->start_a;
     const excellent_half_t end_a = opt->end_a;
-    const excellent_half_t K = initialize_K( opt );
+    const excellent_half_t K = get_K( opt->ndigits );
 
     info->last_a = opt->start_a;
     info->rate = RATE_GUESS;
@@ -404,7 +404,7 @@ default_start_a( uint8_t d ) {
 
 excellent_half_t
 default_end_a( uint8_t d ) {
-    excellent_float_t K = powers_of_10[ d / 2 ];
+    excellent_float_t K = get_K( d );
     excellent_half_t a = 1 + K * (sqrt(5 - 4/K) - 1);
     return a / 2;
 }
@@ -415,8 +415,8 @@ get_next_a( excellent_half_t a ) {
 }
 
 excellent_half_t
-initialize_K(const excellent_opt_t *opt) {
-    return powers_of_10[ opt->ndigits / 2 ];
+get_K( uint8_t d ) {
+    return powers_of_10[ d / 2 ];
 }
 
 void

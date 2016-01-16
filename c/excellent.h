@@ -98,7 +98,7 @@ void search_excellent_numbers(
 
 excellent_half_t default_start_a( uint8_t );
 excellent_half_t default_end_a( uint8_t );
-excellent_half_t initialize_K( const excellent_opt_t * );
+excellent_half_t get_K( uint8_t );
 
 excellent_full_t multiply_halves(
         const excellent_half_t,
