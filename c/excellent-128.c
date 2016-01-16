@@ -86,6 +86,8 @@ search_excellent_numbers(
     const excellent_half_t end_a = opt->end_a;
     const excellent_half_t K = get_K( opt->ndigits );
 
+    excellent_half_t checked_a = 0;
+
     info->last_a = opt->start_a;
     info->rate = RATE_GUESS;
 
@@ -97,17 +99,19 @@ search_excellent_numbers(
     for (a = start_a; a <= end_a; a += next_a[ a % 10 ]) {
 
         check_excellent(a, K);
+        checked_a = a;
         current_iter += 1;
+
 
         if (current_iter == iterations_per_signal_check) {
             if (ALARM_RAISED > 0) {
-                handle_alarm(a, info, opt);
+                handle_alarm(checked_a, info, opt);
             }
             if (USR1_RAISED > 0) {
-                handle_usr1(a, info, opt);
+                handle_usr1(checked_a, info, opt);
             }
             if (INT_RAISED > 0) {
-                handle_int(a, info, opt);
+                handle_int(checked_a, info, opt);
                 break;
             }
             current_iter = 0;
@@ -116,7 +120,7 @@ search_excellent_numbers(
         }
     }
 
-    print_termination_report(start_a, a);
+    print_termination_report(start_a, checked_a);
     return;
 }
 
