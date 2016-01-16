@@ -8,7 +8,7 @@ typedef uint64_t excellent_half_t;
 typedef unsigned __int128 excellent_full_t;
 typedef double excellent_float_t;
 
-
+#define EXCELLENT_SQRT sqrt
 #define EXCELLENT_FMT PRIu64
 
 #define SECONDS_PER_MINUTE (60)

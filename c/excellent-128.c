@@ -414,8 +414,8 @@ void
 check_excellent(excellent_half_t a, excellent_half_t K) {
     excellent_full_t rhs = multiply_halves(a, a) + multiply_halves(a, K);
     excellent_half_t b = 1 +
-        sqrt((excellent_float_t) a) *
-        sqrt((excellent_float_t) (a + K))
+        EXCELLENT_SQRT((excellent_float_t) a) *
+        EXCELLENT_SQRT((excellent_float_t) (a + K))
     ;
 
     if ( rhs == multiply_halves(b, b - 1) ) {
