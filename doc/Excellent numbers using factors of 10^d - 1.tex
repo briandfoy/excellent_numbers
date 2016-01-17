@@ -1,0 +1,70 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{url}
+
+\begin{document}
+
+\title{Finding d-digit excellent numbers using factors of $(10^(d/2) - 1)$}
+
+\author{A. Sinan Unur}
+
+\date{January 17, 2016}
+
+\maketitle
+
+This is a re-write and expansion of comment on HN by a user called Someone. See \url{https://news.ycombinator.com/item?id=10909909} and \url{https://news.ycombinator.com/item?id=10915461}.
+
+Suppose, for integers $a$, $b$, we have
+
+\[ b^2 - a^2 = aK + b \]
+
+where $K\equiv 10^(d/2)$ and $d\equiv\lceil\mathrm{log}_{10}a\rceil=\lceil\mathrm{log}_{10}b\rceil$.
+
+Then:
+%
+\begin{eqnarray}
+%
+b^2 - b & = & a^2 + K \\
+%
+(b - \frac{1}{2})^2 - (\frac{1}{2})^2 & = & (a + \frac{K}{2})^2 - (\frac{K}{2})^2 \\
+%
+(2b - 1)^2 - 1 & = & (2a + K)^2 - K^2 \\
+%
+(2a + K)^2 - (2b - 1)^2 & = & K^2 - 1
+%
+\end{eqnarray}
+
+Now, this equation is of the form $x^2 - y^2 = c$. Write $x^2 - y^2$ as $(x - y)(x + y)$:
+
+\begin{equation}
+%
+\left[2(a - b) + (K + 1)\right] \left[2(a + b) + (K + 1)\right] = K^2 - 1 \label{eqn:fact1}
+%
+\end{equation}
+
+Let $P$ be the set of factors of $(K^2 - 1)$. For every element $ = (p_1,p_2)\in S$, we have equations:
+
+\begin{eqnarray}
+%
+\left[2(a - b) + (K + 1)\right] & = & p_1 \label{eqn:fact2}\\
+%
+\left[2(a + b) + (K + 1)\right] & = & q_1 \label{eqn:fact3}
+%
+\end{eqnarray}
+
+For example, to find 38 digit excellent numbers, we need to generate the integer factors of $999,999,999,999,999,999$, then solve equations (\ref{eqn:fact2}) and (\ref{eqn:fact3}) for each pair of them.
+
+This can be done off-line, and a look up table can be supplied to the program.
+
+Computationally, because we have $K^2$ on the right hand side, we can get by using 128 bit arithmetic for numbers with up to 38 digits. Beyond that, we need 256 bit arithmetic.
+
+Rearranging, we end up with the following sets of equations:
+
+\begin{eqnarray}
+%
+a + b & = & \frac{q - (K + 1)}{2} \\
+%
+b - a & = & \frac{(K + 1) - p}{2}
+%
+\end{document}
+
