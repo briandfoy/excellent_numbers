@@ -38,7 +38,7 @@ Now, this equation is of the form $x^2 - y^2 = c$. Write $x^2 - y^2$ as $(x - y)
 
 \begin{equation}
 %
-\left[2(a - b) + (K + 1)\right] \left[2(a + b) + (K + 1)\right] = K^2 - 1 \label{eqn:fact1}
+\left[2(a - b) + (K + 1)\right] \left[2(a + b) + (K - 1)\right] = K^2 - 1 \label{eqn:fact1}
 %
 \end{equation}
 
@@ -48,7 +48,7 @@ Let $P$ be the set of factors of $(K^2 - 1)$. For every element $ = (p_1,p_2)\in
 %
 \left[2(a - b) + (K + 1)\right] & = & p_1 \label{eqn:fact2}\\
 %
-\left[2(a + b) + (K + 1)\right] & = & p_2 \label{eqn:fact3}
+\left[2(a + b) + (K - 1)\right] & = & p_2 \label{eqn:fact3}
 %
 \end{eqnarray}
 
@@ -62,7 +62,7 @@ Rearranging, we end up with the following sets of equations:
 
 \begin{eqnarray}
 %
-a + b & = & \frac{q - (K + 1)}{2} \\
+a + b & = & \frac{q - (K - 1)}{2} \\
 %
 b - a & = & \frac{(K + 1) - p}{2}
 %
@@ -77,13 +77,13 @@ Now, this is easy to solve by substitution:
 Therefore,
 
 \begin{equation}
-    a = \frac{(p + q) - 2(K + 1)}{4}
+    a = \frac{(p + q) - 2K}{4}
 \end{equation}
 
 and
 
 \begin{equation}
-    b = \frac{q - p}{4}
+    b = \frac{q - p + 2}{4}
 \end{equation}
 
 \end{document}
