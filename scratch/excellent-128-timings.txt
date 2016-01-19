@@ -1,0 +1,185 @@
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 2
+*** [38825] [1452965646] Starting up
+*** [38825] start a is 2
+*** [38825] end a is 6
+48 is excellent
++++ [38825] [1452965646] Checked [2] to [10]
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 4
+*** [38826] [1452965648] Starting up
+*** [38826] start a is 10
+*** [38826] end a is 63
+3468 is excellent
++++ [38826] [1452965648] Checked [10] to [64]
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.001s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 6
+*** [38827] [1452965650] Starting up
+*** [38827] start a is 100
+*** [38827] end a is 619
+140400 is excellent
+190476 is excellent
+216513 is excellent
+300625 is excellent
+334668 is excellent
+416768 is excellent
+484848 is excellent
+530901 is excellent
++++ [38827] [1452965650] Checked [100] to [620]
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.001s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 8
+*** [38828] [1452965652] Starting up
+*** [38828] start a is 1000
+*** [38828] end a is 6181
+16604400 is excellent
+33346668 is excellent
+59809776 is excellent
++++ [38828] [1452965652] Checked [1000] to [6184]
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.001s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 10
+*** [38829] [1452965654] Starting up
+*** [38829] start a is 10000
+*** [38829] end a is 61805
+3333466668 is excellent
+4848484848 is excellent
+4989086476 is excellent
++++ [38829] [1452965654] Checked [10000] to [61806]
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 12
+*** [38830] [1452965656] Starting up
+*** [38830] start a is 100000
+*** [38830] end a is 618034
+101420334225 is excellent
+181090462476 is excellent
+238580543600 is excellent
+243970550901 is excellent
+268234583253 is excellent
+274016590848 is excellent
+320166650133 is excellent
+333334666668 is excellent
+346834683468 is excellent
+400084748433 is excellent
+440750796876 is excellent
+502016868353 is excellent
+569466945388 is excellent
++++ [38830] [1452965656] Checked [100000] to [618036]
+
+real	0m0.006s
+user	0m0.006s
+sys	0m0.000s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 14
+*** [38831] [1452965658] Starting up
+*** [38831] start a is 1000000
+*** [38831] end a is 6180340
+33333346666668 is excellent
+48484848484848 is excellent
++++ [38831] [1452965658] Checked [1000000] to [6180344]
+
+real	0m0.047s
+user	0m0.047s
+sys	0m0.000s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 16
+*** [38832] [1452965660] Starting up
+*** [38832] start a is 10000000
+*** [38832] end a is 61803400
+1045751633986928 is excellent
+1140820035650625 is excellent
+3333333466666668 is excellent
++++ [38832] [1452965660] Checked [10000000] to [61803404]
+
+real	0m0.455s
+user	0m0.455s
+sys	0m0.000s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 18
+*** [38833] [1452965663] Starting up
+*** [38833] start a is 100000000
+*** [38833] end a is 618033989
+103495840337945601 is excellent
+115220484358463728 is excellent
+134171310390093900 is excellent
+139601140398860400 is excellent
+140400140400140400 is excellent
+146198830409356725 is excellent
+168654484443958128 is excellent
+189525190474810476 is excellent
+190476190476190476 is excellent
+215488216511784513 is excellent
+216513216513216513 is excellent
+225789700526090001 is excellent
+241951680548171776 is excellent
+271851166588008693 is excellent
+299376300623700625 is excellent
+300625300625300625 is excellent
+332001666665001333 is excellent
+333333334666666668 is excellent
+334668334668334668 is excellent
+344329484680361873 is excellent
+415233416766584768 is excellent
+416768416768416768 is excellent
+468197520829099776 is excellent
+483153484846516848 is excellent
+484848484848484848 is excellent
+529100530899470901 is excellent
+530901530901530901 is excellent
+572945416949321793 is excellent
++++ [38833] [1452965667] Checked [100000000] to [618033990]
+
+real	0m4.525s
+user	0m4.518s
+sys	0m0.004s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 20
+*** [38834] [1452965670] Starting up
+*** [38834] start a is 1000000000
+*** [38834] end a is 6180339888
+21733880705143685100 is excellent
+22847252005297850625 is excellent
+23037747345324014028 is excellent
+23921499005444619376 is excellent
+24981063345587629068 is excellent
+26396551105776186476 is excellent
+31698125906461101900 is excellent
+33333333346666666668 is excellent
+34683468346834683468 is excellent
+35020266906876369525 is excellent
+36160444847016852753 is excellent
+36412684107047802476 is excellent
+46399675808241903600 is excellent
+46401324208242096401 is excellent
+48179452108449381525 is excellent
++++ [38834] [1452965715] Checked [1000000000] to [6180339890]
+
+real	0m45.226s
+user	0m45.199s
+sys	0m0.000s
+brian@zfs-dev:~/excellent_numbers/c$ time ./excellent-128 22
+*** [38838] [1452965791] Starting up
+*** [38838] start a is 10000000000
+*** [38838] end a is 61803398875
+1283162072038050132225 is excellent
+1382185301039663949900 is excellent
+1401308698439970930753 is excellent
+2178784179051512078476 is excellent
+2338121616653710361068 is excellent
+2367149758454106280193 is excellent
+3333333333466666666668 is excellent
+3576505852069682460225 is excellent
+4848484848484848484848 is excellent
++++ [38838] [1452966250] Checked [10000000000] to [61803398876]
+
+real	7m39.507s
+user	7m39.242s
+sys	0m0.000s
