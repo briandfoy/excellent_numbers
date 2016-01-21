@@ -663,11 +663,17 @@ I'm currently working on the 32-digit numbers. So far:
 
 =item * Sinan Ünür made everything really fast by using int128 math
 
+=item * Matthew Arcus
+
 =back
 
 =head2 Other Readings
 
 =over 4
+
+=item * L<Excellent Numbers|https://matthewarcus.wordpress.com/2016/01/16/excellent-numbers/>
+
+Matthew Arcus re-uses what we already know about factors of 10^k-1 to make the process much faster.
 
 =item * L<Computing excellent numbers|http://www.masteringperl.org/2015/05/computing-excellent-numbers/>
 
