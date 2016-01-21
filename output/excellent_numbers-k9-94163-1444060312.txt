@@ -1,6 +1,0 @@
-*** Starting run at Mon Oct  5 11:51:52 2015
-*** PID is 94163
-*** k is 9
-463996758 .. 4640132421
-
-Ended at 464151526
