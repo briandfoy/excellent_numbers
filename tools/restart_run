@@ -13,8 +13,7 @@ use Getopt::Long            qw(GetOptions);
 use POSIX                   qw(ceil :sys_wait_h);
 
 my $output_dir = catfile( $Bin, '..', 'output' );
-my $length     = 30;
-
+my $length     = $ARGV[0] or die "Tell me the length!\n";
 $|++;
 
 opendir my $dh, $output_dir or die "Could not open $output_dir";
