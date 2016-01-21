@@ -47,6 +47,8 @@ $string
 
 warn "No substitution in README\n" unless $success;
 
+$readme =~ s/\s+\z//;
+
 open my $wfh, '>:utf8', 'README.pod' or die "Could not open [README.pod]: $!";
 say { $wfh } $readme;
 close $wfh;

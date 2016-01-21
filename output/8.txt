@@ -1,0 +1,6 @@
+*** [53122] start a is 1000
+*** [53122] end a is 6182
+16604400 is excellent
+33346668 is excellent
+59809776 is excellent
++++ [53122] Checked [1000] to [6184]

@@ -1,0 +1,79 @@
+#!perl
+use v5.22.0;
+use utf8;
+use strict;
+use warnings;
+
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
+use ExcellentNumber qw(is_excellent);
+use File::Basename qw(basename);
+use File::Spec::Functions qw(catfile no_upwards);
+use IO::Interactive qw(interactive);
+
+my( $file ) = no_upwards( "$FindBin::Bin/../excellent.txt" );
+say "File path is $file";
+my $basename = basename( $file );
+
+my @numbers = do {
+	open my $fh, '<:utf8', $file
+		or die "Could not open $file: $!";
+	my @numbers = <$fh>;
+	close $fh;
+	chomp @numbers;
+	@numbers;
+	};
+
+chomp @numbers;
+my %numbers = map { $_, undef } @numbers;
+
+@ARGV = qw(output) unless @ARGV;
+
+my @add_to_excellent;
+DIR: foreach my $dir ( @ARGV ) {
+	unless( -d $dir ) {
+		warn "[$dir] is not a directory\n";
+		next DIR;
+		}
+
+	opendir my $dh, $dir or die "Could not open directory [$dir]: $!\n";
+
+	FILE: while( my $output_file = readdir $dh ) {
+		next FILE if $output_file =~ /\A\./;
+		my $path = catfile( $dir, $output_file );
+		next FILE unless -T $path;
+
+		open my $fh, '<:utf8', $path or do { warn "Could not open file [$path]: $!"; next FILE };
+
+		LINE: while( <$fh> ) {
+			next unless /\A( [123456] [0123456789]+ )/x;
+			my $number = $1;
+			unless( is_excellent( $number ) ) {
+				say {interactive} "Found non-excellent [$number] in $output_file line $.";
+				next LINE;
+				}
+			say {interactive} "Found [$number] in $output_file line $.";
+			if( exists $numbers{$number} ) {
+				say {interactive} "\tAlready in $basename";
+				}
+			else {
+				say {interactive} "\tShould add to $basename";
+				push @add_to_excellent, $number;
+				}
+			}
+		}
+	}
+
+if( @add_to_excellent ) {
+	say {interactive} join "\n\t", "Should add:", @add_to_excellent;
+
+	open my $fh, '>>:utf8', $file;
+	print {$fh} join "\n", @add_to_excellent;
+	close $fh;
+	exit 0;
+	}
+else {
+	say "Nothing to add!";
+	exit 1;
+	}

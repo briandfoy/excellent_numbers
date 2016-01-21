@@ -394,7 +394,45 @@ b & = ( 6 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^n + 3 (\sum\li
 \end{align}
 $$
 
+<p>All of the summations are the same, so replace them with $S$:</p>
 
+$$
+\begin{align}
+S & = 3 (\sum\limits_{i=0}^{n} 10^i)           \\
+a & = (   S - 1 ) \cdot 10^{2n+2} + 10^n + 2 S \\
+b & = ( 2 S - 1 ) \cdot 10^{2n+2} + 10^n +   S \\
+\end{align}
+$$
+
+<p>The squares are then:</p>
+
+$$
+\begin{align}
+a^2 & = (   S - 1 )^2 \cdot 10^{2(2n+2)} + 10^{2n} + 2^2 S^2 \\
+    & + 2 (   S - 1 ) \cdot 10^{2n+2} 10^n \\
+    & + 2 (   S - 1 ) \cdot 10^{2n+2} 2 S \\
+    & + 2^2 S 10^n \\
+    & = ( S^2 - 2S + 1 ) 10^{4n+4} + 10^{2n} + 4 S^2 \\
+    & + 2 (   S - 1 ) \cdot 10^{3n+2} \\
+    & + 4 S ( S - 1 ) \cdot 10^{2n+2} \\
+    & + 2^2 S 10^n \\
+\end{align}
+$$
+
+
+
+
+\begin{align}
+b^2 & = ( 2 S - 1 )^2 \cdot 10^{2(2n+2)} + 10^{2n} +   S^2 \\
+    & + 2 ( 2 S - 1 ) \cdot 10^{2n+2} 10^n \\
+    & + ( 2 S - 1 ) \cdot 10^{2n+2} S \\
+    & + S 10^n \\
+b^2 & = ( 4 S^2 - 4S + 1 ) \cdot 10^{4n+4} + 10^{2n} +   S^2 \\
+    & + 2 ( 2 S - 1 ) \cdot 10^{3n+2} \\
+    & + S ( 2 S - 1 ) \cdot 10^{2n+2} \\
+    & + S 10^n \\
+\end{align}
+$$
 
 <p>
 And this is how far I've worked on this problem.

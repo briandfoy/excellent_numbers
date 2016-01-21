@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!perl
 use v5.10;
 use strict;
 use warnings;
@@ -35,9 +35,9 @@ while( ++$num ) {
 	my $half = $length / 2;
 	my $front = substr $num, 0, $half;
 	my $back  = substr $num, $half, $half;
-
 	next if $front > $back;
 
 	my $computed = $back**2 - $front**2;
+
 	say "[@{[time]}] $num" if $computed == $num;
 	}

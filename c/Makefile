@@ -1,22 +1,21 @@
 CC=cc
 LIBS=-lgmp
+CFLAGS=-O2 -march=native
+GRAND_CC=${CC} ${CFLAGS}
 
-GRAND_CC=${CC} ${LIBS}
-
-C_FILES=excellent-gmp.c
-BASE=excellent-gmp
+C_FILES=excellent-128.c
+BASE=excellent-128
+ALARM_MINUTES ?= 3
 
 all:
 	${GRAND_CC} -o ${BASE} ${C_FILES}
 
-# make file target name?
-try:
-	${GRAND_CC} -o ${BASE}-try ${C_FILES}
-	./excellent-gmp-try
+short:
+	@ echo 'ALARM_MINUTES is' ${ALARM_MINUTES}
+	${GRAND_CC} -o ${BASE}-$@ -DALARM_MINUTES=${ALARM_MINUTES} ${C_FILES}
 
 debug:
 	${GRAND_CC} -o ${BASE}-debug -DDEBUGGING=1 ${C_FILES}
-	./excellent-gmp-try
 
 valgrind:
 	${GRAND_CC} -g -o ${BASE}-valgrind ${C_FILES}

@@ -1,0 +1,90 @@
+<html>
+<head><title>Javascript test</title></head>
+<body>
+<h1>Test a number for excellence</h1>
+
+<script>
+function is_excellent () {
+	candidate = document.getElementById("candidate").value;
+
+	document.getElementById("candidate_heading").innerText =
+		"Testing " + document.createTextNode( candidate ).textContent;
+
+	// Check that it's a number
+	if( ! IsNumeric( candidate ) ) {
+        document.getElementById("error").innerText =
+        	"This doesn't look like a number.";
+    	return false;
+		}
+
+	// Check that it's an even number of digits
+	length = document.createTextNode( candidate ).textContent.length;
+
+    if( length % 2 == 1 ) {
+        document.getElementById("error").innerText =
+        	"Excellent numbers have an even number of digits.";
+    	return false;
+		}
+
+	// Get a and b
+	half = length / 2;
+	document.getElementById("length").innerText =
+		"length is " + length;
+	document.getElementById("half").innerText =
+		"half is " + half;
+
+	a = candidate.substr( 0, half );
+	b = candidate.substr( half, half );
+
+	document.getElementById("a_half").innerText =
+		"a is " + a;
+	document.getElementById("b_half").innerText =
+		"b is " + b;
+
+	// Do the math
+	left = b*b - a*a;
+
+	document.getElementById("left").innerText =
+		"b2 - a2 = " + left;
+
+	if( left == candidate ) {
+		document.getElementById("candidate_heading").innerText =
+			document.createTextNode( candidate ).textContent + " is excellent";
+		}
+	else {
+		document.getElementById("candidate_heading").innerText =
+			document.createTextNode( candidate ).textContent + " is not excellent";
+		}
+
+
+	return false;
+	}
+
+function IsNumeric ( input ) {
+    var RE = /^[1-9][0-9]*$/;
+    return( RE.test(input) );
+	}
+
+</script>
+
+<form onsubmit="is_excellent(); return false" >
+<label for="number">Number</label>
+<input type="text" id="candidate" name="number" width="32"/>
+<input type="submit" />
+
+<h2 id="candidate_heading">Waiting for a candidate</h2>
+
+<p id="error"></p>
+
+<p id="length"></p>
+<p id="half"></p>
+
+<p id="a_half"></p>
+<p id="b_half"></p>
+
+<p id="left"></p>
+
+</form>
+
+</body>
+</html>

@@ -4,13 +4,51 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <unistd.h>
+#include <errno.h>
+#include <signal.h>
+
+volatile sig_atomic_t int_flag  = 0;
+volatile sig_atomic_t usr1_flag = 0;
 
 void bisect( int, int, mpz_t );
 void default_start_a( int, mpz_t );
 void default_end_a(   int, mpz_t );
 void time_left ( const mpz_t, const mpz_t, const mpz_t );
+void int_handler(  int signo );
+void usr1_handler( int signo );
+
+void int_handler(  int signo ) {
+	++int_flag;
+	}
+void usr1_handler( int signo ) {
+	++usr1_flag;
+	}
+
+void setup_interrupt() {
+	struct sigaction act;
+	act.sa_handler = int_handler;
+	sigemptyset(&act.sa_mask);
+	act.sa_flags = 0;
+	if( sigaction(SIGINT, &act, 0) == -1 ) {
+		perror( "sigaction couldn't install SIGINT" );
+		}
+	}
+
+void setup_usr1() {
+	struct sigaction act;
+	act.sa_handler = usr1_handler;
+	sigemptyset(&act.sa_mask);
+	act.sa_flags = 0;
+	if( sigaction(SIGUSR1, &act, 0) == -1 ) {
+		perror( "sigaction couldn't install SIGUSR1" );
+		}
+	}
 
 int main( int argc, char *argv[] ) {
+	setup_interrupt();
+	setup_usr1();
+
 	mpz_t start_a, end_a;
 	int base10_ui = 10;
 	int digits, k;
@@ -43,12 +81,13 @@ int main( int argc, char *argv[] ) {
 		return( 1 );
 		}
 
-	mpz_t one, ten, two, zero, ten_k;
-	mpz_inits( one, ten, two, zero, ten_k, NULL );
-	mpz_set_ui( one, 1L );
-	mpz_set_ui( ten, 10L );
-	mpz_set_ui( two, 2L );
-	mpz_set_ui( zero, 0L );
+	mpz_t zero, one, two, eight, ten, ten_k;
+	mpz_inits( zero, one, two, eight, ten, ten_k, NULL );
+	mpz_set_ui( zero,  0L );
+	mpz_set_ui( one,   1L );
+	mpz_set_ui( two,   2L );
+	mpz_set_ui( eight, 8L );
+	mpz_set_ui( ten,  10L );
 
 	mpz_pow_ui( ten_k, ten, k );
 
@@ -58,8 +97,8 @@ int main( int argc, char *argv[] ) {
 		mpz_add( start_a, start_a, one );
 		}
 
-	gmp_printf( "*** start a is %Zd\n", start_a );
-	gmp_printf( "*** end a is %Zd\n",   end_a   );
+	gmp_printf( "*** [%d] start a is %Zd\n", getpid(), start_a );
+	gmp_printf( "*** [%d] end a is %Zd\n",   getpid(), end_a   );
 	fflush( stdout );
 
 	mpz_t      i, mod2, mod10, front, back, root, root_plus_one;
@@ -78,30 +117,37 @@ int main( int argc, char *argv[] ) {
 
 	/* only check the even numbers, so increase by 2 each iteration */
 	for( mpz_set( i, start_a ); mpz_cmp( i, end_a ) <= 0; mpz_add(i, i, two) ) {
+		if( int_flag > 0 ) {
+			printf( "!!! [%d] Caught interrupt\n", getpid() );
+			break;
+			}
+
 		this_time = (unsigned)time(NULL);
 
 		/* record some progress info */
-		if( ( (this_time % report_period) == 0) && (this_time != last_time) ) {
+		if( usr1_flag > 0 || ( ( (this_time % report_period) == 0) && (this_time != last_time) ) ) {
+			usr1_flag = 0;
 			time_passed = this_time - last_time;
 			mpz_sub( numbers_done, i, last_i );
 			mpz_tdiv_q_ui( rate, numbers_done, time_passed );
-			gmp_printf( "***[%u] working on: %Zd tried: %Zd rate: %Zd / sec\n", this_time, i, numbers_done, rate );
+			gmp_printf( "+++ [%d] Checked [%Zd] to [%Zd]\n", getpid(), start_a, i );
+			gmp_printf( "*** [%d] [%u] working on: %Zd tried: %Zd rate: %Zd / sec\n",
+				getpid(), this_time, i, numbers_done, rate );
 			time_left( rate, i, end_a );
 			fflush( stdout );
 			mpz_set( last_i, i );
 			last_time = this_time;
 			}
 
-		/* skip those that end in 2 */
+		/* skip those that end in 2 or 8 */
 		mpz_mod( mod10, i, ten );
-		if( mpz_cmp( mod10, two ) == 0 ) {
+		if( (mpz_cmp( mod10, two ) == 0) || (mpz_cmp( mod10, eight ) == 0) ) {
 			continue;
 			}
 
 		/* the front part of the number */
 		mpz_add( front, ten_k, i );
 		mpz_mul( front, front, i );
-
 
 		/* the back part of the number */
 		mpz_sqrt( root, front );
@@ -113,6 +159,9 @@ int main( int argc, char *argv[] ) {
 			fflush( stdout );
 			}
 		}
+
+	gmp_printf( "+++ [%d] Checked [%Zd] to [%Zd]\n", getpid(), start_a, i );
+	fflush( stdout );
 
 	mpz_clears( mod2, mod10, front, back, root, root_plus_one, NULL );
 	mpz_clears( i, start_a, end_a, ten_k, one, two, ten, zero, NULL );
@@ -141,8 +190,8 @@ void time_left ( const mpz_t rate, const mpz_t this_a, const mpz_t end_a ) {
 	mpz_tdiv_q_ui( seconds, seconds_left, 60 );
 	mpz_mod_ui( seconds, seconds, 60 );
 
-	gmp_printf( "*** time left: %Zd wk %Zd d %Zd h %Zd m %Zd s\n",
-		weeks, days, hours, minutes, seconds );
+	gmp_printf( "*** [%d] time left: %Zd wk %Zd d %Zd h %Zd m %Zd s\n",
+		getpid(), weeks, days, hours, minutes, seconds );
 
 	mpz_clears( left_a, seconds_left, weeks, days, hours, minutes, seconds, NULL );
 	}

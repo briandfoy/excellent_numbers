@@ -1,0 +1,854 @@
+*** start a is 57000000000000
+*** end a is 58000000000000
++++ Checked [57000000000000] to [57000487757478]
+***[1449073800] working on: 57000487757478 tried: 487757478 rate: 3560273 / sec
+*** time left: 0 wk 3 d 5 h 17 m 59 s
++++ Checked [57000000000000] to [57003609090138]
+***[1449074700] working on: 57003609090138 tried: 3121332660 rate: 3468147 / sec
+*** time left: 0 wk 3 d 7 h 19 m 48 s
++++ Checked [57000000000000] to [57006776145302]
+***[1449075600] working on: 57006776145302 tried: 3167055164 rate: 3518950 / sec
+*** time left: 0 wk 3 d 6 h 18 m 24 s
++++ Checked [57000000000000] to [57009855400134]
+***[1449076500] working on: 57009855400134 tried: 3079254832 rate: 3421394 / sec
+*** time left: 0 wk 3 d 8 h 20 m 23 s
++++ Checked [57000000000000] to [57013316564860]
+***[1449077400] working on: 57013316564860 tried: 3461164726 rate: 3845738 / sec
+*** time left: 0 wk 2 d 23 h 11 m 16 s
++++ Checked [57000000000000] to [57016836377364]
+***[1449078300] working on: 57016836377364 tried: 3519812504 rate: 3910902 / sec
+*** time left: 0 wk 2 d 21 h 9 m 49 s
++++ Checked [57000000000000] to [57020399717200]
+***[1449079200] working on: 57020399717200 tried: 3563339836 rate: 3959266 / sec
+*** time left: 0 wk 2 d 20 h 8 m 43 s
++++ Checked [57000000000000] to [57023891966822]
+***[1449080100] working on: 57023891966822 tried: 3492249622 rate: 3880277 / sec
+*** time left: 0 wk 2 d 21 h 9 m 52 s
++++ Checked [57000000000000] to [57027347684180]
+***[1449081000] working on: 57027347684180 tried: 3455717358 rate: 3839685 / sec
+*** time left: 0 wk 2 d 22 h 10 m 21 s
++++ Checked [57000000000000] to [57030905104838]
+***[1449081900] working on: 57030905104838 tried: 3557420658 rate: 3952689 / sec
+*** time left: 0 wk 2 d 20 h 8 m 6 s
++++ Checked [57000000000000] to [57034501436234]
+***[1449082800] working on: 57034501436234 tried: 3596331396 rate: 3995923 / sec
+*** time left: 0 wk 2 d 19 h 7 m 7 s
++++ Checked [57000000000000] to [57038097939162]
+***[1449083700] working on: 57038097939162 tried: 3596502928 rate: 3996114 / sec
+*** time left: 0 wk 2 d 18 h 6 m 51 s
++++ Checked [57000000000000] to [57041694750600]
+***[1449084600] working on: 57041694750600 tried: 3596811438 rate: 3996457 / sec
+*** time left: 0 wk 2 d 18 h 6 m 36 s
++++ Checked [57000000000000] to [57045289990544]
+***[1449085500] working on: 57045289990544 tried: 3595239944 rate: 3994711 / sec
+*** time left: 0 wk 2 d 18 h 6 m 23 s
++++ Checked [57000000000000] to [57048887746086]
+***[1449086400] working on: 57048887746086 tried: 3597755542 rate: 3997506 / sec
+*** time left: 0 wk 2 d 18 h 6 m 5 s
++++ Checked [57000000000000] to [57052484117020]
+***[1449087300] working on: 57052484117020 tried: 3596370934 rate: 3995967 / sec
+*** time left: 0 wk 2 d 17 h 5 m 51 s
++++ Checked [57000000000000] to [57056040493614]
+***[1449088200] working on: 57056040493614 tried: 3556376594 rate: 3951529 / sec
+*** time left: 0 wk 2 d 18 h 6 m 21 s
++++ Checked [57000000000000] to [57059624295412]
+***[1449089100] working on: 57059624295412 tried: 3583801798 rate: 3982001 / sec
+*** time left: 0 wk 2 d 17 h 5 m 35 s
++++ Checked [57000000000000] to [57063213727500]
+***[1449090000] working on: 57063213727500 tried: 3589432088 rate: 3988257 / sec
+*** time left: 0 wk 2 d 17 h 5 m 14 s
++++ Checked [57000000000000] to [57066813542792]
+***[1449090900] working on: 57066813542792 tried: 3599815292 rate: 3999794 / sec
+*** time left: 0 wk 2 d 16 h 4 m 48 s
++++ Checked [57000000000000] to [57070408642470]
+***[1449091800] working on: 57070408642470 tried: 3595099678 rate: 3994555 / sec
+*** time left: 0 wk 2 d 16 h 4 m 38 s
++++ Checked [57000000000000] to [57074005732364]
+***[1449092700] working on: 57074005732364 tried: 3597089894 rate: 3996766 / sec
+*** time left: 0 wk 2 d 16 h 4 m 21 s
++++ Checked [57000000000000] to [57077607735636]
+***[1449093600] working on: 57077607735636 tried: 3602003272 rate: 4002225 / sec
+*** time left: 0 wk 2 d 16 h 4 m 1 s
++++ Checked [57000000000000] to [57081208868128]
+***[1449094500] working on: 57081208868128 tried: 3601132492 rate: 4001258 / sec
+*** time left: 0 wk 2 d 15 h 3 m 47 s
++++ Checked [57000000000000] to [57084812421518]
+***[1449095400] working on: 57084812421518 tried: 3603553390 rate: 4003948 / sec
+*** time left: 0 wk 2 d 15 h 3 m 29 s
++++ Checked [57000000000000] to [57088420370720]
+***[1449096300] working on: 57088420370720 tried: 3607949202 rate: 4008832 / sec
+*** time left: 0 wk 2 d 15 h 3 m 9 s
++++ Checked [57000000000000] to [57092029470266]
+***[1449097200] working on: 57092029470266 tried: 3609099546 rate: 4010110 / sec
+*** time left: 0 wk 2 d 14 h 2 m 53 s
++++ Checked [57000000000000] to [57095640164748]
+***[1449098100] working on: 57095640164748 tried: 3610694482 rate: 4011882 / sec
+*** time left: 0 wk 2 d 14 h 2 m 37 s
++++ Checked [57000000000000] to [57099248184784]
+***[1449099000] working on: 57099248184784 tried: 3608020036 rate: 4008911 / sec
+*** time left: 0 wk 2 d 14 h 2 m 24 s
++++ Checked [57000000000000] to [57102852831698]
+***[1449099900] working on: 57102852831698 tried: 3604646914 rate: 4005163 / sec
+*** time left: 0 wk 2 d 14 h 2 m 13 s
++++ Checked [57000000000000] to [57106456657490]
+***[1449100800] working on: 57106456657490 tried: 3603825792 rate: 4004250 / sec
+*** time left: 0 wk 2 d 13 h 1 m 59 s
++++ Checked [57000000000000] to [57110058516550]
+***[1449101700] working on: 57110058516550 tried: 3601859060 rate: 4002065 / sec
+*** time left: 0 wk 2 d 13 h 1 m 46 s
++++ Checked [57000000000000] to [57113664320510]
+***[1449102600] working on: 57113664320510 tried: 3605803960 rate: 4006448 / sec
+*** time left: 0 wk 2 d 13 h 1 m 27 s
++++ Checked [57000000000000] to [57117273149196]
+***[1449103500] working on: 57117273149196 tried: 3608828686 rate: 4009809 / sec
+*** time left: 0 wk 2 d 13 h 1 m 9 s
++++ Checked [57000000000000] to [57120883514450]
+***[1449104400] working on: 57120883514450 tried: 3610365254 rate: 4011516 / sec
+*** time left: 0 wk 2 d 12 h 0 m 52 s
++++ Checked [57000000000000] to [57124493927294]
+***[1449105300] working on: 57124493927294 tried: 3610412844 rate: 4011569 / sec
+*** time left: 0 wk 2 d 12 h 0 m 37 s
++++ Checked [57000000000000] to [57128099587400]
+***[1449106200] working on: 57128099587400 tried: 3605660106 rate: 4006289 / sec
+*** time left: 0 wk 2 d 12 h 0 m 27 s
++++ Checked [57000000000000] to [57131703930038]
+***[1449107100] working on: 57131703930038 tried: 3604342638 rate: 4004825 / sec
+*** time left: 0 wk 2 d 12 h 0 m 13 s
++++ Checked [57000000000000] to [57135305690832]
+***[1449108000] working on: 57135305690832 tried: 3601760794 rate: 4001956 / sec
+*** time left: 0 wk 2 d 12 h 0 m 1 s
++++ Checked [57000000000000] to [57138912249058]
+***[1449108900] working on: 57138912249058 tried: 3606558226 rate: 4007286 / sec
+*** time left: 0 wk 2 d 11 h 59 m 41 s
++++ Checked [57000000000000] to [57142521254292]
+***[1449109800] working on: 57142521254292 tried: 3609005234 rate: 4010005 / sec
+*** time left: 0 wk 2 d 11 h 59 m 23 s
++++ Checked [57000000000000] to [57146129958436]
+***[1449110700] working on: 57146129958436 tried: 3608704144 rate: 4009671 / sec
+*** time left: 0 wk 2 d 11 h 59 m 9 s
++++ Checked [57000000000000] to [57149736191596]
+***[1449111600] working on: 57149736191596 tried: 3606233160 rate: 4006925 / sec
+*** time left: 0 wk 2 d 10 h 58 m 56 s
++++ Checked [57000000000000] to [57153344150124]
+***[1449112500] working on: 57153344150124 tried: 3607958528 rate: 4008842 / sec
+*** time left: 0 wk 2 d 10 h 58 m 39 s
++++ Checked [57000000000000] to [57156949445030]
+***[1449113400] working on: 57156949445030 tried: 3605294906 rate: 4005883 / sec
+*** time left: 0 wk 2 d 10 h 58 m 27 s
++++ Checked [57000000000000] to [57160545683428]
+***[1449114300] working on: 57160545683428 tried: 3596238398 rate: 3995820 / sec
+*** time left: 0 wk 2 d 10 h 58 m 21 s
++++ Checked [57000000000000] to [57164150502894]
+***[1449115200] working on: 57164150502894 tried: 3604819466 rate: 4005354 / sec
+*** time left: 0 wk 2 d 9 h 57 m 58 s
++++ Checked [57000000000000] to [57167690221658]
+***[1449116100] working on: 57167690221658 tried: 3539718764 rate: 3933020 / sec
+*** time left: 0 wk 2 d 10 h 58 m 47 s
++++ Checked [57000000000000] to [57171194375816]
+***[1449117000] working on: 57171194375816 tried: 3504154158 rate: 3893504 / sec
+*** time left: 0 wk 2 d 11 h 59 m 7 s
++++ Checked [57000000000000] to [57173462076654]
+***[1449117900] working on: 57173462076654 tried: 2267700838 rate: 2519667 / sec
+*** time left: 0 wk 3 d 19 h 31 m 7 s
++++ Checked [57000000000000] to [57175863429852]
+***[1449118800] working on: 57175863429852 tried: 2401353198 rate: 2668170 / sec
+*** time left: 0 wk 3 d 13 h 25 m 47 s
++++ Checked [57000000000000] to [57179050550928]
+***[1449119700] working on: 57179050550928 tried: 3187121076 rate: 3541245 / sec
+*** time left: 0 wk 2 d 16 h 4 m 23 s
++++ Checked [57000000000000] to [57182614967240]
+***[1449120600] working on: 57182614967240 tried: 3564416312 rate: 3960462 / sec
+*** time left: 0 wk 2 d 9 h 57 m 19 s
++++ Checked [57000000000000] to [57186182368230]
+***[1449121500] working on: 57186182368230 tried: 3567400990 rate: 3963778 / sec
+*** time left: 0 wk 2 d 9 h 57 m 1 s
++++ Checked [57000000000000] to [57189752664716]
+***[1449122400] working on: 57189752664716 tried: 3570296486 rate: 3966996 / sec
+*** time left: 0 wk 2 d 8 h 56 m 44 s
++++ Checked [57000000000000] to [57193309246710]
+***[1449123300] working on: 57193309246710 tried: 3556581994 rate: 3951757 / sec
+*** time left: 0 wk 2 d 8 h 56 m 42 s
++++ Checked [57000000000000] to [57196851669862]
+***[1449124200] working on: 57196851669862 tried: 3542423152 rate: 3936025 / sec
+*** time left: 0 wk 2 d 8 h 56 m 40 s
++++ Checked [57000000000000] to [57200440234766]
+***[1449125100] working on: 57200440234766 tried: 3588564904 rate: 3987294 / sec
+*** time left: 0 wk 2 d 7 h 55 m 42 s
++++ Checked [57000000000000] to [57204030756848]
+***[1449126000] working on: 57204030756848 tried: 3590522082 rate: 3989468 / sec
+*** time left: 0 wk 2 d 7 h 55 m 25 s
++++ Checked [57000000000000] to [57207630342714]
+***[1449126900] working on: 57207630342714 tried: 3599585866 rate: 3999539 / sec
+*** time left: 0 wk 2 d 7 h 55 m 1 s
++++ Checked [57000000000000] to [57211234173578]
+***[1449127800] working on: 57211234173578 tried: 3603830864 rate: 4004256 / sec
+*** time left: 0 wk 2 d 6 h 54 m 43 s
++++ Checked [57000000000000] to [57214822212478]
+***[1449128700] working on: 57214822212478 tried: 3588038900 rate: 3986709 / sec
+*** time left: 0 wk 2 d 6 h 54 m 42 s
++++ Checked [57000000000000] to [57218420998994]
+***[1449129600] working on: 57218420998994 tried: 3598786516 rate: 3998651 / sec
+*** time left: 0 wk 2 d 6 h 54 m 17 s
++++ Checked [57000000000000] to [57222020230488]
+***[1449130500] working on: 57222020230488 tried: 3599231494 rate: 3999146 / sec
+*** time left: 0 wk 2 d 6 h 54 m 2 s
++++ Checked [57000000000000] to [57225616878358]
+***[1449131400] working on: 57225616878358 tried: 3596647870 rate: 3996275 / sec
+*** time left: 0 wk 2 d 5 h 53 m 49 s
++++ Checked [57000000000000] to [57229212152246]
+***[1449132300] working on: 57229212152246 tried: 3595273888 rate: 3994748 / sec
+*** time left: 0 wk 2 d 5 h 53 m 35 s
++++ Checked [57000000000000] to [57232811849608]
+***[1449133200] working on: 57232811849608 tried: 3599697362 rate: 3999663 / sec
+*** time left: 0 wk 2 d 5 h 53 m 16 s
++++ Checked [57000000000000] to [57236417869556]
+***[1449134100] working on: 57236417869556 tried: 3606019948 rate: 4006688 / sec
+*** time left: 0 wk 2 d 4 h 52 m 56 s
++++ Checked [57000000000000] to [57240023138598]
+***[1449135000] working on: 57240023138598 tried: 3605269042 rate: 4005854 / sec
+*** time left: 0 wk 2 d 4 h 52 m 41 s
++++ Checked [57000000000000] to [57243627201548]
+***[1449135900] working on: 57243627201548 tried: 3604062950 rate: 4004514 / sec
+*** time left: 0 wk 2 d 4 h 52 m 28 s
++++ Checked [57000000000000] to [57247233324934]
+***[1449136800] working on: 57247233324934 tried: 3606123386 rate: 4006803 / sec
+*** time left: 0 wk 2 d 4 h 52 m 11 s
++++ Checked [57000000000000] to [57250830601674]
+***[1449137700] working on: 57250830601674 tried: 3597276740 rate: 3996974 / sec
+*** time left: 0 wk 2 d 4 h 52 m 3 s
++++ Checked [57000000000000] to [57254419473150]
+***[1449138600] working on: 57254419473150 tried: 3588871476 rate: 3987634 / sec
+*** time left: 0 wk 2 d 3 h 51 m 56 s
++++ Checked [57000000000000] to [57258013952586]
+***[1449139500] working on: 57258013952586 tried: 3594479436 rate: 3993866 / sec
+*** time left: 0 wk 2 d 3 h 51 m 36 s
++++ Checked [57000000000000] to [57261616506328]
+***[1449140400] working on: 57261616506328 tried: 3602553742 rate: 4002837 / sec
+*** time left: 0 wk 2 d 3 h 51 m 14 s
++++ Checked [57000000000000] to [57265220697356]
+***[1449141300] working on: 57265220697356 tried: 3604191028 rate: 4004656 / sec
+*** time left: 0 wk 2 d 2 h 50 m 58 s
++++ Checked [57000000000000] to [57268700236502]
+***[1449142200] working on: 57268700236502 tried: 3479539146 rate: 3866154 / sec
+*** time left: 0 wk 2 d 4 h 52 m 32 s
++++ Checked [57000000000000] to [57272271062380]
+***[1449143100] working on: 57272271062380 tried: 3570825878 rate: 3967584 / sec
+*** time left: 0 wk 2 d 2 h 50 m 56 s
++++ Checked [57000000000000] to [57275835601432]
+***[1449144000] working on: 57275835601432 tried: 3564539052 rate: 3960598 / sec
+*** time left: 0 wk 2 d 2 h 50 m 47 s
++++ Checked [57000000000000] to [57279393800400]
+***[1449144900] working on: 57279393800400 tried: 3558198968 rate: 3953554 / sec
+*** time left: 0 wk 2 d 2 h 50 m 37 s
++++ Checked [57000000000000] to [57282929790498]
+***[1449145800] working on: 57282929790498 tried: 3535990098 rate: 3928877 / sec
+*** time left: 0 wk 2 d 2 h 50 m 41 s
++++ Checked [57000000000000] to [57286523665166]
+***[1449146700] working on: 57286523665166 tried: 3593874668 rate: 3993194 / sec
+*** time left: 0 wk 2 d 1 h 49 m 37 s
++++ Checked [57000000000000] to [57290105369314]
+***[1449147600] working on: 57290105369314 tried: 3581704148 rate: 3979671 / sec
+*** time left: 0 wk 2 d 1 h 49 m 33 s
++++ Checked [57000000000000] to [57293700422386]
+***[1449148500] working on: 57293700422386 tried: 3595053072 rate: 3994503 / sec
+*** time left: 0 wk 2 d 1 h 49 m 6 s
++++ Checked [57000000000000] to [57297301641308]
+***[1449149400] working on: 57297301641308 tried: 3601218922 rate: 4001354 / sec
+*** time left: 0 wk 2 d 0 h 48 m 46 s
++++ Checked [57000000000000] to [57300905561188]
+***[1449150300] working on: 57300905561188 tried: 3603919880 rate: 4004355 / sec
+*** time left: 0 wk 2 d 0 h 48 m 29 s
++++ Checked [57000000000000] to [57304507552916]
+***[1449151200] working on: 57304507552916 tried: 3601991728 rate: 4002213 / sec
+*** time left: 0 wk 2 d 0 h 48 m 16 s
++++ Checked [57000000000000] to [57308105044262]
+***[1449152100] working on: 57308105044262 tried: 3597491346 rate: 3997212 / sec
+*** time left: 0 wk 2 d 0 h 48 m 4 s
++++ Checked [57000000000000] to [57311689571360]
+***[1449153000] working on: 57311689571360 tried: 3584527098 rate: 3982807 / sec
+*** time left: 0 wk 2 d 0 h 48 m 0 s
++++ Checked [57000000000000] to [57315276115628]
+***[1449153900] working on: 57315276115628 tried: 3586544268 rate: 3985049 / sec
+*** time left: 0 wk 1 d 23 h 47 m 43 s
++++ Checked [57000000000000] to [57318870241200]
+***[1449154800] working on: 57318870241200 tried: 3594125572 rate: 3993472 / sec
+*** time left: 0 wk 1 d 23 h 47 m 22 s
++++ Checked [57000000000000] to [57322461806656]
+***[1449155700] working on: 57322461806656 tried: 3591565456 rate: 3990628 / sec
+*** time left: 0 wk 1 d 23 h 47 m 9 s
++++ Checked [57000000000000] to [57326055285628]
+***[1449156600] working on: 57326055285628 tried: 3593478972 rate: 3992754 / sec
+*** time left: 0 wk 1 d 22 h 46 m 53 s
++++ Checked [57000000000000] to [57329651980256]
+***[1449157500] working on: 57329651980256 tried: 3596694628 rate: 3996327 / sec
+*** time left: 0 wk 1 d 22 h 46 m 35 s
++++ Checked [57000000000000] to [57333253546452]
+***[1449158400] working on: 57333253546452 tried: 3601566196 rate: 4001740 / sec
+*** time left: 0 wk 1 d 22 h 46 m 16 s
++++ Checked [57000000000000] to [57336854993984]
+***[1449159300] working on: 57336854993984 tried: 3601447532 rate: 4001608 / sec
+*** time left: 0 wk 1 d 22 h 46 m 1 s
++++ Checked [57000000000000] to [57340448194110]
+***[1449160200] working on: 57340448194110 tried: 3593200126 rate: 3992444 / sec
+*** time left: 0 wk 1 d 21 h 45 m 53 s
++++ Checked [57000000000000] to [57344041785790]
+***[1449161100] working on: 57344041785790 tried: 3593591680 rate: 3992879 / sec
+*** time left: 0 wk 1 d 21 h 45 m 38 s
++++ Checked [57000000000000] to [57347631180606]
+***[1449162000] working on: 57347631180606 tried: 3589394816 rate: 3988216 / sec
+*** time left: 0 wk 1 d 21 h 45 m 26 s
++++ Checked [57000000000000] to [57351209577580]
+***[1449162900] working on: 57351209577580 tried: 3578396974 rate: 3975996 / sec
+*** time left: 0 wk 1 d 21 h 45 m 19 s
++++ Checked [57000000000000] to [57354806613068]
+***[1449163800] working on: 57354806613068 tried: 3597035488 rate: 3996706 / sec
+*** time left: 0 wk 1 d 20 h 44 m 50 s
++++ Checked [57000000000000] to [57358406322290]
+***[1449164700] working on: 57358406322290 tried: 3599709222 rate: 3999676 / sec
+*** time left: 0 wk 1 d 20 h 44 m 33 s
++++ Checked [57000000000000] to [57362005730396]
+***[1449165600] working on: 57362005730396 tried: 3599408106 rate: 3999342 / sec
+*** time left: 0 wk 1 d 20 h 44 m 18 s
++++ Checked [57000000000000] to [57365600638780]
+***[1449166500] working on: 57365600638780 tried: 3594908384 rate: 3994342 / sec
+*** time left: 0 wk 1 d 20 h 44 m 7 s
++++ Checked [57000000000000] to [57369191264730]
+***[1449167400] working on: 57369191264730 tried: 3590625950 rate: 3989584 / sec
+*** time left: 0 wk 1 d 19 h 43 m 55 s
++++ Checked [57000000000000] to [57372784499502]
+***[1449168300] working on: 57372784499502 tried: 3593234772 rate: 3992483 / sec
+*** time left: 0 wk 1 d 19 h 43 m 38 s
++++ Checked [57000000000000] to [57376383057262]
+***[1449169200] working on: 57376383057262 tried: 3598557760 rate: 3998397 / sec
+*** time left: 0 wk 1 d 19 h 43 m 19 s
++++ Checked [57000000000000] to [57379980493946]
+***[1449170100] working on: 57379980493946 tried: 3597436684 rate: 3997151 / sec
+*** time left: 0 wk 1 d 19 h 43 m 5 s
++++ Checked [57000000000000] to [57383574907092]
+***[1449171000] working on: 57383574907092 tried: 3594413146 rate: 3993792 / sec
+*** time left: 0 wk 1 d 18 h 42 m 52 s
++++ Checked [57000000000000] to [57387172243058]
+***[1449171900] working on: 57387172243058 tried: 3597335966 rate: 3997039 / sec
+*** time left: 0 wk 1 d 18 h 42 m 35 s
++++ Checked [57000000000000] to [57390762795782]
+***[1449172800] working on: 57390762795782 tried: 3590552724 rate: 3989503 / sec
+*** time left: 0 wk 1 d 18 h 42 m 25 s
++++ Checked [57000000000000] to [57394350546480]
+***[1449173700] working on: 57394350546480 tried: 3587750698 rate: 3986389 / sec
+*** time left: 0 wk 1 d 18 h 42 m 12 s
++++ Checked [57000000000000] to [57397941394662]
+***[1449174600] working on: 57397941394662 tried: 3590848182 rate: 3989831 / sec
+*** time left: 0 wk 1 d 17 h 41 m 54 s
++++ Checked [57000000000000] to [57401537178072]
+***[1449175500] working on: 57401537178072 tried: 3595783410 rate: 3995314 / sec
+*** time left: 0 wk 1 d 17 h 41 m 36 s
++++ Checked [57000000000000] to [57405133004914]
+***[1449176400] working on: 57405133004914 tried: 3595826842 rate: 3995363 / sec
+*** time left: 0 wk 1 d 17 h 41 m 21 s
++++ Checked [57000000000000] to [57408727789650]
+***[1449177300] working on: 57408727789650 tried: 3594784736 rate: 3994205 / sec
+*** time left: 0 wk 1 d 17 h 41 m 7 s
++++ Checked [57000000000000] to [57412323161710]
+***[1449178200] working on: 57412323161710 tried: 3595372060 rate: 3994857 / sec
+*** time left: 0 wk 1 d 16 h 40 m 51 s
++++ Checked [57000000000000] to [57415915160742]
+***[1449179100] working on: 57415915160742 tried: 3591999032 rate: 3991110 / sec
+*** time left: 0 wk 1 d 16 h 40 m 39 s
++++ Checked [57000000000000] to [57419505753238]
+***[1449180000] working on: 57419505753238 tried: 3590592496 rate: 3989547 / sec
+*** time left: 0 wk 1 d 16 h 40 m 25 s
+5742239882566695076662591093 is excellent
++++ Checked [57000000000000] to [57423098736852]
+***[1449180900] working on: 57423098736852 tried: 3592983614 rate: 3992204 / sec
+*** time left: 0 wk 1 d 16 h 40 m 8 s
++++ Checked [57000000000000] to [57426695765890]
+***[1449181800] working on: 57426695765890 tried: 3597029038 rate: 3996698 / sec
+*** time left: 0 wk 1 d 15 h 39 m 50 s
++++ Checked [57000000000000] to [57430293471472]
+***[1449182700] working on: 57430293471472 tried: 3597705582 rate: 3997450 / sec
+*** time left: 0 wk 1 d 15 h 39 m 35 s
++++ Checked [57000000000000] to [57433878733542]
+***[1449183600] working on: 57433878733542 tried: 3585262070 rate: 3983624 / sec
+*** time left: 0 wk 1 d 15 h 39 m 28 s
++++ Checked [57000000000000] to [57437446354518]
+***[1449184500] working on: 57437446354518 tried: 3567620976 rate: 3964023 / sec
+*** time left: 0 wk 1 d 15 h 39 m 25 s
++++ Checked [57000000000000] to [57441039237372]
+***[1449185400] working on: 57441039237372 tried: 3592882854 rate: 3992092 / sec
+*** time left: 0 wk 1 d 14 h 38 m 53 s
++++ Checked [57000000000000] to [57444603663756]
+***[1449186300] working on: 57444603663756 tried: 3564426384 rate: 3960473 / sec
+*** time left: 0 wk 1 d 14 h 38 m 57 s
++++ Checked [57000000000000] to [57448160972166]
+***[1449187200] working on: 57448160972166 tried: 3557308410 rate: 3952564 / sec
+*** time left: 0 wk 1 d 14 h 38 m 46 s
++++ Checked [57000000000000] to [57451709835508]
+***[1449188100] working on: 57451709835508 tried: 3548863342 rate: 3943181 / sec
+*** time left: 0 wk 1 d 14 h 38 m 37 s
++++ Checked [57000000000000] to [57455239758176]
+***[1449189000] working on: 57455239758176 tried: 3529922668 rate: 3922136 / sec
+*** time left: 0 wk 1 d 14 h 38 m 34 s
++++ Checked [57000000000000] to [57458828142752]
+***[1449189900] working on: 57458828142752 tried: 3588384576 rate: 3987093 / sec
+*** time left: 0 wk 1 d 13 h 37 m 42 s
++++ Checked [57000000000000] to [57462415572952]
+***[1449190800] working on: 57462415572952 tried: 3587430200 rate: 3986033 / sec
+*** time left: 0 wk 1 d 13 h 37 m 27 s
++++ Checked [57000000000000] to [57465997563488]
+***[1449191700] working on: 57465997563488 tried: 3581990536 rate: 3979989 / sec
+*** time left: 0 wk 1 d 13 h 37 m 16 s
++++ Checked [57000000000000] to [57469577061452]
+***[1449192600] working on: 57469577061452 tried: 3579497964 rate: 3977219 / sec
+*** time left: 0 wk 1 d 13 h 37 m 2 s
++++ Checked [57000000000000] to [57473159344118]
+***[1449193500] working on: 57473159344118 tried: 3582282666 rate: 3980314 / sec
+*** time left: 0 wk 1 d 12 h 36 m 46 s
++++ Checked [57000000000000] to [57476738121328]
+***[1449194400] working on: 57476738121328 tried: 3578777210 rate: 3976419 / sec
+*** time left: 0 wk 1 d 12 h 36 m 33 s
++++ Checked [57000000000000] to [57480310058282]
+***[1449195300] working on: 57480310058282 tried: 3571936954 rate: 3968818 / sec
+*** time left: 0 wk 1 d 12 h 36 m 22 s
++++ Checked [57000000000000] to [57483887793194]
+***[1449196200] working on: 57483887793194 tried: 3577734912 rate: 3975261 / sec
+*** time left: 0 wk 1 d 12 h 36 m 3 s
++++ Checked [57000000000000] to [57487480846496]
+***[1449197100] working on: 57487480846496 tried: 3593053302 rate: 3992281 / sec
+*** time left: 0 wk 1 d 11 h 35 m 39 s
++++ Checked [57000000000000] to [57491075763022]
+***[1449198000] working on: 57491075763022 tried: 3594916526 rate: 3994351 / sec
+*** time left: 0 wk 1 d 11 h 35 m 23 s
+*** start a is 57000000000000
+*** end a is 58000000000000
+*** start a is 57491075763022
+*** end a is 58000000000000
++++ Checked [57491075763022] to [57491675686422]
+***[1449332100] working on: 57491675686422 tried: 599923400 rate: 3973002 / sec
+*** time left: 0 wk 1 d 11 h 35 m 32 s
++++ Checked [57491075763022] to [57495208038100]
+***[1449333000] working on: 57495208038100 tried: 3532351678 rate: 3924835 / sec
+*** time left: 0 wk 1 d 11 h 35 m 43 s
++++ Checked [57491075763022] to [57498746669132]
+***[1449333900] working on: 57498746669132 tried: 3538631032 rate: 3931812 / sec
+*** time left: 0 wk 1 d 11 h 35 m 24 s
++++ Checked [57491075763022] to [57502342673502]
+***[1449334800] working on: 57502342673502 tried: 3596004370 rate: 3995560 / sec
+*** time left: 0 wk 1 d 10 h 34 m 35 s
++++ Checked [57491075763022] to [57505929552870]
+***[1449335700] working on: 57505929552870 tried: 3586879368 rate: 3985421 / sec
+*** time left: 0 wk 1 d 10 h 34 m 26 s
++++ Checked [57491075763022] to [57509357439116]
+***[1449336600] working on: 57509357439116 tried: 3427886246 rate: 3808762 / sec
+*** time left: 0 wk 1 d 11 h 35 m 46 s
++++ Checked [57491075763022] to [57512414945008]
+***[1449337500] working on: 57512414945008 tried: 3057505892 rate: 3397228 / sec
+*** time left: 0 wk 1 d 15 h 39 m 52 s
++++ Checked [57491075763022] to [57515396482430]
+***[1449338400] working on: 57515396482430 tried: 2981537422 rate: 3312819 / sec
+*** time left: 0 wk 1 d 16 h 40 m 38 s
++++ Checked [57491075763022] to [57518421181252]
+***[1449339300] working on: 57518421181252 tried: 3024698822 rate: 3360776 / sec
+*** time left: 0 wk 1 d 15 h 39 m 48 s
++++ Checked [57491075763022] to [57521573408242]
+***[1449340200] working on: 57521573408242 tried: 3152226990 rate: 3502474 / sec
+*** time left: 0 wk 1 d 13 h 37 m 56 s
++++ Checked [57491075763022] to [57524492191444]
+***[1449341100] working on: 57524492191444 tried: 2918783202 rate: 3243092 / sec
+*** time left: 0 wk 1 d 16 h 40 m 43 s
++++ Checked [57491075763022] to [57527572726328]
+***[1449342000] working on: 57527572726328 tried: 3080534884 rate: 3422816 / sec
+*** time left: 0 wk 1 d 14 h 38 m 20 s
++++ Checked [57491075763022] to [57531106781256]
+***[1449342900] working on: 57531106781256 tried: 3534054928 rate: 3926727 / sec
+*** time left: 0 wk 1 d 9 h 33 m 10 s
++++ Checked [57491075763022] to [57534662213792]
+***[1449343800] working on: 57534662213792 tried: 3555432536 rate: 3950480 / sec
+*** time left: 0 wk 1 d 8 h 32 m 43 s
++++ Checked [57491075763022] to [57538217054696]
+***[1449344700] working on: 57538217054696 tried: 3554840904 rate: 3949823 / sec
+*** time left: 0 wk 1 d 8 h 32 m 28 s
++++ Checked [57491075763022] to [57541768018558]
+***[1449345600] working on: 57541768018558 tried: 3550963862 rate: 3945515 / sec
+*** time left: 0 wk 1 d 8 h 32 m 15 s
++++ Checked [57491075763022] to [57545322028512]
+***[1449346500] working on: 57545322028512 tried: 3554009954 rate: 3948899 / sec
+*** time left: 0 wk 1 d 7 h 31 m 59 s
++++ Checked [57491075763022] to [57548879448366]
+***[1449347400] working on: 57548879448366 tried: 3557419854 rate: 3952688 / sec
+*** time left: 0 wk 1 d 7 h 31 m 42 s
++++ Checked [57491075763022] to [57552438575790]
+***[1449348300] working on: 57552438575790 tried: 3559127424 rate: 3954586 / sec
+*** time left: 0 wk 1 d 7 h 31 m 26 s
++++ Checked [57491075763022] to [57555999828564]
+***[1449349200] working on: 57555999828564 tried: 3561252774 rate: 3956947 / sec
+*** time left: 0 wk 1 d 7 h 31 m 10 s
++++ Checked [57491075763022] to [57559551783780]
+***[1449350100] working on: 57559551783780 tried: 3551955216 rate: 3946616 / sec
+*** time left: 0 wk 1 d 7 h 31 m 0 s
++++ Checked [57491075763022] to [57563110168994]
+***[1449351000] working on: 57563110168994 tried: 3558385214 rate: 3953761 / sec
+*** time left: 0 wk 1 d 6 h 30 m 41 s
++++ Checked [57491075763022] to [57566668691270]
+***[1449351900] working on: 57566668691270 tried: 3558522276 rate: 3953913 / sec
+*** time left: 0 wk 1 d 6 h 30 m 26 s
++++ Checked [57491075763022] to [57570229520702]
+***[1449352800] working on: 57570229520702 tried: 3560829432 rate: 3956477 / sec
+*** time left: 0 wk 1 d 6 h 30 m 10 s
++++ Checked [57491075763022] to [57573785152278]
+***[1449353700] working on: 57573785152278 tried: 3555631576 rate: 3950701 / sec
+*** time left: 0 wk 1 d 5 h 29 m 58 s
++++ Checked [57491075763022] to [57577343724010]
+***[1449354600] working on: 57577343724010 tried: 3558571732 rate: 3953968 / sec
+*** time left: 0 wk 1 d 5 h 29 m 41 s
++++ Checked [57491075763022] to [57580942129446]
+***[1449355500] working on: 57580942129446 tried: 3598405436 rate: 3998228 / sec
+*** time left: 0 wk 1 d 5 h 29 m 6 s
++++ Checked [57491075763022] to [57584544429834]
+***[1449356400] working on: 57584544429834 tried: 3602300388 rate: 4002555 / sec
+*** time left: 0 wk 1 d 4 h 28 m 49 s
++++ Checked [57491075763022] to [57588144145852]
+***[1449357300] working on: 57588144145852 tried: 3599716018 rate: 3999684 / sec
+*** time left: 0 wk 1 d 4 h 28 m 36 s
++++ Checked [57491075763022] to [57591741029732]
+***[1449358200] working on: 57591741029732 tried: 3596883880 rate: 3996537 / sec
+*** time left: 0 wk 1 d 4 h 28 m 22 s
++++ Checked [57491075763022] to [57595307621356]
+***[1449359100] working on: 57595307621356 tried: 3566591624 rate: 3962879 / sec
+*** time left: 0 wk 1 d 4 h 28 m 22 s
++++ Checked [57491075763022] to [57598874164504]
+***[1449360000] working on: 57598874164504 tried: 3566543148 rate: 3962825 / sec
+*** time left: 0 wk 1 d 4 h 28 m 7 s
++++ Checked [57491075763022] to [57602441070956]
+***[1449360900] working on: 57602441070956 tried: 3566906452 rate: 3963229 / sec
+*** time left: 0 wk 1 d 3 h 27 m 51 s
++++ Checked [57491075763022] to [57605933715202]
+***[1449361800] working on: 57605933715202 tried: 3492644246 rate: 3880715 / sec
+*** time left: 0 wk 1 d 4 h 28 m 12 s
++++ Checked [57491075763022] to [57609505312648]
+***[1449362700] working on: 57609505312648 tried: 3571597446 rate: 3968441 / sec
+*** time left: 0 wk 1 d 3 h 27 m 20 s
++++ Checked [57491075763022] to [57613106376062]
+***[1449363600] working on: 57613106376062 tried: 3601063414 rate: 4001181 / sec
+*** time left: 0 wk 1 d 2 h 26 m 51 s
++++ Checked [57491075763022] to [57616708433738]
+***[1449364500] working on: 57616708433738 tried: 3602057676 rate: 4002286 / sec
+*** time left: 0 wk 1 d 2 h 26 m 36 s
++++ Checked [57491075763022] to [57620303991070]
+***[1449365400] working on: 57620303991070 tried: 3595557332 rate: 3995063 / sec
+*** time left: 0 wk 1 d 2 h 26 m 24 s
++++ Checked [57491075763022] to [57623905548402]
+***[1449366300] working on: 57623905548402 tried: 3601557332 rate: 4001730 / sec
+*** time left: 0 wk 1 d 2 h 26 m 6 s
++++ Checked [57491075763022] to [57627509622256]
+***[1449367200] working on: 57627509622256 tried: 3604073854 rate: 4004526 / sec
+*** time left: 0 wk 1 d 1 h 25 m 50 s
++++ Checked [57491075763022] to [57631111029606]
+***[1449368100] working on: 57631111029606 tried: 3601407350 rate: 4001563 / sec
+*** time left: 0 wk 1 d 1 h 25 m 36 s
++++ Checked [57491075763022] to [57634713110600]
+***[1449369000] working on: 57634713110600 tried: 3602080994 rate: 4002312 / sec
+*** time left: 0 wk 1 d 1 h 25 m 21 s
++++ Checked [57491075763022] to [57638314233704]
+***[1449369900] working on: 57638314233704 tried: 3601123104 rate: 4001247 / sec
+*** time left: 0 wk 1 d 1 h 25 m 6 s
++++ Checked [57491075763022] to [57641918513810]
+***[1449370800] working on: 57641918513810 tried: 3604280106 rate: 4004755 / sec
+*** time left: 0 wk 1 d 0 h 24 m 50 s
++++ Checked [57491075763022] to [57645518895242]
+***[1449371700] working on: 57645518895242 tried: 3600381432 rate: 4000423 / sec
+*** time left: 0 wk 1 d 0 h 24 m 36 s
++++ Checked [57491075763022] to [57649119875686]
+***[1449372600] working on: 57649119875686 tried: 3600980444 rate: 4001089 / sec
+*** time left: 0 wk 1 d 0 h 24 m 21 s
++++ Checked [57491075763022] to [57652718072580]
+***[1449373500] working on: 57652718072580 tried: 3598196894 rate: 3997996 / sec
+*** time left: 0 wk 1 d 0 h 24 m 7 s
++++ Checked [57491075763022] to [57656318886802]
+***[1449374400] working on: 57656318886802 tried: 3600814222 rate: 4000904 / sec
+*** time left: 0 wk 0 d 23 h 23 m 51 s
++++ Checked [57491075763022] to [57659913368174]
+***[1449375300] working on: 57659913368174 tried: 3594481372 rate: 3993868 / sec
+*** time left: 0 wk 0 d 23 h 23 m 39 s
++++ Checked [57491075763022] to [57663509986458]
+***[1449376200] working on: 57663509986458 tried: 3596618284 rate: 3996242 / sec
+*** time left: 0 wk 0 d 23 h 23 m 23 s
++++ Checked [57491075763022] to [57667105877148]
+***[1449377100] working on: 57667105877148 tried: 3595890690 rate: 3995434 / sec
+*** time left: 0 wk 0 d 23 h 23 m 8 s
++++ Checked [57491075763022] to [57670704352136]
+***[1449378000] working on: 57670704352136 tried: 3598474988 rate: 3998305 / sec
+*** time left: 0 wk 0 d 22 h 22 m 52 s
++++ Checked [57491075763022] to [57674305221592]
+***[1449378900] working on: 57674305221592 tried: 3600869456 rate: 4000966 / sec
+*** time left: 0 wk 0 d 22 h 22 m 36 s
++++ Checked [57491075763022] to [57677900986072]
+***[1449379800] working on: 57677900986072 tried: 3595764480 rate: 3995293 / sec
+*** time left: 0 wk 0 d 22 h 22 m 23 s
++++ Checked [57491075763022] to [57681455753002]
+***[1449380700] working on: 57681455753002 tried: 3554766930 rate: 3949741 / sec
+*** time left: 0 wk 0 d 22 h 22 m 24 s
++++ Checked [57491075763022] to [57685010116414]
+***[1449381600] working on: 57685010116414 tried: 3554363412 rate: 3949292 / sec
+*** time left: 0 wk 0 d 22 h 22 m 9 s
++++ Checked [57491075763022] to [57688564173976]
+***[1449382500] working on: 57688564173976 tried: 3554057562 rate: 3948952 / sec
+*** time left: 0 wk 0 d 21 h 21 m 54 s
++++ Checked [57491075763022] to [57692054481406]
+***[1449383400] working on: 57692054481406 tried: 3490307430 rate: 3878119 / sec
+*** time left: 0 wk 0 d 22 h 22 m 3 s
++++ Checked [57491075763022] to [57695598421054]
+***[1449384300] working on: 57695598421054 tried: 3543939648 rate: 3937710 / sec
+*** time left: 0 wk 0 d 21 h 21 m 28 s
++++ Checked [57491075763022] to [57699196622898]
+***[1449385200] working on: 57699196622898 tried: 3598201844 rate: 3998002 / sec
+*** time left: 0 wk 0 d 20 h 20 m 53 s
++++ Checked [57491075763022] to [57702798638262]
+***[1449386100] working on: 57702798638262 tried: 3602015364 rate: 4002239 / sec
+*** time left: 0 wk 0 d 20 h 20 m 37 s
++++ Checked [57491075763022] to [57706401501068]
+***[1449387000] working on: 57706401501068 tried: 3602862806 rate: 4003180 / sec
+*** time left: 0 wk 0 d 20 h 20 m 22 s
++++ Checked [57491075763022] to [57710006227856]
+***[1449387900] working on: 57710006227856 tried: 3604726788 rate: 4005251 / sec
+*** time left: 0 wk 0 d 20 h 20 m 6 s
++++ Checked [57491075763022] to [57713598588216]
+***[1449388800] working on: 57713598588216 tried: 3592360360 rate: 3991511 / sec
+*** time left: 0 wk 0 d 19 h 19 m 55 s
++++ Checked [57491075763022] to [57717194326588]
+***[1449389700] working on: 57717194326588 tried: 3595738372 rate: 3995264 / sec
+*** time left: 0 wk 0 d 19 h 19 m 39 s
++++ Checked [57491075763022] to [57720790978522]
+***[1449390600] working on: 57720790978522 tried: 3596651934 rate: 3996279 / sec
+*** time left: 0 wk 0 d 19 h 19 m 24 s
++++ Checked [57491075763022] to [57724381827016]
+***[1449391500] working on: 57724381827016 tried: 3590848494 rate: 3989831 / sec
+*** time left: 0 wk 0 d 19 h 19 m 11 s
++++ Checked [57491075763022] to [57727975100030]
+***[1449392400] working on: 57727975100030 tried: 3593273014 rate: 3992525 / sec
+*** time left: 0 wk 0 d 18 h 18 m 55 s
++++ Checked [57491075763022] to [57731577541172]
+***[1449393300] working on: 57731577541172 tried: 3602441142 rate: 4002712 / sec
+*** time left: 0 wk 0 d 18 h 18 m 37 s
++++ Checked [57491075763022] to [57735180303202]
+***[1449394200] working on: 57735180303202 tried: 3602762030 rate: 4003068 / sec
+*** time left: 0 wk 0 d 18 h 18 m 22 s
++++ Checked [57491075763022] to [57738785122412]
+***[1449395100] working on: 57738785122412 tried: 3604819210 rate: 4005354 / sec
+*** time left: 0 wk 0 d 18 h 18 m 6 s
++++ Checked [57491075763022] to [57742389980822]
+***[1449396000] working on: 57742389980822 tried: 3604858410 rate: 4005398 / sec
+*** time left: 0 wk 0 d 17 h 17 m 51 s
++++ Checked [57491075763022] to [57745988561362]
+***[1449396900] working on: 57745988561362 tried: 3598580540 rate: 3998422 / sec
+*** time left: 0 wk 0 d 17 h 17 m 38 s
++++ Checked [57491075763022] to [57749582197556]
+***[1449397800] working on: 57749582197556 tried: 3593636194 rate: 3992929 / sec
+*** time left: 0 wk 0 d 17 h 17 m 25 s
++++ Checked [57491075763022] to [57753185340536]
+***[1449398700] working on: 57753185340536 tried: 3603142980 rate: 4003492 / sec
+*** time left: 0 wk 0 d 17 h 17 m 7 s
++++ Checked [57491075763022] to [57756787916258]
+***[1449399600] working on: 57756787916258 tried: 3602575722 rate: 4002861 / sec
+*** time left: 0 wk 0 d 16 h 16 m 52 s
++++ Checked [57491075763022] to [57760378176820]
+***[1449400500] working on: 57760378176820 tried: 3590260562 rate: 3989178 / sec
+*** time left: 0 wk 0 d 16 h 16 m 41 s
++++ Checked [57491075763022] to [57763912129096]
+***[1449401400] working on: 57763912129096 tried: 3533952276 rate: 3926613 / sec
+*** time left: 0 wk 0 d 16 h 16 m 42 s
++++ Checked [57491075763022] to [57767476298100]
+***[1449402300] working on: 57767476298100 tried: 3564169004 rate: 3960187 / sec
+*** time left: 0 wk 0 d 16 h 16 m 18 s
++++ Checked [57491075763022] to [57771039981956]
+***[1449403200] working on: 57771039981956 tried: 3563683856 rate: 3959648 / sec
+*** time left: 0 wk 0 d 16 h 16 m 3 s
++++ Checked [57491075763022] to [57774599611994]
+***[1449404100] working on: 57774599611994 tried: 3559630038 rate: 3955144 / sec
+*** time left: 0 wk 0 d 15 h 15 m 49 s
++++ Checked [57491075763022] to [57778054148518]
+***[1449405000] working on: 57778054148518 tried: 3454536524 rate: 3838373 / sec
+*** time left: 0 wk 0 d 16 h 16 m 3 s
++++ Checked [57491075763022] to [57781588256530]
+***[1449405900] working on: 57781588256530 tried: 3534108012 rate: 3926786 / sec
+*** time left: 0 wk 0 d 15 h 15 m 27 s
++++ Checked [57491075763022] to [57785174356662]
+***[1449406800] working on: 57785174356662 tried: 3586100132 rate: 3984555 / sec
+*** time left: 0 wk 0 d 14 h 14 m 58 s
++++ Checked [57491075763022] to [57788770604010]
+***[1449407700] working on: 57788770604010 tried: 3596247348 rate: 3995830 / sec
+*** time left: 0 wk 0 d 14 h 14 m 41 s
++++ Checked [57491075763022] to [57792368109736]
+***[1449408600] working on: 57792368109736 tried: 3597505726 rate: 3997228 / sec
+*** time left: 0 wk 0 d 14 h 14 m 25 s
++++ Checked [57491075763022] to [57795958169258]
+***[1449409500] working on: 57795958169258 tried: 3590059522 rate: 3988955 / sec
+*** time left: 0 wk 0 d 14 h 14 m 12 s
++++ Checked [57491075763022] to [57799524428678]
+***[1449410400] working on: 57799524428678 tried: 3566259420 rate: 3962510 / sec
+*** time left: 0 wk 0 d 14 h 14 m 3 s
++++ Checked [57491075763022] to [57803105210066]
+***[1449411300] working on: 57803105210066 tried: 3580781388 rate: 3978645 / sec
+*** time left: 0 wk 0 d 13 h 13 m 44 s
++++ Checked [57491075763022] to [57806703867018]
+***[1449412200] working on: 57806703867018 tried: 3598656952 rate: 3998507 / sec
+*** time left: 0 wk 0 d 13 h 13 m 25 s
++++ Checked [57491075763022] to [57810305520498]
+***[1449413100] working on: 57810305520498 tried: 3601653480 rate: 4001837 / sec
+*** time left: 0 wk 0 d 13 h 13 m 10 s
++++ Checked [57491075763022] to [57813907355372]
+***[1449414000] working on: 57813907355372 tried: 3601834874 rate: 4002038 / sec
+*** time left: 0 wk 0 d 12 h 12 m 54 s
++++ Checked [57491075763022] to [57817505109206]
+***[1449414900] working on: 57817505109206 tried: 3597753834 rate: 3997504 / sec
+*** time left: 0 wk 0 d 12 h 12 m 40 s
++++ Checked [57491075763022] to [57821105623264]
+***[1449415800] working on: 57821105623264 tried: 3600514058 rate: 4000571 / sec
+*** time left: 0 wk 0 d 12 h 12 m 25 s
++++ Checked [57491075763022] to [57824705345050]
+***[1449416700] working on: 57824705345050 tried: 3599721786 rate: 3999690 / sec
+*** time left: 0 wk 0 d 12 h 12 m 10 s
++++ Checked [57491075763022] to [57828304621038]
+***[1449417600] working on: 57828304621038 tried: 3599275988 rate: 3999195 / sec
+*** time left: 0 wk 0 d 11 h 11 m 55 s
++++ Checked [57491075763022] to [57831903427148]
+***[1449418500] working on: 57831903427148 tried: 3598806110 rate: 3998673 / sec
+*** time left: 0 wk 0 d 11 h 11 m 40 s
++++ Checked [57491075763022] to [57835497288160]
+***[1449419400] working on: 57835497288160 tried: 3593861012 rate: 3993178 / sec
+*** time left: 0 wk 0 d 11 h 11 m 26 s
++++ Checked [57491075763022] to [57839092716598]
+***[1449420300] working on: 57839092716598 tried: 3595428438 rate: 3994920 / sec
+*** time left: 0 wk 0 d 11 h 11 m 11 s
++++ Checked [57491075763022] to [57842693208754]
+***[1449421200] working on: 57842693208754 tried: 3600492156 rate: 4000546 / sec
+*** time left: 0 wk 0 d 10 h 10 m 55 s
++++ Checked [57491075763022] to [57846292327050]
+***[1449422100] working on: 57846292327050 tried: 3599118296 rate: 3999020 / sec
+*** time left: 0 wk 0 d 10 h 10 m 40 s
++++ Checked [57491075763022] to [57849885561372]
+***[1449423000] working on: 57849885561372 tried: 3593234322 rate: 3992482 / sec
+*** time left: 0 wk 0 d 10 h 10 m 26 s
++++ Checked [57491075763022] to [57853444728322]
+***[1449423900] working on: 57853444728322 tried: 3559166950 rate: 3954629 / sec
+*** time left: 0 wk 0 d 10 h 10 m 17 s
++++ Checked [57491075763022] to [57857004968642]
+***[1449424800] working on: 57857004968642 tried: 3560240320 rate: 3955822 / sec
+*** time left: 0 wk 0 d 10 h 10 m 2 s
++++ Checked [57491075763022] to [57860562732304]
+***[1449425700] working on: 57860562732304 tried: 3557763662 rate: 3953070 / sec
+*** time left: 0 wk 0 d 9 h 9 m 47 s
++++ Checked [57491075763022] to [57864062130752]
+***[1449426600] working on: 57864062130752 tried: 3499398448 rate: 3888220 / sec
+*** time left: 0 wk 0 d 9 h 9 m 42 s
++++ Checked [57491075763022] to [57867634644872]
+***[1449427500] working on: 57867634644872 tried: 3572514120 rate: 3969460 / sec
+*** time left: 0 wk 0 d 9 h 9 m 15 s
++++ Checked [57491075763022] to [57871232704222]
+***[1449428400] working on: 57871232704222 tried: 3598059350 rate: 3997843 / sec
+*** time left: 0 wk 0 d 8 h 8 m 56 s
++++ Checked [57491075763022] to [57874826693500]
+***[1449429300] working on: 57874826693500 tried: 3593989278 rate: 3993321 / sec
+*** time left: 0 wk 0 d 8 h 8 m 42 s
++++ Checked [57491075763022] to [57878421789256]
+***[1449430200] working on: 57878421789256 tried: 3595095756 rate: 3994550 / sec
+*** time left: 0 wk 0 d 8 h 8 m 27 s
++++ Checked [57491075763022] to [57882014569974]
+***[1449431100] working on: 57882014569974 tried: 3592780718 rate: 3991978 / sec
+*** time left: 0 wk 0 d 8 h 8 m 12 s
++++ Checked [57491075763022] to [57885611449222]
+***[1449432000] working on: 57885611449222 tried: 3596879248 rate: 3996532 / sec
+*** time left: 0 wk 0 d 7 h 7 m 57 s
++++ Checked [57491075763022] to [57889208638544]
+***[1449432900] working on: 57889208638544 tried: 3597189322 rate: 3996877 / sec
+*** time left: 0 wk 0 d 7 h 7 m 41 s
++++ Checked [57491075763022] to [57892804745928]
+***[1449433800] working on: 57892804745928 tried: 3596107384 rate: 3995674 / sec
+*** time left: 0 wk 0 d 7 h 7 m 27 s
++++ Checked [57491075763022] to [57896400328900]
+***[1449434700] working on: 57896400328900 tried: 3595582972 rate: 3995092 / sec
+*** time left: 0 wk 0 d 7 h 7 m 12 s
++++ Checked [57491075763022] to [57899998189396]
+***[1449435600] working on: 57899998189396 tried: 3597860496 rate: 3997622 / sec
+*** time left: 0 wk 0 d 6 h 6 m 56 s
++++ Checked [57491075763022] to [57903596524752]
+***[1449436500] working on: 57903596524752 tried: 3598335356 rate: 3998150 / sec
+*** time left: 0 wk 0 d 6 h 6 m 41 s
++++ Checked [57491075763022] to [57907195379366]
+***[1449437400] working on: 57907195379366 tried: 3598854614 rate: 3998727 / sec
+*** time left: 0 wk 0 d 6 h 6 m 26 s
++++ Checked [57491075763022] to [57910789912574]
+***[1449438300] working on: 57910789912574 tried: 3594533208 rate: 3993925 / sec
+*** time left: 0 wk 0 d 6 h 6 m 12 s
++++ Checked [57491075763022] to [57914385432758]
+***[1449439200] working on: 57914385432758 tried: 3595520184 rate: 3995022 / sec
+*** time left: 0 wk 0 d 5 h 5 m 57 s
++++ Checked [57491075763022] to [57917979690768]
+***[1449440100] working on: 57917979690768 tried: 3594258010 rate: 3993620 / sec
+*** time left: 0 wk 0 d 5 h 5 m 42 s
++++ Checked [57491075763022] to [57921577014960]
+***[1449441000] working on: 57921577014960 tried: 3597324192 rate: 3997026 / sec
+*** time left: 0 wk 0 d 5 h 5 m 27 s
++++ Checked [57491075763022] to [57925173104656]
+***[1449441900] working on: 57925173104656 tried: 3596089696 rate: 3995655 / sec
+*** time left: 0 wk 0 d 5 h 5 m 12 s
++++ Checked [57491075763022] to [57928770833200]
+***[1449442800] working on: 57928770833200 tried: 3597728544 rate: 3997476 / sec
+*** time left: 0 wk 0 d 4 h 4 m 56 s
++++ Checked [57491075763022] to [57932366859988]
+***[1449443700] working on: 57932366859988 tried: 3596026788 rate: 3995585 / sec
+*** time left: 0 wk 0 d 4 h 4 m 42 s
++++ Checked [57491075763022] to [57935965048950]
+***[1449444600] working on: 57935965048950 tried: 3598188962 rate: 3997987 / sec
+*** time left: 0 wk 0 d 4 h 4 m 26 s
++++ Checked [57491075763022] to [57939562687494]
+***[1449445500] working on: 57939562687494 tried: 3597638544 rate: 3997376 / sec
+*** time left: 0 wk 0 d 4 h 4 m 11 s
++++ Checked [57491075763022] to [57943157620736]
+***[1449446400] working on: 57943157620736 tried: 3594933242 rate: 3994370 / sec
+*** time left: 0 wk 0 d 3 h 3 m 57 s
++++ Checked [57491075763022] to [57946754986896]
+***[1449447300] working on: 57946754986896 tried: 3597366160 rate: 3997073 / sec
+*** time left: 0 wk 0 d 3 h 3 m 42 s
++++ Checked [57491075763022] to [57950350758316]
+***[1449448200] working on: 57950350758316 tried: 3595771420 rate: 3995301 / sec
+*** time left: 0 wk 0 d 3 h 3 m 27 s
++++ Checked [57491075763022] to [57953949652430]
+***[1449449100] working on: 57953949652430 tried: 3598894114 rate: 3998771 / sec
+*** time left: 0 wk 0 d 3 h 3 m 11 s
++++ Checked [57491075763022] to [57957545106068]
+***[1449450000] working on: 57957545106068 tried: 3595453638 rate: 3994948 / sec
+*** time left: 0 wk 0 d 2 h 2 m 57 s
++++ Checked [57491075763022] to [57961135976306]
+***[1449450900] working on: 57961135976306 tried: 3590870238 rate: 3989855 / sec
+*** time left: 0 wk 0 d 2 h 2 m 42 s
++++ Checked [57491075763022] to [57964730473732]
+***[1449451800] working on: 57964730473732 tried: 3594497426 rate: 3993886 / sec
+*** time left: 0 wk 0 d 2 h 2 m 27 s
++++ Checked [57491075763022] to [57968329253366]
+***[1449452700] working on: 57968329253366 tried: 3598779634 rate: 3998644 / sec
+*** time left: 0 wk 0 d 2 h 2 m 12 s
++++ Checked [57491075763022] to [57971951031948]
+***[1449453600] working on: 57971951031948 tried: 3621778582 rate: 4024198 / sec
+*** time left: 0 wk 0 d 1 h 1 m 56 s
++++ Checked [57491075763022] to [57975586847804]
+***[1449454500] working on: 57975586847804 tried: 3635815856 rate: 4039795 / sec
+*** time left: 0 wk 0 d 1 h 1 m 40 s
++++ Checked [57491075763022] to [57979217271314]
+***[1449455400] working on: 57979217271314 tried: 3630423510 rate: 4033803 / sec
+*** time left: 0 wk 0 d 1 h 1 m 25 s
++++ Checked [57491075763022] to [57982858696768]
+***[1449456300] working on: 57982858696768 tried: 3641425454 rate: 4046028 / sec
+*** time left: 0 wk 0 d 1 h 1 m 10 s
++++ Checked [57491075763022] to [57986498588956]
+***[1449457200] working on: 57986498588956 tried: 3639892188 rate: 4044324 / sec
+*** time left: 0 wk 0 d 0 h 0 m 55 s
++++ Checked [57491075763022] to [57990133437022]
+***[1449458100] working on: 57990133437022 tried: 3634848066 rate: 4038720 / sec
+*** time left: 0 wk 0 d 0 h 0 m 40 s
++++ Checked [57491075763022] to [57993764063222]
+***[1449459000] working on: 57993764063222 tried: 3630626200 rate: 4034029 / sec
+*** time left: 0 wk 0 d 0 h 0 m 25 s
++++ Checked [57491075763022] to [57997395077682]
+***[1449459900] working on: 57997395077682 tried: 3631014460 rate: 4034460 / sec
+*** time left: 0 wk 0 d 0 h 0 m 10 s
++++ Checked [57491075763022] to [58000000000002]

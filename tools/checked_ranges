@@ -1,0 +1,157 @@
+#!perl -s
+use v5.22.0;
+use utf8;
+
+use feature qw(signatures postderef);
+no warnings map { "experimental::$_" } qw(signatures postderef);
+
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
+use Data::Dumper;
+use ExcellentNumber qw(is_excellent);
+use File::Basename qw(basename);
+use File::Spec::Functions qw(catfile no_upwards);
+use IO::Interactive qw(interactive);
+use Set::IntSpan;
+
+my $output_dir = $ARGV[0] // 'output';
+opendir my $dh, $output_dir or die "Could not open [$output_dir]: $!\n";
+
+use vars qw($d); # argument processing
+$d //= 0;
+
+my $hash;
+
+=pod
+
+*** [89849] [1449865800] working on: 572965008746 tried: 3696589318 rate: 4107321 / sec
+*** [89849] time left: 0 wk 0 d 3 h 3 m 2 s
++++ [89849] Checked [100000000000] to [576664001452]
+*** [89849] [1449866700] working on: 576664001452 tried: 3698992706 rate: 4109991 / sec
+*** [89849] time left: 0 wk 0 d 2 h 2 m 47 s
+578571099120955675476225 is excellent
+579021625716956183909488 is excellent
++++ [89849] Checked [100000000000] to [580365067368]
+
+=cut
+
+my %r = (
+	stars         => qr/ \Q***\E /x,
+	pluses        => qr/ \Q+++\E /x,
+	bangs         => qr/ \Q!!!\E /x,
+
+	pid           => qr/ \[ (?<pid>   [0-9]{1,5} ) \] /x,
+	epoch         => qr/ \[ (?<epoch> [0-9]{10,} ) \] /x,
+    start         => qr/ (?<start>[0-9]+)             /x,
+    end           => qr/ (?<end>[0-9]+)               /x,
+    progress      => qr/ (?<progress>[0-9]+)          /x,
+	);
+
+$r{prefix} = qr/ \A \s* (?: $r{stars} | $r{pluses} | $r{bangs} ) \s* (?:$r{pid})? \s* (?:$r{epoch})? \s* /x;
+
+my %R = (
+	old_start_end => qr/$r{prefix} $r{start} \s* \Q..\E \s* $r{end} /x,
+
+	start         => qr/$r{prefix} start \s+ a \s+ is \s+ $r{start} /xi,
+	end           => qr/$r{prefix} end \s+ a \s+ is \s+ $r{end} /xi,
+
+	old_progress  => qr/$r{prefix} Working \s+ on :? \s+ $r{progress} /xi,
+	progress      => qr/$r{prefix} Checked \s+ \[ $r{start} \] \s+ to \s+ \[ $r{progress} \]/xi,
+	);
+
+=pod
+
+***[1446504600] working on: 617443626528 tried: 1235699164 rate: 2059498 / sec
+
+(?^uix:
+	(?^ux: \A \s*
+		(?:
+			(?^ux: \ \*\*\*\  ) |
+			(?^ux: \ \+\+\+\  ) |
+			(?^ux: \ \!\!\!\  )
+		)
+		\s*
+		(?:
+			(?^ux: \[ (?<pid>   [0-9]{1,5} ) \] ))?
+			\s*
+			(?:(?^ux: \[ (?<epoch> [0-9]{10,} ) \] ))?
+			\s*
+		)
+		start \s+ a \s+ is \s+
+		(?^ux: (?<start>[0-9]+)
+	)
+)
+
+say "progress: $R{old_progess}" if $d;
+
+$_ = "***[1446504600] working on: 617443626528 tried: 1235699164 rate: 2059498 / sec";
+
+if( m/$r{prefix}/ ) {
+	say "prefix is $+{epoch}";
+	}
+
+if( m/$R{old_progress}/ ) {
+	say "old_progress is $+{progress}";
+	}
+else { say "No match" }
+
+__END__
+
+=cut
+
+FILE: while( my $output_file = readdir $dh ) {
+	next FILE if $output_file =~ /\A\./;
+	my $this = $hash->{$output_file} = {};
+	my $path = catfile( $output_dir, $output_file );
+	next FILE unless -T $path;
+#	say {interactive} "Checking on $output_file";
+
+	open my $fh, '<:utf8', $path or do { warn "Could not open file [$path]: $!"; next FILE };
+
+	LINE: while( <$fh> ) {
+		if( m/$R{old_start_end}/ ) {
+			$this->@{ qw(start end) } = @+{qw(start end)};
+		#	say {interactive} "Found start [$+{start}] and end [$+{end}]";
+			}
+		elsif( m/$R{start}/ ) {
+			$this->{ 'start' } = $+{start};
+		#	say {interactive} "Found start [$+{start}]";
+			}
+		elsif( m/$R{end}/x ) {
+			$this->{'end'} = $+{end};
+		#	say {interactive} "Found end [$+{end}]";
+			}
+		elsif( m/$R{old_progress}/ or m/$R{progress}/ ) {
+			$this->{'progress'} = $+{progress};
+		#	say {interactive} "Found progress [$+{progress}]";
+			}
+		}
+	}
+
+say Dumper( $hash ) if $d;
+
+my $ranges;
+FILE: foreach my $file ( keys %$hash ) {
+	my $this = $hash->{$file};
+
+	my $length = 2 * length $this->{start};
+	unless( $this->{progress} ) {
+		warn "No progress info in $file: Skipping\n";
+		next FILE;
+		}
+
+	my $set_spec = join '-', $this->@{ qw(start progress) };
+	say "$length: $set_spec" if $d;
+	push $ranges->{$length}->@*, $set_spec;
+	}
+
+say Dumper( $ranges ) if $d;
+
+foreach my $length ( sort { $a <=> $b } keys %$ranges ) {
+	my $set = eval { Set::IntSpan->new( $ranges->{$length}->@* ) };
+	next unless $set;
+
+	my $holes = $set->holes;
+	say "$length: $holes";
+	}

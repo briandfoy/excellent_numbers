@@ -1,0 +1,11 @@
+*** [53040] start a is 100
+*** [53040] end a is 619
+140400 is excellent
+190476 is excellent
+216513 is excellent
+300625 is excellent
+334668 is excellent
+416768 is excellent
+484848 is excellent
+530901 is excellent
++++ [53040] Checked [100] to [620]

@@ -1,0 +1,99 @@
+#!perl
+use v5.22;
+
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
+use Getopt::Long;
+use IO::Interactive qw(interactive);
+use Net::Twitter;
+
+use ExcellentNumber qw(is_excellent);
+
+
+my %Options;
+GetOptions(
+	'dry-run|n' => \$Options{dry_run},
+	);
+
+my $file = "$FindBin::Bin/../excellent.txt";
+
+my %numbers = do {
+	open my $fh, '<:utf8', $file
+		or die "Could not open $file: $!";
+	my @numbers = <$fh>;
+	close $fh;
+	chomp @numbers;
+	map { $_, undef } @numbers;
+	};
+
+say { interactive } "There are " . keys(%numbers) . " locally listed excellent numbers";
+
+my $nt = Net::Twitter->new(
+	traits   => [qw/OAuth API::RESTv1_1/],
+	map { $_ => $ENV{"excellent_twitter_$_"} || die "ENV excellent_twitter_$_ not set" }
+		qw(
+			consumer_secret
+			consumer_key
+			access_token
+			access_token_secret
+			)
+	);
+
+my %tweets;
+STATUSES: while( 1 ) {
+	state $min_id = 1;
+	state $fetch_size = 200;
+
+	my $max_key = $min_id == 1 ? 'since_id' : 'max_id';
+
+	my $statuses = $nt->user_timeline({
+		count       => $fetch_size,
+		screen_name => 'excellent_nums',
+		$max_key    => $min_id,
+		});
+
+	say { interactive } "Found " . @$statuses . " statuses";
+	$min_id = $statuses->[-1]{id} - 1 if $min_id == 1;
+
+	foreach my $status ( @$statuses ) {
+		$min_id = $status->{id} - 1 if $min_id > $status->{id};
+		my( $number ) = $status->{text} =~ m/(\d+)/;
+		warn "[$number] has more than one tweet!\n" if exists $tweets{$number};
+		$tweets{$number} = undef;
+		unless( is_excellent( $number ) ) {
+			warn "Tweet for [$number] is an unexcellent error\n";
+			}
+		}
+
+	last if @$statuses < $fetch_size;
+	}
+
+say { interactive } "Found " . keys(%tweets) . " previously tweeted excellent numbers";
+
+my %Sizes;
+NUMBER: foreach my $number ( sort { $a <=> $b } keys %numbers ) {
+	$Sizes{ length $number }++;
+	if( exists $tweets{$number} ) {
+		say { interactive } "Already tweeted $number";
+		delete $numbers{$number};
+		next NUMBER;
+		}
+	unless( is_excellent( $number ) ) {
+		warn "[$number] in file is an unexcellent error\n";
+		next;
+		}
+	warn "[$number] has not been tweeted\n";
+	say { interactive } "Tweeting $number";
+	if( length $number < 30 ) {
+		say { interactive } "Skipping $number because it's too low";
+		next;
+		}
+	$nt->update( "$number is excellent" ) unless $Options{dry_run};
+	}
+
+SIZE: foreach my $size ( sort { $a <=> $b } keys %Sizes ) {
+	state $total = 0;
+	$total += $Sizes{$size};
+	say { interactive } sprintf '%2d %3d %3d', $size, $Sizes{$size}, $total;
+	}
