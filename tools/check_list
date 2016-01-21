@@ -2,7 +2,7 @@
 
 use ExcellentNumber;
 
-my $file = 'excellent.txt';
+my $file = @*ARGS[0] // 'excellent.txt';
 
 my @errors;
 
