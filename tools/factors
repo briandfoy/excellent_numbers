@@ -1,0 +1,29 @@
+#!perl
+use v5.10;
+
+use utf8;
+
+use bignum;
+
+foreach my $n ( 1 .. $ARGV[0] ) {
+	my $repunit = '1' x $n;
+	my $working = $repunit;
+
+	my $root = int sqrt( $repunit );
+	my @factors = qw( 1 );
+	for( my $i = 2; $i <= $root; $i++ ) {
+		my $remainder = $working % $i;
+
+		if( $working % $i == 0 ) {
+			$working /= $i;
+			push @factors, $i, $working;
+			redo;
+			}
+		}
+
+	push @factors, $repunit;
+
+	@factors = sort { $a <=> $b } @factors;
+
+	say "$repunit -> @factors";
+	}
