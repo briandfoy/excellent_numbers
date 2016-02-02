@@ -501,7 +501,7 @@ The count of excellent numbers for a length $N$ have a curious pattern that seem
 <li>The maximum value of $a$ is close to the inverse golden ratio to some power of 10.
 </ul>
 
-<h2>The Algorithm</h2>
+<h2>The First Algorithm</h2>
 
 <p>These numbers are an interesting programming exercise, although most people stop programming before they get to the interesting bits. If you apply brute force and check every number, you can easily do 10- or 12-digit numbers. After that things start to get slow. When their programs get slow, people find something else to do, leaving the good parts for those who stuck at it.</p>
 
@@ -587,7 +587,7 @@ The only values of $a$ that will produce $\{ 0, 6 \}$ as a square are $\{ 0, 4, 
 From there, it's brute force to check all $a$ ending in $\{ 0, 4, 6 \}$ from $1 \cdot 10^{k-1}$ to $6.2 \cdot 10^{k-1}$.
 </p>
 
-<h2>Brass tacks</h2>
+<h3>Brass tacks</h3>
 
 <p>
 Now that we have an algorithm that excludes most of the numbers, we have to compute some large numbers, where large is relative to the integer size of computer processors. Each jump in number of digits, say from 24- to 26-digits, is a ten-fold increase in numbers to check.
@@ -630,6 +630,8 @@ But then Sinan Ünür had the idea to try it in 128-bit integer math using compi
 That's just my laptop. The next tactic is to go wide. Instead of one processor, break up the problem and distribute it among several processors. For instance, for 32-digit numbers, it takes 210 days on one processor, or a month on 7 processors or 3 days on 70 processors.
 </p>
 
+<h2>The Second Algorithm</h2>
+
 <h2>Contributions</h2>
 
 <p>
@@ -646,6 +648,11 @@ Phil Doroff from <a href="http://www.servercentral.com">ServerCentral</a> donate
 
 <p>
 Sinan Ünür helped with <a href="https://www.mathjax.org">MathJax</a> to bring some $\TeX$ goodness to this page. He also listened to me talk about much more math than anyone really wants to talk about.
+</p>
+
+<p>
+Matthew Arcus developed the idea of <a href="https://matthewarcus.wordpress.com/2016/01/16/excellent-numbers/
+">getting to the numbers very quickly through factors of $10^k-1$</a> that made all of our optimizations look like stone tools.
 </p>
 
 <h2>How to contribute</h2>
@@ -685,6 +692,12 @@ Watch out for some of the other stuff you find out there. Most other spots have 
 
 <li> <a href="https://oeis.org/A162700">The Online Encyclopedia of Integer Sequences, A162700</a></li>
 </ul>
+
+<li> <a href="https://www.nu42.com/2016/01/excellent-optimization-story.html">An Excellent Optimization Story</a> by Sinan Ünür and itss <a href="https://news.ycombinator.com/item?id=10909909">Hacker News thread</a> or its <a href="https://www.reddit.com/r/programming/comments/413l1u/an_optimization_story_switching_from_gmp_to_gccs/">Reddit thread</a>.
+
+<li> <a href="https://www.nu42.com/2016/01/excellent-numbers-explicit-solution.html">An explicit solution for d-digit excellent numbers in terms of factors of 10^d - 1</a> by Sinan Ünür
+
+<li> <a href="https://matthewarcus.wordpress.com/2016/01/16/excellent-numbers/">Excellent Numbers</a> by Matthew Arcus, the overall winner of this hobby.
 
 </body>
 </html>
