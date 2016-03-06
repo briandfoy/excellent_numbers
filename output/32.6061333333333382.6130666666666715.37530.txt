@@ -1,0 +1,5 @@
+*** [37604] [2016-03-06T20:25:37-00:00] Starting up
+*** [37604] start a is 6061333333333382
+*** [37604] end a is 6130666666666715
+*** [37604] report interval is 15
+*** [37604] signal check interval is 10

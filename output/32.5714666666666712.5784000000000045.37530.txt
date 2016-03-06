@@ -1,0 +1,5 @@
+*** [37599] [2016-03-06T20:25:37-00:00] Starting up
+*** [37599] start a is 5714666666666712
+*** [37599] end a is 5784000000000045
+*** [37599] report interval is 15
+*** [37599] signal check interval is 10

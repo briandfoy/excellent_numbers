@@ -1,9 +1,0 @@
-*** [34030] [2016-03-06T16:42:41-00:00] Starting up
-*** [34030] start a is 1000
-*** [34030] end a is 6180
-*** [34030] report interval is 15
-*** [34030] signal check interval is 2
-16604400 is excellent
-33346668 is excellent
-59809776 is excellent
-+++ [34030] [2016-03-06T16:42:41-00:00] Checked [1000] to [6180]

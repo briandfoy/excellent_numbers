@@ -1,0 +1,5 @@
+*** [37570] [2016-03-06T20:25:37-00:00] Starting up
+*** [37570] start a is 3704000000000026
+*** [37570] end a is 3773333333333359
+*** [37570] report interval is 15
+*** [37570] signal check interval is 10
