@@ -1,15 +1,13 @@
-#include <errno.h>
-#include <inttypes.h>
 #include <math.h>
 #include <signal.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
 #include <unistd.h>
 
-const uint64_t powers_of_10[] = {
+#include "excellent.h"
+
+const excellent_half_t powers_of_10[] = {
     1,
     10,
     100,
@@ -31,40 +29,16 @@ const uint64_t powers_of_10[] = {
     1000000000000000000LL,
 };
 
-/* This was created by perl/bisect.pl. Take the maximum b (all 9s)
-and compute the largest a from that.
+const uint8_t MAX_NDIGITS = 2 * ((sizeof powers_of_10)/(sizeof powers_of_10[0]));
 
-Each position represents a value of k (half digits), with 0 as a placeholder
-for k=0 */
-const uint64_t stop_a[] = {
-    0,
-    6,
-    63,
-    619,
-    6181,
-    61805,
-    618034,
-    6180340,
-    61803400,
-    618033989,
-    6180339888LL,
-    61803398875LL,
-    618033988751LL,
-    6180339887499LL,
-    61803398874990LL,
-    618033988749895LL,
-    6180339887498949LL,
-    61803398874989485LL,
-    618033988749894849LL,
-    6180339887498948483LL,
-};
+/*
+   a has to end in 0, 4, or 6. Instead of incrementing by 2 and
+   checking the last decimal digit, use the last decimal digit to choose
+   the increment value. 0->4, 4->6, 6->0
 
-/* a has to end in 0, 4, or 6. Instead of incrementing by 2 and
-checking the last decimal digit, use the last decimal digit to choose
-the increment value. 0->4, 4->6, 6->0
-
-Increment by 1 for any other ending and eventually we'll be back in sync.
+   Increment by 1 for any other ending and eventually we'll be back in sync.
 */
+
 const uint8_t next_a[] = {
     4,         /* previous a ends in 0 */
     1, 1, 1,
@@ -74,247 +48,394 @@ const uint8_t next_a[] = {
     1, 1, 1
 };
 
-const uint8_t  seconds_per_minute = 60;
-const uint64_t iterations_per_signal_check = 300000000;
+volatile sig_atomic_t ALARM_RAISED = 0;
+volatile sig_atomic_t INT_RAISED  = 0;
+volatile sig_atomic_t USR1_RAISED = 0;
 
-#ifdef ALARM_MINUTES
-const uint8_t alarm_minutes = ALARM_MINUTES;
-#else
-const uint8_t alarm_minutes = 15;
-#endif
+const uint16_t MAX_MINUTES_BETWEEN_PROGRESS_REPORTS = 43800; /* one month */
+const uint8_t MAX_SECONDS_BETWEEN_SIGNAL_CHECKS = 10; /* some semblance of responsivness */
 
-struct excellent_progress_info {
-    uint64_t last_a;
-    uint64_t numbers_done;
-    uint64_t rate;
-    uint32_t last_time;
-};
+const excellent_half_t RATE_GUESS = 100000000LL;
 
-volatile sig_atomic_t alarm_flag = 0;
-volatile sig_atomic_t int_flag  = 0;
-volatile sig_atomic_t usr1_flag = 0;
+int main(int argc, char **argv) {
+    excellent_info_t info;
+    excellent_opt_t opt;
 
-static unsigned __int128 umult64x64_128(uint64_t, uint64_t);
-static uint64_t default_start_a( uint8_t );
-static uint64_t default_end_a( uint8_t );
-static void time_left ( uint64_t, uint64_t );
-static void alarm_handler( int signo );
-static void int_handler(  int signo );
-static void usr1_handler( int signo );
+    process_options(argc, argv, &opt);
 
-static void
+    setup_alarm();
+    setup_int();
+    setup_usr1();
+
+    alarm(opt.minutes_between_progress_reports * SECONDS_PER_MINUTE);
+
+    search_excellent_numbers(&info, &opt);
+
+    return 0;
+}
+
+void
+search_excellent_numbers(
+        excellent_info_t *info,
+        const excellent_opt_t *opt
+        ) {
+    excellent_half_t a;
+    excellent_half_t current_iter, iterations_per_signal_check;
+
+    const excellent_half_t start_a = opt->start_a;
+    const excellent_half_t end_a = opt->end_a;
+    const excellent_half_t K = get_K( opt->ndigits );
+
+    excellent_half_t checked_a = 0;
+
+    info->last_a = opt->start_a;
+    info->rate = RATE_GUESS;
+
+    print_startup_report(info, opt);
+
+    current_iter = 0;
+    iterations_per_signal_check = info->rate * opt->seconds_between_signal_checks;
+
+    for (a = start_a; a <= end_a; a += next_a[ a % 10 ]) {
+
+        check_excellent(a, K);
+        checked_a = a;
+        current_iter += 1;
+
+
+        if (current_iter == iterations_per_signal_check) {
+            if (ALARM_RAISED > 0) {
+                handle_alarm(checked_a, info, opt);
+            }
+            if (USR1_RAISED > 0) {
+                handle_usr1(checked_a, info, opt);
+            }
+            if (INT_RAISED > 0) {
+                handle_int(checked_a, info, opt);
+                break;
+            }
+            current_iter = 0;
+            iterations_per_signal_check = info->rate *
+                opt->seconds_between_signal_checks;
+        }
+    }
+
+    print_termination_report(start_a, checked_a);
+    return;
+}
+
+void
+print_startup_report(excellent_info_t *info, const excellent_opt_t *opt) {
+    time( & (info->last_time) );
+
+    printf( "*** [%d] [%s] Starting up\n",              getpid(), timestamp(info->last_time) );
+    printf( "*** [%d] start a is %" EXCELLENT_FMT "\n", getpid(), opt->start_a );
+    printf( "*** [%d] end a is %" EXCELLENT_FMT "\n",   getpid(), opt->end_a );
+    printf( "*** [%d] report interval is %u\n",         getpid(), opt->minutes_between_progress_reports );
+    printf( "*** [%d] signal check interval is %u\n",   getpid(), opt->seconds_between_signal_checks );
+    fflush( stdout );
+    return;
+}
+
+void
+print_termination_report(excellent_half_t start_a, excellent_half_t a) {
+    printf(
+        "+++ [%d] [%s] Checked [%" EXCELLENT_FMT "] to [%" EXCELLENT_FMT "]\n",
+        getpid(),  timestamp( time(NULL) ), start_a, a);
+    fflush( stdout );
+    return;
+}
+
+const char *
+timestamp(const time_t timer) {
+    static char buffer[26] = { 0 };
+    struct tm* tm_info = gmtime(&timer);
+    strftime(buffer, 26, "%Y-%m-%dT%H:%M:%S-00:00", tm_info);
+    return buffer;
+}
+
+excellent_full_t
+multiply_halves(
+        const excellent_half_t x,
+        const excellent_half_t y
+        ) {
+    excellent_full_t z = ((excellent_full_t) x) * ((excellent_full_t) y);
+    return z;
+}
+
+void
+print_excellent_number(
+        const excellent_half_t a,
+        const excellent_half_t b
+        ) {
+    printf("%" EXCELLENT_FMT "%" EXCELLENT_FMT " is excellent\n", a, b);
+    fflush( stdout );
+    return;
+}
+
+void
 report_progress(
-        struct excellent_progress_info *pinfo,
-        uint64_t start_a,
-        uint64_t a
-        )
-{
-    pinfo->numbers_done = a - pinfo->last_a;
-    unsigned this_time = time(NULL);
-    pinfo->rate = pinfo->numbers_done / (this_time - pinfo->last_time);
+        const excellent_half_t a,
+        excellent_info_t *info,
+        const excellent_opt_t *opt
+        ) {
+    excellent_half_t numbers_done = a - info->last_a;
+    time_t this_time = time( NULL );
 
-    printf( "+++ [%d] Checked [%" PRIu64 "] to [%" PRIu64 "]\n",
-            getpid(), start_a, a );
-    printf( "*** [%d] [%u] working on: %" PRIu64 " tried: %" PRIu64 " rate: %" PRIu64 " / sec\n",
-            getpid(), this_time, a, pinfo->numbers_done, pinfo->rate );
-	fflush( stdout );
-    pinfo->last_time = this_time;
-    pinfo->last_a = a;
+    info->rate = ((excellent_float_t) numbers_done) / (this_time - info->last_time);
+
+    printf( "+++ [%d] Checked [%" EXCELLENT_FMT "] to [%" EXCELLENT_FMT "]\n", getpid(), opt->start_a, a );
+    printf( "*** [%d] [%s] working on: %" EXCELLENT_FMT " tried: %" EXCELLENT_FMT " rate: %" EXCELLENT_FMT " / sec\n",
+            getpid(), timestamp( this_time ), a, numbers_done, info->rate );
+    fflush( stdout );
+    info->last_time = this_time;
+    info->last_a = a;
+
+    time_left(a, info, opt);
 
     return;
 }
 
-static void
-alarm_handler( int signo ) {
-    alarm_flag += 1;
-    /* Reset the alarm so we get output more than once */
-    alarm( alarm_minutes * seconds_per_minute);
-}
-
-static void
-int_handler(  int signo ) {
-    int_flag += 1;
-}
-
-static void
-usr1_handler( int signo ) {
-    usr1_flag += 1;
-}
-
-static void
-setup_interrupt( void ) {
-    struct sigaction act;
-    act.sa_handler = int_handler;
-    sigemptyset(&act.sa_mask);
-    act.sa_flags = 0;
-    if( sigaction(SIGINT, &act, 0) == -1 ) {
-        perror( "sigaction couldn't install SIGINT" );
-    }
-}
-
-static void
-setup_usr1( void ) {
-    struct sigaction act;
-    act.sa_handler = usr1_handler;
-    sigemptyset(&act.sa_mask);
-    act.sa_flags = 0;
-    if( sigaction(SIGUSR1, &act, 0) == -1 ) {
-        perror( "sigaction couldn't install SIGUSR1" );
-    }
-}
-
-static void
-setup_alarm( void ) {
-    struct sigaction act;
-    act.sa_handler = alarm_handler;
-    sigemptyset(&act.sa_mask);
-    if ( sigaction(SIGALRM, &act, NULL) == -1 ) {
-        perror( "sigaction couldn't install SIGALRM" );
-    }
-    alarm(alarm_minutes * seconds_per_minute);
-}
-
-static void
-time_left ( uint64_t rate, uint64_t left_a ) {
+void
+time_left(
+        const excellent_half_t a,
+        const excellent_info_t *info,
+        const excellent_opt_t *opt
+        ) {
     uint64_t seconds_left;
     uint8_t weeks, days, hours, minutes, seconds;
 
-    static const uint16_t seconds_per_hour = seconds_per_minute * 60;
-    static const uint32_t seconds_per_day  = seconds_per_hour * 24;
-    static const uint32_t seconds_per_week = seconds_per_day * 7;
+    excellent_half_t left_a = opt->end_a - a;
+    seconds_left = 1 + ((double) left_a) / info->rate;
 
-    seconds_left = (uint64_t) (1 + ((double) left_a) / rate);
-
-    weeks   = seconds_left / seconds_per_week;
-    days    = ( seconds_left / seconds_per_day ) % 7;
-    hours   = ( seconds_left / seconds_per_hour ) % 24;
-    minutes = ( seconds_left / seconds_per_minute ) % 60;
+    weeks   = seconds_left / SECONDS_PER_WEEK;
+    days    = ( seconds_left / SECONDS_PER_DAY ) % 7;
+    hours   = ( seconds_left / SECONDS_PER_HOUR ) % 24;
+    minutes = ( seconds_left / SECONDS_PER_MINUTE ) % 60;
     seconds = seconds_left - (
-            weeks * seconds_per_week +
-            days * seconds_per_day +
-            hours * seconds_per_hour +
-            minutes * seconds_per_minute
+            weeks * SECONDS_PER_WEEK +
+            days * SECONDS_PER_DAY +
+            hours * SECONDS_PER_HOUR +
+            minutes * SECONDS_PER_MINUTE
             );
 
     printf( "*** [%d] time left: %u wk %u d %u h %u m %u s\n",
             getpid(), weeks, days, hours, minutes, seconds );
-	fflush( stdout );
-
-    return;
-}
-
-static uint64_t
-default_start_a( uint8_t k ) {
-    return powers_of_10[ k - 1 ];
-}
-
-static uint64_t
-default_end_a( uint8_t k ) {
-    return stop_a[ k ];
-}
-
-static unsigned __int128
-umult64x64_128(uint64_t x, uint64_t y)
-{
-    unsigned __int128 z = ((unsigned __int128) x) * ((unsigned __int128) y);
-    return z;
-}
-
-static void
-check_excellent(uint64_t a, uint64_t K) {
-    uint64_t b = (uint64_t) (1.0 + a * sqrt(1 + ((double) K)/ a));
-    unsigned __int128 lhs = umult64x64_128(b, b - 1);
-    unsigned __int128 rhs = umult64x64_128(a, K) + umult64x64_128(a, a);
-
-    if ( lhs == rhs ) {
-        printf("%" PRIu64 "%" PRIu64 " is excellent\n", a, b );
-        fflush( stdout );
-    }
-
-    return;
-}
-
-
-int main( int argc, char *argv[] ) {
-    setup_interrupt();
-    setup_usr1();
-    setup_alarm();
-
-    uint64_t a, start_a, end_a;
-    uint64_t current_iter, K;
-    uint8_t digits, k;
-    struct excellent_progress_info pinfo = { 0 };
-
-    if ( (argc < 2) || (argc > 4)) {
-        fprintf( stderr, "Usage: %s DIGITS START END\n", argv[0] );
-        exit( EXIT_FAILURE );
-    }
-
-    digits = strtoul(argv[1], (char **)NULL, 10);
-    k = ( digits / 2 );
-
-    if( argc == 2 ) {
-        start_a = default_start_a( k );
-        end_a = default_end_a( k );
-    }
-    else if( argc == 3 ) {
-        start_a = strtoull(argv[2], (char **) NULL, 10);
-        end_a = default_end_a( k );
-    }
-    else {
-        start_a = strtoull(argv[2], (char **) NULL, 10);
-        end_a = strtoull(argv[3], (char **) NULL, 10);
-    }
-
-    /* odd numbers cannot be candidates for a. Start with an even
-       number and add two to check the next candidate */
-    if ( start_a % 2 ) {
-        start_a += 1;
-    }
-
-	printf( "*** [%d] [%u] Starting up\n", getpid(), (unsigned)time(NULL) );
-	printf( "*** [%d] start a is %" PRIu64 "\n", getpid(), start_a );
-    printf( "*** [%d] end a is %" PRIu64 "\n",   getpid(), end_a   );
     fflush( stdout );
 
-    pinfo.last_a = start_a;
-    pinfo.last_time = (unsigned) time(NULL);
+    return;
+}
 
-    K = powers_of_10[ k ];
+void
+process_options(int argc, char **argv, excellent_opt_t *opt) {
+    int c;
+    opterr = 0;
 
-    current_iter = 0;
+    opt->start_a = 0;
+    opt->end_a = 0;
+    opt->minutes_between_progress_reports = 15;
+    opt->seconds_between_signal_checks = 2;
+    opt->ndigits = 8;
 
-    for (a = start_a; a <= end_a; a += next_a[ a % 10 ]) {
-        check_excellent(a, K);
-        current_iter += 1;
+    /*
+     * -b : start_a
+     * -e : end_a
+     * -r : minutes between progress reports
+     * -s : seconds between signal checks
+     */
 
-        if ((current_iter % (iterations_per_signal_check)) == 0) {
-            if( int_flag > 0 ) {
-                printf( "!!! [%d] [%u] Caught interrupt\n",
-                	getpid(),  (unsigned)time(NULL)
-                	);
+    while ((c = getopt(argc, argv, "+b:d:e:r:s:h")) != -1) {
+        switch ( c ) {
+            case 'b' :
+                opt->start_a = strtoull(optarg, (char **) NULL, 10);
                 break;
-            }
-
-            if ( usr1_flag > 0 ) {
-                report_progress( &pinfo, start_a, a );
-                time_left( pinfo.rate, end_a - a );
-                usr1_flag = 0;
-            }
-
-            if ( alarm_flag > 0 ) {
-                report_progress( &pinfo, start_a, a );
-                time_left( pinfo.rate, end_a - a );
-                alarm_flag = 0;
-            }
+            case 'd' :
+                opt->ndigits = atoi(optarg);
+                break;
+            case 'e' :
+                opt->end_a = strtoull(optarg, (char **) NULL, 10);
+                break;
+            case 'r' :
+                opt->minutes_between_progress_reports = atoi( optarg );
+                break;
+            case 's' :
+                opt->seconds_between_signal_checks = atoi( optarg );
+                break;
+            case '?' :
+            case 'h' :
+            default  :
+                print_usage_and_exit();
+                break;
         }
+
     }
 
-    printf(
-    	"+++ [%d] [%u] Checked [%" PRIu64 "] to [%" PRIu64 "]\n",
-    	getpid(),  (unsigned)time(NULL), start_a, a );
-    fflush( stdout );
+    if ( opt->ndigits > MAX_NDIGITS ) {
+        opt->ndigits = MAX_NDIGITS;
+    }
 
-    return( 0 );
+    if ( opt->start_a == 0) {
+        opt->start_a = default_start_a( opt->ndigits );
+    }
+
+    if ( opt->end_a == 0) {
+        opt->end_a = default_end_a (opt->ndigits );
+    }
+
+    if ( opt->minutes_between_progress_reports >
+            MAX_MINUTES_BETWEEN_PROGRESS_REPORTS ) {
+        opt->minutes_between_progress_reports =
+            MAX_MINUTES_BETWEEN_PROGRESS_REPORTS;
+    }
+
+    if ( opt->seconds_between_signal_checks >
+            MAX_SECONDS_BETWEEN_SIGNAL_CHECKS ) {
+        opt->seconds_between_signal_checks =
+            MAX_SECONDS_BETWEEN_SIGNAL_CHECKS;
+    }
+
+    return;
 }
+
+void
+handle_alarm(
+        const excellent_half_t a,
+        excellent_info_t *info,
+        const excellent_opt_t *opt
+        ) {
+    report_progress(a, info, opt);
+    ALARM_RAISED = 0;
+    alarm(opt->minutes_between_progress_reports * SECONDS_PER_MINUTE);
+    return;
+}
+
+void
+handle_int(
+        const excellent_half_t a,
+        excellent_info_t *info,
+        const excellent_opt_t *opt
+        ) {
+    printf( "!!! [%d] [%u] Caught interrupt\n",
+            getpid(),  (unsigned)time(NULL)
+          );
+    INT_RAISED = 0;
+    return;
+}
+
+void
+handle_usr1(
+        const excellent_half_t a,
+        excellent_info_t *info,
+        const excellent_opt_t *opt
+        ) {
+    report_progress(a, info, opt);
+    USR1_RAISED = 0;
+    return;
+}
+void
+alarm_raised( int signo ) {
+    ++ ALARM_RAISED;
+}
+
+void
+int_raised( int signo ) {
+    ++ INT_RAISED;
+}
+
+void
+usr1_raised( int signo ) {
+    ++ USR1_RAISED;
+}
+
+void
+setup_alarm( void ) {
+    struct sigaction act;
+    act.sa_handler = alarm_raised;
+    sigemptyset(&act.sa_mask);
+    act.sa_flags = 0;
+    if ( sigaction(SIGALRM, &act, NULL) == -1 ) {
+        perror( "sigaction couldn't install SIGALRM" );
+    }
+}
+
+void
+setup_int( void ) {
+    struct sigaction act;
+    act.sa_handler = int_raised;
+    sigemptyset(&act.sa_mask);
+    act.sa_flags = 0;
+    if( sigaction(SIGINT, &act, NULL) == -1 ) {
+        perror( "sigaction couldn't install SIGINT" );
+    }
+}
+
+void
+setup_usr1( void ) {
+    struct sigaction act;
+    act.sa_handler = usr1_raised;
+    sigemptyset(&act.sa_mask);
+    act.sa_flags = 0;
+    if( sigaction(SIGUSR1, &act, NULL) == -1 ) {
+        perror( "sigaction couldn't install SIGUSR1" );
+    }
+}
+
+void
+print_usage_and_exit( void ) {
+    fputs(
+            "Arguments:\n"
+            "\t-d : number of digits\n"
+            "\t-b : start_a\n"
+            "\t-e : end_a\n"
+            "\t-r : minutes between progress reports\n"
+            "\t-s : seconds between signal checks\n"
+            "\t-h : show this message\n",
+            stderr
+         );
+    exit( EXIT_FAILURE );
+}
+
+excellent_half_t
+default_start_a( uint8_t d ) {
+    return powers_of_10[ (d / 2) - 1 ];
+}
+
+/*
+ * given a, we have:
+ * b = 0.5 + sqrt(.25 + a**2 + a10**K)
+ * b < K must hold. Use this to find a(K)
+ */
+
+excellent_half_t
+default_end_a( uint8_t d ) {
+    excellent_float_t K = get_K( d );
+    excellent_half_t a = 1 + K * (sqrt(5 - 4/K) - 1);
+    return a / 2;
+}
+
+uint8_t
+get_next_a( excellent_half_t a ) {
+    return next_a[ a % 10 ];
+}
+
+excellent_half_t
+get_K( uint8_t d ) {
+    return powers_of_10[ d / 2 ];
+}
+
+void
+check_excellent(excellent_half_t a, excellent_half_t K) {
+    excellent_full_t rhs = multiply_halves(a, a) + multiply_halves(a, K);
+    excellent_half_t b = 1 +
+        EXCELLENT_SQRT((excellent_float_t) a) *
+        EXCELLENT_SQRT((excellent_float_t) (a + K))
+    ;
+
+    if ( rhs == multiply_halves(b, b - 1) ) {
+        print_excellent_number(a, b);
+    }
+
+    return;
+}
+
 
