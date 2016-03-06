@@ -5,7 +5,7 @@ OPTIMIZE=-O2 -march=native -ffinite-math-only -fno-math-errno
 WARNINGS=-Wall
 
 CFLAGS=${WARNINGS} ${OPTIMIZE}
-GRAND_CC=${CC} ${CFLAGS}
+GRAND_CC=${CC} ${CFLAGS} ${LIBS}
 
 C_FILES=excellent-128.c
 BASE=excellent-128
