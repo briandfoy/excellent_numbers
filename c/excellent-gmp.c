@@ -57,14 +57,17 @@ int main( int argc, char *argv[] ) {
 
 	if( argc == 1 ) {
 		digits = 4;
+		k = 2;
 		}
 	else {
 		digits = strtol(argv[1], (char **)NULL, 10);
+		k = ( digits / 2 );
 		}
 
-	k = ( digits / 2 );
+	fprintf( stderr, "digits: %d \n", digits );
+	fprintf( stderr, "k: %d \n", k );
 
-	if( argc == 2 ) {
+	if( argc <= 2 ) {
 		default_start_a( k, start_a );
 		default_end_a(   k, end_a   );
 		}
