@@ -421,7 +421,7 @@ $$
 
 
 
-
+$$
 \begin{align}
 b^2 & = ( 2 S - 1 )^2 \cdot 10^{2(2n+2)} + 10^{2n} +   S^2 \\
     & + 2 ( 2 S - 1 ) \cdot 10^{2n+2} 10^n \\
@@ -462,45 +462,7 @@ The other numbers have some interesting patterns in their factorizations:
 	666500013333: 3 3 3 7 11 11 101 101 2857
 </pre>
 
-<h2>The count of excellent numbers in a range</h2>
-
-<p>
-The count of excellent numbers for a length $N$ have a curious pattern that seems predictable based on the number of ways that you can write $N$ with an odd factor. The count of excellent numbers in $N$ is $\#$, and the sum of the count of previous excellent numbers is $\#'$.
-</p>
-
-<pre>
- N   #   #' factors with odd number
- 2   1   1
- 4   1   2
- 6   8  10  2x3
- 8   3  13
-10   3  16  2x5
-12  13  29      4x3
-14   2  31  2x7
-16   3  34
-18  28  62  2x9     6x3
-20  15  77      4x5
-22   9  86  2x11
-24  51 137              8x3
-26   5 142  2x13
-28  17 159      4x7
-30 381 540  2x15    6x5     10x3
-32   ?   ?
-34   ?   ?  2x17
-36   ?   ?      4x9             12x3
-38   ?   ?  2x19
-</pre>
-
-<p>Some observations</p>
-
-<ul>
-<li>A length that is a power of $2$ have few excellent numbers.
-<li>A length with several such factorizations have many more excellent compared to the lengths around them, like $N=18$ or $N=30$.
-<li>The lengths with an odd factor and $4$ have the pattern 1,13,15,17. The next one would be $N=36$, but that also has $12x3$.
-<li>I expect only three (or five) excellent numbers in $N=32$, and I already know one of them: $3_{15}46_{15}8$.
-</ul>
-
-<h2>The Algorithm</h2>
+<h2>The First Algorithm</h2>
 
 <p>These numbers are an interesting programming exercise, although most people stop programming before they get to the interesting bits. If you apply brute force and check every number, you can easily do 10- or 12-digit numbers. After that things start to get slow. When their programs get slow, people find something else to do, leaving the good parts for those who stuck at it.</p>
 
@@ -586,7 +548,7 @@ The only values of $a$ that will produce $\{ 0, 6 \}$ as a square are $\{ 0, 4, 
 From there, it's brute force to check all $a$ ending in $\{ 0, 4, 6 \}$ from $1 \cdot 10^{k-1}$ to $6.2 \cdot 10^{k-1}$.
 </p>
 
-<h2>Brass tacks</h2>
+<h3>Brass tacks</h3>
 
 <p>
 Now that we have an algorithm that excludes most of the numbers, we have to compute some large numbers, where large is relative to the integer size of computer processors. Each jump in number of digits, say from 24- to 26-digits, is a ten-fold increase in numbers to check.
@@ -629,23 +591,153 @@ But then Sinan Ünür had the idea to try it in 128-bit integer math using compi
 That's just my laptop. The next tactic is to go wide. Instead of one processor, break up the problem and distribute it among several processors. For instance, for 32-digit numbers, it takes 210 days on one processor, or a month on 7 processors or 3 days on 70 processors.
 </p>
 
+<h2>The "Cheating" Algorithm</h2>
+
+<p>
+<a href="https://programmingpraxis.com/2015/03/24/excellent-numbers/#comment-49937">Matthew Arcus suggested a solution</a> based on quadratic Diophatine equations. The genius of this approach is what mathematics is all about: reducing problems to known problems.
+
+First, collect terms:
+
+$$
+\begin{align}
+b^2 - a^2 &= a 10^k + b \\
+b^2 - b   &= a^2 + a 10^k
+\end{align}
+$$
+
+Next, you want to move everything around to make some nicer polynomials by completing some squares:
+
+$$
+\begin{align}
+ b^2 - b            &=  a^2 +  a 10^k                     \\
+4b^2 - 4b + 1 - 1   &= 4a^2 + 4a 10^k + 10^{2k} - 10^{2k} \\
+(2b - 1)^2 - 1      &= (2a + 10^k)^2 - 10^{2k}            \\
+10^{2k} - 1         &= (2a + 10^k)^2 - (2b - 1)^2         \\
+                    &= A^2 - B^2                          \\
+                    &= (A + B)(A - B)                     \\
+                    &= i \cdot j
+\end{align}
+$$
+
+<p>
+Let $i$ and $j$ be a pair of divisors whose product is $10^{2k} - 1$, Finding those divisors is an expensive problem for large $k$. But, this is where the cheating comes in. First, some math jokes:
+</p>
+
+<blockquote>
+A mathematician, a physicist, and an engineer are asked to find the volumes of rubber balls. The mathematician measures their circumferences to sum their volumes. The physicist submerges them in water and notes their displacement. The engineer finds their serial numbers and looks up their volume.
+</blockquote>
+
+<blockquote>
+A physicist, an engineer, and a mathematician compare strategies to solve the flickering lightbulb in the faculty lounge. The physicist says he can predict when it will blow out so they can replace it sooner. The engineer designs a new, longer lasting lightbulb with novel materials. The mathematician uses a broom to break the bulb, saying "Every time I do this a new one shows up".
+</blockquote>
+
+<p>
+So far, you've been doing a lot of work, but Matthew's great inspiration is that you already know the factors of $(10^{2k} - 1)/9$. People have already done the work to factor 1, 11, 111, 1111, and so on. These are called <i>repunits</i> (for repetitive units). You can lookup <A href="http://www.h4.dion.ne.jp/~rep/">lists of those factors</a> then add two factors of 3 to get to 9, 99, 999, 9999, and so on.
+</p>
+
+<p>
+Once you have those factors, you can compute all the divisors of $10^{2k} - 1$. Take one divisor $i$ and compute the corresponding $j$, with $i < j$.
+</p>
+
+$$
+\begin{align}
+i &= (A - B) \\
+j &= (A + B) \\
+\end{align}
+$$
+
+<p>
+Solve for $A$ and $B$. Since $10^{2k} - 1$ is necessarily odd, its two divisors must also be odd. Their sums and differences are necessarily even:
+</p>
+
+$$
+\begin{align}
+A &= (j+i) / 2 \\
+B &= (j-i) / 2 \\
+\end{align}
+$$
+
+<p>
+Bring back the definitions of $A$ and $B$:
+</p>
+
+$$
+\begin{align}
+(2a + 10^k) &= (j+i) / 2 \\
+(2b - 1)    &= (j-i) / 2 \\
+\end{align}
+$$
+
+<p>
+Solve for $a$ and $b$:
+</p>
+
+$$
+\begin{align}
+a &= ( (j+i) / 2 - 10^k ) / 2 \\
+b &= ( (j-i) / 2 + 1 ) / 2 \\
+\end{align}
+$$
+
+<p>
+If both $a$ and $b$ have $k$ digits, the pair is a candidate for an excellent number. Check that they satisfy $b^2 - a^2 = ab$. If they do, you've found an excellent number.
+</p>
+
+<p>
+The cheating reduces this problem to a relatively trivial one. What you would do in years of computational work before takes mere seconds. Before you had to check $3 \cdot 10^{k-1}$ candidates and each bump of $k$ required ten times the computational power. With this method, the number of prime factors does not necessarily increase with $k$. The next set of numbers might take less time!
+</p>
+
+<div id="timings" class="center" align="center">
+<table>
+<tr><th>$2k$</th><th>$10^{2k} - 1$<br/>factors</th><th>$10^{2k} - 1$<br/>divisors</th><th>$3 \cdot 10^{k-1}$</th></tr>
+<tr> <td> 2</td> <td>3</td>      <td>7</td>     <td>3</td>   </tr>
+<tr> <td> 4</td> <td>4</td>      <td>13</td>    <td>30</td>  </tr>
+<tr> <td> 6</td> <td>7</td>      <td>65</td>    <td>300</td>  </tr>
+<tr> <td> 8</td> <td>6</td>      <td>49</td>    <td>3000</td>  </tr>
+<tr> <td>10</td> <td>6</td>      <td>49</td>    <td>30,000</td>  </tr>
+<tr> <td>12</td> <td>9</td>      <td>257</td>   <td>300,000</td>  </tr>
+<tr> <td>14</td> <td>6</td>      <td>49</td>    <td>3 million</td>  </tr>
+<tr> <td>16</td> <td>8</td>      <td>193</td>   <td>30 million</td>  </tr>
+<tr> <td>18</td> <td>11</td>     <td>641</td>   <td>300 million</td>  </tr>
+<tr> <td>20</td> <td>9</td>      <td>385</td>   <td>3 billion</td>  </tr>
+<tr> <td>22</td> <td>9</td>      <td>289</td>   <td>30 billion</td>  </tr>
+<tr> <td>24</td> <td>12</td>     <td>2,049</td>  <td>300 billion</td>  </tr>
+<tr> <td>26</td> <td>8</td>      <td>193</td>   <td>3 trillion</td></tr>
+<tr> <td>28</td> <td>10</td>     <td>769</td>   <td>30 trillion</td> </tr>
+<tr> <td>30</td> <td>15</td>     <td>16,385</td> <td>300 trillion</td>  </tr>
+<tr> <td>32</td> <td>13</td>     <td>6,145</td>  <td>3 quadrillion</td> </tr>
+<tr> <td>34</td> <td>8</td>      <td>193</td>   <td>30 quadrillion</td> </tr>
+<tr> <td>36</td> <td>14</td>     <td>5,121</td>  <td>300 quadrillion</td> </tr>
+</table>
+</div>
+
+<p>
+All of this is to say that Matthew has completely ruined most of the fun we were having. He's found them all.
+</p>
+
+<h2>Some conclusions</h2>
+
+<p>
+I started this project to have some fun. I tried some new languages and several new techniques. I read quite a bit about mathematics. I learned quite a bit about high-performance computing.
+</p>
+
+<p>
+Had I investigated the problem and come up with Matthew's solution right away, I would have missed all of the exploration. I would have missed the patterns in the numbers because I never would have closely inspected the output looking for patterns that I might feed back into my crude optimizations.
+</p>
+
+<p>
+Besides, it was never about the numbers anyway.
+</p>
+
 <h2>Contributions</h2>
 
-<p>
-I first found this problem through Mark Jason Dominus's <a href="http://blog.plover.com/math/excellent.html">Excellent Numbers</a>. He provided some optimizations that I worked out before I read far enough ahead.
-</p>
-
-<p>
-Joe Zbiciak contributed the modulus congruence optimization.
-</p>
-
-<p>
-Phil Doroff from <a href="http://www.servercentral.com">ServerCentral</a> donated some time on their big hardware. This allowed us to go very wide.
-</p>
-
-<p>
-Sinan Ünür helped with <a href="https://www.mathjax.org">MathJax</a> to bring some $\TeX$ goodness to this page. He also listened to me talk about much more math than anyone really wants to talk about.
-</p>
+<ul>
+<li>I first found this problem through Mark Jason Dominus's <a href="http://blog.plover.com/math/excellent.html">Excellent Numbers</a>. He provided some optimizations that I worked out before I read far enough ahead.
+<li>Joe Zbiciak contributed the modulus congruence optimization.
+<li>Phil Doroff from <a href="http://www.servercentral.com">ServerCentral</a> donated some time on their big hardware. This allowed us to go very wide.
+<li>Sinan Ünür helped with <a href="https://www.mathjax.org">MathJax</a> to bring some $\TeX$ goodness to this page. He also listened to me talk about much more math than anyone really wants to talk about. He then was Tom Sawyer-ed into writing a bunch of C code.
+<li>Matthew Arcus made things much faster by <a href="https://matthewarcus.wordpress.com/2016/01/16/excellent-numbers/">reusing the work done by factorizations</a>.
+</ul>
 
 <h2>How to contribute</h2>
 
@@ -655,10 +747,8 @@ There are a list of things you can do:
 
 <ul>
 <li>Implement the algorithm in another language. So far I have C, Perl, and Julia.</li>
-<li>Find more optimizations.</li>
-<li>Verify that I haven't missed any numbers, or that the ones I have found are indeed excellent.</li>
+<li>Verify that I haven't missed any numbers, or that the ones I have found are indeed excellent. I love independent verification.</li>
 <li>Add the number to the <a href="https://oeis.org/A162700">excellent number sequence in the Online Encyclopedia of Integer Sequences</a>.</li>
-<li>Lend me a big cluster of 1,000 processors.</li>
 </ul>
 
 <h2>Further reading</h2>
@@ -672,6 +762,9 @@ Watch out for some of the other stuff you find out there. Most other spots have 
 </p>
 
 <ul>
+
+<li> <A href="https://matthewarcus.wordpress.com/2016/01/16/excellent-numbers/">Matthew Arcus's quadratic Diophantine equation solution</a>
+
 <li> <a href="http://www.masteringperl.org/2015/05/computing-excellent-numbers/">Computing excellent numbers</a></li>
 
 <li> <a href="http://www.masteringperl.org/2015/10/doing-less-work-to-compute-excellent-numbers/">Doing less work to compute excellent numbers</a></li>
