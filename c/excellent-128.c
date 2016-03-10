@@ -425,13 +425,13 @@ get_K( uint8_t d ) {
 
 void
 check_excellent(excellent_half_t a, excellent_half_t K) {
-    excellent_full_t rhs = multiply_halves(a, a) + multiply_halves(a, K);
+    excellent_full_t rhs = multiply_halves(a, a + K);
     excellent_half_t b = 1 +
         EXCELLENT_SQRT((excellent_float_t) a) *
         EXCELLENT_SQRT((excellent_float_t) (a + K))
     ;
 
-    if ( rhs == multiply_halves(b, b - 1) ) {
+    if ( multiply_halves(b, b - 1) == rhs ) {
         print_excellent_number(a, b);
     }
 
