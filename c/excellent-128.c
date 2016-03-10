@@ -206,7 +206,7 @@ time_left(
     uint8_t weeks, days, hours, minutes, seconds;
 
     excellent_half_t left_a = opt->end_a - a;
-    seconds_left = 1 + ((double) left_a) / info->rate;
+    seconds_left = 1 + ((excellent_float_t) left_a) / info->rate;
 
     weeks   = seconds_left / SECONDS_PER_WEEK;
     days    = ( seconds_left / SECONDS_PER_DAY ) % 7;
