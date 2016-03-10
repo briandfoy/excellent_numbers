@@ -1,7 +1,7 @@
 CC=cc
 LIBS=-lm
 
-OPTIMIZE=-O2 -march=native -ffinite-math-only -fno-math-errno
+OPTIMIZE=-O2 -march=native -ffinite-math-only -fno-math-errno -std=c11
 WARNINGS=-Wall
 
 CFLAGS=${WARNINGS} ${OPTIMIZE}

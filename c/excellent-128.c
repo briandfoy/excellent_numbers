@@ -423,15 +423,38 @@ get_K( uint8_t d ) {
     return powers_of_10[ d / 2 ];
 }
 
+static inline excellent_full_t
+excellent_isqrt(excellent_full_t n) {
+    uint8_t bits = 8 * sizeof(excellent_half_t);
+    excellent_full_t r = (1ULL << bits);
+    excellent_full_t r2;
+
+    while ( r > n ) {
+        r >>= 2;
+        bits -= 2;
+    }
+
+    while ( bits ) {
+        r2 = r * r;
+        if ( n == r2 ) {
+            break;
+        }
+        if ( n < r2 ) {
+            r &= ~(1ULL << bits);
+        }
+        r |= (1ULL << --bits);
+    }
+
+    return r;
+}
+
 void
 check_excellent(excellent_half_t a, excellent_half_t K) {
-    excellent_full_t rhs = multiply_halves(a, a) + multiply_halves(a, K);
-    excellent_half_t b = 1 +
-        EXCELLENT_SQRT((excellent_float_t) a) *
-        EXCELLENT_SQRT((excellent_float_t) (a + K))
-    ;
+    excellent_full_t rhs = multiply_halves(a, a + K);
+    excellent_half_t b   = excellent_isqrt(rhs);
 
-    if ( rhs == multiply_halves(b, b - 1) ) {
+    if ( (multiply_halves(b, b - 1) == rhs) ||
+            (++b, multiply_halves(b, b - 1) == rhs) ) {
         print_excellent_number(a, b);
     }
 
