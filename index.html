@@ -384,13 +384,13 @@ I've noticed this pattern that popped out after finding the 30-digit number:
 
 
 <p>
-These numbers have the form $a = 3_n20_n16_{n-1}$ and $b = 6_n50_n13_{n-1}$ where $n$ signifies a repetition of that digit. In general, I can write these numbers as:
+These numbers have the form $a = 3_n20_n16_{n+1}$ and $b = 6_n50_n13_{n+1}$ where $n$ signifies a repetition of that digit. In general, I can write these numbers as:
 </p>
 
 $$
 \begin{align}
-a & = ( 3 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^n + 6 (\sum\limits_{i=0}^n 10^i) \\
-b & = ( 6 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^n + 3 (\sum\limits_{i=0}^n 10^i)
+a & = ( 3 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^{n+1} + 6 (\sum\limits_{i=0}^n 10^i) \\
+b & = ( 6 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^{n+1} + 3 (\sum\limits_{i=0}^n 10^i)
 \end{align}
 $$
 
@@ -399,40 +399,48 @@ $$
 $$
 \begin{align}
 S & = 3 (\sum\limits_{i=0}^{n} 10^i)           \\
-a & = (   S - 1 ) \cdot 10^{2n+2} + 10^n + 2 S \\
-b & = ( 2 S - 1 ) \cdot 10^{2n+2} + 10^n +   S \\
+a & = (   S - 1 ) \cdot 10^{2n+2} + 10^{n+1} + 2 S \\
+b & = ( 2 S - 1 ) \cdot 10^{2n+2} + 10^{n+1} +   S \\
+\\
+a & = ( S - 1 ) \cdot 10^{2n+2} + 10^{n+1} + S + S \\
+b & = ( S - 1 ) \cdot 10^{2n+2} + 10^{n+1} + S + S \cdot 10^{2n+2} \\
 \end{align}
 $$
 
-<p>The squares are then:</p>
+<p>Rearrange a bit to tease out a common set of terms:</p>
 
 $$
 \begin{align}
-a^2 & = (   S - 1 )^2 \cdot 10^{2(2n+2)} + 10^{2n} + 2^2 S^2 \\
-    & + 2 (   S - 1 ) \cdot 10^{2n+2} 10^n \\
-    & + 2 (   S - 1 ) \cdot 10^{2n+2} 2 S \\
-    & + 2^2 S 10^n \\
-    & = ( S^2 - 2S + 1 ) 10^{4n+4} + 10^{2n} + 4 S^2 \\
-    & + 2 (   S - 1 ) \cdot 10^{3n+2} \\
-    & + 4 S ( S - 1 ) \cdot 10^{2n+2} \\
-    & + 2^2 S 10^n \\
+a & = ( S - 1 ) \cdot 10^{2n+2} + 10^{n+1} + S + S \\
+b & = ( S - 1 ) \cdot 10^{2n+2} + 10^{n+1} + S + S \cdot 10^{2n+2} \\
 \end{align}
 $$
 
-
+<p>Make $a$ and $b$ a bit simpler:</p>
 
 $$
 \begin{align}
-b^2 & = ( 2 S - 1 )^2 \cdot 10^{2(2n+2)} + 10^{2n} +   S^2 \\
-    & + 2 ( 2 S - 1 ) \cdot 10^{2n+2} 10^n \\
-    & + ( 2 S - 1 ) \cdot 10^{2n+2} S \\
-    & + S 10^n \\
-b^2 & = ( 4 S^2 - 4S + 1 ) \cdot 10^{4n+4} + 10^{2n} +   S^2 \\
-    & + 2 ( 2 S - 1 ) \cdot 10^{3n+2} \\
-    & + S ( 2 S - 1 ) \cdot 10^{2n+2} \\
-    & + S 10^n \\
+N & = 10^{n+1}
+P & = ( S - 1 ) \cdot N^2 + N + S \\
+a & = P + S \\
+b & = P + S \cdot N^2 \\
 \end{align}
 $$
+
+<p>Now </p>
+
+$$
+\begin{align}
+b^2 - a^2 & = (b + a) (b - a) \\
+          & = (P + S N^2 + P + S) ( P + S \cdot N^2 - P - S ) \\
+          & = (2P + S (N^2 + 1) ) ( S (N^2 - 1) ) \\
+          & = (2P + S (N^2 + 1) ) ( S (N^2 - 1) ) \\
+          & = 2PS(N^2 - 1) + S^2 (N^2 + 1) (N^2 - 1) \\
+           \\
+ab = a \cdot N^3 + b
+\end{align}
+$$
+
 
 <p>
 And this is how far I've worked on this problem.
@@ -447,19 +455,19 @@ The other numbers have some interesting patterns in their factorizations:
 <pre>
 216513: 3 3 3 3 3 3 3 3 3 11
 	216: 2 2 2 3 3 3
-	513: 3 3 3 19
+	513:       3 3 3 19
 
 320166650133: 3 3 3 3 3 3 3 3 3 11 11 11 11 11 101
 	320166: 2 3 3 3 7 7 11 11
-	650133: 3 3 3 11 11 199
+	650133:   3 3 3     11 11 199
 
 332001666665001333: 3 3 3 3 3 3 3 3 3 3 3 3 3 3 7 11 13 37 37 37 37 37
 	332001666: 2 3 3 3 3 3 37 37 499
-	665001333: 3 3 3 3 3 37 37 1999
+	665001333:   3 3 3 3 3 37 37     1999
 
 333200016666666500013333: 3 3 3 3 3 3 3 3 3 11 11 11 11 11 73 101 101 101 101 101 137
-	333200016666: 2 3 3 3 11 11 101 101 4999
-	666500013333: 3 3 3 7 11 11 101 101 2857
+	333200016666: 2 3 3 3   11 11 101 101      4999
+	666500013333:   3 3 3 7 11 11 101 101 2857
 </pre>
 
 <h2>The First Algorithm</h2>
