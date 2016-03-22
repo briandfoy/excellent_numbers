@@ -1,0 +1,5 @@
+*** [3618] [2016-03-22T20:57:44-00:00] Starting up
+*** [3618] start a is 3357333333333356
+*** [3618] end a is 3426666666666689
+*** [3618] report interval is 15
+*** [3618] signal check interval is 10

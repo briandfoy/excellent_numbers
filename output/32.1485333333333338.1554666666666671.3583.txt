@@ -1,0 +1,5 @@
+*** [3591] [2016-03-22T20:57:44-00:00] Starting up
+*** [3591] start a is 1485333333333338
+*** [3591] end a is 1554666666666671
+*** [3591] report interval is 15
+*** [3591] signal check interval is 10

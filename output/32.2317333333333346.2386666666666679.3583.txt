@@ -1,0 +1,5 @@
+*** [3603] [2016-03-22T20:57:44-00:00] Starting up
+*** [3603] start a is 2317333333333346
+*** [3603] end a is 2386666666666679
+*** [3603] report interval is 15
+*** [3603] signal check interval is 10

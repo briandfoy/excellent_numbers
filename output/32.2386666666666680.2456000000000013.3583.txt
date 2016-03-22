@@ -1,0 +1,5 @@
+*** [3604] [2016-03-22T20:57:44-00:00] Starting up
+*** [3604] start a is 2386666666666680
+*** [3604] end a is 2456000000000013
+*** [3604] report interval is 15
+*** [3604] signal check interval is 10

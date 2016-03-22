@@ -1,0 +1,5 @@
+*** [3612] [2016-03-22T20:57:44-00:00] Starting up
+*** [3612] start a is 2941333333333352
+*** [3612] end a is 3010666666666685
+*** [3612] report interval is 15
+*** [3612] signal check interval is 10

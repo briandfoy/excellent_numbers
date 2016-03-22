@@ -1,0 +1,5 @@
+*** [3654] [2016-03-22T20:57:44-00:00] Starting up
+*** [3654] start a is 5853333333333380
+*** [3654] end a is 5922666666666713
+*** [3654] report interval is 15
+*** [3654] signal check interval is 10
