@@ -162,7 +162,7 @@ for( my $a = $opts{'start'}; $a <= $opts{'end'}; $a += $interval ) {
 
 	$end = $opts{'end'} if $end > $opts{'end'};
 
-	my @args = ( $opts{'length'}, $a, $end );
+	my @args = ( '-d', $opts{'length'}, '-b', $a, '-e', $end, '-r', 15, '-s', 10 );
 	my $output_file = make_filename( $opts{output_dir}, $opts{length}, $a, $end );
 	push @output_files, $output_file;
 
