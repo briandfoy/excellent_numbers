@@ -1,0 +1,5 @@
+*** [53846] [2016-04-09T16:54:13-00:00] Starting up
+*** [53846] start a is 22480000000000012
+*** [53846] end a is 23173333333333345
+*** [53846] report interval is 15
+*** [53846] signal check interval is 10

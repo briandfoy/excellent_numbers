@@ -1,0 +1,5 @@
+*** [53877] [2016-04-09T16:54:13-00:00] Starting up
+*** [53877] start a is 43973333333333366
+*** [53877] end a is 44666666666666699
+*** [53877] report interval is 15
+*** [53877] signal check interval is 10
