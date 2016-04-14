@@ -540,3 +540,12 @@
 +++ [53835] Checked [14853333333333338] to [14860926244251496]
 *** [53835] [2016-04-11T14:32:41-00:00] working on: 14860926244251496 tried: 42773078700 rate: 47420264 / sec
 *** [53835] time left: 23 wk 6 d 8 h 55 m 16 s
+*** [63929] [2016-04-14T04:36:55-00:00] Starting up
+*** [63929] start a is 1000
+*** [63929] end a is 6180
+*** [63929] report interval is 15
+*** [63929] signal check interval is 2
+16604400 is excellent
+33346668 is excellent
+59809776 is excellent
++++ [63929] [2016-04-14T04:36:55-00:00] Checked [1000] to [6180]

@@ -540,3 +540,12 @@
 +++ [53877] Checked [43973333333333366] to [43981014901057164]
 *** [53877] [2016-04-11T14:30:40-00:00] working on: 43981014901057164 tried: 40312794600 rate: 44791994 / sec
 *** [53877] time left: 25 wk 2 d 4 h 4 m 23 s
+*** [63893] [2016-04-14T04:36:55-00:00] Starting up
+*** [63893] start a is 1000
+*** [63893] end a is 6180
+*** [63893] report interval is 15
+*** [63893] signal check interval is 2
+16604400 is excellent
+33346668 is excellent
+59809776 is excellent
++++ [63893] [2016-04-14T04:36:55-00:00] Checked [1000] to [6180]
