@@ -394,58 +394,40 @@ b & = ( 6 (\sum\limits_{i=0}^{n} 10^i) - 1 ) \cdot 10^{2n+2} + 10^{n+1} + 3 (\su
 \end{align}
 $$
 
-<p>All of the summations are the same, so replace them with $S$:</p>
+<p>Define $S$ to stand in for the summations:</p>
+
+$$
+S & = 3 (\sum\limits_{i=0}^{n} 10^i)
+$$
+
+<p>I can rewrite the $10^{n+1}$ terms with $S$:</p>
 
 $$
 \begin{align}
-S & = 3 (\sum\limits_{i=0}^{n} 10^i)           \\
-a & = (   S - 1 ) \cdot 10^{2n+2} + 10^{n+1} + 2 S \\
-b & = ( 2 S - 1 ) \cdot 10^{2n+2} + 10^{n+1} +   S \\
-\\
-a & = ( S - 1 ) \cdot 10^{2n+2} + 10^{n+1} + S + S \\
-b & = ( S - 1 ) \cdot 10^{2n+2} + 10^{n+1} + S + S \cdot 10^{2n+2} \\
+10^{n+1} & = 1 + 9 (\sum\limits_{i=0}^{n} 10^i) \\
+         & = 3S + 1
 \end{align}
 $$
 
-<p>Rearrange a bit to tease out a common set of terms:</p>
+<p>Now $a$ and $b$ are polynomials of $S$</p>
 
 $$
 \begin{align}
-N & = 10^{n+1} \\
-a & = ( S - 1 ) \cdot N^2 + N + S + S \\
-b & = ( S - 1 ) \cdot N^2 + N + S + S \cdot N^2 \\
+a & = (   S - 1 ) \cdot (3S+1)^2 + (3S+1) + 2 S \\
+b & = ( 2 S - 1 ) \cdot (3S+1)^2 + (3S+1) +   S
 \end{align}
 $$
 
-<p>Make $a$ and $b$ a bit simpler:</p>
+<p>Tedious algebra shows these numbers are excellent</p>
 
 $$
 \begin{align}
-P & = ( S - 1 ) \cdot N^2 + N + S \\
-a & = P + S \\
-b & = P + S \cdot N^2 \\
+b^2 - a^2             & = 81 S^5 (3S+2) \\
+a \cdot 10^{3n+3} + b & = a \cdot (3S+1)^3 + b \\
+                      & = 81 S^5 (3S+2) \\
+                      & = b^2 - a^2
 \end{align}
 $$
-
-<p>Now </p>
-
-$$
-\begin{align}
-b^2 - a^2 & = (b + a) (b - a) \\
-          & = (P + S N^2 + P + S) ( P + S \cdot N^2 - P - S ) \\
-          & = (2P + S (N^2 + 1) ) ( S (N^2 - 1) ) \\
-          & = (2P + S (N^2 + 1) ) ( S (N^2 - 1) ) \\
-          & = 2PS(N^2 - 1) + S^2 (N^2 + 1) (N^2 - 1) \\
-           \\
-ab        & = a \cdot N^3 + b
-\end{align}
-$$
-
-
-<p>
-And this is how far I've worked on this problem.
-</p>
-
 
 <p>
 The other numbers have some interesting patterns in their factorizations:
