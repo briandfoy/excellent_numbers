@@ -1,14 +1,12 @@
-#!/Users/brian/bin/perls/perl5.22.0
-use v5.22;
-use feature qw(postderef);
-no warnings qw(experimental::postderef);
+#!/Users/brian/bin/perls/perl5.24.0
+use v5.24;
 
 use bignum;
 
 use List::Util qw(reduce);
-use Mojo::UserAgent;
+#use Mojo::UserAgent;
 
-my $file  = '/Users/brian/Desktop/Repunit100.txt';
+my $file  = 'Repunit100.txt';
 my $url   = 'http://www.h4.dion.ne.jp/~rep/Repunit100.txt';
 #my $lines = Mojo::UserAgent->new->get( $url )->res->body;
 
@@ -49,18 +47,16 @@ while( <$fh> ) {
 		$factors =~ s/\s+$letter\s+/ $f /;
 		my $key = "$this_k$letter";
 		$factors{$key} = [ @f ];
-		<STDIN>;
 		}
 
 	$factors =~ s/\s*\$\s*//g;
 	$factors =~ s/\s*\z//;
 
-	say "<$k> <$this_k> => [$factors]";
+	say "$k => [$factors]";
 
 	my @f = split /\s+/, $factors;
 
 	push @{ $factors{$this_k} }, @f;
-	last if $this_k > 200;
 	}
 #$Data::Dumper::Sortkeys = 1;
 
@@ -82,10 +78,11 @@ foreach my $i ( sort { $a <=> $b } keys %factors  ) {
 
 	my $product = 1;
 	$product *= $_ for @factors;
-	printf "%3s | %s | %d | %s\n", $i, $product, scalar @factors, join " ", @factors;
+	warn "WRONG PRODUCT FOR $i!\n" if $product =~ /[^1]/;
+	printf "%3s | %s\n",
+		$i,
+		join " ",sort { $a <=> $b } @factors;
 	}
-
-say Dumper( $factors{'151'} ); use Data::Dumper;
 
 __END__
 $lines =~ s/\R+/\n/g;
