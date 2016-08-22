@@ -1,3 +1,5 @@
+(defparameter *PHI* 0.619)
+
 (defun split-into-a-b-string (number)
 	"Split a number into two parts with equal digits"
 	(let ((ab-string (write-to-string number)))
@@ -21,24 +23,37 @@
 					;(format t "ab ~a -> a ~a b ~a~%" number a b)
 					(cons a b))))))
 
+(defun diff-of-squares ( a-b )
+	"Take a difference of squares
+	 a-b is a cons of a and b"
+	(-
+		(expt (cdr a-b) 2)
+		(expt (car a-b) 2)))
+
 (defun is-excellent (number)
 	"Determine is ab = b^2 - a^2"
 	(let ((a-b (split-into-a-b-log number)))
 		(if a-b
-			(if (=
-					(-
-						(expt (cdr a-b) 2)
-						(expt (car a-b) 2))
-					number)
-			t nil)
-			nil)
-	))
+			(if (= (diff-of-squares a-b) number)
+				t
+				nil)
+			nil)))
 
+(defun low-by-power (n)
+	(expt 10 (+ (* n 2) 1 )))
+
+(defun high-by-power (n)
+	(*
+		*PHI*
+		(-
+		(expt 10 (+ (* n 2) 2 ) )
+		1)))
+
+(defun show-number (ab)
+	(format t "[~a] ~a~%" (get-internal-real-time) ab))
 
 (loop for n from 0 to 4
-	do (loop for ab from (expt 10 (+ (* n 2) 1 ) ) to (- (expt 10 (+ (+ (* n 2) 1 ) 1)) 1 )
-		do (if (is-excellent ab) (format t "[~a] ~a~%" (get-internal-real-time) ab))
-		)
-	)
+	do (loop for ab from (low-by-power n) to (high-by-power n)
+		do (if (is-excellent ab) (show-number ab))))
 
 
