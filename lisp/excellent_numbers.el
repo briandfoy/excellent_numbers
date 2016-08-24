@@ -41,6 +41,31 @@
 				nil)
 			nil)))
 
+(defun log-ceil (n)
+	"Find the next higher power for the number
+	I use this to shift a over to put it together with b
+	to get ab.
+
+	This fails when the input is exactly a power to ten,
+	in which case it returns one less. For my purposes,
+	this doesn't matter because it will never be a value
+	of b
+	"
+	(ceiling (log n 10d0))
+	)
+
+(defun make-number-from-a-b (a b)
+	"Put the halves back together to make ab
+	"
+	(+
+		(* a (expt 10 (log-ceil b)))
+		b))
+
+(defun is-power-of-ten (n)
+	(=
+		(floor (log n 10))
+		(log n 10)))
+
 (defun low-by-power (n)
 	(expt 10 (+ (* n 2) 1 )))
 
@@ -50,6 +75,18 @@
 		(-
 		(expt 10 (+ (* n 2) 2 ) )
 		1)))
+
+(defun high-by-magnitude (n)
+	"Return the highest number of a to check
+	that's the same power of 10 as n
+	"
+	(ceiling
+		(*
+			*PHI*
+			(expt
+				10
+				(log-ceil n)
+				))))
 
 (defun show-number (ab)
 	(format t "[~a] ~a~%" (get-internal-real-time) ab))
