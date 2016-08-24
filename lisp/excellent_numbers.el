@@ -25,13 +25,15 @@
 
 (defun diff-of-squares ( a-b )
 	"Take a difference of squares
-	 a-b is a cons of a and b"
+	 a-b is a cons of a and b
+	 "
 	(-
 		(expt (cdr a-b) 2)
 		(expt (car a-b) 2)))
 
 (defun is-excellent (number)
-	"Determine is ab = b^2 - a^2"
+	"Determine is ab = b^2 - a^2
+	"
 	(let ((a-b (split-into-a-b-log number)))
 		(if a-b
 			(if (= (diff-of-squares a-b) number)
