@@ -1,4 +1,5 @@
 PROGRAM=excellent_numbers.el
+LISP=sbcl
 
 all:
-	@ sbcl --script ${PROGRAM}
+	${LISP} --script ${PROGRAM}
