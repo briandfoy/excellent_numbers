@@ -12,7 +12,7 @@
 
 (defun split-into-a-b-log (number)
 	"Split a number into two parts with equal digits"
-	(let ((power (floor (log number 10))))
+	(let ((power (floor (log number 10d0))))
 		(if (evenp power)
 			nil
 			(let ((half-power (expt 10 (/ (+ power 1) 2))))
