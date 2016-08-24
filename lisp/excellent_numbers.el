@@ -52,8 +52,3 @@
 (defun show-number (ab)
 	(format t "[~a] ~a~%" (get-internal-real-time) ab))
 
-(loop for n from 0 to 4
-	do (loop for ab from (low-by-power n) to (high-by-power n)
-		do (if (is-excellent ab) (show-number ab))))
-
-
